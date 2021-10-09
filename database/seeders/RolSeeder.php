@@ -25,6 +25,11 @@ class RolSeeder extends Seeder
         Permission::create(['name' => 'Crear usuarios']);
         Permission::create(['name' => 'Editar usuarios']);
         Permission::create(['name' => 'Eliminar usuarios']);
+
+        Permission::create(['name' => 'Ver listado de roles']);
+        Permission::create(['name' => 'Crear roles']);
+        Permission::create(['name' => 'Editar roles']);
+        Permission::create(['name' => 'Eliminar roles']);
         
     }
 }
