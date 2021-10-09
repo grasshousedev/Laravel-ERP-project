@@ -19,17 +19,17 @@ class RolSeeder extends Seeder
         $rolAdmin = Role::create(['name' => 'Admin']);
         $rolUser = Role::create(['name' => 'User']);
 
-        Permission::create(['name' => 'Ver dashboard']);
+        Permission::create(['name' => 'Ver dashboard'])->syncRoles([$rolAdmin, $rolUser]);
 
-        Permission::create(['name' => 'Ver listado de usuarios']);
-        Permission::create(['name' => 'Crear usuarios']);
-        Permission::create(['name' => 'Editar usuarios']);
-        Permission::create(['name' => 'Eliminar usuarios']);
-
-        Permission::create(['name' => 'Ver listado de roles']);
-        Permission::create(['name' => 'Crear roles']);
-        Permission::create(['name' => 'Editar roles']);
-        Permission::create(['name' => 'Eliminar roles']);
+        Permission::create(['name' => 'Ver listado de usuarios'])->syncRoles([$rolAdmin]);
+        Permission::create(['name' => 'Crear usuarios'])->syncRoles([$rolAdmin]);
+        Permission::create(['name' => 'Editar usuarios'])->syncRoles([$rolAdmin]);
+        Permission::create(['name' => 'Eliminar usuarios'])->syncRoles([$rolAdmin]);
+        
+        Permission::create(['name' => 'Ver listado de roles'])->syncRoles([$rolAdmin]);
+        Permission::create(['name' => 'Crear roles'])->syncRoles([$rolAdmin]);
+        Permission::create(['name' => 'Editar roles'])->syncRoles([$rolAdmin]);
+        Permission::create(['name' => 'Eliminar roles'])->syncRoles([$rolAdmin]);
         
     }
 }
