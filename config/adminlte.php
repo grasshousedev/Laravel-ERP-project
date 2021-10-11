@@ -251,19 +251,22 @@ return [
         [
             'text'  => 'Dashboard',
             'url'   => 'admin',
-            'icon'  => 'fas fa-fw fa-home'
+            'icon'  => 'fas fa-fw fa-home',
+            'can'   => 'Ver dashboard'
         ],
         [
             'text'        => 'Usuarios',
             'route'       => 'admin.users.index',
             'icon'        => 'fas fa-users fa-fw',
+            'can'         => 'Ver listado de usuarios'
             // 'label'       => 4,
             // 'label_color' => 'success',
         ],
         [
             'text'        => 'Roles',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fas fa-scroll',
+            'route'       => 'admin.roles.index',
+            'icon'        => 'fas fa-users-cog fa-fw',
+            'can'         => 'Ver listado de roles'
             // 'label'       => 4,
             // 'label_color' => 'success',
         ],
