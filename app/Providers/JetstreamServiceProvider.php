@@ -12,6 +12,8 @@ use App\Actions\Jetstream\UpdateTeamName;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Jetstream\Jetstream;
 
+use Laravel\Fortify\Fortify;
+use Spatie\Permission\Models\Role;
 class JetstreamServiceProvider extends ServiceProvider
 {
     /**
@@ -21,7 +23,11 @@ class JetstreamServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        Fortify::registerView(function () {
+            $roles = Role::all();
+            $data = ['uvas'];
+            return view('auth.register', $data);
+        });
     }
 
     /**

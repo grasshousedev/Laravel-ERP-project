@@ -29,10 +29,13 @@
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
-
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            <div class="col-span-6 sm:col-span-4">
+                <x-jet-label for="rol" value="{{ __('Rol') }}" />
+                <select name="rol" id="rol" class="block w-full mt-1">
+                    @foreach ( $roles as $rol )
+                    <option value="{{ $rol->name }}">{{ $rol->name }}</option>
+                    @endforeach
+                </select>
             </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
