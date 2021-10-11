@@ -28,18 +28,25 @@
                         <tr>
                             <td>{{ $rol->id }}</td>
                             <td>{{ $rol->name }}</td>
-                            <td width="10px">
-                                <a href="{{ route('admin.roles.edit', $rol) }}" class="btn btn-sm btn-primary">Editar</a>
-                            </td>
-                            <td width="10px">
-                                <form action="{{ route('admin.roles.destroy', $rol) }}" method="POST">
 
-                                    @csrf
-                                    @method('DELETE')
+                            @can('Editar usuarios')
+                                <td width="10px">
+                                    <a href="{{ route('admin.roles.edit', $rol) }}" class="btn btn-sm btn-primary">Editar</a>
+                                </td>
+                            @endcan
+                            
+                            @can('Eliminar usuarios')
+                                <td width="10px">
+                                    <form action="{{ route('admin.roles.destroy', $rol) }}" method="POST">
 
-                                    <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
-                                </form>
-                            </td>
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                                    </form>
+                                </td>
+                            @endcan
+                            
                         </tr>
                     @endforeach
                 </tbody>
