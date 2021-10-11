@@ -11,6 +11,7 @@
                             <th>ID</th>
                             <th>Nombre</th>
                             <th>Email</th>
+                            <th>Rol</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -20,7 +21,13 @@
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
-
+                                <td>
+                                    @if (!empty($user->getRoleNames()))
+                                        @foreach ($user->getRoleNames() as $rol)
+                                            {{ $rol }}
+                                        @endforeach
+                                    @endif
+                                </td>
                                 @can('Editar usuarios')
                                 <td>
                                     <a href="{{ route('admin.users.edit', $user) }}">Editar</a>
