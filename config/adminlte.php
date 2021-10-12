@@ -267,70 +267,38 @@ return [
             'route'       => 'admin.roles.index',
             'icon'        => 'fas fa-users-cog fa-fw',
             'can'         => 'Ver listado de roles'
-            // 'label'       => 4,
-            // 'label_color' => 'success',
         ],
+        [
+            'text'        => 'Logistica',
+            'route'       => 'admin.roles.index',
+            'icon'        => 'fas fa-users-cog fa-fw',
+            'can'         => 'Ver listado de roles'
+        ],
+        [
+            'text'        => 'Almacen',
+            'route'       => 'admin.roles.index',
+            'icon'        => 'fas fa-users-cog fa-fw',
+            'can'         => 'Ver listado de roles'
+        ],
+        [
+            'text'        => 'Productos',
+            'route'       => 'admin.roles.index',
+            'icon'        => 'fas fa-users-cog fa-fw',
+            'can'         => 'Ver listado de roles'
+        ],
+        [
+            'text'        => 'servicios',
+            'route'       => 'admin.roles.index',
+            'icon'        => 'fas fa-users-cog fa-fw',
+            'can'         => 'Ver listado de roles'
+        ],
+
         ['header' => 'Configuración de Cuenta'],
         [
             'text' => 'profile',
             'url'  => 'user/profile',
             'icon' => 'fas fa-fw fa-user',
         ],
-        
-        // [
-        //     'text'    => 'multilevel',
-        //     'icon'    => 'fas fa-fw fa-share',
-        //     'submenu' => [
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //         [
-        //             'text'    => 'level_one',
-        //             'url'     => '#',
-        //             'submenu' => [
-        //                 [
-        //                     'text' => 'level_two',
-        //                     'url'  => '#',
-        //                 ],
-        //                 [
-        //                     'text'    => 'level_two',
-        //                     'url'     => '#',
-        //                     'submenu' => [
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                     ],
-        //                 ],
-        //             ],
-        //         ],
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //     ],
-        // ],
-        // ['header' => 'labels'],
-        // [
-        //     'text'       => 'important',
-        //     'icon_color' => 'red',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'warning',
-        //     'icon_color' => 'yellow',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'information',
-        //     'icon_color' => 'cyan',
-        //     'url'        => '#',
-        // ],
     ],
 
     /*
