@@ -10,6 +10,8 @@
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>DNI</th>
                             <th>Email</th>
                             <th>Rol</th>
                             <th></th>
@@ -20,6 +22,8 @@
                             <tr>
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
+                                <td>{{ $user->apellido }}</td>
+                                <td>{{ $user->dni }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>
                                     @if (!empty($user->getRoleNames()))
@@ -28,13 +32,13 @@
                                         @endforeach
                                     @endif
                                 </td>
-                                @can('Editar usuarios')
+                                @can('Editar roles')
                                 <td>
                                     <a href="{{ route('admin.users.edit', $user) }}">Editar</a>
                                 </td>
                                 @endcan
                                 
-                                @can('Eliminar usuarios')
+                                @can('Eliminar roles')
                                 <td>
                                     <form action="{{ route('admin.users.destroy', $user) }}" method="POST">
 
