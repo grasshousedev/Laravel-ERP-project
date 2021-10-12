@@ -32,8 +32,11 @@
             <div class="col-span-6 sm:col-span-4">
                 <x-jet-label for="rol" value="{{ __('Rol') }}" />
                 <select name="rol" id="rol" class="block w-full mt-1">
-                    <option value="user">Usuario</option>
-                    <option value="admin">Administrador</option>
+
+                    @foreach ($roles as $rol)
+                        <option value="{{ $rol->name }}">{{ $rol->name }}</option>
+                    @endforeach
+                    
                 </select>
             </div>
 
