@@ -265,31 +265,31 @@ return [
         [
             'text'        => 'Roles',
             'route'       => 'admin.roles.index',
-            'icon'        => 'fas fa-users-cog fa-fw',
+            'icon'        => 'far fa-address-card',
             'can'         => 'Ver listado de roles'
         ],
         [
             'text'        => 'Logistica',
             'route'       => 'admin.roles.index',
-            'icon'        => 'fas fa-users-cog fa-fw',
+            'icon'        => 'fas fa-microchip',
             'can'         => 'Ver listado de roles'
         ],
         [
             'text'        => 'Almacen',
             'route'       => 'admin.roles.index',
-            'icon'        => 'fas fa-users-cog fa-fw',
+            'icon'        => 'fas fa-boxes',
             'can'         => 'Ver listado de roles'
         ],
         [
             'text'        => 'Productos',
             'route'       => 'admin.roles.index',
-            'icon'        => 'fas fa-users-cog fa-fw',
+            'icon'        => 'fas fa-box-open',
             'can'         => 'Ver listado de roles'
         ],
         [
             'text'        => 'servicios',
             'route'       => 'admin.roles.index',
-            'icon'        => 'fas fa-users-cog fa-fw',
+            'icon'        => 'fas fa-concierge-bell',
             'can'         => 'Ver listado de roles'
         ],
 
