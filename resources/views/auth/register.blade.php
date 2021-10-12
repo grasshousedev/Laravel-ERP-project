@@ -32,8 +32,8 @@
             <div class="col-span-6 sm:col-span-4">
                 <x-jet-label for="rol" value="{{ __('Rol') }}" />
                 <select name="rol" id="rol" class="block w-full mt-1">
-                    <option value="usuario">Usuario</option>
-                    <option value="administrador">Administrador</option>
+                    <option value="user">Usuario</option>
+                    <option value="admin">Administrador</option>
                 </select>
             </div>
 
