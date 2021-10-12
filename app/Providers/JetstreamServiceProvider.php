@@ -25,8 +25,7 @@ class JetstreamServiceProvider extends ServiceProvider
     {
         Fortify::registerView(function () {
             $roles = Role::all();
-            $data = ['uvas'];
-            return view('auth.register', $data);
+            return view('auth.register', compact('roles'));
         });
     }
 
