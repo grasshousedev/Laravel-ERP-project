@@ -3,7 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use Livewire\Component;
+use Livewire\WithPagination;
 class AppServiceProvider extends ServiceProvider
 {
     /**

@@ -33,13 +33,13 @@
                                     @endif
                                 </td>
                                 @can('Editar roles')
-                                <td>
+                                <td width="10px">
                                     <a href="{{ route('admin.users.edit', $user) }}">Editar</a>
                                 </td>
                                 @endcan
                                 
                                 @can('Eliminar roles')
-                                <td>
+                                <td width="10px">
                                     <form action="{{ route('admin.users.destroy', $user) }}" method="POST">
 
                                         @csrf
@@ -54,11 +54,10 @@
                         @endforeach
                     </tbody>
                 </table>
+                    
+
             </div>
-            
-            <div class="card-footer">
-                {{ $users->links() }}
-            </div>
+            {{ $users->links() }}
 
         @else
             <div class="card-body">
@@ -66,4 +65,5 @@
             </div>
         @endif
     </div>
+    
 </div>

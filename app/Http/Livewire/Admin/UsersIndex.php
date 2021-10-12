@@ -1,4 +1,5 @@
 <?php
+namespace App\Http\Livewire;
 
 namespace App\Http\Livewire\Admin;
 
@@ -19,9 +20,7 @@ class UsersIndex extends Component
 
     public function render()
     {
-        $users = User::where('name', 'LIKE', '%' . $this->search . '%')
-                        ->orWhere('email', 'LIKE', '%' . $this->search . '%')
-                        ->paginate(10);
-        return view('livewire.admin.users-index', compact('users'));
+        $users = User::paginate(5);
+        return view('livewire.users-index', ['users' => $users]);
     }
 }
