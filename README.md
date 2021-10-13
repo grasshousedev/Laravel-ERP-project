@@ -1,10 +1,10 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 ## PASOS PARA EJECUTAR LOCALMENTE
-### >INSTALAMOS DEPENDENCIAS:
-- Para clonar el repositorio del proyecto.
-- Abra su terminal en un directorio de preferencia y ejecute:
-<p>git clone https://github.com/Jamir-boop/ERP-Laravel.git</p>
+###INSTALAMOS DEPENDENCIAS:
+>Para clonar el repositorio del proyecto.
+>Abra su terminal en un directorio de preferencia y ejecute:
+```<p>git clone https://github.com/Jamir-boop/ERP-Laravel.git</p>```
 
 
 ## Learning Laravel
