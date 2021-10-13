@@ -19,10 +19,11 @@ class Productos extends Migration
             $table->string('fabri_prod');
             $table->string('model_prod');
             $table->string('tipo_prod');
-            $table->string('desc_prod');
-            $table->timestamp('prec_prod');
+            $table->double('prec_prod');
+            $table->double('vent_prod');
             $table->double('unidades_prod');
-            $table->timestamps();
+            $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->dateTime('updated_at')->nullable();
         });
     }
 
