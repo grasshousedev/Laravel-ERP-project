@@ -24,7 +24,7 @@ npm run dev
 
 ### Creando base de datos:
 Crear una base de datos en el motor postgres con el nombre "postDBS".
-Para integrar las migrciones ejecutar los scripts:
+En seguida para integrar las migrciones ejecutar los scripts:
 
 ```
 php artisan migrate
