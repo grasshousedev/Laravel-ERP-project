@@ -4,12 +4,12 @@
 ###INSTALAMOS DEPENDENCIAS:
 >Para clonar el repositorio del proyecto.
 >Abra su terminal en un directorio de preferencia y ejecute:
+<<<<<<< HEAD
 
 ```
 git clone https://github.com/Jamir-boop/ERP-Laravel.git
 
 ```
-
 
 ## Learning Laravel
 
