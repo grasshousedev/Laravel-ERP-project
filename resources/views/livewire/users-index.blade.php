@@ -10,7 +10,7 @@
                         <th>DNI</th>
                         <th>Email</th>
                         <th>Rol</th>
-                        <th></th>
+                        <th colspan="2"></th>
                         <th></th>
                     </tr>
                 </thead>
@@ -51,8 +51,7 @@
                     @endforeach
                 </tbody>
             </table>
-                
-
+        
         </div>
     </div>
     

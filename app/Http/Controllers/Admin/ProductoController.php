@@ -26,7 +26,8 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+        $productos = Producto::all();
+        return view('admin.productos.create', compact('productos'));
     }
 
     /**

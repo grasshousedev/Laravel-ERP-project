@@ -3,6 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
+    <a href="{{ route('admin.productos.create') }}" class="btn btn-secondary btn-sm float-right">Agregar producto</a>
     <h1>Productos</h1>
 @stop
 
@@ -30,8 +31,8 @@
                         <td>{{ $producto->fabri_prod }}</td>
                         <td>{{ $producto->model_prod }}</td>
                         <td>{{ $producto->tipo_prod }}</td>
-                        <td>{{ $producto->prec_prod }}</td>
-                        <td>{{ $producto->vent_prod }}</td>
+                        <td>S/.{{ $producto->prec_prod }}</td>
+                        <td>S/.{{ $producto->vent_prod }}</td>
                         <td>{{ $producto->unidades_prod }}</td>
                         <td>
                             <a href="#" class="btn btn-sm btn-primary">Editar</a>
