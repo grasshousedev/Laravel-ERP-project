@@ -2,14 +2,14 @@
 
 ## COMO EJECUTAR LOCALMENTE
 
-###Clonando el repositorio:
+### Clonando el repositorio:
 Abra su terminal en un directorio de preferencia y ejecute:
 
 ```
 git clone https://github.com/Jamir-boop/ERP-Laravel.git
 ```
 
-###Instalamos Dependencias:
+### Instalamos Dependencias:
 Una vez clonado el repositorio en terminal ingrese a la carpeta ERP-Laravel:
 ```
 cd ./ERP-laravel
@@ -22,7 +22,7 @@ npm install
 npm run dev
 ```
 
-###Creando base de datos:
+### Creando base de datos:
 Crear una base de datos en el motor postgres con el nombre "postDBS".
 Para integrar las migrciones ejecutar los scripts:
 
@@ -31,7 +31,7 @@ php artisan migrate
 php artisan migrate:fresh --seed
 ```
 
-###Inicializando localmente:
+### Inicializando localmente:
 ```
 php artisan serve
 ```
