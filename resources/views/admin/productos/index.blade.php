@@ -7,41 +7,45 @@
 @stop
 
 @section('content')
-    <table class="table table-striped" id="productos">
-        <thead>
-            <th>ID</th>
-            <th>Codigo</th>
-            <th>Fabricante</th>
-            <th>Modelo</th>
-            <th>Tipo</th>
-            <th>Precio-compra</th>
-            <th>Precio-venta</th>
-            <th>Unidades</th>
-            <th></th>
-            <th></th>
-        </thead>
-        <tbody>
-            @foreach ($productos as $producto)
-                <tr>
-                    <td>{{ $producto->id }}</td>
-                    <td>{{ $producto->cod_prod }}</td>
-                    <td>{{ $producto->fabri_prod }}</td>
-                    <td>{{ $producto->model_prod }}</td>
-                    <td>{{ $producto->tipo_prod }}</td>
-                    <td>{{ $producto->prec_prod }}</td>
-                    <td>{{ $producto->vent_prod }}</td>
-                    <td>{{ $producto->unidades_prod }}</td>
-                    <td>
-                        <a href="#" class="btn btn-sm btn-primary">Editar</a>
-                    </td>
+<div class="card">
+    <div class="card-body">
+        <table class="table table-striped" id="productos">
+            <thead>
+                <th>ID</th>
+                <th>Codigo</th>
+                <th>Fabricante</th>
+                <th>Modelo</th>
+                <th>Tipo</th>
+                <th>Precio-compra</th>
+                <th>Precio-venta</th>
+                <th>Unidades</th>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody>
+                @foreach ($productos as $producto)
+                    <tr>
+                        <td>{{ $producto->id }}</td>
+                        <td>{{ $producto->cod_prod }}</td>
+                        <td>{{ $producto->fabri_prod }}</td>
+                        <td>{{ $producto->model_prod }}</td>
+                        <td>{{ $producto->tipo_prod }}</td>
+                        <td>{{ $producto->prec_prod }}</td>
+                        <td>{{ $producto->vent_prod }}</td>
+                        <td>{{ $producto->unidades_prod }}</td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">Editar</a>
+                        </td>
 
-                    <td>
-                        <a href="#" class="btn btn-sm btn-danger">Eliminar</a>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</div>
 @stop
 
 @section('css')

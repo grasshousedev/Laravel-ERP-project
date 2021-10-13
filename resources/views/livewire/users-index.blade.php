@@ -31,7 +31,7 @@
                             </td>
                             @can('Editar roles')
                             <td width="10px">
-                                <a href="{{ route('admin.users.edit', $user) }}">Editar</a>
+                                <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-primary">Editar</a>
                             </td>
                             @endcan
                             
