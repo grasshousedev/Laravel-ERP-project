@@ -13,7 +13,7 @@ class Servicios extends Migration
      */
     public function up()
     {
-        //
+        
     }
 
     /**

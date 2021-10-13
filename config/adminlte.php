@@ -270,25 +270,31 @@ return [
         ],
         [
             'text'        => 'Logistica',
-            'route'       => 'admin.roles.index',
+            'route'       => 'admin.logistica.index',
             'icon'        => 'fas fa-microchip',
             'can'         => 'Ver listado de roles'
         ],
         [
             'text'        => 'Almacen',
-            'route'       => 'admin.roles.index',
+            'route'       => 'admin.almacen.index',
             'icon'        => 'fas fa-boxes',
             'can'         => 'Ver listado de roles'
         ],
+        // [
+        //     'text'        => 'Proveedores',
+        //     'route'       => 'admin.proveedores.index',
+        //     'icon'        => 'fas fa-boxes',
+        //     'can'         => 'Ver listado de roles'
+        // ],
         [
             'text'        => 'Productos',
-            'route'       => 'admin.roles.index',
+            'route'       => 'admin.productos.index',
             'icon'        => 'fas fa-box-open',
             'can'         => 'Ver listado de roles'
         ],
         [
-            'text'        => 'servicios',
-            'route'       => 'admin.roles.index',
+            'text'        => 'Servicios',
+            'route'       => 'admin.servicios.index',
             'icon'        => 'fas fa-concierge-bell',
             'can'         => 'Ver listado de roles'
         ],

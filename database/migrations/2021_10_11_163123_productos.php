@@ -13,7 +13,17 @@ class Productos extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('productos', function (Blueprint $table) {
+            $table->id();
+            $table->string('cod_prod');
+            $table->string('fabri_prod');
+            $table->string('model_prod');
+            $table->string('tipo_prod');
+            $table->string('desc_prod');
+            $table->timestamp('prec_prod');
+            $table->double('unidades_prod');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +33,6 @@ class Productos extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('productos');
     }
 }

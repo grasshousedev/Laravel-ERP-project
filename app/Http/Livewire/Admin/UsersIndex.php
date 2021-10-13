@@ -20,7 +20,7 @@ class UsersIndex extends Component
 
     public function render()
     {
-        $users = User::paginate(5);
+        $users = User::paginate(20);
         return view('livewire.users-index', ['users' => $users]);
     }
 }
