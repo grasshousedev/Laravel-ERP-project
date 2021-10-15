@@ -26,8 +26,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        $productos = Producto::all();
-        return view('admin.productos.create', compact('productos'));
+        return view('admin.productos.create');
     }
 
     /**
@@ -38,7 +37,21 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'cod_prod' => 'required',
+            'fabri_prod' => 'required',
+            'model_prod' => 'required',
+            'tipo_prod' => 'required',
+            'prec_prod' => 'required',
+            'vent_prod' => 'required',
+            'unidades_prod' => 'required',
+        ]);
+
+        $datosprod = request()->except('_token');
+        Producto::insert($datosprod);
+        //return response()->json($datosprod);
+        $productos = Producto::all();
+        return redirect()->route('admin.productos.index', compact('productos'))->with('info', 'El producto fue creado correctamente.');
     }
 
     /**
@@ -60,7 +73,8 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $producto = Producto::find($id);
+        return view('admin.productos.edit', compact('producto'));
     }
 
     /**
@@ -72,7 +86,21 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'cod_prod' => 'required',
+            'fabri_prod' => 'required',
+            'model_prod' => 'required',
+            'tipo_prod' => 'required',
+            'prec_prod' => 'required',
+            'vent_prod' => 'required',
+            'unidades_prod' => 'required',
+        ]);
+
+        $datosprod = request()->except('_token', '_method');
+        
+        Producto::where('id','=',$id)->update($datosprod);
+        $producto = Producto::findOrFail($id);
+        return redirect()->route('admin.productos.edit', $producto)->with('info', 'El producto fue actualizado correctamente.');
     }
 
     /**
@@ -83,6 +111,9 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Producto::destroy($id);
+
+        $productos = Producto::all();
+        return redirect()->route('admin.productos.index', compact('productos'))->with('info', 'El producto fue eliminado correctamente.');
     }
 }

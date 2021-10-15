@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Editar rol</h1>
+    <h1>Editar Producto</h1>
 @stop
 
 @section('content')
@@ -14,11 +14,11 @@
     @endif
     <div class="card">
         <div class="card-body">
-            {!! Form::model($role, ['route' => ['admin.roles.update', $role], 'method' => 'put']) !!}
+            {!! Form::model($producto, ['route' => ['admin.productos.update', $producto], 'method' => 'put']) !!}
             
-                @include('admin.roles.parts.form')
+                @include('admin.productos.parts.form')
 
-                {!! Form::submit('Editar rol', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Editar producto', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
     </div>

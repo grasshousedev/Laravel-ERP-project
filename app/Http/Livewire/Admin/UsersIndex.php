@@ -9,9 +9,6 @@ use Livewire\WithPagination;
 
 class UsersIndex extends Component
 {
-    use WithPagination;
-    public $search;
-
     protected $paginationTheme = "bootstrap";
 
     public function updatingSearch(){
@@ -20,7 +17,7 @@ class UsersIndex extends Component
 
     public function render()
     {
-        $users = User::paginate(20);
+        $users = User::all();
         return view('livewire.users-index', ['users' => $users]);
     }
 }

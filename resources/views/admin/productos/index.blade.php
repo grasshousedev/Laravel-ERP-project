@@ -8,6 +8,11 @@
 @stop
 
 @section('content')
+    @if (session('info'))
+        <div class="alert alert-success">
+            {{ session('info') }}
+        </div>
+    @endif
 <div class="card">
     <div class="card-body">
         <table class="table table-striped" id="productos">
@@ -34,13 +39,23 @@
                         <td>S/.{{ $producto->prec_prod }}</td>
                         <td>S/.{{ $producto->vent_prod }}</td>
                         <td>{{ $producto->unidades_prod }}</td>
-                        <td>
-                            <a href="#" class="btn btn-sm btn-primary">Editar</a>
-                        </td>
+                        {{-- @can('Editar productos') --}}
+                                <td width="10px">
+                                    <a href="{{ route('admin.productos.edit', $producto->id) }}" class="btn btn-sm btn-primary">Editar</a>
+                                </td>
+                            {{-- @endcan --}}
+                            
+                        {{-- @can('Eliminar productos') --}}
+                            <td width="10px">
+                                <form action="{{ route('admin.productos.destroy', $producto) }}" method="POST">
 
-                        <td>
-                            <a href="#" class="btn btn-sm btn-danger">Eliminar</a>
-                        </td>
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                                </form>
+                            </td>
+                        {{-- @endcan --}}
                     </tr>
                 @endforeach
             </tbody>

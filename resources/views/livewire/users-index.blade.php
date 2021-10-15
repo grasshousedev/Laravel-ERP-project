@@ -10,7 +10,7 @@
                         <th>DNI</th>
                         <th>Email</th>
                         <th>Rol</th>
-                        <th colspan="2"></th>
+                        <th></th>
                         <th></th>
                     </tr>
                 </thead>
