@@ -12,6 +12,7 @@
                         <th>Rol</th>
                         <th></th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,10 +32,14 @@
                             </td>
                             @can('Editar roles')
                             <td width="10px">
-                                <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-primary">Editar</a>
+                                <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-success">roles</a>
                             </td>
                             @endcan
                             
+                            <td width="10px">
+                                <a href=""  class="btn btn-sm btn-primary">Editar</a>
+                            </td>
+
                             @can('Eliminar roles')
                             <td width="10px">
                                 <form action="{{ route('admin.users.destroy', $user) }}" method="POST">

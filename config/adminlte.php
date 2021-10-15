@@ -290,7 +290,7 @@ return [
             'text'        => 'Productos',
             'route'       => 'admin.productos.index',
             'icon'        => 'fas fa-box-open',
-            'can'         => 'Ver listado de roles'
+            'can'         => 'Ver listado de productos'
         ],
         [
             'text'        => 'Servicios',

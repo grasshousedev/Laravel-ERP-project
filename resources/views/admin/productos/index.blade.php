@@ -3,7 +3,10 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <a href="{{ route('admin.productos.create') }}" class="btn btn-secondary btn-sm float-right">Agregar producto</a>
+    @can('Crear productos')
+        <a href="{{ route('admin.productos.create') }}" class="btn btn-secondary btn-sm float-right">Agregar producto</a>
+    @endcan
+    
     <h1>Productos</h1>
 @stop
 
@@ -39,13 +42,13 @@
                         <td>S/.{{ $producto->prec_prod }}</td>
                         <td>S/.{{ $producto->vent_prod }}</td>
                         <td>{{ $producto->unidades_prod }}</td>
-                        {{-- @can('Editar productos') --}}
-                                <td width="10px">
-                                    <a href="{{ route('admin.productos.edit', $producto->id) }}" class="btn btn-sm btn-primary">Editar</a>
-                                </td>
-                            {{-- @endcan --}}
+                        @can('Editar productos')
+                            <td width="10px">
+                                <a href="{{ route('admin.productos.edit', $producto->id) }}" class="btn btn-sm btn-primary">Editar</a>
+                            </td>
+                        @endcan
                             
-                        {{-- @can('Eliminar productos') --}}
+                        @can('Eliminar productos')
                             <td width="10px">
                                 <form action="{{ route('admin.productos.destroy', $producto) }}" method="POST">
 
@@ -55,7 +58,7 @@
                                     <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
                                 </form>
                             </td>
-                        {{-- @endcan --}}
+                        @endcan
                     </tr>
                 @endforeach
             </tbody>

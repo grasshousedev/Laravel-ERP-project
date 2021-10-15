@@ -3,6 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
+    <a href="{{ route('admin.productos.create') }}" class="btn btn-secondary btn-sm float-right">Crear usuario</a>
     <h1>Lista de usuarios</h1>
     @if (session('info'))
         <div class="alert alert-success">

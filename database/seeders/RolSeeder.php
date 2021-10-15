@@ -30,6 +30,11 @@ class RolSeeder extends Seeder
         Permission::create(['name' => 'Crear roles'])->syncRoles([$rolAdmin]);
         Permission::create(['name' => 'Editar roles'])->syncRoles([$rolAdmin]);
         Permission::create(['name' => 'Eliminar roles'])->syncRoles([$rolAdmin]);
+
+        Permission::create(['name' => 'Ver listado de productos'])->syncRoles([$rolAdmin]);
+        Permission::create(['name' => 'Crear productos'])->syncRoles([$rolAdmin]);
+        Permission::create(['name' => 'Editar productos'])->syncRoles([$rolAdmin]);
+        Permission::create(['name' => 'Eliminar productos'])->syncRoles([$rolAdmin]);
         
     }
 }
