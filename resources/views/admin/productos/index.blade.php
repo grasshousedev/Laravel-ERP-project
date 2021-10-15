@@ -55,7 +55,7 @@
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('ESTAS SEGURO'); false">Eliminar</button>
                                 </form>
                             </td>
                         @endcan
