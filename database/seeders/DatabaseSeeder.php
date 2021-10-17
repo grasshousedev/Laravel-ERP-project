@@ -17,5 +17,10 @@ class DatabaseSeeder extends Seeder
         $this->call(RolSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(ProductosSeeder::class);
+        $this->call(estado::class);
+        $this->call(expiracion::class);
+        $this->call(forma_pago::class);
+        $this->call(moneda::class);
+        $this->call(tiempo_entrega::class);
     }
 }

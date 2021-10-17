@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\AlmacenController;
 use App\Http\Controllers\Admin\LogisticaController;
 use App\Http\Controllers\Admin\ProductoController;
 use App\Http\Controllers\Admin\ServicioController;
+use App\Http\Controllers\Admin\VentaController;
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
@@ -22,4 +23,6 @@ Route::resource('logistica', LogisticaController::class)->names('admin.logistica
 Route::resource('productos', ProductoController::class)->middleware('can:Ver listado de productos')->names('admin.productos');
 
 Route::resource('servicios', ServicioController::class)->names('admin.servicios');
+
+Route::resource('ventas', VentaController::class)->names('admin.ventas');
 

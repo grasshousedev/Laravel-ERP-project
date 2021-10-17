@@ -299,6 +299,13 @@ return [
             'can'         => 'Ver listado de roles'
         ],
 
+        [
+            'text'        => 'Venta',
+            'route'       => 'admin.ventas.index',
+            'icon'        => 'fas fa-concierge-bell',
+            'can'         => 'Ver listado de roles'
+        ],
+
         ['header' => 'Configuración de Cuenta'],
         [
             'text' => 'profile',

@@ -3,11 +3,15 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Ventas</h1>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+
+    <a class="btn btn-primary" href="{{ route('admin.users.index') }}" role="button">Cotizar</a>
+
+    <a class="btn btn-primary" href="{{ route('admin.users.index') }}" role="button">Clientes</a>
+
 @stop
 
 @section('css')

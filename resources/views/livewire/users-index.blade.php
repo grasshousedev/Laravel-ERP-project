@@ -30,17 +30,14 @@
                                     @endforeach
                                 @endif
                             </td>
-                            @can('Editar roles')
+                            
+                            @can('Editar usuarios')
                             <td width="10px">
-                                <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-success">roles</a>
+                                <a href="admin.users.edit"  class="btn btn-sm btn-primary">Editar</a>
                             </td>
                             @endcan
-                            
-                            <td width="10px">
-                                <a href=""  class="btn btn-sm btn-primary">Editar</a>
-                            </td>
 
-                            @can('Eliminar roles')
+                            @can('Eliminar usuarios')
                             <td width="10px">
                                 <form action="{{ route('admin.users.destroy', $user) }}" method="POST">
 

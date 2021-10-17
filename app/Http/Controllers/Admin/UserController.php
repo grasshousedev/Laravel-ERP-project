@@ -24,7 +24,8 @@ class UserController extends Controller
     
     public function index()
     {
-        return view('admin.users.index');
+        $users = User::all();
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -34,8 +35,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $users = User::all();
-        return view('admin.users.create', compact('users'));
+        return view('admin.users.create');
     }
 
     /**
@@ -46,7 +46,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'      => 'required',
+            'apellido'  => 'required',
+            'dni'       => 'required|unique:users',
+            'email'     => 'required|unique:users',
+            'password'  => 'required'
+        ]);
+        $datosuser = request()->except('_token');
+        User::insert($datosuser);
+        //return response()->json($datosuser);
+        $users = User::all();
+        return redirect()->route('admin.users.index', compact('users'))->with('info', 'Se registro correctamente al usuario.');
     }
 
     /**
