@@ -13,7 +13,7 @@ class Expiracion extends Migration
      */
     public function up()
     {
-        Schema::create('tiempo_expiracion', function (Blueprint $table) {
+        Schema::create('tiempo_expiraciones', function (Blueprint $table) {
             $table->id();
             $table->string('expiracion');
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
@@ -28,6 +28,6 @@ class Expiracion extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tiempo_expiracion');
+        Schema::dropIfExists('tiempo_expiraciones');
     }
 }

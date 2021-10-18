@@ -13,7 +13,7 @@ class Estado extends Migration
      */
     public function up()
     {
-        Schema::create('estado_entrega', function (Blueprint $table) {
+        Schema::create('estado_entregas', function (Blueprint $table) {
             $table->id();
             $table->string('estado');
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
@@ -28,6 +28,6 @@ class Estado extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estado_entrega');
+        Schema::dropIfExists('estado_entregas');
     }
 }

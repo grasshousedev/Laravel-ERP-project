@@ -13,7 +13,7 @@ class FormaPago extends Migration
      */
     public function up()
     {
-        Schema::create('forma_pago', function (Blueprint $table) {
+        Schema::create('forma_pagos', function (Blueprint $table) {
             $table->id();
             $table->string('tipo_pago');
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
@@ -28,6 +28,6 @@ class FormaPago extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('forma_pago');
+        Schema::dropIfExists('forma_pagos');
     }
 }

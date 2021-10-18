@@ -14,19 +14,19 @@ class estado extends Seeder
      */
     public function run()
     {
-        DB::table('estado_entrega')->insert([
+        DB::table('estado_entregas')->insert([
             'estado'   => 'Abierto'
         ]);
 
-        DB::table('estado_entrega')->insert([
+        DB::table('estado_entregas')->insert([
             'estado'   => 'Pendiente'
         ]);
 
-        DB::table('estado_entrega')->insert([
+        DB::table('estado_entregas')->insert([
             'estado'   => 'Poceso'
         ]);
 
-        DB::table('estado_entrega')->insert([
+        DB::table('estado_entregas')->insert([
             'estado'   => 'Cerrado'
         ]);
     }

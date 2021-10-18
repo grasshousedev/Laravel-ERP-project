@@ -13,7 +13,7 @@ class TiempoEntrega extends Migration
      */
     public function up()
     {
-        Schema::create('tiempo_entrega', function (Blueprint $table) {
+        Schema::create('tiempo_entregas', function (Blueprint $table) {
             $table->id();
             $table->string('entrega');
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
@@ -28,6 +28,6 @@ class TiempoEntrega extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tiempo_entrega');
+        Schema::dropIfExists('tiempo_entregas');
     }
 }

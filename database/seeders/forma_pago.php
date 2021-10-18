@@ -14,23 +14,23 @@ class forma_pago extends Seeder
      */
     public function run()
     {
-        DB::table('forma_pago')->insert([
+        DB::table('forma_pagos')->insert([
             'tipo_pago'   => 'Efectivo'
         ]);
 
-        DB::table('forma_pago')->insert([
+        DB::table('forma_pagos')->insert([
             'tipo_pago'   => '10 Dias'
         ]);
 
-        DB::table('forma_pago')->insert([
+        DB::table('forma_pagos')->insert([
             'tipo_pago'   => '15 Dias'
         ]);
 
-        DB::table('forma_pago')->insert([
+        DB::table('forma_pagos')->insert([
             'tipo_pago'   => '20 Dias'
         ]);
 
-        DB::table('forma_pago')->insert([
+        DB::table('forma_pagos')->insert([
             'tipo_pago'   => '30 Dias'
         ]);
     }

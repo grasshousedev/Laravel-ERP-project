@@ -13,7 +13,7 @@ class Moneda extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_moneda', function (Blueprint $table) {
+        Schema::create('tipo_monedas', function (Blueprint $table) {
             $table->id();
             $table->string('moneda');
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
@@ -28,6 +28,6 @@ class Moneda extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_moneda');
+        Schema::dropIfExists('tipo_monedas');
     }
 }

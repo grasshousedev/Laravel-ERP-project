@@ -5,6 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\estado_entrega;
+use App\Models\Forma_pago;
+use App\Models\Tiempo_entrega;
+use App\Models\Tiempo_expiracione;
+use App\Models\Tipo_moneda;
+use App\Models\User;
+
 class VentaController extends Controller
 {
     /**
@@ -14,7 +21,15 @@ class VentaController extends Controller
      */
     public function index()
     {
-        return view('admin.ventas.cotizar');
+        
+        $estado         = estado_entrega::all();
+        $forma_pago     = Forma_pago::all();
+        $tiempo_entrega = Tiempo_entrega::all();
+        $expiracion     = Tiempo_expiracione::all();
+        $moneda         = Tipo_moneda::all();
+        $users          = User::all();
+
+        return view('admin.ventas.cotizar', compact('estado', 'expiracion', 'forma_pago', 'moneda', 'tiempo_entrega', 'users'));
     }
 
     /**
