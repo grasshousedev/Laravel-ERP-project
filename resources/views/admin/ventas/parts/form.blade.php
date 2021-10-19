@@ -1,5 +1,5 @@
 <div class="form-row">
-    <input name="codigo" type="hidden" id="validationDefault01" value="COT000">
+    <input name="codigo" type="hidden" id="validationDefault01" value="COT000"> {{--TODO --}}
 
     <div class="col-md-2 my-1">
         {!! Form::label('cliente', 'Cliente') !!}
