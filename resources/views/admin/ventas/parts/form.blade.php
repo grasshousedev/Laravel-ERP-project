@@ -1,5 +1,9 @@
 <div class="form-row">
-    <input name="codigo" type="hidden" id="validationDefault01" value="COT000"> {{--TODO --}}
+
+    <?php foreach ($cotizacion as $value) {
+        $id = $value->id;
+    } ?>
+    <input name="codigo" type="hidden" id="validationDefault01" value="COT000<?= $id ?>">
 
     <div class="col-md-2 my-1">
         {!! Form::label('cliente', 'Cliente') !!}
@@ -9,7 +13,7 @@
         {!! Form::label('asignado', 'Asignado') !!}
         {!! Form::select('asignado', $users, auth()->user()->name, ['class' => 'custom-select mr-sm-2']) !!}
     </div>
-    
+
 </div>
 
 <div class="form-row">
@@ -23,7 +27,7 @@
         {!! Form::label('tiempo_expiracion', 'Expiracion') !!}
         {!! Form::select('tiempo_expiracion', $expiracion, null, ['class' => 'custom-select mr-sm-2']) !!}
     </div>
-        
+
     <div class="col-md-1 my-1">
         {!! Form::label('estado', 'Estado') !!}
         {!! Form::select('estado', $estado, null, ['class' => 'custom-select mr-sm-2']) !!}
@@ -42,7 +46,7 @@
         {!! Form::label('tiempo_entrega', 'Entrega') !!}
         {!! Form::select('tiempo_entrega', $tiempo_entrega, null, ['class' => 'custom-select mr-sm-2']) !!}
     </div>
-    
+
 </div>
 
 <div class="form-group col-md-4">
