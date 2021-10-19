@@ -301,7 +301,7 @@ return [
 
         [
             'text'        => 'Venta',
-            'route'       => 'admin.ventas.index',
+            'route'       => 'admin.ventas-index.index',
             'icon'        => 'fas fa-concierge-bell',
             'can'         => 'Ver listado de roles'
         ],

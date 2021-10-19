@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Editar Producto</h1>
+    <h1>Editar Cotizacion</h1>
 @stop
 
 @section('content')
@@ -14,12 +14,12 @@
     @endif
     <div class="card">
         <div class="card-body">
-            {!! Form::model($producto, ['route' => ['admin.productos.update', $producto], 'method' => 'put']) !!}
+            {!! Form::model($cotizacion, ['route' => ['admin.ventas.update', $cotizacion], 'method' => 'put']) !!}
             
-                @include('admin.productos.parts.form')
+                @include('admin.ventas.parts.form')
 
-                {!! Form::submit('Editar producto', ['class' => 'btn btn-primary']) !!}
-                
+                {!! Form::submit('Editar cotizacion', ['class' => 'btn btn-primary']) !!}
+
             {!! Form::close() !!}
         </div>
     </div>

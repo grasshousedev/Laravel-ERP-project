@@ -100,7 +100,7 @@ class ProductoController extends Controller
         
         Producto::where('id','=',$id)->update($datosprod);
         $producto = Producto::findOrFail($id);
-        return redirect()->route('admin.productos.edit', $producto)->with('info', 'El producto fue actualizado correctamente.');
+        return redirect()->route('admin.productos.index', $producto)->with('info', 'El producto fue actualizado correctamente.');
     }
 
     /**

@@ -12,6 +12,8 @@
 
         @include('admin.ventas.parts.form')
 
+        {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
+
     {!! Form::close() !!}
 
 @stop
