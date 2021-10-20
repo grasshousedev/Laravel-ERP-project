@@ -22,7 +22,7 @@ class VentaController extends Controller
      */
     public function index()
     {
-        
+
         $estado         = estado_entrega::pluck('estado', 'estado');
         $forma_pago     = Forma_pago::pluck('tipo_pago', 'tipo_pago');
         $tiempo_entrega = Tiempo_entrega::pluck('entrega', 'entrega');
@@ -128,8 +128,8 @@ class VentaController extends Controller
         ]);
 
         $datoscot = request()->except('_token', '_method');
-        
-        Cotizacione::where('id','=',$id)->update($datoscot);
+
+        Cotizacione::where('id', '=', $id)->update($datoscot);
         $cotizacion = Cotizacione::findOrFail($id);
 
         return redirect()->route('admin.ventas-index.index', $cotizacion)->with('info', 'La cotizacion fue actualizada correctamente.');
@@ -147,5 +147,13 @@ class VentaController extends Controller
 
         $cotizacion = Cotizacione::all();
         return redirect()->route('admin.ventas-index.index', compact('cotizacion'))->with('info', 'La cotizacion fue eliminada correctamente.');
+    }
+
+    function downloadPDF($id)
+    {
+        $venta = $this->venta->get();
+        $cotizacion = Cotizacione::find($id);
+        $pdf = PDF::loadView('ventas.pdf', compact('cotizacion'));
+        return $pdf->download('archivo.pdf');
     }
 }

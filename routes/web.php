@@ -24,3 +24,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+// Route::get('/ventaPDF', 'welcome');
+
+Route::get('/demoPDF', function () {
+    $data = "info general";
+    $pdf = PDF::loadView('demoPDF', compact("data"));
+    return $pdf->download('archivo.pdf');
+});
