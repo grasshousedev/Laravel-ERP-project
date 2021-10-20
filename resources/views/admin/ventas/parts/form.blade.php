@@ -1,9 +1,5 @@
 <div class="form-row">
-
-    <?php foreach ($cotizacion as $value) {
-        $id = $value->id;
-    } ?>
-    <input name="codigo" type="hidden" id="validationDefault01" value="COT000<?= $id ?>">
+    <input name="codigo" type="hidden" id="validationDefault01" value="COT000">
 
     <div class="col-md-2 my-1">
         {!! Form::label('cliente', 'Cliente') !!}
@@ -67,3 +63,4 @@
     </div>
 
 </div>
+

@@ -5,7 +5,7 @@
 @section('content_header')
     <a class="btn btn-primary float-right" href="{{ route('admin.ventas.index') }}" role="button">Cotizar</a>
 
-    <a class="btn btn-primary float-right" href="{{ route('admin.users.index') }}" role="button">Clientes</a>
+    <a class="btn btn-primary float-right" href="{{ route('admin.clientes.index') }}" role="button">Clientes</a>
     <h1>Ventas</h1>
 @stop
 
@@ -76,4 +76,5 @@
             $('#cotizaciones').DataTable();
         });
     </script>
+    
 @stop
