@@ -1,8 +1,8 @@
 <div class="form-row">
 
-    <?php foreach ($cotizacion as $value) {
-        $id = $value->id;
-    } ?>
+    @foreach ($cotizacion as $value)
+    <?php $id = $value->id; ?>
+    @endforeach
     <input name="codigo" type="hidden" id="validationDefault01" value="COT000<?= $id ?>">
 
     <div class="col-md-2 my-1">
