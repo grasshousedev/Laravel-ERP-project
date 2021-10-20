@@ -1,5 +1,5 @@
 <div class="form-row">
-
+    <?php $id = 1 ?>
     @foreach ($cotizacion as $value)
     <?php $id = $value->id; ?>
     @endforeach
