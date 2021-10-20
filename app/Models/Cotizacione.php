@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Cotizacione extends Model
 {
     use HasFactory;
+
+    public function cliente(){
+        return $this->belongsTo('App\Models\Cliente');
+    }
 }

@@ -11,9 +11,6 @@
 {!! Form::open(['route' => 'admin.ventas.store']) !!}
 
 @include('admin.ventas.parts.form')
-
-{!! Form::submit('agregar producto', ['class' => 'btn btn-primary']) !!}
-{!! Form::submit('agregar servicio', ['class' => 'btn btn-primary']) !!}
 @include('admin.ventas.parts.form_tabla')
 
 {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}

@@ -19,6 +19,11 @@
 <div class="form-row">
 
     <div class="col-md-1 my-1">
+        {!! Form::label('cliente_id', 'Cliente ID') !!}
+        {!! Form::text('cliente_id', null, ['class' => 'custom-select mr-sm-2']) !!}
+    </div>
+
+    <div class="col-md-1 my-1">
         {!! Form::label('moneda', 'Moneda') !!}
         {!! Form::select('moneda', $moneda, null, ['class' => 'custom-select mr-sm-2']) !!}
     </div>
@@ -28,14 +33,14 @@
         {!! Form::select('tiempo_expiracion', $expiracion, null, ['class' => 'custom-select mr-sm-2']) !!}
     </div>
 
+</div>
+
+<div class="form-row">
+
     <div class="col-md-1 my-1">
         {!! Form::label('estado', 'Estado') !!}
         {!! Form::select('estado', $estado, null, ['class' => 'custom-select mr-sm-2']) !!}
     </div>
-
-</div>
-
-<div class="form-row">
 
     <div class="col-auto my-1">
         {!! Form::label('forma_pago', 'Pago') !!}

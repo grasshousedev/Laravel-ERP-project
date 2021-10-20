@@ -15,7 +15,7 @@ class Clientes extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
-            $table->string('ruc');
+            $table->BigInteger('ruc')->unique();
             $table->string('razon_social');
             $table->string('direccion');
             $table->string('contacto');

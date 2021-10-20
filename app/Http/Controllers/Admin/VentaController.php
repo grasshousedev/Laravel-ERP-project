@@ -46,9 +46,10 @@ class VentaController extends Controller
         $cotizacion     = Cotizacione::all();
 
         $pdf = PDF::loadView('admin.ventas.pdf', ['estado'=>$estado, 'expiracion'=>$forma_pago, 'forma_pago'=>$tiempo_entrega, 'moneda'=>$expiracion, 'tiempo_entrega'=>$moneda, 'users'=>$users, 'cotizacion'=>$cotizacion]);
-        //$pdf->loadHTML('<h1>Test</h1>');
-        return $pdf->stream();
-        // return view('admin.ventas.pdf', compact('estado', 'expiracion', 'forma_pago', 'moneda', 'tiempo_entrega', 'users', 'cotizacion'));
+        // return $pdf->stream(); //<== para ver en el navegador
+        $nombre         = date('Y-m-d');
+        return $pdf->download('COTIZACIONES_'.$nombre.'.pdf');
+        // return view('admin.ventas.pdf', compact('estado', 'expiracion', 'forma_pago', 'moneda', 'tiempo_entrega', 'users', 'cotizacion')); // <== retorna la vista HTML
     }
 
     /**
@@ -81,6 +82,7 @@ class VentaController extends Controller
             'condiciones'       => 'required',
             'direccion'         => 'required',
             'pie_pagina'        => 'required',
+            'cliente_id'        => '',
         ]);
 
         $datoscot = request()->except('_token');
