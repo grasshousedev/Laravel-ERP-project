@@ -31,3 +31,4 @@ Route::resource('ventas', VentaController::class)->names('admin.ventas');
 Route::resource('ventas-index', VentaIndexController::class)->names('admin.ventas-index');
 
 Route::resource('clientes', ClienteController::class)->names('admin.clientes');
+

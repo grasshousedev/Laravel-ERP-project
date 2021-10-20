@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\VentaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,5 @@ Route::get('/demoPDF', function () {
     $pdf = PDF::loadView('demoPDF', compact("data"));
     return $pdf->download('archivo.pdf');
 });
+
+Route::get('admin/ventas/pdf', [App\Http\Controllers\Admin\VentaController::class, 'pdf'])->name('admin.ventas.pdf');
