@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ProductoController;
 use App\Http\Controllers\Admin\ServicioController;
 use App\Http\Controllers\Admin\VentaController;
 use App\Http\Controllers\Admin\VentaIndexController;
+use App\Http\Controllers\Admin\ClienteController;
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
@@ -28,3 +29,5 @@ Route::resource('servicios', ServicioController::class)->names('admin.servicios'
 Route::resource('ventas', VentaController::class)->names('admin.ventas');
 
 Route::resource('ventas-index', VentaIndexController::class)->names('admin.ventas-index');
+
+Route::resource('clientes', ClienteController::class)->names('admin.clientes');

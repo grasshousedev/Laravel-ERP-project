@@ -4,9 +4,9 @@
 
 @section('content_header')
 <a class="btn btn-primary float-right" href="{{ route('admin.ventas.index') }}" role="button">Cotizar</a>
-
-<a class="btn btn-primary float-right" href="{{ route('admin.users.index') }}" role="button">Clientes</a>
+<a class="btn btn-primary float-right" href="{{ route('admin.clientes.index') }}" role="button">Clientes</a>
 <h1>Ventas</h1>
+
 @stop
 
 @section('content')
@@ -68,6 +68,7 @@
 @stop
 
 @section('js')
+
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>

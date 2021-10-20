@@ -52,7 +52,7 @@ class VentaController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate = ([
+        $request->validate([
             'codigo'            => 'required',
             'cliente'           => 'required',
             'asignado'          => 'required',
@@ -113,7 +113,7 @@ class VentaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate = ([
+        $request->validate([
             'codigo'            => 'required',
             'cliente'           => 'required',
             'asignado'          => 'required',
