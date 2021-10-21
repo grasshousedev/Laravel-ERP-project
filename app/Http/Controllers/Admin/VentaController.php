@@ -101,7 +101,14 @@ class VentaController extends Controller
      */
     public function show($id)
     {
-        //
+        $cotizacion     = Cotizacione::find($id);
+
+        // return view('admin.ventas.mas_info', compact('cotizacion'));
+
+        $pdf = PDF::loadView('admin.ventas.mas_info', compact('cotizacion'));
+
+        $nombre         = date('Y-m-d');
+        return $pdf->stream('CLIENTE-'.$nombre.'.pdf');
     }
 
     /**
@@ -168,11 +175,4 @@ class VentaController extends Controller
         return redirect()->route('admin.ventas-index.index', compact('cotizacion'))->with('info', 'La cotizacion fue eliminada correctamente.');
     }
 
-    function downloadPDF($id)
-    {
-        $venta = $this->venta->get();
-        $cotizacion = Cotizacione::find($id);
-        $pdf = PDF::loadView('ventas.pdf', compact('cotizacion'));
-        return $pdf->download('archivo.pdf');
-    }
 }
