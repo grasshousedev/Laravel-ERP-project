@@ -7,80 +7,96 @@
         {{-- <link href="{{ public_path('css/pdf.css') }}" rel="stylesheet" type="text/css"> --}}
         <title>PDF</title>
         <style>
-            #customers {
-                font-family: Arial, Helvetica, sans-serif;
-                border-collapse: collapse;
-                width: 100%;
-            }
-            
-            #customers td, #customers th {
-                border: 1px solid #ddd;
-                padding: 8px;
-            }
-            
-            #customers tr:nth-child(even){background-color: #f2f2f2;}
-            
-            #customers tr:hover {background-color: #ddd;}
-            
-            #customers th {
-                padding-top: 12px;
-                padding-bottom: 12px;
+            h1{
                 text-align: left;
-                background-color: #04AA6D;
+                font-family: sans-serif;
+            }
+            .cotizar{
+                background-color: white;
+                border-collapse: collapse;
+                text-align: left;
+                width: 100%;
+                font-size: 13px;
+                font-family: sans-serif;
+            }
+            th, td {    
+                border: 1px solid black;
+                padding: 10px;
+                text-align: left;
+            }            
+            thead{
+                background-color: #246355;
+                border-bottom: solid 1px #0F362D;
                 color: white;
+            }
+            .coti{
+                border-collapse: collapse;
+                text-align: right;
+                margin-left: 600px;
+            }
+            .descripcion{
+                width: 500px;
+                font-family: sans-serif;
             }
         </style>
     </head>
 <body>
-
-    <h1>{{ $cotizacion->codigo }}</h1>
-
-<table class="table table-striped" id="customers">
+    <h1>NOMBRE DE LA EMPRESA.SAC</h1>
+    <div class="descripcion"> 
+    <label>Telefono: 888-8888</label><br>
+    <label>Email: Empresa@gmail.com</label><br>
+    </div>   
+    <table class="coti">
+    <thead>
+        <tr>
+            <th>Cotizacion</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>{{ $cotizacion->codigo }}</td>
+    </tr>
+    </table>
+    <br>
+    <hr style="border:1px;">
+    <br>
+<table class="cotizar">
+    <thead>
     <tr>
         <th>Codigo</th>
         <th>Cliente</th>
         <th>Asignado</th>
+        <th>moneda</th>
+        <th>Expiracion</th>
+        <th>Estado</th>
+        <th>Forma de pago</th>
     </tr>
+    </thead>
     <tr>
         <td>{{ $cotizacion->codigo }}</td>
         <td>{{ $cotizacion->cliente }}</td>
         <td>{{ $cotizacion->asignado }}</td>
-    </tr>
-    <tr>
-        <th>moneda</th>
-        <th>Expiracion</th>
-        <th>Estado</th>
-    </tr>
-    <tr>
         <td>{{ $cotizacion->moneda }}</td>
         <td>{{ $cotizacion->tiempo_expiracion }}</td>
         <td>{{ $cotizacion->estado }}</td>
+        <td>{{ $cotizacion->forma_pago }}</td>
     </tr>
+    <thead>
     <tr>
-        <th>Forma de pago</th>
         <th>Tiempo de entrega</th>
         <th>Condiciones</th>
-    </tr>
-    <tr>
-        <td>{{ $cotizacion->forma_pago }}</td>
-        <td>{{ $cotizacion->tiempo_entrega }}</td>
-        <td>{{ $cotizacion->condiciones }}</td>
-    </tr>
-    <tr>
         <th>Direccion</th>
         <th>Pie de pagina</th>
         <th>Cliende ID</th>
-    </tr>
-    <tr>
-        <td>{{ $cotizacion->direccion }}</td>
-        <td>{{ $cotizacion->pie_pagina }}</td>
-        <td>{{ $cotizacion->cliente_id }}</td>
-    </tr>
-    <tr>
         <th>Creado</th>
         <th>Editado</th>
     </tr>
+    </thead>
     <tr>
+        <td>{{ $cotizacion->tiempo_entrega }}</td>
+        <td>{{ $cotizacion->condiciones }}</td>
+        <td>{{ $cotizacion->direccion }}</td>
+        <td>{{ $cotizacion->pie_pagina }}</td>
+        <td>{{ $cotizacion->cliente_id }}</td>
         <td>{{ $cotizacion->created_at }}</td>
         <td>{{ $cotizacion->updated_at }}</td>
     </tr>

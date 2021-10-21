@@ -7,33 +7,34 @@
         {{-- <link href="{{ public_path('css/pdf.css') }}" rel="stylesheet" type="text/css"> --}}
         <title>PDF</title>
         <style>
-            #customers {
-                font-family: Arial, Helvetica, sans-serif;
-                border-collapse: collapse;
-                width: 100%;
-            }
-            
-            #customers td, #customers th {
-                border: 1px solid #ddd;
-                padding: 8px;
-            }
-            
-            #customers tr:nth-child(even){background-color: #f2f2f2;}
-            
-            #customers tr:hover {background-color: #ddd;}
-            
-            #customers th {
-                padding-top: 12px;
-                padding-bottom: 12px;
-                text-align: left;
-                background-color: #04AA6D;
+            thead{
+                background-color: #246355;
+                border-bottom: solid 1px #0F362D;
                 color: white;
+            }
+            th, td {    
+                border: 1px solid black;
+                padding: 10px;
+                text-align: left;
+            }
+            .cotizar{
+                background-color: white;
+                border-collapse: collapse;
+                text-align: left;
+                width: 100%;
+                font-size: 13px;
+                font-family: sans-serif;
+            }
+            h2{
+                font-family: sans-serif;
+                font-weight: bold;
+                text-align: center;
             }
         </style>
     </head>
     <body>
         <h2>Lista de cotizaciones</h2>
-        <table class="table table-striped table-hover" id="customers">
+        <table class="cotizar">
             <thead>
                 <tr>
                     <th>Codigo</th>
