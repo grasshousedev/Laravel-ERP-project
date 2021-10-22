@@ -84,4 +84,7 @@
         $('#cotizaciones').DataTable();
     });
 </script>
+
+
+
 @stop
