@@ -67,16 +67,18 @@
 
             // TOTALES
             let sub_total = total;
-            let igv = calc_igv(total, 10);
-            let neto = sub_total - igv;
+            let igv = 0;
+            let neto = 0;
 
             if (document.getElementById("sub_total").value != "") {
 
-                sub_total = parseFloat(document.getElementById("sub_total").value) + parseFloat(total);
-                igv = parseFloat(document.getElementById("igv").value) + calc_igv(total, 10);
-                neto = parseFloat(document.getElementById("neto").value) + (sub_total - igv);
+                sub_total = parseFloat(document.getElementById("sub_total").value) + sub_total;
+                neto = parseFloat(document.getElementById("neto").value) + (sub_total + igv);
 
             }
+
+            igv = calc_igv(sub_total, 18);
+            neto = sub_total + igv;
 
             document.getElementById("sub_total").value = sub_total;
             document.getElementById("igv").value = igv;
