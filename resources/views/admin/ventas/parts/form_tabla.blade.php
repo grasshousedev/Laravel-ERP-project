@@ -1,4 +1,4 @@
-<a class="btn btn-primary" href="#" role="button" onclick="add_row()">Agregar Producto</a>
+<a class="btn btn-primary" href="#" role="button" onclick="add_row()">Agregar Item Producto</a>
 
 <table class="table table-sm table-dark" id="table_t">
     <thead>
@@ -10,29 +10,32 @@
             <th scope="col">Precio Neto</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="table_data">
         <tr>
-            <th scope="row"><input type="text" id="item"></th>
-            <th scope="row"><input type="number" id="cantidad"></th>
-            <th scope="row"><input type="number" id="precio_venta"></th>
-            <th scope="row"><input type="number" id="total"></th>
-            <th scope="row"><input type="number" id="precio_neto"></th>
-        </tr>
-
-        <tr>
-            <th scope="col">Sub Total</th>
-            <th scope="row">123</th>
-        </tr>
-        <tr>
-            <th scope="col">IGV</th>
-            <th scope="row">12</th>
-        </tr>
-        <tr>
-            <th scope="col">TOTAL</th>
-            <th scope="row">3333</th>
+            <th scope="row"><input class="bg-dark text-white border-0" type="text" id="item"></th>
+            <th scope="row"><input class="bg-dark text-white border-0" type="number" id="cantidad"></th>
+            <th scope="row"><input class="bg-dark text-white border-0" type="number" id="precio_venta"></th>
+            <th scope="row"><input class="bg-dark text-white border-0" type="number" id="total"></th>
+            <th scope="row"><input class="bg-dark text-white border-0" type="number" id="precio_neto"></th>
         </tr>
     </tbody>
 </table>
+
+<div class="d-flex flex-column bg-dark text-white">
+    <div class="p-2">
+        <label for="sub_total">Sub Total</label>
+        <input class="bg-dark text-white border-0" type="text" id="sub_total" readonly>
+    </div>
+    <div class="p-2">
+        <label for="igv">IGV</label>
+        <input class="bg-dark text-white border-0" type="text" id="igv" readonly>
+    </div>
+    <div class="p-2">
+        <label for="neto">Total</label>
+        <input class="bg-dark text-white border-0" type="text" id="neto" readonly>
+    </div>
+</div>
+
 
 <script>
     function add_row() {
@@ -42,21 +45,43 @@
         const total = document.getElementById("total");
         const pneto = document.getElementById("precio_neto");
 
-        console.log(item);
+        if (item.value != "") {
+            const table = document.getElementsByTagName("table")[0];
+            const new_row = table.insertRow(table.rows.length); // AL FINAL
+            // const new_row = table.insertRow(1);  // AL INICIO 
+            new_row.insertCell(0).innerHTML = item.value;
+            new_row.insertCell(1).innerHTML = cant.value;
+            new_row.insertCell(2).innerHTML = pventa.value;
+            new_row.insertCell(3).innerHTML = total.value;
+            new_row.insertCell(4).innerHTML = pneto.value;
 
-        const table = document.getElementsByTagName("table")[0];
-        const new_row = table.insertRow(1);
-        new_row.insertCell(0).innerHTML = item.value;
-        new_row.insertCell(1).innerHTML = cant.value;
-        new_row.insertCell(2).innerHTML = pventa.value;
-        new_row.insertCell(3).innerHTML = total.value;
-        new_row.insertCell(4).innerHTML = pneto.value;
+            // TOTALES
+            let sub_total = parseFloat(total.value);
+            let igv = calc_igv(total.value, 10);
+            let neto = sub_total - igv;
+
+            if (document.getElementById("sub_total").value != "") {
+
+                sub_total = parseFloat(document.getElementById("sub_total").value) + parseFloat(total.value);
+                igv = parseFloat(document.getElementById("igv").value) + calc_igv(total.value, 10);
+                neto = parseFloat(document.getElementById("neto").value) + (sub_total - igv);
+
+            }
+
+            document.getElementById("sub_total").value = sub_total;
+            document.getElementById("igv").value = igv;
+            document.getElementById("neto").value = neto;
+
+            // RESET INPUTS
+            item.value = "";
+            cant.value = "";
+            pventa.value = "";
+            total.value = "";
+            pneto.value = "";
+        }
     }
 
-    function igv() {
-        const table = document.getElementsByTagName("table")[0];
-
-        const column_length = table.rows.length;
-        return column_length;
+    function calc_igv(total, porcentaje) {
+        return total * porcentaje / 100
     }
 </script>
