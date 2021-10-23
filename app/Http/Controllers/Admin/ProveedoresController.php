@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Cliente;
+use App\Models\Proveedore;
 use App\Models\Estado_provee_cliente;
 
-class ClienteController extends Controller
+class ProveedoresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class ClienteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $clientes = Cliente::all();
-        return view('admin.clientes.index', compact('clientes'));
+    {        
+        $proveedores = Proveedore::all();
+        return view('admin.proveedores.index', compact('proveedores'));
     }
 
     /**
@@ -28,7 +28,8 @@ class ClienteController extends Controller
     public function create()
     {
         $estado      = Estado_provee_cliente::pluck('estado', 'estado');
-        return view('admin.clientes.create', compact('estado'));
+
+        return view('admin.proveedores.create', compact('estado'));
     }
 
     /**
@@ -54,12 +55,12 @@ class ClienteController extends Controller
             'asignado'      => 'required',
         ]);
 
-        $datoscli = request()->except('_token');
-        Cliente::insert($datoscli);
+        $datosprovee = request()->except('_token');
+        Proveedore::insert($datosprovee);
         //return response()->json($datoscli); asd
 
-        $clientes = Cliente::all();
-        return redirect()->route('admin.clientes.index', compact('clientes'))->with('info', 'El cliente fue registrado correctamente.');
+        $proveedores = Proveedore::all();
+        return redirect()->route('admin.proveedores.index', compact('proveedores'))->with('info', 'El proveedor fue registrado correctamente.');
     }
 
     /**
@@ -81,8 +82,8 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        $clientes = Cliente::find($id);
-        return view('admin.clientes.edit', compact('clientes'));
+        $proveedores = Proveedore::find($id);
+        return view('admin.proveedores.edit', compact('proveedores'));
     }
 
     /**
@@ -109,11 +110,11 @@ class ClienteController extends Controller
             'asignado'      => 'required',
         ]);
 
-        $datoscli = request()->except('_token', '_method');
+        $datosprovee = request()->except('_token', '_method');
         
-        Cliente::where('id','=',$id)->update($datoscli);
-        $clientes = Cliente::findOrFail($id);
-        return redirect()->route('admin.clientes.index', $clientes)->with('info', 'El cliente fue actualizado correctamente.');
+        Proveedore::where('id','=',$id)->update($datosprovee);
+        $proveedores = Proveedore::findOrFail($id);
+        return redirect()->route('admin.proveedores.index', $proveedores)->with('info', 'El proveedor fue actualizado correctamente.');
     }
 
     /**
@@ -124,9 +125,9 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        Cliente::destroy($id);
+        Proveedore::destroy($id);
 
-        $clientes = Cliente::all();
-        return redirect()->route('admin.clientes.index', compact('clientes'))->with('info', 'El cliente fue eliminado correctamente.');
+        $proveedores = Proveedore::all();
+        return redirect()->route('admin.proveedores.index', compact('proveedores'))->with('info', 'El proveedor fue eliminado correctamente.');
     }
 }

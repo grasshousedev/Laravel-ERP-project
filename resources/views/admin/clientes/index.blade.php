@@ -17,20 +17,20 @@
     <div class="card-body">
         <table class="table table-striped" id="cotizaciones">
             <thead>
-                <th>RUC</th>
-                <th>Razon social</th>
-                <th>Dirección</th>
-                <th>Contacto</th>
-                <th>Celular 1</th>
-                <th>Calular 2</th>
-                <th>Email 1</th>
-                <th>Email 2</th>
-                <th>Pagina web</th>
-                <th>Area</th>
-                <th>Estado</th>
-                <th>Asignado</th>
-                <th></th>
-                <th></th>
+                <th id="">RUC</th>
+                <th id="">Razon social</th>
+                <th id="">Dirección</th>
+                <th id="">Contacto</th>
+                <th id="">Celular 1</th>
+                <th id="">Calular 2</th>
+                <th id="">Email 1</th>
+                <th id="">Email 2</th>
+                <th id="">Pagina web</th>
+                <th id="">Area</th>
+                <th id="">Estado</th>
+                <th id="">Asignado</th>
+                <th id=""></th>
+                <th id=""></th>
             </thead>
             <tbody>
                 @foreach ($clientes as $cliente)

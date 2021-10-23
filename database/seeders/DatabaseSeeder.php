@@ -22,5 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(forma_pago::class);
         $this->call(moneda::class);
         $this->call(tiempo_entrega::class);
+        $this->call(estado_provee_cliente::class);
     }
+    
 }

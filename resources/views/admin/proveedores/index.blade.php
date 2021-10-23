@@ -3,17 +3,89 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Proveedores</h1>
+    <a class="btn btn-primary float-right" href="{{ route('admin.proveedores.create') }}" role="button">Agregar proveedor</a>
+    <h1>Ventas</h1>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    @if (session('info'))
+        <div class="alert alert-success">
+            {{ session('info') }}
+        </div>
+    @endif
+<div class="card">
+    <div class="card-body">
+        <table class="table table-striped" id="cotizaciones">
+            <thead>
+                <th id="">RUC</th>
+                <th id="">Razon social</th>
+                <th id="">Dirección</th>
+                <th id="">Contacto</th>
+                <th id="">Celular 1</th>
+                <th id="">Calular 2</th>
+                <th id="">Email 1</th>
+                <th id="">Email 2</th>
+                <th id="">Pagina web</th>
+                <th id="">Area</th>
+                <th id="">Estado</th>
+                <th id="">Asignado</th>
+                <th id=""></th>
+                <th id=""></th>
+            </thead>
+            <tbody>
+                @foreach ($proveedores as $proveedor)
+                    <tr>
+                        <td>{{ $proveedor->ruc }}</td>
+                        <td>{{ $proveedor->razon_social }}</td>
+                        <td>{{ $proveedor->direccion }}</td>
+                        <td>{{ $proveedor->contacto }}</td>
+                        <td>{{ $proveedor->celular1 }}</td>
+                        <td>{{ $proveedor->celular2 }}</td>
+                        <td>{{ $proveedor->email1 }}</td>
+                        <td>{{ $proveedor->email2 }}</td>
+                        <td>{{ $proveedor->paginaweb }}</td>
+                        <td>{{ $proveedor->area }}</td>
+                        <td>{{ $proveedor->estado }}</td>
+                        <td>{{ $proveedor->asignado }}</td>
+
+                        <td width="10px">
+                            <a href="{{ route('admin.proveedores.edit', $proveedor->id) }}" class="btn btn-sm btn-primary">Editar</a>
+                        </td>
+                        
+                        <td width="10px">
+                            <form action="{{ route('admin.proveedores.destroy', $proveedor) }}" method="POST">
+        
+                                @csrf
+                                @method('DELETE')
+        
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro de eliminar este registro?'); false">Eliminar</button>
+                            </form>
+                        </td>
+
+                    </tr>
+                @endforeach
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
 @stop
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready (function () {
+            $('#cotizaciones').DataTable();
+        });
+    </script>
+    
 @stop

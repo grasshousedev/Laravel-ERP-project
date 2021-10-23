@@ -300,10 +300,47 @@ return [
         ],
 
         [
-            'text'        => 'Venta',
-            'route'       => 'admin.ventas-index.index',
+            'text'    => 'Venta',
+            
             'icon'        => 'fas fa-concierge-bell',
-            'can'         => 'Ver listado de roles'
+            'submenu' => [
+                [
+                    'text'  => 'Cotizaciones',
+                    'route'   => 'admin.ventas-index.index',
+                ],
+                [
+                    'text'  => 'Clientes',
+                    'route' => 'admin.clientes.index'
+                ],
+                // [
+                //     'text'    => 'level_one',
+                //     'url'     => '#',
+                //     'submenu' => [
+                //         [
+                //             'text' => 'level_two',
+                //             'url'  => '#',
+                //         ],
+                //         [
+                //             'text'    => 'level_two',
+                //             'url'     => '#',
+                //             'submenu' => [
+                //                 [
+                //                     'text' => 'level_three',
+                //                     'url'  => '#',
+                //                 ],
+                //                 [
+                //                     'text' => 'level_three',
+                //                     'url'  => '#',
+                //                 ],
+                //             ],
+                //         ],
+                //     ],
+                // ],
+                [
+                    'text' => 'Proveedores',
+                    'route' => 'admin.proveedores.index'
+                ],
+            ],
         ],
 
         ['header' => 'Configuración de Cuenta'],
@@ -312,6 +349,9 @@ return [
             'url'  => 'user/profile',
             'icon' => 'fas fa-fw fa-user',
         ],
+
+        
+        
     ],
 
     /*
