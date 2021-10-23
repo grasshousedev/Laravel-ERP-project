@@ -1,6 +1,6 @@
 <a class="btn btn-primary" href="#" role="button" onclick="add_row()">Agregar Item Producto</a>
 
-<table class="table table-sm table-dark" id="table_t">
+<table class="table table-sm bg-dark" id="table_t">
     <thead>
         <tr>
             <th scope="col">Item</th>
@@ -21,7 +21,20 @@
     </tbody>
 </table>
 
-<div class="d-flex flex-column bg-dark text-white">
+<div class="d-flex flex-row bg-dark text-white">
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
     <div class="p-2">
         <label for="sub_total">Sub Total</label>
         <input class="bg-dark text-white border-0" type="text" id="sub_total" readonly>
