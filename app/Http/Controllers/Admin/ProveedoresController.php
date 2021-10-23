@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Proveedore;
+use App\Models\Estado_provee_cliente;
 
 class ProveedoresController extends Controller
 {
@@ -14,7 +15,7 @@ class ProveedoresController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {        
         $proveedores = Proveedore::all();
         return view('admin.proveedores.index', compact('proveedores'));
     }
@@ -26,7 +27,9 @@ class ProveedoresController extends Controller
      */
     public function create()
     {
-        return view('admin.proveedores.create');
+        $estado      = Estado_provee_cliente::pluck('estado', 'estado');
+
+        return view('admin.proveedores.create', compact('estado'));
     }
 
     /**
