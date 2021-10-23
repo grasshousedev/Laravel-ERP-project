@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Proveedore;
 use App\Models\Estado_provee_cliente;
+use App\Models\Estado_impresora;
+use App\Models\Tipo_impresora;
 
 class ProveedoresController extends Controller
 {
