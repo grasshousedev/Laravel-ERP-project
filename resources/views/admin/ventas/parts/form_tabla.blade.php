@@ -88,7 +88,9 @@
             item.value = "";
             cant.value = "";
             pventa.value = "";
-            pneto.value = "";
+
+        } else {
+            alert("INGRESE NOMBRE DEL ITEM");
         }
     }
 
