@@ -10,12 +10,12 @@
     </thead>
     <tbody id="table_data">
         <tr>
-            <th scope="row"><input class="bg-dark text-white border-0" type="text" id="item"></th>
-            <th scope="row"><input class="bg-dark text-white border-0" type="number" id="cantidad"></th>
-            <th scope="row"><input class="bg-dark text-white border-0" type="number" id="precio_venta"></th>
-            <th scope="row"><input class="bg-dark text-white border-0" type="number" id="total"></th>
+            <th scope="row"><input class="bg-dark text-white" type="text" id="item"></th>
+            <th scope="row"><input class="bg-dark text-white" type="number" id="cantidad"></th>
+            <th scope="row"><input class="bg-dark text-white" type="number" id="precio_venta"></th>
+            <th scope="row"><input class="bg-dark text-white" type="number" id="total"></th>
             <th scope="row">
-                <input class="bg-dark text-white border-0" type="number" id="precio_neto">
+                <input class="bg-dark text-white" type="number" id="precio_neto">
                 <a class="btn btn-primary" href="#" role="button" onclick="add_row()">Item <i class="far fa-plus-square"></i> </a>
             </th>
         </tr>
