@@ -1,5 +1,3 @@
-<a class="btn btn-primary" href="#" role="button" onclick="add_row()">Agregar Item Producto</a>
-
 <table class="table table-sm bg-dark" id="table_t">
     <thead>
         <tr>
@@ -7,7 +5,7 @@
             <th scope="col">Cantidad</th>
             <th scope="col">Precio Venta</th>
             <th scope="col">Total</th>
-            <th scope="col">Precio Neto</th>
+            <th scope="col" colspan="2">Precio Neto</th>
         </tr>
     </thead>
     <tbody id="table_data">
@@ -16,7 +14,10 @@
             <th scope="row"><input class="bg-dark text-white border-0" type="number" id="cantidad"></th>
             <th scope="row"><input class="bg-dark text-white border-0" type="number" id="precio_venta"></th>
             <th scope="row"><input class="bg-dark text-white border-0" type="number" id="total"></th>
-            <th scope="row"><input class="bg-dark text-white border-0" type="number" id="precio_neto"></th>
+            <th scope="row">
+                <input class="bg-dark text-white border-0" type="number" id="precio_neto">
+                <a class="btn btn-primary" href="#" role="button" onclick="add_row()">Item <i class="far fa-plus-square"></i> </a>
+            </th>
         </tr>
     </tbody>
 </table>
