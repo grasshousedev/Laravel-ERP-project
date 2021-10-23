@@ -15,6 +15,10 @@ class tipo_impresoras extends Seeder
     public function run()
     {
         DB::table('tipo_impresoras')->insert([
+            'tipo_impresora'   => 'Seleccionar...'
+        ]);
+
+        DB::table('tipo_impresoras')->insert([
             'tipo_impresora'   => 'SLA'
         ]);
 

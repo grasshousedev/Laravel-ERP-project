@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Models\Tipo_impresora;
+use App\Models\Estado_impresora;
 
 class ProductoController extends Controller
 {
@@ -26,7 +28,8 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('admin.productos.create');
+        $tipo_prod = Tipo_impresora::pluck('tipo_impresora', 'tipo_impresora');
+        return view('admin.productos.create', compact('tipo_prod'));
     }
 
     /**

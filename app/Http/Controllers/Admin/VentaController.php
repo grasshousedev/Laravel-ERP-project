@@ -12,6 +12,7 @@ use App\Models\Tiempo_expiracione;
 use App\Models\Tipo_moneda;
 use App\Models\User;
 use App\Models\Cotizacione;
+use App\Models\Area_provee_cliente;
 use PDF;
 
 class VentaController extends Controller

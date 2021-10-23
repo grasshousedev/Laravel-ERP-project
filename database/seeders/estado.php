@@ -15,6 +15,10 @@ class estado extends Seeder
     public function run()
     {
         DB::table('estado_entregas')->insert([
+            'estado'   => 'Seleccionar...'
+        ]);
+
+        DB::table('estado_entregas')->insert([
             'estado'   => 'Abierto'
         ]);
 

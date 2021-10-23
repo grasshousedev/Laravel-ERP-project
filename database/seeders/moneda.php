@@ -15,6 +15,11 @@ class moneda extends Seeder
     public function run()
     {
         DB::table('tipo_monedas')->insert([
+            'moneda'   => 'Seleccionar...'
+        ]);
+
+
+        DB::table('tipo_monedas')->insert([
             'moneda'   => 'Soles (S/.)'
         ]);
 

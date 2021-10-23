@@ -15,6 +15,11 @@ class estado_provee_cliente extends Seeder
     public function run()
     {
         DB::table('estado_provee_clientes')->insert([
+            'estado'   => 'Seleciconar...'
+        ]);
+
+
+        DB::table('estado_provee_clientes')->insert([
             'estado'   => 'Activo'
         ]);
 

@@ -15,6 +15,10 @@ class estado_impresoras extends Seeder
     public function run()
     {
         DB::table('estado_impresoras')->insert([
+            'estado_impresora'   => 'Seleccionar...'
+        ]);
+
+        DB::table('estado_impresoras')->insert([
             'estado_impresora'   => 'SLA'
         ]);
 

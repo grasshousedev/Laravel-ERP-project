@@ -30,7 +30,7 @@
 
 <div class="form-group">
     {!! Form::label('tipo_prod', 'Tipo') !!}
-    {!! Form::text('tipo_prod', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el tipo']) !!}
+    {!! Form::select('tipo_prod', $tipo_prod, null, ['class' => 'form-control']) !!}
     @error('tipo_prod')
     <small class="text-danger">
         El campo tipo es requerido

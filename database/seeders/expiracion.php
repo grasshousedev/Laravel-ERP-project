@@ -15,6 +15,10 @@ class expiracion extends Seeder
     public function run()
     {
         DB::table('tiempo_expiraciones')->insert([
+            'expiracion'   => 'Seleccionar...'
+        ]);
+
+        DB::table('tiempo_expiraciones')->insert([
             'expiracion'   => '10 Dias'
         ]);
 

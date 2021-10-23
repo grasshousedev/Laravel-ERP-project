@@ -15,6 +15,10 @@ class forma_pago extends Seeder
     public function run()
     {
         DB::table('forma_pagos')->insert([
+            'tipo_pago'   => 'Seleccionar...'
+        ]);
+
+        DB::table('forma_pagos')->insert([
             'tipo_pago'   => 'Efectivo'
         ]);
 

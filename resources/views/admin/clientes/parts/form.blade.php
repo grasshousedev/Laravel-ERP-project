@@ -89,8 +89,8 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('area', 'Area *') !!}
-    {!! Form::text('area', null, ['class' => 'form-control' ]) !!}
+    {!! Form::label('area', 'Area') !!}
+    {!! Form::select('area', $area, null, ['class' => 'custom-select mr-sm-2']) !!}
     @error('area')
     <small class="text-danger">
         {{ $message }}
