@@ -19,14 +19,12 @@ class estado_impresoras extends Seeder
         ]);
 
         DB::table('estado_impresoras')->insert([
-            'estado_impresora'   => 'SLA'
+            'estado_impresora'   => 'Activo'
         ]);
 
         DB::table('estado_impresoras')->insert([
-            'estado_impresora'   => 'FDM'
+            'estado_impresora'   => 'Inactivo'
         ]);
-        DB::table('estado_impresoras')->insert([
-            'estado_impresora'   => 'DLP'
-        ]);
+
     }
 }
