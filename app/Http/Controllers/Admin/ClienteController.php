@@ -85,7 +85,10 @@ class ClienteController extends Controller
     {
         $clientes = Cliente::find($id);
         $area        = Area_provee_cliente::pluck('area', 'area');
-        return view('admin.clientes.edit', compact('clientes', 'area'));
+        $estado      = Estado_provee_cliente::pluck('estado', 'estado');
+
+        return view('admin.clientes.edit', compact('clientes', 'area', 'estado'));
+
     }
 
     /**

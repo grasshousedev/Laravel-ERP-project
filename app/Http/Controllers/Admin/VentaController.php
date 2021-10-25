@@ -13,6 +13,8 @@ use App\Models\Tipo_moneda;
 use App\Models\User;
 use App\Models\Cotizacione;
 use App\Models\Area_provee_cliente;
+use App\Models\Cliente;
+use App\Models\Producto;
 use PDF;
 
 class VentaController extends Controller
@@ -60,7 +62,21 @@ class VentaController extends Controller
      */
     public function create()
     {
-        return view('admin.ventas.cotizar');
+        $cliente     = Cliente::all();
+        //return response()->json($cliente); //retorna los valores en formato json
+        return view('admin.ventas.cotizar', compact('cliente'));
+    }
+
+    public function search()
+    {
+        $cliente     = Cliente::all();
+        return response()->json($cliente);
+    }
+
+    public function searchProduct()
+    {
+        $producto     = Producto::all();
+        return response()->json($producto);
     }
 
     /**

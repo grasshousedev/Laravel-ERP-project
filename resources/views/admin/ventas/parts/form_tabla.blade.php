@@ -9,12 +9,16 @@
     </thead>
     <tbody id="table_data">
         <tr>
-            <th scope="row"><input class="bg-dark text-white" type="text" id="item"></th>
-            <th scope="row"><input class="bg-dark text-white" type="number" id="cantidad"></th>
-            <th scope="row"><input class="bg-dark text-white" type="number" id="precio_venta"></th>
             <th scope="row">
-                <input class="bg-dark text-white border-0" type="number" id="total" readonly>
-                <a class="btn btn-primary" href="#" role="button" onclick="add_row()">Item <i class="far fa-plus-square"></i> </a>
+                <div class="input-field">
+                    <input name="producto" class="bg-dark text-white" type="text" id="item">
+                </div>
+            </th>
+            <th scope="row"><input name="cantidad_prod" class="bg-dark text-white" type="number" id="cantidad"></th>
+            <th scope="row"><input name="precio_prod" class="bg-dark text-white" type="number" id="precio_venta"></th>
+            <th scope="row">
+                <input name="" class="bg-dark text-white border-0" type="number" id="total" readonly>
+                <a class="btn btn-primary" href="#" role="button" onclick="add_row()">Item <em class="far fa-plus-square"></em> </a>
             </th>
         </tr>
     </tbody>
@@ -36,18 +40,17 @@
     </style>
     <div class="p-2">
         <label for="sub_total">Sub Total</label>
-        <input class="bg-dark text-white border-0" type="text" id="sub_total" readonly>
+        <input name="sub_total" class="bg-dark text-white border-0" type="text" id="sub_total" readonly>
     </div>
     <div class="p-2">
         <label for="igv">IGV</label>
-        <input class="bg-dark text-white border-0" type="text" id="igv" readonly>
+        <input name="igv_sub" class="bg-dark text-white border-0" type="text" id="igv" readonly>
     </div>
     <div class="p-2">
         <label for="neto">Total</label>
-        <input class="bg-dark text-white border-0" type="text" id="neto" readonly>
+        <input name="total_neto" class="bg-dark text-white border-0" type="text" id="neto" readonly>
     </div>
 </div>
-
 
 <script>
     function add_row() {
@@ -64,6 +67,13 @@
             new_row.insertCell(1).innerHTML = cant.value;
             new_row.insertCell(2).innerHTML = pventa.value;
             new_row.insertCell(3).innerHTML = total;
+
+            // const table = document.getElementById("table_t");
+            // const new_row = document.createElement("INPUT"); // AL FINAL
+            // table.appendChild(new_row) = item.value;
+            // table.appendChild(new_row) = cant.value;
+            // table.appendChild(new_row) = pventa.value;
+            // table.appendChild(new_row) = total;
 
             // TOTALES
             let sub_total = total;

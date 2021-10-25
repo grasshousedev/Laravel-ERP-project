@@ -4,10 +4,9 @@
     <?//php $id = $value->id; ?>
     @endforeach --}}
     <input name="codigo" type="hidden" id="validationDefault01" value="COT000">
-
-    <div class="col-md-2 my-1">
+    <div class="input-field">
         {!! Form::label('cliente', 'Cliente') !!}
-        {!! Form::text('cliente', null, ['class' => 'form-control']) !!}
+        {!! Form::text('cliente', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
     </div>
     <div class="col-md-2 my-1">
         {!! Form::label('asignado', 'Asignado') !!}
@@ -20,7 +19,7 @@
 
     <div class="col-md-1 my-1">
         {!! Form::label('cliente_id', 'Cliente ID') !!}
-        {!! Form::text('cliente_id', null, ['class' => 'custom-select mr-sm-2']) !!}
+        {!! Form::text('cliente_id', null, ['class' => 'custom-select mr-sm-2', 'autocomplete'=>'off']) !!}
     </div>
 
     <div class="col-md-1 my-1">
@@ -58,17 +57,17 @@
 
     <div class="col-auto my-1">
         {!! Form::label('condiciones', 'Condiciones generales') !!}
-        {!! Form::text('condiciones', null, ['class' => 'form-control']) !!}
+        {!! Form::text('condiciones', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
     </div>
 
     <div class="col-auto my-1">
         {!! Form::label('direccion', 'Direccion') !!}
-        {!! Form::text('direccion', null, ['class' => 'form-control']) !!}
+        {!! Form::text('direccion', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
     </div>
 
     <div class="col-auto my-3">
         {!! Form::label('pie_pagina', 'Pie de pagina') !!}
-        {!! Form::text('pie_pagina', null, ['class' => 'form-control']) !!}
+        {!! Form::text('pie_pagina', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
     </div>
 
 </div>
