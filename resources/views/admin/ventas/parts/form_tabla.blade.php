@@ -63,17 +63,16 @@
             const table = document.getElementsByTagName("table")[0];
             const new_row = table.insertRow(table.rows.length); // AL FINAL
             // const new_row = table.insertRow(1);  // AL INICIO 
-            new_row.insertCell(0).innerHTML = item.value;
-            new_row.insertCell(1).innerHTML = cant.value;
-            new_row.insertCell(2).innerHTML = pventa.value;
-            new_row.insertCell(3).innerHTML = total;
 
-            // const table = document.getElementById("table_t");
-            // const new_row = document.createElement("INPUT"); // AL FINAL
-            // table.appendChild(new_row) = item.value;
-            // table.appendChild(new_row) = cant.value;
-            // table.appendChild(new_row) = pventa.value;
-            // table.appendChild(new_row) = total;
+            // añadiendo celdas
+            // new_row.insertCell(0).innerHTML = item.value;
+            // new_row.insertCell(1).innerHTML = cant.value;
+            // new_row.insertCell(2).innerHTML = pventa.value;
+            // new_row.insertCell(3).innerHTML = total;
+
+            var nueva_linea = "<tr><td><input readonly class='bg-dark text-white border-0' type='text' name='nombre_item' value='" + item.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='cantidad_item' value='" + cant.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='precio_venta' value='" + pventa.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='total_item' value='" + total + "'></td></tr>";
+
+            $("table tbody").append(nueva_linea); // lo añado con jquery porque alv :v
 
             // TOTALES
             let sub_total = total;
