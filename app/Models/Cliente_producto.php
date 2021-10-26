@@ -5,17 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cliente extends Model
+class Cliente_producto extends Model
 {
     use HasFactory;
-    //Relacion uno a muchos
-    public function cotizaciones()
+
+    public function cotizacion()
     {
-        return $this->hasMany('App\Models\Cotizacione');
+        return $this->belongsTo('App\Models\Cotizacione');
     }
 
 }
-
-
-
-

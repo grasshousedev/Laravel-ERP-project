@@ -15,6 +15,10 @@ class tiempo_entrega extends Seeder
     public function run()
     {
         DB::table('tiempo_entregas')->insert([
+            'entrega'   => 'Selecccionar...'
+        ]);
+
+        DB::table('tiempo_entregas')->insert([
             'entrega'   => '10 Dias'
         ]);
 

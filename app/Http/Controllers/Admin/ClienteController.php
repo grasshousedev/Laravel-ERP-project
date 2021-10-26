@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
 use App\Models\Estado_provee_cliente;
+use App\Models\Area_provee_cliente;
 
 class ClienteController extends Controller
 {
@@ -28,7 +29,8 @@ class ClienteController extends Controller
     public function create()
     {
         $estado      = Estado_provee_cliente::pluck('estado', 'estado');
-        return view('admin.clientes.create', compact('estado'));
+        $area        = Area_provee_cliente::pluck('area', 'area');
+        return view('admin.clientes.create', compact('estado', 'area'));
     }
 
     /**
@@ -82,7 +84,11 @@ class ClienteController extends Controller
     public function edit($id)
     {
         $clientes = Cliente::find($id);
-        return view('admin.clientes.edit', compact('clientes'));
+        $area        = Area_provee_cliente::pluck('area', 'area');
+        $estado      = Estado_provee_cliente::pluck('estado', 'estado');
+
+        return view('admin.clientes.edit', compact('clientes', 'area', 'estado'));
+
     }
 
     /**

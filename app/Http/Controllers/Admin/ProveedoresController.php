@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Proveedore;
 use App\Models\Estado_provee_cliente;
+use App\Models\Estado_impresora;
+use App\Models\Tipo_impresora;
+use App\Models\Area_provee_cliente;
 
 class ProveedoresController extends Controller
 {
@@ -28,8 +31,8 @@ class ProveedoresController extends Controller
     public function create()
     {
         $estado      = Estado_provee_cliente::pluck('estado', 'estado');
-
-        return view('admin.proveedores.create', compact('estado'));
+        $area        = Area_provee_cliente::pluck('area', 'area');
+        return view('admin.proveedores.create', compact('estado', 'area'));
     }
 
     /**
@@ -41,13 +44,13 @@ class ProveedoresController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'ruc'           => 'required',
+            'ruc'           => 'required|unique:proveedores',
             'razon_social'  => 'required',
             'direccion'     => 'required',
             'contacto'      => 'required',
             'celular1'      => 'required',
             'celular2'      => '',
-            'email1'        => 'required',
+            'email1'        => 'required|unique:proveedores',
             'email2'        => '',
             'paginaweb'     => '',
             'area'          => 'required',
@@ -83,7 +86,8 @@ class ProveedoresController extends Controller
     public function edit($id)
     {
         $proveedores = Proveedore::find($id);
-        return view('admin.proveedores.edit', compact('proveedores'));
+        $area        = Area_provee_cliente::pluck('area', 'area');
+        return view('admin.proveedores.edit', compact('proveedores', 'area'));
     }
 
     /**
@@ -96,13 +100,13 @@ class ProveedoresController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'ruc'           => 'required',
+            'ruc'           => 'required|unique:proveedores',
             'razon_social'  => 'required',
             'direccion'     => 'required',
             'contacto'      => 'required',
             'celular1'      => 'required',
             'celular2'      => '',
-            'email1'        => 'required',
+            'email1'        => 'required|unique:proveedores',
             'email2'        => '',
             'paginaweb'     => '',
             'area'          => 'required',

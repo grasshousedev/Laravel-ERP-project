@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Models\Tipo_impresora;
+use App\Models\Estado_impresora;
 
 class ProductoController extends Controller
 {
@@ -26,7 +28,9 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('admin.productos.create');
+        $tipo_prod = Tipo_impresora::pluck('tipo_impresora', 'tipo_impresora');
+        $estado    = Estado_impresora::pluck('estado_impresora', 'estado_impresora');
+        return view('admin.productos.create', compact('tipo_prod', 'estado'));
     }
 
     /**
@@ -38,18 +42,21 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'cod_prod' => 'required',
-            'fabri_prod' => 'required',
-            'model_prod' => 'required',
-            'tipo_prod' => 'required',
-            'prec_prod' => 'required',
-            'vent_prod' => 'required',
+            'cod_prod'      => 'required',
+            'fabri_prod'    => 'required',
+            'model_prod'    => 'required',
+            'tipo_prod'     => 'required',
+            'descripcion'   => 'required',
+            'prec_prod'     => 'required',
+            'vent_prod'     => 'required',
             'unidades_prod' => 'required',
+            'estado'        => 'required',
+            'proveedor'     => 'required',
         ]);
 
         $datosprod = request()->except('_token');
         Producto::insert($datosprod);
-        //return response()->json($datosprod);
+        //return response()->json($datosprod); asd
         $productos = Producto::all();
         return redirect()->route('admin.productos.index', compact('productos'))->with('info', 'El producto fue creado correctamente.');
     }
@@ -74,7 +81,9 @@ class ProductoController extends Controller
     public function edit($id)
     {
         $producto = Producto::find($id);
-        return view('admin.productos.edit', compact('producto'));
+        $tipo_prod = Tipo_impresora::pluck('tipo_impresora', 'tipo_impresora');
+        $estado    = Estado_impresora::pluck('estado_impresora', 'estado_impresora');
+        return view('admin.productos.edit', compact('producto', 'tipo_prod', 'estado'));
     }
 
     /**
@@ -87,13 +96,16 @@ class ProductoController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'cod_prod' => 'required',
-            'fabri_prod' => 'required',
-            'model_prod' => 'required',
-            'tipo_prod' => 'required',
-            'prec_prod' => 'required',
-            'vent_prod' => 'required',
+            'cod_prod'      => 'required',
+            'fabri_prod'    => 'required',
+            'model_prod'    => 'required',
+            'tipo_prod'     => 'required',
+            'descripcion'   => 'required',
+            'prec_prod'     => 'required',
+            'vent_prod'     => 'required',
             'unidades_prod' => 'required',
+            'estado'        => 'required',
+            'proveedor'     => 'required',
         ]);
 
         $datosprod = request()->except('_token', '_method');
