@@ -8,8 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Cotizacione extends Model
 {
     use HasFactory;
-
-    public function cliente(){
+    //Relacion uno a muchos (inversa)
+    public function cliente()
+    {
         return $this->belongsTo('App\Models\Cliente');
+    }
+
+    public function cli_productos()
+    {
+        return $this->hasMany('App\Models\Cliente_producto');
     }
 }

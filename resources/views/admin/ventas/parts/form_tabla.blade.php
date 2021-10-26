@@ -1,28 +1,31 @@
-<table class="table table-sm bg-dark" id="table_t">
-    <thead>
-        <tr>
-            <th scope="col">Item</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Precio Venta</th>
-            <th scope="col" colspan="2">Total</th>
-        </tr>
-    </thead>
-    <tbody id="table_data">
-        <tr>
-            <th scope="row">
-                <div class="input-field">
-                    <input name="producto" class="bg-dark text-white" type="text" id="item">
-                </div>
-            </th>
-            <th scope="row"><input name="cantidad_prod" class="bg-dark text-white" type="number" id="cantidad"></th>
-            <th scope="row"><input name="precio_prod" class="bg-dark text-white" type="number" id="precio_venta"></th>
-            <th scope="row">
-                <input name="" class="bg-dark text-white border-0" type="number" id="total" readonly>
-                <a class="btn btn-primary" href="#" role="button" onclick="add_row()">Item <em class="far fa-plus-square"></em> </a>
-            </th>
-        </tr>
-    </tbody>
-</table>
+{{-- <form action="" method="post"> --}}
+    <table class="table table-sm bg-dark" id="table_t">
+        {{-- @csrf --}}
+        <thead>
+            <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio Venta</th>
+                <th scope="col" colspan="2">Total</th>
+            </tr>
+        </thead>
+        <tbody id="table_data">
+            <tr>
+                <th scope="row">
+                    <div class="input-field">
+                        <input name="producto" class="bg-dark text-white" type="text" id="item">
+                    </div>
+                </th>
+                <th scope="row"><input name="cantidad_prod" class="bg-dark text-white" type="number" id="cantidad"></th>
+                <th scope="row"><input name="precio_prod" class="bg-dark text-white" type="number" id="precio_venta"></th>
+                <th scope="row">
+                    <input name="" class="bg-dark text-white border-0" type="number" id="total" readonly>
+                    <a class="btn btn-primary" href="#" value="Agregar item" role="button" onclick="add_row()">Agregar item</a>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+{{-- </form> --}}
 
 <div class="d-flex flex-row bg-dark text-white">
     <style>
@@ -70,7 +73,7 @@
             // new_row.insertCell(2).innerHTML = pventa.value;
             // new_row.insertCell(3).innerHTML = total;
 
-            var nueva_linea = "<tr><td><input readonly class='bg-dark text-white border-0' type='text' name='nombre_item' value='" + item.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='cantidad_item' value='" + cant.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='precio_venta' value='" + pventa.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='total_item' value='" + total + "'></td></tr>";
+            var nueva_linea = "<tr><td><input readonly class='bg-dark text-white border-0' type='text' name='producto' value='" + item.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='cantidad_prod' value='" + cant.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='precio_prod' value='" + pventa.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='total_prod' value='" + total + "'></td></tr>";
 
             $("table tbody").append(nueva_linea); // lo añado con jquery porque alv :v
 

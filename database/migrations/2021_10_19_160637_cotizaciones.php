@@ -27,11 +27,14 @@ class Cotizaciones extends Migration
             $table->string('direccion');
             $table->text('pie_pagina');
             $table->unsignedBigInteger('cliente_id')->nullable();
+            
 
             $table->foreign('cliente_id')
                     ->references('id')
                     ->on('clientes')
                     ->onDelete('set null');
+
+            
 
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('updated_at')->nullable();
