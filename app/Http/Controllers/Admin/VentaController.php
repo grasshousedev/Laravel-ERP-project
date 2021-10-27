@@ -103,15 +103,29 @@ class VentaController extends Controller
             'cliente_id'        => '',
         ]);
 
-        $datoscot = request()->except('_token', 'producto', 'cantidad_prod', 'precio_prod', 'total_prod');
-        Cotizacione::insert($datoscot);
+        
+        $contador = request()->only('contador_formulario');
+        $agarrar = array();
+        
+        for ($i=0; $i < $contador; $i++) { 
+            // array_push($agarrar, "producto".$i, "cantidad_prod".$i, "precio_prod".$i, "total_prod".$i);
+            // array_push($agarrar, "producto".$i);
+            $contador = $contador;
+        }
 
-        $datosprod = request()->except('_token', 'codigo', 'cliente', 'asignado', 'moneda', 'tiempo_expiracion', 'estado', 'forma_pago', 'tiempo_entrega', 'condiciones', 'direccion', 'pie_pagina', 'cliente_id');
-        Cliente_producto::insert($datosprod);
-        //return response()->json($datoscot);
-
-        $cotizacion = Cotizacione::all();
-        return redirect()->route('admin.ventas-index.index', compact('cotizacion'))->with('info', 'La cotizacion fue creada correctamente.');
+        // $test = request()->only($agarrar);
+            
+        // $datoscot = request()->except('_token', 'producto', 'cantidad_prod', 'precio_prod', 'total_prod', 'contador_formulario');
+        // Cotizacione::insert($datoscot);
+        
+        // $datosprod = request()->except('_token', 'codigo', 'cliente', 'asignado', 'moneda', 'tiempo_expiracion', 'estado', 'forma_pago', 'tiempo_entrega', 'condiciones', 'direccion', 'pie_pagina', 'cliente_id', 'contador_formulario');
+        // Cliente_producto::insert($datosprod);
+        
+        
+        // $cotizacion = Cotizacione::all();
+        // return redirect()->route('admin.ventas-index.index', compact('cotizacion'))->with('info', 'La cotizacion fue creada correctamente.');
+        
+        return response()->json($contador); //locoshon
     }
 
     /**

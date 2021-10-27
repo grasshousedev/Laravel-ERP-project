@@ -52,6 +52,8 @@
     <div class="p-2">
         <label for="neto">Total</label>
         <input name="" class="bg-dark text-white border-0" type="text" id="neto" readonly>
+        
+        <input name="contador_formulario" type="number" id="contador_formulario" value="0" readonly>
     </div>
 </div>
 
@@ -61,6 +63,7 @@
         const cant = document.getElementById("cantidad");
         const pventa = document.getElementById("precio_venta");
         const total = parseFloat(document.getElementById("cantidad").value) * parseFloat(document.getElementById("precio_venta").value);
+        const contador = document.getElementById("contador_formulario");
 
         if (item.value != "") {
             const table = document.getElementsByTagName("table")[0];
@@ -73,7 +76,8 @@
             // new_row.insertCell(2).innerHTML = pventa.value;
             // new_row.insertCell(3).innerHTML = total;
 
-            var nueva_linea = "<tr><td><input readonly class='bg-dark text-white border-0' type='text' name='producto' value='" + item.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='cantidad_prod' value='" + cant.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='precio_prod' value='" + pventa.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='total_prod' value='" + total + "'></td></tr>";
+            contador.value = parseInt(contador.value) + 1;
+            var nueva_linea = "<tr><td><input readonly class='bg-dark text-white border-0' type='text' name='producto" + contador.value + "' value='" + item.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='cantidad_prod" + contador.value + "' value='" + cant.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='precio_prod" + contador.value + "' value='" + pventa.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='total_prod" + contador.value + "' value='" + total + "'></td></tr>";
 
             $("table tbody").append(nueva_linea);
 
