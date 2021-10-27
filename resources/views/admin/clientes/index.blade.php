@@ -21,14 +21,7 @@
                 <th id="">Razon social</th>
                 <th id="">Dirección</th>
                 <th id="">Contacto</th>
-                <th id="">Celular 1</th>
-                <th id="">Calular 2</th>
-                <th id="">Email 1</th>
-                <th id="">Email 2</th>
-                <th id="">Pagina web</th>
-                <th id="">Area</th>
                 <th id="">Estado</th>
-                <th id="">Asignado</th>
                 <th id=""></th>
                 <th id=""></th>
             </thead>
@@ -39,14 +32,13 @@
                         <td>{{ $cliente->razon_social }}</td>
                         <td>{{ $cliente->direccion }}</td>
                         <td>{{ $cliente->contacto }}</td>
-                        <td>{{ $cliente->celular1 }}</td>
-                        <td>{{ $cliente->celular2 }}</td>
-                        <td>{{ $cliente->email1 }}</td>
-                        <td>{{ $cliente->email2 }}</td>
-                        <td>{{ $cliente->paginaweb }}</td>
-                        <td>{{ $cliente->area }}</td>
                         <td>{{ $cliente->estado }}</td>
-                        <td>{{ $cliente->asignado }}</td>
+
+                        <td width="80px">
+                            <form action="{{ route('admin.clientes.show', $cliente) }}" method="GET">
+                                <button type="submit" class="btn btn-sm btn-success">Ver más</button>
+                            </form>
+                        </td>
 
                         <td width="10px">
                             <a href="{{ route('admin.clientes.edit', $cliente->id) }}" class="btn btn-sm btn-primary">Editar</a>

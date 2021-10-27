@@ -74,7 +74,8 @@ class ProveedoresController extends Controller
      */
     public function show($id)
     {
-        //
+        $proveedores     = Proveedore::find($id);
+        return view('admin.proveedores.ver_mas', compact('proveedores'));
     }
 
     /**

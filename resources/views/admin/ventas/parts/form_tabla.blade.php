@@ -75,7 +75,7 @@
 
             var nueva_linea = "<tr><td><input readonly class='bg-dark text-white border-0' type='text' name='producto' value='" + item.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='cantidad_prod' value='" + cant.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='precio_prod' value='" + pventa.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='total_prod' value='" + total + "'></td></tr>";
 
-            $("table tbody").append(nueva_linea); // lo añado con jquery porque alv :v
+            $("table tbody").append(nueva_linea);
 
             // TOTALES
             let sub_total = total;

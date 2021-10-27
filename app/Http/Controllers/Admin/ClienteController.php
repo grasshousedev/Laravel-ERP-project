@@ -72,7 +72,9 @@ class ClienteController extends Controller
      */
     public function show($id)
     {
-        //
+        $clientes = Cliente::find($id);
+
+        return view('admin.clientes.ver_mas', compact('clientes'));
     }
 
     /**

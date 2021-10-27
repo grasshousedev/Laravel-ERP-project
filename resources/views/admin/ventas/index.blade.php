@@ -37,11 +37,13 @@
                     <td>{{ $cot->asignado }}</td>
                     <td>{{ $cot->created_at }}</td>
                     <td>{{ $cot->updated_at }}</td>
+
                     <td width="80px">
                         <form action="{{ route('admin.ventas.show', $cot) }}" method="GET">
-                            <button type="submit" class="btn btn-sm btn-success">Ver mas</button>
+                            <button type="submit" class="btn btn-sm btn-success">PDF</button>
                         </form>
                     </td>
+                    
                     {{-- @can('Editar productos') --}}
                     <td width="10px">
                         <a href="{{ route('admin.ventas.edit', $cot->id) }}" class="btn btn-sm btn-primary">Editar</a>

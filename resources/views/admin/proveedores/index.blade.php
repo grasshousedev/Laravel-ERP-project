@@ -20,15 +20,7 @@
                 <th id="">RUC</th>
                 <th id="">Razon social</th>
                 <th id="">Dirección</th>
-                <th id="">Contacto</th>
-                <th id="">Celular 1</th>
-                <th id="">Calular 2</th>
-                <th id="">Email 1</th>
-                <th id="">Email 2</th>
-                <th id="">Pagina web</th>
-                <th id="">Area</th>
                 <th id="">Estado</th>
-                <th id="">Asignado</th>
                 <th id=""></th>
                 <th id=""></th>
             </thead>
@@ -38,15 +30,13 @@
                         <td>{{ $proveedor->ruc }}</td>
                         <td>{{ $proveedor->razon_social }}</td>
                         <td>{{ $proveedor->direccion }}</td>
-                        <td>{{ $proveedor->contacto }}</td>
-                        <td>{{ $proveedor->celular1 }}</td>
-                        <td>{{ $proveedor->celular2 }}</td>
-                        <td>{{ $proveedor->email1 }}</td>
-                        <td>{{ $proveedor->email2 }}</td>
-                        <td>{{ $proveedor->paginaweb }}</td>
-                        <td>{{ $proveedor->area }}</td>
                         <td>{{ $proveedor->estado }}</td>
-                        <td>{{ $proveedor->asignado }}</td>
+
+                        <td width="80px">
+                            <form action="{{ route('admin.proveedores.show', $proveedor) }}" method="GET">
+                                <button type="submit" class="btn btn-sm btn-success">Ver mas</button>
+                            </form>
+                        </td>
 
                         <td width="10px">
                             <a href="{{ route('admin.proveedores.edit', $proveedor->id) }}" class="btn btn-sm btn-primary">Editar</a>
