@@ -21,9 +21,9 @@ class CreateClienteProductosTable extends Migration
             $table->double('precio_prod');
             $table->double('total_prod');
 
-            $table->double('sub_total');
-            $table->double('igv_sub');
-            $table->double('total_neto');
+            // $table->double('sub_total');
+            // $table->double('igv_sub');
+            // $table->double('total_neto');
 
             $table->unsignedBigInteger('cotizacion_id')->nullable();
             $table->foreign('cotizacion_id')

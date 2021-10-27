@@ -15,6 +15,7 @@ use App\Models\Cotizacione;
 use App\Models\Area_provee_cliente;
 use App\Models\Cliente;
 use App\Models\Producto;
+use App\Models\Cliente_producto;
 use PDF;
 
 class VentaController extends Controller
@@ -102,8 +103,11 @@ class VentaController extends Controller
             'cliente_id'        => '',
         ]);
 
-        $datoscot = request()->except('_token');
+        $datoscot = request()->except('_token', 'producto', 'cantidad_prod', 'precio_prod', 'total_prod');
         Cotizacione::insert($datoscot);
+
+        $datosprod = request()->except('_token', 'codigo', 'cliente', 'asignado', 'moneda', 'tiempo_expiracion', 'estado', 'forma_pago', 'tiempo_entrega', 'condiciones', 'direccion', 'pie_pagina', 'cliente_id');
+        Cliente_producto::insert($datosprod);
         //return response()->json($datoscot);
 
         $cotizacion = Cotizacione::all();

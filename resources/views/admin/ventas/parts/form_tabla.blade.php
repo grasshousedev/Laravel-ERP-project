@@ -43,15 +43,15 @@
     </style>
     <div class="p-2">
         <label for="sub_total">Sub Total</label>
-        <input name="sub_total" class="bg-dark text-white border-0" type="text" id="sub_total" readonly>
+        <input name="" class="bg-dark text-white border-0" type="text" id="sub_total" readonly>
     </div>
     <div class="p-2">
         <label for="igv">IGV</label>
-        <input name="igv_sub" class="bg-dark text-white border-0" type="text" id="igv" readonly>
+        <input name="" class="bg-dark text-white border-0" type="text" id="igv" readonly>
     </div>
     <div class="p-2">
         <label for="neto">Total</label>
-        <input name="total_neto" class="bg-dark text-white border-0" type="text" id="neto" readonly>
+        <input name="" class="bg-dark text-white border-0" type="text" id="neto" readonly>
     </div>
 </div>
 
