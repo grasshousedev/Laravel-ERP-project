@@ -108,7 +108,7 @@
 
             </table>
 
-            <a href="{{ route('admin.proveedores.index') }}" class="btn btn-sm btn-primary">Volver</a>
+            <a href="{{ route('admin.clientes.index') }}" class="btn btn-sm btn-primary">Volver</a>
 
         </div>
     </div>
