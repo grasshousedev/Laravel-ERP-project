@@ -103,29 +103,17 @@ class VentaController extends Controller
             'cliente_id'        => '',
         ]);
 
-        
-        $contador = request()->only('contador_formulario');
-        $agarrar = array();
-        
-        for ($i=0; $i < $contador; $i++) { 
-            // array_push($agarrar, "producto".$i, "cantidad_prod".$i, "precio_prod".$i, "total_prod".$i);
-            // array_push($agarrar, "producto".$i);
-            $contador = $contador;
-        }
-
-        // $test = request()->only($agarrar);
             
-        // $datoscot = request()->except('_token', 'producto', 'cantidad_prod', 'precio_prod', 'total_prod', 'contador_formulario');
-        // Cotizacione::insert($datoscot);
+        $datoscot = request()->only('codigo', 'cliente', 'asignado', 'moneda', 'tiempo_expiracion', 'estado', 'forma_pago', 'tiempo_entrega', 'condiciones', 'direccion', 'pie_pagina', 'cliente_id');
+        Cotizacione::insert($datoscot);
         
-        // $datosprod = request()->except('_token', 'codigo', 'cliente', 'asignado', 'moneda', 'tiempo_expiracion', 'estado', 'forma_pago', 'tiempo_entrega', 'condiciones', 'direccion', 'pie_pagina', 'cliente_id', 'contador_formulario');
-        // Cliente_producto::insert($datosprod);
+        $datosprod = request()->only('info_producto');
+        Cliente_producto::insert($datosprod);
         
+        // return response()->json($contador); //para debug
         
-        // $cotizacion = Cotizacione::all();
-        // return redirect()->route('admin.ventas-index.index', compact('cotizacion'))->with('info', 'La cotizacion fue creada correctamente.');
-        
-        return response()->json($contador); //locoshon
+        $cotizacion = Cotizacione::all();
+        return redirect()->route('admin.ventas-index.index', compact('cotizacion'))->with('info', 'La cotizacion fue creada correctamente.');
     }
 
     /**
@@ -137,10 +125,11 @@ class VentaController extends Controller
     public function show($id)
     {
         $cotizacion     = Cotizacione::find($id);
+        $cliente_producto     = Cliente_producto::all();
 
         // return view('admin.ventas.mas_info', compact('cotizacion'));
 
-        $pdf = PDF::loadView('admin.ventas.mas_info', compact('cotizacion'));
+        $pdf = PDF::loadView('admin.ventas.mas_info', compact('cotizacion', 'cliente_producto'));
 
         $nombre         = date('Y-m-d');
         return $pdf->stream('CLIENTE-'.$nombre.'.pdf');

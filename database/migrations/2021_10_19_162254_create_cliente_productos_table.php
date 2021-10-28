@@ -16,10 +16,10 @@ class CreateClienteProductosTable extends Migration
         Schema::create('cliente_productos', function (Blueprint $table) {
             $table->id();
             
-            $table->string('producto');
-            $table->double('cantidad_prod');
-            $table->double('precio_prod');
-            $table->double('total_prod');
+            $table->string('info_producto');
+            // $table->double('cantidad_prod');
+            // $table->double('precio_prod');
+            // $table->double('total_prod');
 
             // $table->double('sub_total');
             // $table->double('igv_sub');

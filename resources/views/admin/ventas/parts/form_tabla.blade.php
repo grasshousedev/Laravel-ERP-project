@@ -54,6 +54,7 @@
         <input name="" class="bg-dark text-white border-0" type="text" id="neto" readonly>
         
         <input name="contador_formulario" type="number" id="contador_formulario" value="0" readonly>
+        <input name="info_producto" type="text" id="info_producto" value="" readonly>
     </div>
 </div>
 
@@ -80,6 +81,14 @@
             var nueva_linea = "<tr><td><input readonly class='bg-dark text-white border-0' type='text' name='producto" + contador.value + "' value='" + item.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='cantidad_prod" + contador.value + "' value='" + cant.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='precio_prod" + contador.value + "' value='" + pventa.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='total_prod" + contador.value + "' value='" + total + "'></td></tr>";
 
             $("table tbody").append(nueva_linea);
+
+            if(document.getElementById("info_producto").value != ""){
+                document.getElementById("info_producto").value = document.getElementById("info_producto").value + '$' + item.value +'@'+ cant.value +'@'+ pventa.value;
+
+            }else{
+                document.getElementById("info_producto").value = document.getElementById("info_producto").value + item.value +'@'+ cant.value +'@'+ pventa.value;
+            }
+
 
             // TOTALES
             let sub_total = total;
