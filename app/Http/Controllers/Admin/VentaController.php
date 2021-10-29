@@ -107,7 +107,7 @@ class VentaController extends Controller
         $datoscot = request()->only('codigo', 'cliente', 'asignado', 'moneda', 'tiempo_expiracion', 'estado', 'forma_pago', 'tiempo_entrega', 'condiciones', 'direccion', 'pie_pagina', 'cliente_id');
         Cotizacione::insert($datoscot);
         
-        $datosprod = request()->only('info_producto');
+        $datosprod = request()->only('info_producto', 'cotizacion_id');
         Cliente_producto::insert($datosprod);
         
         // return response()->json($contador); //para debug

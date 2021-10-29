@@ -6,7 +6,8 @@
                 <th scope="col">Item</th>
                 <th scope="col">Cantidad</th>
                 <th scope="col">Precio Venta</th>
-                <th scope="col" colspan="2">Total</th>
+                <th scope="col">Total</th>
+                <th scope="col">ID cotizacion</th>
             </tr>
         </thead>
         <tbody id="table_data">
@@ -18,8 +19,10 @@
                 </th>
                 <th scope="row"><input name="cantidad_prod" class="bg-dark text-white" type="number" id="cantidad"></th>
                 <th scope="row"><input name="precio_prod" class="bg-dark text-white" type="number" id="precio_venta"></th>
+                
+                <th scope="row"><input name="" class="bg-dark text-white border-0" type="number" id="total" readonly></th>
+                <th scope="row"><input name="cotizacion_id" class="bg-dark text-white" type="number" id="cotizacion_id"></th>
                 <th scope="row">
-                    <input name="" class="bg-dark text-white border-0" type="number" id="total" readonly>
                     <a class="btn btn-primary" href="#" value="Agregar item" role="button" onclick="add_row()">Agregar item</a>
                 </th>
             </tr>
@@ -64,7 +67,8 @@
         const cant = document.getElementById("cantidad");
         const pventa = document.getElementById("precio_venta");
         const total = parseFloat(document.getElementById("cantidad").value) * parseFloat(document.getElementById("precio_venta").value);
-        const contador = document.getElementById("contador_formulario");
+        const cot_id = document.getElementById("cotizacion_id");
+        const contador = document.getElementById("total");
 
         if (item.value != "") {
             const table = document.getElementsByTagName("table")[0];
@@ -78,7 +82,7 @@
             // new_row.insertCell(3).innerHTML = total;
 
             contador.value = parseInt(contador.value) + 1;
-            var nueva_linea = "<tr><td><input readonly class='bg-dark text-white border-0' type='text' name='producto" + contador.value + "' value='" + item.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='cantidad_prod" + contador.value + "' value='" + cant.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='precio_prod" + contador.value + "' value='" + pventa.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='total_prod" + contador.value + "' value='" + total + "'></td></tr>";
+            var nueva_linea = "<tr><td><input readonly class='bg-dark text-white border-0' type='text' name='producto" + contador.value + "' value='" + item.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='cantidad_prod" + contador.value + "' value='" + cant.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='precio_prod" + contador.value + "' value='" + pventa.value + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='total_prod" + contador.value + "' value='" + total + "'></td><td><input readonly class='bg-dark text-white border-0' type='number' name='cotizacion_id' value='" + cot_id.value +"'></td></tr>";
 
             $("table tbody").append(nueva_linea);
 

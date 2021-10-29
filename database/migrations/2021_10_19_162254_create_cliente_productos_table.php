@@ -26,6 +26,7 @@ class CreateClienteProductosTable extends Migration
             // $table->double('total_neto');
 
             $table->unsignedBigInteger('cotizacion_id')->nullable();
+            
             $table->foreign('cotizacion_id')
                     ->references('id')
                     ->on('cotizaciones')

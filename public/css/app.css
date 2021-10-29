@@ -1306,6 +1306,9 @@ select {
 .flex-shrink-0 {
 	flex-shrink: 0;
 }
+.border-collapse {
+	border-collapse: collapse;
+}
 .origin-top-left {
 	transform-origin: top left;
 }
@@ -1353,6 +1356,9 @@ select {
 }
 .grid-cols-1 {
 	grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.flex-row {
+	flex-direction: row;
 }
 .flex-col {
 	flex-direction: column;
@@ -1443,6 +1449,9 @@ select {
 }
 .border-2 {
 	border-width: 2px;
+}
+.border-0 {
+	border-width: 0px;
 }
 .border-b-2 {
 	border-bottom-width: 2px;
@@ -2272,4 +2281,5 @@ select {
 		padding-right: 2rem;
 	}
 }
+
 
