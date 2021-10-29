@@ -12,6 +12,7 @@
 
         @include('admin.ventas.parts.form')
         @include('admin.ventas.parts.form_tabla')
+        
     {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
 
 

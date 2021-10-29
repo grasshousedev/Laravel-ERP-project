@@ -289,7 +289,9 @@
     <hr style="border:1px;">
     <br>
     <div class="producto">
-        Productos
+        @foreach($cliente_producto as $item)
+            {{ $item->info_producto }}
+        @endforeach
     </div>
     <br>
     <div class="condiciones">
