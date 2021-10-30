@@ -24,6 +24,7 @@
                 <th id="">Estado</th>
                 <th id=""></th>
                 <th id=""></th>
+                <th id=""></th>
             </thead>
             <tbody>
                 @foreach ($clientes as $cliente)

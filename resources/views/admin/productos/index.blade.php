@@ -4,10 +4,10 @@
 
 @section('content_header')
     @can('Crear productos')
-        <a href="{{ route('admin.productos.create') }}" class="btn btn-secondary btn-sm float-right">Agregar producto</a>
+        <a href="{{ route('admin.productos.create') }}" class="btn btn-secondary btn-sm float-right">Agregar P / S</a>
     @endcan
     
-    <h1>Productos</h1>
+    <h1>Productos y Servicios</h1>
 @stop
 
 @section('content')

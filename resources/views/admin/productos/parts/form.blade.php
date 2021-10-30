@@ -89,6 +89,16 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('tipo', 'tipo') !!}
+    {!! Form::select('tipo', $tipo, null, ['class' => 'form-control']) !!}
+    @error('tipo')
+    <small class="text-danger">
+        El campo tipo es requerido
+    </small>
+    @enderror
+</div>
+
+<div class="form-group">
     {!! Form::label('proveedor', 'Proveedor') !!}
     {!! Form::text('proveedor', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el proveedor']) !!}
     @error('proveedor')

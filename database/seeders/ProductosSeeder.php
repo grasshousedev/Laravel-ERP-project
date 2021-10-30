@@ -24,6 +24,7 @@ class ProductosSeeder extends Seeder
             'vent_prod'     => 4670,
             'unidades_prod' => 11,
             'estado'        => 'Activo',
+            'tipo'          => 'Producto',
             'proveedor'     => 'Prueba proveedores'
         ]);
 
@@ -37,6 +38,7 @@ class ProductosSeeder extends Seeder
             'vent_prod'     => 5695,
             'unidades_prod' => 10,
             'estado'        => 'Activo',
+            'tipo'          => 'Producto',
             'proveedor'     => 'Prueba proveedores'
         ]);
 
@@ -50,6 +52,7 @@ class ProductosSeeder extends Seeder
             'vent_prod'     => 2950,
             'unidades_prod' => 15,
             'estado'        => 'Activo',
+            'tipo'          => 'Producto',
             'proveedor'     => 'Prueba proveedores'
         ]);
 
@@ -63,6 +66,7 @@ class ProductosSeeder extends Seeder
             'vent_prod'     => 950,
             'unidades_prod' => 30,
             'estado'        => 'Activo',
+            'tipo'          => 'Producto',
             'proveedor'     => 'Prueba proveedores'
         ]);
 
@@ -76,6 +80,7 @@ class ProductosSeeder extends Seeder
             'vent_prod'     => 1080,
             'unidades_prod' => 28,
             'estado'        => 'Activo',
+            'tipo'          => 'Producto',
             'proveedor'     => 'Prueba proveedores'
         ]);
 
@@ -89,6 +94,7 @@ class ProductosSeeder extends Seeder
             'vent_prod'     => 2245,
             'unidades_prod' => 19,
             'estado'        => 'Activo',
+            'tipo'          => 'Producto',
             'proveedor'     => 'Prueba proveedores'
         ]);
 
@@ -102,6 +108,7 @@ class ProductosSeeder extends Seeder
             'vent_prod'     => 2245,
             'unidades_prod' => 20,
             'estado'        => 'Activo',
+            'tipo'          => 'Producto',
             'proveedor'     => 'Prueba proveedores'
         ]);
 
@@ -115,6 +122,7 @@ class ProductosSeeder extends Seeder
             'vent_prod'     => 53780,
             'unidades_prod' => 5,
             'estado'        => 'Activo',
+            'tipo'          => 'Producto',
             'proveedor'     => 'Prueba proveedores'
         ]);
 
@@ -128,6 +136,7 @@ class ProductosSeeder extends Seeder
             'vent_prod'     => 205000,
             'unidades_prod' => 1,
             'estado'        => 'Activo',
+            'tipo'          => 'Producto',
             'proveedor'     => 'Prueba proveedores'
         ]);
 
@@ -141,6 +150,7 @@ class ProductosSeeder extends Seeder
             'vent_prod'     => 215000,
             'unidades_prod' => 5,
             'estado'        => 'Activo',
+            'tipo'          => 'Producto',
             'proveedor'     => 'Prueba proveedores'
         ]);
 
@@ -154,6 +164,7 @@ class ProductosSeeder extends Seeder
             'vent_prod'     => 267000,
             'unidades_prod' => 1,
             'estado'        => 'Activo',
+            'tipo'          => 'Producto',
             'proveedor'     => 'Prueba proveedores'
         ]);
 
@@ -167,6 +178,7 @@ class ProductosSeeder extends Seeder
             'vent_prod'     => 24000,
             'unidades_prod' => 5,
             'estado'        => 'Activo',
+            'tipo'          => 'Producto',
             'proveedor'     => 'Prueba proveedores'
         ]);
 
@@ -180,6 +192,7 @@ class ProductosSeeder extends Seeder
             'vent_prod'     => 1030,
             'unidades_prod' => 20,
             'estado'        => 'Activo',
+            'tipo'          => 'Producto',
             'proveedor'     => 'Prueba proveedores'
         ]);
     }
