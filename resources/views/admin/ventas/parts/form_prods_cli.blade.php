@@ -27,7 +27,7 @@
         </small>
     @enderror
 </div>
-
+<br>
 <input type="hidden" name="cotizacion_id" value="{{ ($_GET['id']) }}">
 
 <input name="total_prod" class="bg-dark text-white border-0" type="hidden" id="total_prod">

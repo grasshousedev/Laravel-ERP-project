@@ -10,24 +10,32 @@
 
 @section('content')
 
-<div class="card">
-    <div class="card-body">
-        {!! Form::open(['route' => "admin.productos_cli.store", 'autocomplete'=>'off']) !!}
+<div class="row">
+  <div class="col-sm-2">
+    <div class="card">
+      <div class="card-body">
+      {!! Form::open(['route' => "admin.productos_cli.store", 'autocomplete'=>'off']) !!}
 
-            @include('admin.ventas.parts.form_prods_cli')
-            
-        {{-- {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!} --}}
-        <input type="submit" class="btn btn-primary" onclick="calcular()" value="Crear">
+@include('admin.ventas.parts.form_prods_cli')
 
-        {!! Form::close() !!}
-        <div>
-            <table class="table table-striped" id="cotizaciones">
-                <thead>
+{{-- {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!} --}}
+<input type="submit" class="btn btn-primary" onclick="calcular()" value="Crear">
+
+{!! Form::close() !!}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-10">
+    <div class="card" >
+      <div class="card-body" >
+      <table class="table table-borderless" id="cotizaciones" >
+                <thead class="table-dark">
                     <th id="">Producto</th>
                     <th id="">Cantidad</th>
                     <th id="">Precio</th>
                     <th id="">Total de Producto</th>
-                    <th id=""></th>
+                    <th id="">Funciones</th>
                 </thead>
                 <tbody>
                     <?php 
@@ -40,8 +48,8 @@
                         <td>{{ $producto->precio_prod }}</td>
                         <td>{{ $producto->total_prod }}</td>
 
-                        <td>
-                            <a href="{{ route('admin.productos_cli.edit', $producto->id) }}" class="btn btn-sm btn-primary">
+                        <td style="width: 150px;">
+                            <a href="{{ route('admin.productos_cli.edit', $producto->id) }}" class="btn btn-sm btn-primary" >
                                 <span class="material-icons-outlined">
                                 edit
                                 </span>
@@ -70,7 +78,7 @@
                             <?php echo $igv;?>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="table-bordered">
                         <td><strong>Total</strong></td>
                         <td></td>
                         <td></td>
@@ -80,9 +88,11 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
+
 
 @stop
 
