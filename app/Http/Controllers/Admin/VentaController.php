@@ -16,6 +16,7 @@ use App\Models\Area_provee_cliente;
 use App\Models\Cliente;
 use App\Models\Producto;
 use App\Models\Cliente_producto;
+use App\Classes\CustomCodeGenerator;
 use PDF;
 
 class VentaController extends Controller
@@ -102,14 +103,18 @@ class VentaController extends Controller
             'pie_pagina'        => 'required',
             'cliente_id'        => '',
         ]);
-            
+
+        $ultima_cotizacion = Cotizacione::all();
+        $codigo = new CustomCodeGenerator("COT", sizeOf($ultima_cotizacion));
+                
         $datoscot = request()->only('codigo', 'cliente', 'asignado', 'moneda', 'tiempo_expiracion', 'estado', 'forma_pago', 'tiempo_entrega', 'condiciones', 'direccion', 'pie_pagina', 'cliente_id');
-        Cotizacione::insert($datoscot);
-        
-        // return response()->json($contador); //para debug
+        $datoscot['codigo'] = $codigo->generar;
+        // return response()->json($datoscot); //para debugs
+        Cotizacione::insert($datoscot);        
         
         $cotizacion = Cotizacione::all();
         return redirect()->route('admin.ventas-index.index', compact('cotizacion'))->with('info', 'La cotizacion fue creada correctamente.');
+        // return response()->json($codigo->generar); //para debugs
     }
 
     /**
