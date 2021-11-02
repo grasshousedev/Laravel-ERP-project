@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call(estado_impresoras::class);
         $this->call(area_provee_clientes::class);
         $this->call(EstadoProducto_servicios::class);
+        $this->call(Clientes::class);
     }
     
 }
