@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Tipo_impresora;
 use App\Models\Estado_impresora;
+use App\Models\EstadoProductoservicio;
 
 class ProductoController extends Controller
 {
@@ -28,9 +29,10 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        $tipo_prod = Tipo_impresora::pluck('tipo_impresora', 'tipo_impresora');
-        $estado    = Estado_impresora::pluck('estado_impresora', 'estado_impresora');
-        return view('admin.productos.create', compact('tipo_prod', 'estado'));
+        $tipo_prod  = Tipo_impresora::pluck('tipo_impresora', 'tipo_impresora');
+        $estado     = Estado_impresora::pluck('estado_impresora', 'estado_impresora');
+        $tipo       = EstadoProductoservicio::pluck('producto_servicio', 'producto_servicio');
+        return view('admin.productos.create', compact('tipo_prod', 'estado', 'tipo'));
     }
 
     /**
@@ -51,6 +53,7 @@ class ProductoController extends Controller
             'vent_prod'     => 'required',
             'unidades_prod' => 'required',
             'estado'        => 'required',
+            'tipo'          => 'required',
             'proveedor'     => 'required',
         ]);
 
@@ -83,7 +86,9 @@ class ProductoController extends Controller
         $producto = Producto::find($id);
         $tipo_prod = Tipo_impresora::pluck('tipo_impresora', 'tipo_impresora');
         $estado    = Estado_impresora::pluck('estado_impresora', 'estado_impresora');
-        return view('admin.productos.edit', compact('producto', 'tipo_prod', 'estado'));
+        $tipo       = EstadoProductoservicio::pluck('producto_servicio', 'producto_servicio');
+
+        return view('admin.productos.edit', compact('producto', 'tipo_prod', 'estado', 'tipo'));
     }
 
     /**

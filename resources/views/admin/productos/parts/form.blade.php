@@ -218,3 +218,63 @@
         </div>
     </div>
 </div>
+{{-- 
+<div class="form-group">
+    {!! Form::label('prec_prod', 'Precio de compra') !!}
+    {!! Form::text('prec_prod', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el precio de compra']) !!}
+    @error('prec_prod')
+    <small class="text-danger">
+        El campo precio de compra es requerido
+    </small>
+    @enderror
+</div>
+
+<div class="form-group">
+    {!! Form::label('vent_prod', 'Precio de venta') !!}
+    {!! Form::text('vent_prod', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el precio de venta']) !!}
+    @error('vent_prod')
+    <small class="text-danger">
+        El campo precio de venta es requerido
+    </small>
+    @enderror
+</div>
+
+<div class="form-group">
+    {!! Form::label('unidades_prod', 'Unidades') !!}
+    {!! Form::text('unidades_prod', null, ['class' => 'form-control', 'placeholder' => 'Ingrese las unidades']) !!}
+    @error('unidades_prod')
+    <small class="text-danger">
+        El campo unidades es requerido
+    </small>
+    @enderror
+</div>
+
+<div class="form-group">
+    {!! Form::label('estado', 'Estado') !!}
+    {!! Form::select('estado', $estado, null, ['class' => 'form-control']) !!}
+    @error('estado')
+    <small class="text-danger">
+        El campo estado es requerido
+    </small>
+    @enderror
+</div>
+
+<div class="form-group">
+    {!! Form::label('tipo', 'tipo') !!}
+    {!! Form::select('tipo', $tipo, null, ['class' => 'form-control']) !!}
+    @error('tipo')
+    <small class="text-danger">
+        El campo tipo es requerido
+    </small>
+    @enderror
+</div>
+
+<div class="form-group">
+    {!! Form::label('proveedor', 'Proveedor') !!}
+    {!! Form::text('proveedor', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el proveedor']) !!}
+    @error('proveedor')
+    <small class="text-danger">
+        El campo unidades es requerido
+    </small>
+    @enderror
+</div> --}}

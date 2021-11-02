@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Cliente_producto;
+use App\Models\Cotizacione;
 
 class Cliente_productos extends Controller
 {
@@ -12,9 +14,14 @@ class Cliente_productos extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $filtro = $request->get('id');
+        $productos = \DB::table('cliente_productos')
+                    ->select('cliente_productos.*')
+                    ->where('cotizacion_id', $filtro)
+                    ->get();
+        return view('admin.ventas.productos_cli', compact('productos'));
     }
 
     /**
@@ -35,7 +42,22 @@ class Cliente_productos extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'producto'            => 'required',
+            'cantidad_prod'       => 'required',
+            'precio_prod'         => 'required',
+            'cotizacion_id'       => '',
+            'total_prod'          => ''
+        ]);
+            
+        $datosprods = request()->except('_token');
+
+        Cliente_producto::insert($datosprods);
+
+        //return $request->cotizacion_id;
+        
+        //return response()->json($datosprods); //para debug
+        return redirect()->route('admin.productos_cli.index', 'id='.$request->cotizacion_id);
     }
 
     /**
@@ -55,9 +77,11 @@ class Cliente_productos extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        //
+        $productos     = Cliente_producto::find($id);
+
+        return view('admin.ventas.productos_cli', compact('productos'));
     }
 
     /**
@@ -78,8 +102,15 @@ class Cliente_productos extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        Cliente_producto::destroy($id);
+
+        $filtro = $request->get('id');
+        $productos = \DB::table('cliente_productos')
+                    ->select('cliente_productos.*')
+                    ->where('cotizacion_id', $filtro)
+                    ->get();
+        return view('admin.ventas.productos_cli', compact('productos'));
     }
 }

@@ -20,14 +20,15 @@
     <div class="card-body">
         <table class="table table-striped" id="cotizaciones">
             <thead>
-                <th>Codigo</th>
-                <th>Cliente</th>
-                <th>Asignado</th>
-                <th>Creado</th>
-                <th>Editado</th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th id="">Codigo</th>
+                <th id="">Cliente</th>
+                <th id="">Asignado</th>
+                <th id="">Creado</th>
+                <th id="">Editado</th>
+                <th id=""></th>
+                <th id=""></th>
+                <th id=""></th>
+                <th id=""></th>
             </thead>
             <tbody>
                 @foreach ($cotizacion as $cot)
@@ -38,15 +39,31 @@
                     <td>{{ $cot->created_at }}</td>
                     <td>{{ $cot->updated_at }}</td>
 
-                    <td width="80px">
+                    <td width="10px">
                         <form action="{{ route('admin.ventas.show', $cot) }}" method="GET">
-                            <button type="submit" class="btn btn-sm btn-success">PDF</button>
+                            <button type="submit" class="btn btn-sm btn-warning">
+                                <span class="material-icons-outlined md-48">
+                                    picture_as_pdf
+                                </span>
+                            </button>
                         </form>
+                    </td>
+
+                    <td width="10px">
+                        <a href="{{ route('admin.productos_cli.index', 'id='.$cot->id) }}" class="btn btn-sm btn-secondary">
+                            <span class="material-icons-outlined">
+                                table_chart
+                            </span>
+                        </a>
                     </td>
                     
                     {{-- @can('Editar productos') --}}
                     <td width="10px">
-                        <a href="{{ route('admin.ventas.edit', $cot->id) }}" class="btn btn-sm btn-primary">Editar</a>
+                        <a href="{{ route('admin.ventas.edit', $cot->id) }}" class="btn btn-sm btn-primary">
+                            <span class="material-icons-outlined">
+                            edit
+                            </span>
+                        </a>
                     </td>
                     {{-- @endcan --}}
 
@@ -57,8 +74,13 @@
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro de eliminar este registro?'); false">Eliminar</button>
+                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro de eliminar este registro?'); false">
+                                <span class="material-icons-outlined">
+                                delete
+                                </span>
+                            </button>
                         </form>
+                        
                     </td>
                     {{-- @endcan --}}
                 </tr>
@@ -74,6 +96,10 @@
 <link rel="stylesheet" href="/css/admin_custom.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
 @stop
 
 @section('js')

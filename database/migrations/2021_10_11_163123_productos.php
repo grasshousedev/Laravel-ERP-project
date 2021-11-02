@@ -24,6 +24,7 @@ class Productos extends Migration
             $table->double('vent_prod');
             $table->double('unidades_prod');
             $table->string('estado');
+            $table->string('tipo');
             $table->string('proveedor');
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('updated_at')->nullable();

@@ -7,17 +7,18 @@
 @stop
 
 @section('content')
+    <div class="card">
+        <div class="card-body">
+            {!! Form::open(['route' => 'admin.ventas.store', 'autocomplete'=>'off']) !!}
 
-    {!! Form::open(['route' => 'admin.ventas.store', 'autocomplete'=>'off']) !!}
-
-        @include('admin.ventas.parts.form')
-        @include('admin.ventas.parts.form_tabla')
-        
-    {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
+                @include('admin.ventas.parts.form')
+                
+            {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
 
 
-    {!! Form::close() !!}
-    
+            {!! Form::close() !!}
+        </div>
+    </div>
 @stop
 
 @section('css')

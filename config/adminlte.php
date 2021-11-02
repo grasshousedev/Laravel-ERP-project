@@ -287,16 +287,10 @@ return [
         //     'can'         => 'Ver listado de roles'
         // ],
         [
-            'text'        => 'Productos',
+            'text'        => 'Productos / Servicios',
             'route'       => 'admin.productos.index',
             'icon'        => 'fas fa-box-open',
             'can'         => 'Ver listado de productos'
-        ],
-        [
-            'text'        => 'Servicios',
-            'route'       => 'admin.servicios.index',
-            'icon'        => 'fas fa-concierge-bell',
-            'can'         => 'Ver listado de roles'
         ],
 
         [
