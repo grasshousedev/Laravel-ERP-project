@@ -104,12 +104,10 @@ class VentaController extends Controller
             'cliente_id'        => '',
         ]);
 
+        $datoscot = request()->only('codigo', 'cliente', 'asignado', 'moneda', 'tiempo_expiracion', 'estado', 'forma_pago', 'tiempo_entrega', 'condiciones', 'direccion', 'pie_pagina', 'cliente_id');
         $ultima_cotizacion = Cotizacione::all();
         $codigo = new CustomCodeGenerator("COT", sizeOf($ultima_cotizacion));
-                
-        $datoscot = request()->only('codigo', 'cliente', 'asignado', 'moneda', 'tiempo_expiracion', 'estado', 'forma_pago', 'tiempo_entrega', 'condiciones', 'direccion', 'pie_pagina', 'cliente_id');
         $datoscot['codigo'] = $codigo->generar;
-        // return response()->json($datoscot); //para debugs
         Cotizacione::insert($datoscot);        
         
         $cotizacion = Cotizacione::all();
