@@ -27,6 +27,7 @@
                     <th id="">Cantidad</th>
                     <th id="">Precio</th>
                     <th id="">Total de Producto</th>
+                    <th id=""></th>
                 </thead>
                 <tbody>
                     <?php 
@@ -38,6 +39,16 @@
                         <td>{{ $producto->cantidad_prod }}</td>
                         <td>{{ $producto->precio_prod }}</td>
                         <td>{{ $producto->total_prod }}</td>
+
+                        <td>
+                            <a href="{{ route('admin.productos_cli.edit', $producto->id) }}" class="btn btn-sm btn-primary">
+                                <span class="material-icons-outlined">
+                                edit
+                                </span>
+                            </a>
+                        </td>
+
+                        
                         <?php $producto = $producto->total_prod; ?>
                         <?php $total_productos = $total_productos + $producto; ?>
                     </tr>
@@ -76,6 +87,10 @@
 @stop
 
 @section('css')
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
 @stop
 
 @section('js')

@@ -77,9 +77,11 @@ class Cliente_productos extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        //
+        $productos     = Cliente_producto::find($id);
+
+        return view('admin.ventas.productos_cli', compact('productos'));
     }
 
     /**
@@ -100,8 +102,15 @@ class Cliente_productos extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        Cliente_producto::destroy($id);
+
+        $filtro = $request->get('id');
+        $productos = \DB::table('cliente_productos')
+                    ->select('cliente_productos.*')
+                    ->where('cotizacion_id', $filtro)
+                    ->get();
+        return view('admin.ventas.productos_cli', compact('productos'));
     }
 }

@@ -80,6 +80,7 @@
                                 </span>
                             </button>
                         </form>
+                        
                     </td>
                     {{-- @endcan --}}
                 </tr>
