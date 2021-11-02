@@ -60,6 +60,7 @@
         <input name="info_producto" type="text" id="info_producto" value="" readonly>
     </div>
 </div>
+<br>
 
 <script>
     function add_row() {
