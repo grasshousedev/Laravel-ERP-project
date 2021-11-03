@@ -10,7 +10,7 @@
 
 <div class="input-field" style="max-width: 210px;">
     {!! Form::label('notas', 'Notas') !!}
-    {!! Form::text('notas', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
+    {!! Form::textarea('notas', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
     @error('notas')
         <small class="text-danger">
             {{ $message }}
