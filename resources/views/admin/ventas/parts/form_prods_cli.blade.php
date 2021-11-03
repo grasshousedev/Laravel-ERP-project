@@ -9,6 +9,16 @@
 </div>
 
 <div class="input-field" style="max-width: 210px;">
+    {!! Form::label('notas', 'Notas') !!}
+    {!! Form::text('notas', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
+    @error('notas')
+        <small class="text-danger">
+            {{ $message }}
+        </small>
+    @enderror
+</div>
+
+<div class="input-field" style="max-width: 210px;">
     {!! Form::label('cantidad_prod', 'Cantidad') !!}
     {!! Form::text('cantidad_prod', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
     @error('cantidad_prod')

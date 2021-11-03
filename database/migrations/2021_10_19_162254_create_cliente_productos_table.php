@@ -17,6 +17,7 @@ class CreateClienteProductosTable extends Migration
             $table->id();
             
             $table->string('producto');
+            $table->string('notas');
             $table->double('cantidad_prod');
             $table->double('precio_prod');
             $table->double('total_prod');

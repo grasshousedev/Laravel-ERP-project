@@ -11,27 +11,28 @@
 @section('content')
 
 <div class="row">
-  <div class="col-sm-2">
-    <div class="card">
-      <div class="card-body">
-      {!! Form::open(['route' => "admin.productos_cli.store", 'autocomplete'=>'off']) !!}
+    <div class="col-sm-2">
+        <div class="card">
+        <div class="card-body">
+        {!! Form::open(['route' => "admin.productos_cli.store", 'autocomplete'=>'off']) !!}
 
-@include('admin.ventas.parts.form_prods_cli')
+            @include('admin.ventas.parts.form_prods_cli')
 
-{{-- {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!} --}}
-<input type="submit" class="btn btn-primary" onclick="calcular()" value="Crear">
+            {{-- {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!} --}}
+            <input type="submit" class="btn btn-primary" onclick="calcular()" value="Crear">
 
-{!! Form::close() !!}
-      </div>
+            {!! Form::close() !!}
+        </div>
+        </div>
     </div>
-  </div>
 
   <div class="col-sm-10">
     <div class="card" >
       <div class="card-body" >
-      <table class="table table-borderless" id="cotizaciones" >
+      <table class="table table-borderless table-striped" id="cotizaciones" >
                 <thead class="table-dark">
                     <th id="">Producto</th>
+                    <th id="">Notas</th>
                     <th id="">Cantidad</th>
                     <th id="">Precio</th>
                     <th id="">Total de Producto</th>
@@ -44,6 +45,7 @@
                     @foreach ($productos as $producto)
                     <tr>
                         <td>{{ $producto->producto }}</td>
+                        <td>{{ $producto->notas }}</td>
                         <td>{{ $producto->cantidad_prod }}</td>
                         <td>{{ $producto->precio_prod }}</td>
                         <td>{{ $producto->total_prod }}</td>
@@ -55,13 +57,12 @@
                                 </span>
                             </a>
                         </td>
-
                         
                         <?php $producto = $producto->total_prod; ?>
                         <?php $total_productos = $total_productos + $producto; ?>
                     </tr>
                     @endforeach
-                    <tr>
+                    <tr class="table-bordered">
                         <td><strong>Sub total</strong></td>
                         <td></td>
                         <td></td>
@@ -69,7 +70,7 @@
                             <?php echo $total_productos; ?>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="table-bordered">
                         <td><strong>IGV</strong></td>
                         <td></td>
                         <td></td>
