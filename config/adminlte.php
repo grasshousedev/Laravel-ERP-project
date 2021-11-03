@@ -334,6 +334,10 @@ return [
                     'text' => 'Proveedores',
                     'route' => 'admin.proveedores.index'
                 ],
+                [
+                    'text' => 'Evaluaciones',
+                    'route' => 'admin.evaluaciones.index'
+                ],
             ],
         ],
 
