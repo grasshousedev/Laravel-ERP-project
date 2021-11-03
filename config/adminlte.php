@@ -334,11 +334,12 @@ return [
                     'text' => 'Proveedores',
                     'route' => 'admin.proveedores.index'
                 ],
-                [
-                    'text' => 'Evaluaciones',
-                    'route' => 'admin.evaluaciones.index'
-                ],
             ],
+        ],
+        [
+            'text'        => 'Operaciones',
+            'route'       => 'admin.evaluaciones.index',
+            'icon'        => 'fas fa-boxes',
         ],
 
         ['header' => 'Configuración de Cuenta'],
