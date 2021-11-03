@@ -4,7 +4,7 @@ namespace App\Classes;
 
 class CustomCodeGenerator
 {
-    function __construct($prefix="COD", $last_id=0, $size=6)
+    function __construct($prefix, $last_id=0, $size=6)
     {
         $this->id = $last_id + 1;
         $this->prefix = $prefix;
