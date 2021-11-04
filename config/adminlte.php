@@ -334,9 +334,45 @@ return [
                     'text' => 'Proveedores',
                     'route' => 'admin.proveedores.index'
                 ],
+
                 [
-                    'text' => 'Evaluaciones',
-                    'route' => 'admin.evaluaciones.index'
+                    'text'    => 'Operaciones',
+                    
+                    'icon'        => 'fas fa-cogs',
+                    'submenu' => [
+                        [
+                            'text'  => 'Evaluaciones',
+                            'route'   => 'admin.evaluaciones.index',
+                        ],
+                        [
+                            'text'  => 'Ordenes de trabajo',
+                            'route' => 'admin.ordenestrabajo.index'
+                        ],
+                        // [
+                        //     'text'    => 'level_one',
+                        //     'url'     => '#',
+                        //     'submenu' => [
+                        //         [
+                        //             'text' => 'level_two',
+                        //             'url'  => '#',
+                        //         ],
+                        //         [
+                        //             'text'    => 'level_two',
+                        //             'url'     => '#',
+                        //             'submenu' => [
+                        //                 [
+                        //                     'text' => 'level_three',
+                        //                     'url'  => '#',
+                        //                 ],
+                        //                 [
+                        //                     'text' => 'level_three',
+                        //                     'url'  => '#',
+                        //                 ],
+                        //             ],
+                        //         ],
+                        //     ],
+                        // ],
+                    ],
                 ],
             ],
         ],

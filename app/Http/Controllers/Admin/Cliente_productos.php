@@ -50,7 +50,7 @@ class Cliente_productos extends Controller
             'cotizacion_id'       => '',
             'total_prod'          => ''
         ]);
-            
+        
         $datosprods = request()->except('_token');
 
         Cliente_producto::insert($datosprods);

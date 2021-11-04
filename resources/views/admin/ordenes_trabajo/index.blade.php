@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Evaluaciones')
+@section('title', 'Ordenes de trabajo')
 
 @section('content_header')
     <a class="btn btn-primary float-right" href="{{ route('admin.proveedores.create') }}" role="button">Agregar proveedor</a>
-    <h1>Evaluaciones</h1>
+    <h1>Ordenes de trabajo</h1>
 @stop
 
 @section('content')

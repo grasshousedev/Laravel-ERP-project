@@ -10,7 +10,6 @@ class EvaluacionesController extends Controller
 {
     public function index()
     {        
-        $proveedores = Proveedore::all();
-        return view('admin.proveedores.index', compact('proveedores'));
+        return view('admin.evaluaciones.index');
     }
 }
