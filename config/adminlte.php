@@ -334,12 +334,12 @@ return [
                     'text' => 'Proveedores',
                     'route' => 'admin.proveedores.index'
                 ],
-
-                [
-                    'text'    => 'Operaciones',
-                    
-                    'icon'        => 'fas fa-cogs',
-                    'submenu' => [
+            ],
+        ],
+        [
+            'text'        => 'Operaciones',
+            'icon'        => 'fas fa-cogs',
+            'submenu' => [
                         [
                             'text'  => 'Evaluaciones',
                             'route'   => 'admin.evaluaciones.index',
@@ -373,13 +373,6 @@ return [
                         //     ],
                         // ],
                     ],
-                ],
-            ],
-        ],
-        [
-            'text'        => 'Operaciones',
-            'route'       => 'admin.evaluaciones.index',
-            'icon'        => 'fas fa-boxes',
         ],
 
         ['header' => 'Configuración de Cuenta'],
