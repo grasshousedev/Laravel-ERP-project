@@ -35,6 +35,7 @@ class VentaController extends Controller
         $expiracion     = Tiempo_expiracione::pluck('expiracion', 'expiracion');
         $moneda         = Tipo_moneda::pluck('moneda', 'moneda');
         $users          = User::pluck('name', 'name');
+
         $cotizacion     = Cotizacione::all();
 
         return view('admin.ventas.cotizar', compact('estado', 'expiracion', 'forma_pago', 'moneda', 'tiempo_entrega', 'users', 'cotizacion'));
@@ -48,6 +49,7 @@ class VentaController extends Controller
         $expiracion     = Tiempo_expiracione::pluck('expiracion', 'expiracion');
         $moneda         = Tipo_moneda::pluck('moneda', 'moneda');
         $users          = User::pluck('name', 'name');
+
         $cotizacion     = Cotizacione::all();
 
         $pdf = PDF::loadView('admin.ventas.pdf', ['estado'=>$estado, 'expiracion'=>$forma_pago, 'forma_pago'=>$tiempo_entrega, 'moneda'=>$expiracion, 'tiempo_entrega'=>$moneda, 'users'=>$users, 'cotizacion'=>$cotizacion]);
@@ -123,7 +125,7 @@ class VentaController extends Controller
      */
     public function show($id)
     {
-        $cotizacion     = Cotizacione::find($id);
+        $cotizacion           = Cotizacione::find($id);
         $cliente_producto     = Cliente_producto::all();
 
         // return view('admin.ventas.mas_info', compact('cotizacion'));

@@ -376,6 +376,11 @@ return [
                 ],
             ],
         ],
+        [
+            'text'        => 'Operaciones',
+            'route'       => 'admin.evaluaciones.index',
+            'icon'        => 'fas fa-boxes',
+        ],
 
         ['header' => 'Configuración de Cuenta'],
         [

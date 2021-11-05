@@ -29,6 +29,7 @@
                 <th id=""></th>
                 <th id=""></th>
                 <th id=""></th>
+                <th id=""></th>
             </thead>
             <tbody>
                 @foreach ($cotizacion as $cot)
@@ -40,7 +41,7 @@
                     <td>{{ $cot->updated_at }}</td>
 
                     <td width="10px">
-                        <form action="{{ route('admin.ventas.show', $cot) }}" method="GET">
+                        <form action="{{ route('admin.ventas.show', $cot->id) }}" method="GET">
                             <button type="submit" class="btn btn-sm btn-warning">
                                 <span class="material-icons-outlined md-48">
                                     picture_as_pdf
@@ -57,32 +58,37 @@
                         </a>
                     </td>
                     
-                    {{-- @can('Editar productos') --}}
                     <td width="10px">
                         <a href="{{ route('admin.ventas.edit', $cot->id) }}" class="btn btn-sm btn-primary">
                             <span class="material-icons-outlined">
-                            edit
+                                edit
                             </span>
                         </a>
                     </td>
-                    {{-- @endcan --}}
 
-                    {{-- @can('Eliminar productos') --}}
                     <td width="10px">
-                        <form action="{{ route('admin.ventas.destroy', $cot) }}" method="POST">
+                        <a href="{{ route('admin.ventas.edit', $cot->id) }}" class="btn btn-sm btn-primary">
+                            <span class="material-icons-outlined">
+                                check_circle
+                            </span>
+                        </a>
+                    </td>
+
+                    <td width="10px">
+                        
+                        <form action="{{ route('admin.ventas.destroy', $cot->id) }}" method="POST">
 
                             @csrf
                             @method('DELETE')
 
                             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro de eliminar este registro?'); false">
                                 <span class="material-icons-outlined">
-                                delete
+                                    delete
                                 </span>
                             </button>
                         </form>
                         
                     </td>
-                    {{-- @endcan --}}
                 </tr>
                 @endforeach
             </tbody>
