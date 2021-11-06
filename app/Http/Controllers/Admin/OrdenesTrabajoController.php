@@ -14,7 +14,22 @@ class OrdenesTrabajoController extends Controller
      */
     public function index()
     {
-        return view('admin.ordenes_trabajo.index');
+        $filtro = 'O-T';
+        $cotizacion = \DB::table('cotizaciones')
+                    ->select('cotizaciones.*')
+                    ->where('codigo', 'like','%'.$filtro.'%')
+                    ->get();
+        //$cota = Cotizacione::find($id);
+        // foreach($cotizacion as $key=>$value) {
+        //     echo $key.' => '.$value->codigo.'<br>';
+        //     echo '<br>';
+            
+        //     $res = str_replace("COT", "OT", $value->codigo);
+        //     echo $res;
+        // }
+        
+        //return ($cotizacion);
+        return view('admin.ordenes_trabajo.index', compact('cotizacion'));
     }
 
     /**

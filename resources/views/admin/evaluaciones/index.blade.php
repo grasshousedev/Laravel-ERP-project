@@ -3,7 +3,9 @@
 @section('title', 'Evaluaciones')
 
 @section('content_header')
-    {{-- <a class="btn btn-primary float-right" href="{{ route('admin.proveedores.create') }}" role="button">Agregar proveedor</a> --}}
+<a class="btn btn-primary float-right" href="{{ route('admin.ventas.pdf') }}" role="button">PDF</a>
+<a class="btn btn-primary float-right" href="{{ route('admin.ventas.index') }}" role="button">Cotizar</a>
+<a class="btn btn-primary float-right" href="{{ route('admin.clientes.index') }}" role="button">Clientes</a>
     <h1>Evaluaciones</h1>
 @stop
 
@@ -24,9 +26,9 @@
                 <th id="">Editado</th>
                 <th id=""></th>
                 <th id=""></th>
-                {{-- <th id=""></th>
                 <th id=""></th>
-                <th id=""></th> --}}
+                <th id=""></th>
+                <th id=""></th>
             </thead>
             <tbody>
                 @foreach ($cotizacion as $cot)
@@ -47,7 +49,7 @@
                         </form>
                     </td>
 
-                    {{-- <td width="10px">
+                    <td width="10px">
                         <a href="{{ route('admin.productos_cli.index', 'id='.$cot->id) }}" class="btn btn-sm btn-secondary">
                             <span class="material-icons-outlined">
                                 table_chart
@@ -64,12 +66,20 @@
                     </td>
 
                     <td width="10px">
-                        <a href="{{ route('admin.ventas.edit', $cot->id) }}" class="btn btn-sm btn-primary">
+                        {{-- <a href="{{ route('admin.evaluaciones.update', $cot->id) }}" class="btn btn-sm btn-primary">
                             <span class="material-icons-outlined">
                                 check_circle
                             </span>
-                        </a>
-                    </td> --}}
+                        </a> --}}
+
+                        <form action="{{ route('admin.evaluaciones.update', $cot->id) }}" method="PUT">
+                            <button type="submit" class="btn btn-sm btn-primary">
+                                <span class="material-icons-outlined">
+                                    check_circle
+                                </span>
+                            </button>
+                        </form>
+                    </td>
 
                     <td width="10px">
                         
@@ -105,7 +115,6 @@
 @stop
 
 @section('js')
-
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>

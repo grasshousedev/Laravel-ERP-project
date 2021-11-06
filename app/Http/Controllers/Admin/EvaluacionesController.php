@@ -19,8 +19,17 @@ class EvaluacionesController extends Controller
         $cotizacion = \DB::table('cotizaciones')
                     ->select('cotizaciones.*')
                     ->where('codigo', 'like','%'.$filtro.'%')
-                    ->get()->toArray();
-        //return response()->json($cotizacion);
+                    ->get();
+        //$cota = Cotizacione::find($id);
+        // foreach($cotizacion as $key=>$value) {
+        //     echo $key.' => '.$value->codigo.'<br>';
+        //     echo '<br>';
+            
+        //     $res = str_replace("COT", "OT", $value->codigo);
+        //     echo $res;
+        // }
+        
+        //return ($cotizacion);
         return view('admin.evaluaciones.index', compact('cotizacion'));
     }
 
@@ -76,7 +85,7 @@ class EvaluacionesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return 'aaa';
     }
 
     /**

@@ -334,6 +334,11 @@ return [
                     'text' => 'Proveedores',
                     'route' => 'admin.proveedores.index'
                 ],
+
+                [
+                    'text' => 'O.C. Clientes',
+                    'route' => 'admin.occClientes.index'
+                ],
             ],
         ],
         [
