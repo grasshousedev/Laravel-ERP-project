@@ -15,7 +15,8 @@ class OccClientes extends Controller
      */
     public function index()
     {
-        return view('admin.occClientes.index');
+        $occClientes = OccCliente::all();
+        return view('admin.occClientes.index', compact('occClientes'));
     }
 
     /**
@@ -46,13 +47,15 @@ class OccClientes extends Controller
         ]);
         $occC = request()->except('_token');
         if($request->hasFile('archivo')){
-            //$archivo = $request->file('archivo');
-            $occC['archivo'] = $request->file('archivo')->store('uploads', 'public', $occC['archivo']->getClientOriginalName());
-            //$archivo->move(public_path().'/archivo/', $archivo->getClientOriginalName());
+            $archivo = $request->file('archivo');
+            $archivo->move(public_path().'/uploads/', $occC['archivo']->getClientOriginalName());
+            $occC['archivo'] = $archivo->getClientOriginalName();
         }
         OccCliente::insert($occC);
-        return response()->json($occC);
+        //return response()->json($occC);
         //dd($request);
+        $occClientes = OccCliente::all();
+        return redirect()->route('admin.occClientes.index', compact('occClientes'))->with('info', 'Fue creado correctamente.');
     }
 
     /**
@@ -74,7 +77,9 @@ class OccClientes extends Controller
      */
     public function edit($id)
     {
-        //
+        $occClientes = OccCliente::find($id);
+
+        return view('admin.occClientes.edit', compact('occClientes'));
     }
 
     /**
@@ -86,7 +91,28 @@ class OccClientes extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'ruc'            => 'required',
+            'razon'          => 'required',
+            'descripcion'    => 'required',
+            'cot'            => 'required',
+            'tiempo_entrega' => 'required',
+            'archivo'        => 'required',
+        ]);
+
+        $occC = request()->except('_token', '_method');
+        if($request->hasFile('archivo')){
+            $archivo = $request->file('archivo');
+            $archivo->move(public_path().'/uploads/', $occC['archivo']->getClientOriginalName());
+            $occC['archivo'] = $archivo->getClientOriginalName();
+        }
+
+        OccCliente::where('id','=',$id)->update($occC);
+        
+        $occClientes = OccCliente::findOrFail($id);
+
+        return redirect()->route('admin.occClientes.index', $occClientes)->with('info', 'Se actualizo correctamente');
+
     }
 
     /**
@@ -97,6 +123,9 @@ class OccClientes extends Controller
      */
     public function destroy($id)
     {
-        //
+        OccCliente::destroy($id);
+
+        $occClientes = OccCliente::all();
+        return redirect()->route('admin.occClientes.index', compact('occClientes'))->with('info', 'Se elimino correctamente.');
     }
 }
