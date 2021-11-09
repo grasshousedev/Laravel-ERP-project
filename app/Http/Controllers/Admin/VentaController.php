@@ -114,7 +114,7 @@ class VentaController extends Controller
         
         $cotizacion = Cotizacione::all();
         return redirect()->route('admin.ventas-index.index', compact('cotizacion'))->with('info', 'La cotizacion fue creada correctamente.');
-        // return response()->json($codigo->generar); //para debugs
+        //return response()->json($datoscot); //para debugs
     }
 
     /**
@@ -183,9 +183,11 @@ class VentaController extends Controller
         $datoscot = request()->except('_token', '_method');
 
         Cotizacione::where('id', '=', $id)->update($datoscot);
-        $cotizacion = Cotizacione::findOrFail($id);
 
-        return redirect()->route('admin.ventas-index.index', $cotizacion)->with('info', 'La cotizacion fue actualizada correctamente.');
+        //$cotizacion = Cotizacione::findOrFail($id);
+
+        //return redirect()->route('admin.ventas-index.index', $cotizacion)->with('info', 'La cotizacion fue actualizada correctamente.');
+        return response()->json($datoscot); 
     }
 
     /**
