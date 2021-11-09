@@ -167,7 +167,6 @@ class VentaController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'codigo'            => 'required',
             'cliente'           => 'required',
             'asignado'          => 'required',
             'moneda'            => 'required',
@@ -180,7 +179,7 @@ class VentaController extends Controller
             'pie_pagina'        => 'required',
         ]);
 
-        $datoscot = request()->except('_token', '_method');
+        $datoscot = request()->except('_token', '_method', 'codigo');
 
         Cotizacione::where('id', '=', $id)->update($datoscot);
 

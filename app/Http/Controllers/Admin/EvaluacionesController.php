@@ -80,8 +80,9 @@ class EvaluacionesController extends Controller
         $registro->condiciones = $cotizacion['condiciones'];
         $registro->direccion = $cotizacion['direccion'];
         $registro->pie_pagina = $cotizacion['pie_pagina'];
+        $registro->cliente_id = $cotizacion['cliente_id'];
         $registro->save();
-        
+
         Cotizacione::destroy($id);
         return redirect()->route('admin.ordenestrabajo.index');
     }

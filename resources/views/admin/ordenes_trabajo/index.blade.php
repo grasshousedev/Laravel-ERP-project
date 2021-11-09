@@ -27,8 +27,6 @@
                 <th id=""></th>
                 <th id=""></th>
                 <th id=""></th>
-                <th id=""></th>
-                <th id=""></th>
             </thead>
             <tbody>
                 @foreach ($cotizacion as $cot)
@@ -40,7 +38,7 @@
                     <td>{{ $cot->updated_at }}</td>
 
                     <td width="10px">
-                        <form action="{{ route('admin.ventas.show', $cot->id) }}" method="GET">
+                        <form action="{{ route('admin.ordenestrabajo.show', $cot->id) }}" method="GET">
                             <button type="submit" class="btn btn-sm btn-warning">
                                 <span class="material-icons-outlined md-48">
                                     picture_as_pdf
@@ -48,17 +46,9 @@
                             </button>
                         </form>
                     </td>
-
-                    <td width="10px">
-                        <a href="{{ route('admin.productos_cli.index', 'id='.$cot->id) }}" class="btn btn-sm btn-secondary">
-                            <span class="material-icons-outlined">
-                                table_chart
-                            </span>
-                        </a>
-                    </td>
                     
                     <td width="10px">
-                        <a href="{{ route('admin.ventas.edit', $cot->id) }}" class="btn btn-sm btn-primary">
+                        <a href="{{ route('admin.ordenestrabajo.edit', $cot->id) }}" class="btn btn-sm btn-primary">
                             <span class="material-icons-outlined">
                                 edit
                             </span>
@@ -66,24 +56,8 @@
                     </td>
 
                     <td width="10px">
-                        {{-- <a href="{{ route('admin.evaluaciones.update', $cot->id) }}" class="btn btn-sm btn-primary">
-                            <span class="material-icons-outlined">
-                                check_circle
-                            </span>
-                        </a> --}}
-
-                        <form action="{{ route('admin.evaluaciones.update', $cot->id) }}" method="PUT">
-                            <button type="submit" class="btn btn-sm btn-primary">
-                                <span class="material-icons-outlined">
-                                    check_circle
-                                </span>
-                            </button>
-                        </form>
-                    </td>
-
-                    <td width="10px">
                         
-                        <form action="{{ route('admin.ventas.destroy', $cot->id) }}" method="POST">
+                        <form action="{{ route('admin.ordenestrabajo.destroy', $cot->id) }}" method="POST">
 
                             @csrf
                             @method('DELETE')
