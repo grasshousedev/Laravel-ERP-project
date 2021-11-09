@@ -107,14 +107,21 @@ class VentaController extends Controller
         ]);
 
         $datoscot = request()->only('codigo', 'cliente', 'asignado', 'moneda', 'tiempo_expiracion', 'estado', 'forma_pago', 'tiempo_entrega', 'condiciones', 'direccion', 'pie_pagina', 'cliente_id');
-        $ultima_cotizacion = Cotizacione::all();
-        $codigo = new CustomCodeGenerator("COT", sizeOf($ultima_cotizacion));
-        $datoscot['codigo'] = $codigo->generar;
+        $ultima_cotizacion = Cotizacione::all()->last();
+        
+        if(isset($ultima_cotizacion->id)){
+            $codigo = new CustomCodeGenerator("COT", $ultima_cotizacion->id);
+            $datoscot['codigo'] = $codigo->generar;
+        }else{
+            $codigo = new CustomCodeGenerator("COT");
+            $datoscot['codigo'] = $codigo->generar;
+        }
+
         Cotizacione::insert($datoscot);        
         
         $cotizacion = Cotizacione::all();
-        return redirect()->route('admin.ventas-index.index', compact('cotizacion'))->with('info', 'La cotizacion fue creada correctamente.');
-        //return response()->json($datoscot); //para debugs
+        return redirect()->route('admin.evaluaciones.index', compact('cotizacion'))->with('info', 'La cotizacion fue creada correctamente.');
+        // return response()->json($ultima_cotizacion->id); //para debugs
     }
 
     /**
