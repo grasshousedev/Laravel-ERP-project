@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Ordenes_compra;
 
 class OrdenesTrabajoController extends Controller
 {
@@ -14,21 +15,7 @@ class OrdenesTrabajoController extends Controller
      */
     public function index()
     {
-        $filtro = 'O-T';
-        $cotizacion = \DB::table('cotizaciones')
-                    ->select('cotizaciones.*')
-                    ->where('codigo', 'like','%'.$filtro.'%')
-                    ->get();
-        //$cota = Cotizacione::find($id);
-        // foreach($cotizacion as $key=>$value) {
-        //     echo $key.' => '.$value->codigo.'<br>';
-        //     echo '<br>';
-            
-        //     $res = str_replace("COT", "OT", $value->codigo);
-        //     echo $res;
-        // }
-        
-        //return ($cotizacion);
+        $cotizacion = Ordenes_compra::all();
         return view('admin.ordenes_trabajo.index', compact('cotizacion'));
     }
 
