@@ -67,7 +67,7 @@
                     </td>
 
                     <td width="10px">
-                        <a href="{{ route('admin.ventas.edit', $cot->id) }}" class="btn btn-sm btn-primary">
+                        <a href="{{ route('admin.ventas.update', $cot->id) }}" class="btn btn-sm btn-primary">
                             <span class="material-icons-outlined">
                                 check_circle
                             </span>

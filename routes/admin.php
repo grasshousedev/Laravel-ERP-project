@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\ProveedoresController;
 use App\Http\Controllers\Admin\Cliente_productos;
 use App\Http\Controllers\Admin\EvaluacionesController;
 use App\Http\Controllers\Admin\OrdenesTrabajoController;
+use App\Http\Controllers\Admin\OccClientes;
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
@@ -43,3 +44,5 @@ Route::resource('productos_cli', Cliente_productos::class)->names('admin.product
 Route::resource('evaluaciones', EvaluacionesController::class)->names('admin.evaluaciones');
 
 Route::resource('ordenestrabajo', OrdenesTrabajoController::class)->names('admin.ordenestrabajo');
+
+Route::resource('occClientes', OccClientes::class)->names('admin.occClientes');

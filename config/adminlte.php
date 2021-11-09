@@ -299,10 +299,6 @@ return [
             'icon'        => 'fas fa-concierge-bell',
             'submenu' => [
                 [
-                    'text'  => 'Cotizaciones',
-                    'route'   => 'admin.ventas-index.index',
-                ],
-                [
                     'text'  => 'Clientes',
                     'route' => 'admin.clientes.index'
                 ],
@@ -333,6 +329,11 @@ return [
                 [
                     'text' => 'Proveedores',
                     'route' => 'admin.proveedores.index'
+                ],
+
+                [
+                    'text' => 'O.C. Clientes',
+                    'route' => 'admin.occClientes.index'
                 ],
             ],
         ],
