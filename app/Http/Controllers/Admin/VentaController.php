@@ -111,7 +111,7 @@ class VentaController extends Controller
 
         $cotizacion = Cotizacione::all()->last();
 
-        $codigo = new CustomCodeGenerator("COT", $cotizacion->id);
+        $codigo = new CustomCodeGenerator("COT", $cotizacion->id - 1);
         $datoscot['codigo'] = $codigo->generar;
         Cotizacione::where('id', '=', $cotizacion->id)->update($datoscot);
 

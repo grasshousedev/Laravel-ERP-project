@@ -83,7 +83,6 @@ class EvaluacionesController extends Controller
         $registro->cliente_id = $cotizacion['cliente_id'];
         $registro->save();
 
-        Cotizacione::destroy($id);
         return redirect()->route('admin.ordenestrabajo.index');
     }
 
