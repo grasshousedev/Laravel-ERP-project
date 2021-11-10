@@ -76,6 +76,7 @@ class LogisticaController extends Controller
         $registro->condiciones = $cotizacion['condiciones'];
         $registro->direccion = $cotizacion['direccion'];
         $registro->pie_pagina = $cotizacion['pie_pagina'];
+        $registro->cotizacion_id = $cotizacion['cotizacion_id'];
         $registro->cliente_id = $cotizacion['cliente_id'];
         $registro->save();
 
@@ -90,7 +91,7 @@ class LogisticaController extends Controller
      */
     public function edit($id)
     {
-        // $cotizacion     = Orden_pedido::find($id);
+        $cotizacion     = Orden_pedido::find($id);
         // $estado         = estado_entrega::pluck('estado', 'estado');
         // $forma_pago     = Forma_pago::pluck('tipo_pago', 'tipo_pago');
         // $tiempo_entrega = Tiempo_entrega::pluck('entrega', 'entrega');
@@ -99,7 +100,7 @@ class LogisticaController extends Controller
         // $users          = User::pluck('name', 'name');
 
         // return view('admin.logistica.edit', compact('cotizacion', 'estado', 'expiracion', 'forma_pago', 'moneda', 'tiempo_entrega', 'users'));
-        $prod = Cliente_producto::where('cotizacion_id', '=', 1)->get();
+        $prod = Cliente_producto::where('cotizacion_id', '=', $cotizacion['cotizacion_id'])->get();
         return response()->json($prod); //para debugs
     }
 

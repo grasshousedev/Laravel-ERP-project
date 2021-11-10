@@ -26,6 +26,7 @@ class OrdenPedidos extends Migration
             $table->string('condiciones');
             $table->string('direccion');
             $table->text('pie_pagina');
+            $table->text('cotizacion_id');
             $table->unsignedBigInteger('cliente_id')->nullable();
             
             $table->foreign('cliente_id')
