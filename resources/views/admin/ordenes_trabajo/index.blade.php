@@ -27,6 +27,7 @@
                 <th id=""></th>
                 <th id=""></th>
                 <th id=""></th>
+                <th id=""></th>
             </thead>
             <tbody>
                 @foreach ($cotizacion as $cot)
@@ -51,6 +52,14 @@
                         <a href="{{ route('admin.ordenestrabajo.edit', $cot->id) }}" class="btn btn-sm btn-primary">
                             <span class="material-icons-outlined">
                                 edit
+                            </span>
+                        </a>
+                    </td>
+
+                    <td width="10px">
+                        <a href="{{ route('admin.logistica.show', $cot->id) }}" class="btn btn-sm btn-primary">
+                            <span class="material-icons-outlined">
+                                check_circle
                             </span>
                         </a>
                     </td>

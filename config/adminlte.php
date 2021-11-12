@@ -346,8 +346,42 @@ return [
                             'route'   => 'admin.evaluaciones.index',
                         ],
                         [
-                            'text'  => 'Ordenes de trabajo',
+                            'text'  => 'Ordenes de Trabajo',
                             'route' => 'admin.ordenestrabajo.index'
+                        ],
+                        // [
+                        //     'text'    => 'level_one',
+                        //     'url'     => '#',
+                        //     'submenu' => [
+                        //         [
+                        //             'text' => 'level_two',
+                        //             'url'  => '#',
+                        //         ],
+                        //         [
+                        //             'text'    => 'level_two',
+                        //             'url'     => '#',
+                        //             'submenu' => [
+                        //                 [
+                        //                     'text' => 'level_three',
+                        //                     'url'  => '#',
+                        //                 ],
+                        //                 [
+                        //                     'text' => 'level_three',
+                        //                     'url'  => '#',
+                        //                 ],
+                        //             ],
+                        //         ],
+                        //     ],
+                        // ],
+                    ],
+        ],
+        [
+            'text'        => 'Logística',
+            'icon'        => 'fas fa-clipboard-check',
+            'submenu' => [
+                        [
+                            'text'  => 'Ordenes de Pedido',
+                            'route'   => 'admin.logistica.index',
                         ],
                         // [
                         //     'text'    => 'level_one',

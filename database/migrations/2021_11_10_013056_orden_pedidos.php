@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class OrdenesCompras extends Migration
+class OrdenPedidos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class OrdenesCompras extends Migration
      */
     public function up()
     {
-        Schema::create('ordenes_compras', function (Blueprint $table) {
+        Schema::create('orden_pedidos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('codigo');
             $table->string('cliente');
@@ -46,6 +46,6 @@ class OrdenesCompras extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ordenes_compras');
+        Schema::dropIfExists('orden_pedidos');
     }
 }
