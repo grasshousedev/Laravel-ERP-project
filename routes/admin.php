@@ -15,7 +15,13 @@ use App\Http\Controllers\Admin\ProveedoresController;
 use App\Http\Controllers\Admin\Cliente_productos;
 use App\Http\Controllers\Admin\EvaluacionesController;
 use App\Http\Controllers\Admin\OrdenesTrabajoController;
-use App\Http\Controllers\Admin\OccClientes;
+use App\Http\Controllers\Admin\occClientes;
+use App\Http\Controllers\Admin\Estado_entregaController;
+use App\Http\Controllers\Admin\Forma_pagoController;
+use App\Http\Controllers\Admin\Tipo_monedaController;
+use App\Http\Controllers\Admin\Tiempo_entregaController;
+use App\Http\Controllers\Admin\Tiempo_expiracionController;
+use App\Http\Controllers\Admin\Estado_provee_clientesController;
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
@@ -46,3 +52,15 @@ Route::resource('evaluaciones', EvaluacionesController::class)->names('admin.eva
 Route::resource('ordenestrabajo', OrdenesTrabajoController::class)->names('admin.ordenestrabajo');
 
 Route::resource('occClientes', OccClientes::class)->names('admin.occClientes');
+
+Route::resource('estadoentrega', Estado_entregaController::class)->names('admin.estadoentrega');
+
+Route::resource('formapago', Forma_pagoController::class)->names('admin.formapago');
+
+Route::resource('tipomoneda', Tipo_monedaController::class)->names('admin.tipomoneda');
+
+Route::resource('tiempoentrega', Tiempo_entregaController::class)->names('admin.tiempoentrega');
+
+Route::resource('tiempoexpiracion', Tiempo_expiracionController::class)->names('admin.tiempoexpiracion');
+
+Route::resource('estadocliente', Estado_provee_clientesController::class)->names('admin.estadocliente');

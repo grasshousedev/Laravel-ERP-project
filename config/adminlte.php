@@ -244,42 +244,26 @@ return [
         // ],
         
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
             'text'  => 'Dashboard',
             'url'   => 'admin',
             'icon'  => 'fas fa-fw fa-home',
             'can'   => 'Ver dashboard'
         ],
-        [
-            'text'        => 'Usuarios',
-            'route'       => 'admin.users.index',
-            'icon'        => 'fas fa-users fa-fw',
-            'can'         => 'Ver listado de usuarios'
-            // 'label'       => 4,
-            // 'label_color' => 'success',
-        ],
-        [
-            'text'        => 'Roles',
-            'route'       => 'admin.roles.index',
-            'icon'        => 'far fa-address-card',
-            'can'         => 'Ver listado de roles'
-        ],
-        [
-            'text'        => 'Logistica',
-            'route'       => 'admin.logistica.index',
-            'icon'        => 'fas fa-microchip',
-            'can'         => 'Ver listado de roles'
-        ],
-        [
-            'text'        => 'Almacen',
-            'route'       => 'admin.almacen.index',
-            'icon'        => 'fas fa-boxes',
-            'can'         => 'Ver listado de roles'
-        ],
+        // [
+        //     'text'        => 'Usuarios',
+        //     'route'       => 'admin.users.index',
+        //     'icon'        => 'fas fa-users fa-fw',
+        //     'can'         => 'Ver listado de usuarios'
+        //     // 'label'       => 4,
+        //     // 'label_color' => 'success',
+        // ],
+        // [
+        //     'text'        => 'Roles',
+        //     'route'       => 'admin.roles.index',
+        //     'icon'        => 'far fa-address-card',
+        //     'can'         => 'Ver listado de roles'
+        // ],
+
         // [
         //     'text'        => 'Proveedores',
         //     'route'       => 'admin.proveedores.index',
@@ -291,6 +275,16 @@ return [
             'route'       => 'admin.productos.index',
             'icon'        => 'fas fa-box-open',
             'can'         => 'Ver listado de productos'
+        ],
+
+        [
+            'text' => 'Proveedores',
+            'route' => 'admin.proveedores.index'
+        ],
+
+        [
+            'text'  => 'Clientes',
+            'route' => 'admin.clientes.index'
         ],
 
         [
@@ -381,6 +375,82 @@ return [
             'submenu' => [
                         [
                             'text'  => 'Ordenes de Pedido',
+                            'route'   => 'admin.logistica.index',
+                        ],
+                    ],
+        ],
+
+        [
+            'text'        => 'Almacen',
+            'route'       => 'admin.almacen.index',
+            'icon'        => 'fas fa-boxes',
+            'can'         => 'Ver listado de roles'
+        ],
+
+        [
+            'text'        => 'Admin',
+            'icon'        => 'fas fa-users-cog',
+            'label'       => "CRUD'S",
+            'label_color' => 'success',
+            'submenu' => [
+                        [
+                            'text'  => 'CRUD ROLES',
+                            'route'   => 'admin.roles.index',
+                        ],
+                        [
+                            'text'  => 'CRUD USUARIOS',
+                            'route'   => 'admin.users.index',
+                        ],
+                        [
+                            'text'  => 'CRUD PROVEEDORES',
+                            'route'   => 'admin.proveedores.index',
+                        ],
+                        [
+                            'text'  => 'CRUD PS',
+                            'route'   => 'admin.productos.index',
+                        ],
+                        [
+                            'text'  => 'CRUD CLIENTES',
+                            'route'   => 'admin.clientes.index',
+                        ],
+                        [
+                            'text'  => 'CRUD ESTADO',
+                            'route'   => 'admin.estadoentrega.index',
+                        ],
+                        [
+                            'text'  => 'CRUD FORMA DE PAGO',
+                            'route'   => 'admin.formapago.index',
+                        ],
+                        [
+                            'text'  => 'CRUD MONEDA',
+                            'route'   => 'admin.tipomoneda.index',
+                        ],
+                        [
+                            'text'  => 'CRUD TIEMPO ENTREGA',
+                            'route'   => 'admin.tiempoentrega.index',
+                        ],
+                        [
+                            'text'  => 'CRUD VALIDEZ OFERTA',
+                            'route'   => 'admin.tiempoexpiracion.index',
+                        ],
+                        [
+                            'text'  => 'CRUD CONDICIONES GENERALES',
+                            'route'   => 'admin.logistica.index',
+                        ],
+                        [
+                            'text'  => 'CRUD PIE DE PAGINA',
+                            'route'   => 'admin.logistica.index',
+                        ],
+                        [
+                            'text'  => 'CRUD IGV',
+                            'route'   => 'admin.logistica.index',
+                        ],
+                        [
+                            'text'  => 'CRUD ESTADO',
+                            'route'   => 'admin.estadocliente.index',
+                        ],
+                        [
+                            'text'  => 'CRUD AREA DE CONTACTO',
                             'route'   => 'admin.logistica.index',
                         ],
                         // [
