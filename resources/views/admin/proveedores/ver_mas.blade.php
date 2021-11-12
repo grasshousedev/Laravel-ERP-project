@@ -21,6 +21,7 @@
                         <div class="card-body">
                             <h5 class="card-title">RUC</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$proveedores->ruc}}</p>
                         </div>
                     </div>
@@ -30,6 +31,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Razon Social</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$proveedores->razon_social}}</p>
                         </div>
                     </div>
@@ -39,6 +41,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Dirección</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$proveedores->direccion}}</p>
                         </div>
                     </div>
@@ -48,6 +51,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Celular 1</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$proveedores->celular1}}</p>
                         </div>
                     </div>
@@ -57,6 +61,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Celular 2</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$proveedores->celular2}}</p>
                         </div>
                     </div>
@@ -66,6 +71,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Email 1</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$proveedores->email1}}</p>
                         </div>
                     </div>
@@ -75,6 +81,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Email 2</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$proveedores->email2}}</p>
                         </div>
                     </div>
@@ -84,6 +91,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Pagina Web</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$proveedores->paginaweb}}></p>
                         </div>
                     </div>
@@ -93,6 +101,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Area</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$proveedores->area}}</p>
                         </div>
                     </div>
@@ -102,6 +111,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Estado</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$proveedores->estado}}</p>
                         </div>
                     </div>
@@ -111,6 +121,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Asignado</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$proveedores->asignado}}</p>
                         </div>
                     </div>
