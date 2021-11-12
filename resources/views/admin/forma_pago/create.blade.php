@@ -11,7 +11,7 @@
     {!! Form::open(['route' => 'admin.formapago.store']) !!}
 
         @include('admin.forma_pago.parts.form')
-
+        
         {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
 
     {!! Form::close() !!}

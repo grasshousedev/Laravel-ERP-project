@@ -18,7 +18,7 @@
             
                 @include('admin.estado_entrega.parts.form')
 
-                {!! Form::submit('Editar cliente', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Editar estado de entrega', ['class' => 'btn btn-primary']) !!}
                 
             {!! Form::close() !!}
         </div>
