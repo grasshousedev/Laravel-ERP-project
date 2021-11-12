@@ -114,6 +114,8 @@
         @enderror
     </div>
 
+    @include('admin.logistica.parts.producto_cliente')
+
     <div class="col-15 my-3">
         {!! Form::label('pie_pagina', 'Pie de pagina') !!}
         {!! Form::text('pie_pagina', null, ['class' => 'form-control border-0', 'autocomplete'=>'off', 'readonly']) !!}

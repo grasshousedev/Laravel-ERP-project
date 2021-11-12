@@ -15,8 +15,8 @@
     <div class="card">
         <div class="card-body">
             {!! Form::model($cotizacion, ['route' => ['admin.logistica.update', $cotizacion], 'method' => 'put']) !!}
-            
-                @include('admin.logistica.parts.form')
+                
+                @include('admin.logistica.parts.form')                
 
                 {!! Form::submit('Editar pedido', ['class' => 'btn btn-primary']) !!}
 

@@ -11,7 +11,6 @@
     {!! Form::open(['route' => 'admin.occClientes.store', 'enctype' => 'multipart/form-data']) !!}
     
         @include('admin.occClientes.parts.form')
-
         {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
         
     {!! Form::close() !!}

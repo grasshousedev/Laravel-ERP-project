@@ -44,7 +44,7 @@ class Cliente_productos extends Controller
     {
         $request->validate([
             'producto'            => 'required',
-            'notas'               => 'required',
+            'notas'               => '',
             'cantidad_prod'       => 'required',
             'precio_prod'         => 'required',
             'cotizacion_id'       => '',

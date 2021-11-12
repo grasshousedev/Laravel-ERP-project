@@ -20,6 +20,7 @@
                         <div class="card-body">
                             <h5 class="card-title">RUC</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$clientes->ruc}}</p>
                         </div>
                     </div>
@@ -29,6 +30,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Razon Social</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$clientes->razon_social}}</p>
                         </div>
                     </div>
@@ -38,6 +40,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Direccion</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$clientes->direccion}}</p>
                         </div>
                     </div>
@@ -47,6 +50,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Celular 1</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$clientes->celular1}}</p>
                         </div>
                     </div>
@@ -56,6 +60,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Celular 2</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$clientes->celular2}}</p>
                         </div>
                     </div>
@@ -65,6 +70,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Email 1</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$clientes->email1}}</p>
                         </div>
                     </div>
@@ -74,6 +80,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Email 2</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$clientes->email2}}</p>
                         </div>
                     </div>
@@ -83,6 +90,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Pagina Web</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$clientes->paginaweb}}</p>
                         </div>
                     </div>
@@ -92,6 +100,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Area</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$clientes->area}}</p>
                         </div>
                     </div>
@@ -101,6 +110,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Estado</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$clientes->estado}}</p>
                         </div>
                     </div>
@@ -110,6 +120,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Asignado</h5>
                             <br>
+                            <hr style="background-color: white;">
                             <p class="card-text">{{$clientes->asignado}}</p>
                         </div>
                     </div>
