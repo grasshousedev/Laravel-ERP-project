@@ -88,7 +88,8 @@ class ProveedoresController extends Controller
     {
         $proveedores = Proveedore::find($id);
         $area        = Area_provee_cliente::pluck('area', 'area');
-        return view('admin.proveedores.edit', compact('proveedores', 'area'));
+        $estado      = Estado_provee_cliente::pluck('estado', 'estado');
+        return view('admin.proveedores.edit', compact('proveedores', 'area', 'estado'));
     }
 
     /**

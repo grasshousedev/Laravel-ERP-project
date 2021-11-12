@@ -32,7 +32,7 @@
                             
                             @can('Editar usuarios')
                             <td width="10px">
-                                <a href="admin.users.edit"  class="btn btn-sm btn-primary">Editar</a>
+                                <a href="{{ route('admin.users.edit', $user) }}"  class="btn btn-sm btn-primary">Editar</a>
                             </td>
                             @endcan
 
