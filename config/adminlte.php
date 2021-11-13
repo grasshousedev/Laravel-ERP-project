@@ -377,6 +377,10 @@ return [
                             'text'  => 'Ordenes de Pedido',
                             'route'   => 'admin.logistica.index',
                         ],
+                        [
+                            'text'  => 'Compras',
+                            'route'   => 'admin.listaproductos.index',
+                        ],
                     ],
         ],
 

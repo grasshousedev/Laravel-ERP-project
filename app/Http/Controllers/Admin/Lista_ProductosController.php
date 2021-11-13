@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Tiempo_expiracione;
+use App\Models\Cliente_producto;
 
-class Tiempo_expiracionController extends Controller
+class Lista_ProductosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class Tiempo_expiracionController extends Controller
      */
     public function index()
     {
-        $expiraciones = Tiempo_expiracione::all();
-        return view('admin.tiempo_expiracion.index', compact('expiraciones'));
+        $lista_productos = Cliente_producto::all();
+        return view('admin.lista_productos_comprados.index', compact('lista_productos'));
     }
 
     /**
