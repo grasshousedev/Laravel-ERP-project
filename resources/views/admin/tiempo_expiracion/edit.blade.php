@@ -14,9 +14,9 @@
     @endif
     <div class="card">
         <div class="card-body">
-            {!! Form::model($tiempoentregas, ['route' => ['admin.tiempoentrega.update', $tiempoentregas], 'method' => 'put']) !!}
+            {!! Form::model($expiraciones, ['route' => ['admin.tiempoexpiracion.update', $expiraciones], 'method' => 'put']) !!}
             
-                @include('admin.tiempo_entrega.parts.form')
+                @include('admin.tiempo_expiracion.parts.form')
 
                 {!! Form::submit('Editar', ['class' => 'btn btn-primary']) !!}
                 

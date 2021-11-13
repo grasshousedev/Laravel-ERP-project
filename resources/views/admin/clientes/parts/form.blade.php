@@ -195,7 +195,7 @@
     <div class="col-md">
         <div class="form-floating">
             <div class="form-group">
-                <label class="col-md-4 control-label" >{!! Form::label('area', 'Area') !!}</label> 
+                <label class="col-md-4 control-label" >{!! Form::label('area', 'Area de contacto') !!}</label> 
                 <div class="col-md-11 inputGroupContainer">
                     <div class="input-group">
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-question-square" viewBox="0 0 16 16" style="margin-right: 20px;">
