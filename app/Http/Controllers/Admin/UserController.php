@@ -114,7 +114,10 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        $user->delete();
-        return redirect()->route('admin.users.index')->with('info', 'El usuario se elimino correctamente.');
+        // $user->delete();
+        $user['estado'] = 'INACTIVO';
+        $user->save();
+        
+        return redirect()->route('admin.users.index')->with('info', 'El usuario se desactivó correctamente.');
     }
 }
