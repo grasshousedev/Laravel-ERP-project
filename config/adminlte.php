@@ -439,23 +439,23 @@ return [
                         ],
                         [
                             'text'  => 'CRUD CONDICIONES GENERALES',
-                            'route'   => 'admin.logistica.index',
+                            'route'   => 'admin.condiciones.index',
                         ],
                         [
                             'text'  => 'CRUD PIE DE PAGINA',
-                            'route'   => 'admin.logistica.index',
+                            'route'   => 'admin.piedepagina.index',
                         ],
                         [
                             'text'  => 'CRUD IGV',
                             'route'   => 'admin.logistica.index',
                         ],
                         [
-                            'text'  => 'CRUD ESTADO',
+                            'text'  => 'CRUD ESTADO (cliente/proveedor)',
                             'route'   => 'admin.estadocliente.index',
                         ],
                         [
                             'text'  => 'CRUD AREA DE CONTACTO',
-                            'route'   => 'admin.logistica.index',
+                            'route'   => 'admin.areacontacto.index',
                         ],
                         // [
                         //     'text'    => 'level_one',

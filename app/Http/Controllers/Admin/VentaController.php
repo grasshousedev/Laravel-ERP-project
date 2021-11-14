@@ -187,8 +187,8 @@ class VentaController extends Controller
 
         //$cotizacion = Cotizacione::findOrFail($id);
 
-        //return redirect()->route('admin.ventas-index.index', $cotizacion)->with('info', 'La cotizacion fue actualizada correctamente.');
-        return response()->json($datoscot); 
+        return redirect()->route('admin.ventas-index.index', $cotizacion)->with('info', 'La cotizacion fue actualizada correctamente.');
+        //return response()->json($datoscot); 
     }
 
     /**
