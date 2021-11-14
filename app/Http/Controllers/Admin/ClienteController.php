@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Cliente;
 use App\Models\Estado_provee_cliente;
 use App\Models\Area_provee_cliente;
@@ -30,7 +31,8 @@ class ClienteController extends Controller
     {
         $estado      = Estado_provee_cliente::pluck('estado', 'estado');
         $area        = Area_provee_cliente::pluck('area', 'area');
-        return view('admin.clientes.create', compact('estado', 'area'));
+        $users       = User::pluck('name', 'name');
+        return view('admin.clientes.create', compact('estado', 'area', 'users'));
     }
 
     /**
