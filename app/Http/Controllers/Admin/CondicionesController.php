@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Tiempo_expiracione;
+use App\Models\Condicione;
 
-class Tiempo_expiracionController extends Controller
+class CondicionesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class Tiempo_expiracionController extends Controller
      */
     public function index()
     {
-        $expiraciones = Tiempo_expiracione::all();
-        return view('admin.tiempo_expiracion.index', compact('expiraciones'));
+        $condiciones = Condicione::all();
+        return view('admin.condiciones.index', compact('condiciones'));
     }
 
     /**
@@ -26,7 +26,7 @@ class Tiempo_expiracionController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.condiciones.create');
     }
 
     /**
@@ -37,7 +37,16 @@ class Tiempo_expiracionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'condiciones'        => 'required',
+        ]);
+
+        $condicion = request()->except('_token');
+        Condicione::insert($condicion);
+        //return response()->json($estado_entregas); 
+
+        $condiciones = Condicione::all();
+        return redirect()->route('admin.condiciones.index', compact('condiciones'))->with('info', 'La condicion fue registrada correctamente.');
     }
 
     /**
@@ -59,7 +68,8 @@ class Tiempo_expiracionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $condiciones = Condicione::find($id);
+        return view('admin.condiciones.edit', compact('condiciones'));
     }
 
     /**
@@ -71,7 +81,17 @@ class Tiempo_expiracionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'condiciones'        => 'required',
+        ]);
+
+        $condicion = request()->except('_token', '_method');
+
+        Condicione::where('id','=',$id)->update($condicion);        
+        //return response()->json($estado_entregas); 
+
+        $condiciones = Condicione::findOrFail($id);
+        return redirect()->route('admin.condiciones.index', compact('condiciones'))->with('info', 'La condicion fue actualizada correctamente.');
     }
 
     /**
@@ -82,6 +102,7 @@ class Tiempo_expiracionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Condicione::destroy($id);
+        return redirect()->route('admin.condiciones.index')->with('info', 'La condicion fue eliminada correctamente.');
     }
 }

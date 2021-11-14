@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Editar moneda</h1>
+    <h1>Editar condicion</h1>
 @stop
 
 @section('content')
@@ -14,9 +14,9 @@
     @endif
     <div class="card">
         <div class="card-body">
-            {!! Form::model($expiraciones, ['route' => ['admin.tiempoexpiracion.update', $expiraciones], 'method' => 'put']) !!}
+            {!! Form::model($condiciones, ['route' => ['admin.condiciones.update', $condiciones], 'method' => 'put']) !!}
             
-                @include('admin.tiempo_expiracion.parts.form')
+                @include('admin.condiciones.parts.form')
 
                 {!! Form::submit('Editar', ['class' => 'btn btn-primary']) !!}
                 

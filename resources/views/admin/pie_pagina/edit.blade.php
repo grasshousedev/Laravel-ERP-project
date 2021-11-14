@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Editar moneda</h1>
+    <h1>Editar pie de pagina</h1>
 @stop
 
 @section('content')
@@ -14,11 +14,11 @@
     @endif
     <div class="card">
         <div class="card-body">
-            {!! Form::model($expiraciones, ['route' => ['admin.tiempoexpiracion.update', $expiraciones], 'method' => 'put']) !!}
+            {!! Form::model($piepaginas, ['route' => ['admin.piedepagina.update', $piepaginas], 'method' => 'put']) !!}
             
-                @include('admin.tiempo_expiracion.parts.form')
+                @include('admin.pie_pagina.parts.form')
 
-                {!! Form::submit('Editar', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Editar cliente', ['class' => 'btn btn-primary']) !!}
                 
             {!! Form::close() !!}
         </div>

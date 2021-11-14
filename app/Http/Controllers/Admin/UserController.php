@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Classes\CustomCodeGenerator;
 
 use Spatie\Permission\Models\Role;
 
@@ -49,12 +50,21 @@ class UserController extends Controller
         $request->validate([
             'name'      => 'required',
             'apellido'  => 'required',
-            'dni'       => 'required|unique:users',
+            'dni'       => 'required|unique:users|max:8',
             'email'     => 'required|unique:users',
+            'estado'  => 'required',
+            'cargo'  => 'required',
+            'celular'  => 'required|max:9',
             'password'  => 'required'
         ]);
+
         $datosuser = request()->except('_token');
         User::insert($datosuser);
+
+        $last_user = User::all()->last();
+        $codigo = new CustomCodeGenerator("USU", $last_user->id - 1);
+        $datosuser['codigo'] = $codigo->generar;
+        User::where('id', '=', $last_user->id)->update($datosuser);
         //return response()->json($datosuser);
         $users = User::all();
         return redirect()->route('admin.users.index', compact('users'))->with('info', 'Se registro correctamente al usuario.');
@@ -104,7 +114,10 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        $user->delete();
-        return redirect()->route('admin.users.index')->with('info', 'El usuario se elimino correctamente.');
+        // $user->delete();
+        $user['estado'] = 'INACTIVO';
+        $user->save();
+        
+        return redirect()->route('admin.users.index')->with('info', 'El usuario se desactivó correctamente.');
     }
 }
