@@ -31,3 +31,4 @@ Route::get('admin/ventas/findCustomersProduct', [App\Http\Controllers\Admin\Vent
 Route::get('admin/occProveedores/findCustomers', [App\Http\Controllers\Admin\OccProveedoresController::class, 'search'])->name('admin.occProveedores.search');
 
 Route::get('admin/occProveedores/findCustomersProduct', [App\Http\Controllers\Admin\OccProveedoresController::class, 'searchProduct'])->name('admin.occProveedores.searchProduct');
+

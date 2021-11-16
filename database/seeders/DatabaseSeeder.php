@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EstadoProducto_servicios::class);
         $this->call(Clientes::class);
         $this->call(estado_occProveedor::class);
+        $this->call(Proveedores::class);
     }
     
 }

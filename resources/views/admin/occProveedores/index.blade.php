@@ -22,8 +22,8 @@
             <thead>
                 <th id="">RUC</th>
                 <th id="">Razon social</th>
-                <th id="">Descripcion</th>
-                <th id="">Cotizacion</th>
+                <th id="">Estado</th>
+                <th id="">Responsable</th>
                 <th id=""></th>
                 <th id=""></th>
                 <th id=""></th>
@@ -32,25 +32,41 @@
                 @foreach ($orden_compras as $orden_compra)
                     <tr>
                         <td>{{ $orden_compra->ruc }}</td>
-                        <td>{{ $orden_compra->razon }}</td>
-                        <td>{{ $orden_compra->descripcion }}</td>
-                        <td>{{ $orden_compra->cot }}</td>
-                        <td>{{ $orden_compra->tiempo_entrega }}</td>
+                        <td>{{ $orden_compra->razon_social }}</td>
+                        <td>{{ $orden_compra->estado }}</td>
+                        <td>{{ $orden_compra->responsable }}</td>
 
                         <td width="10px">
-                            <a href="{{ route('admin.occClientes.edit', $orden_compra->id) }}" class="btn btn-sm btn-primary">Editar</a>
+                            <a href="{{ route('admin.productos_cli.index', 'id='.$orden_compra->id) }}" class="btn btn-sm btn-secondary">
+                                <span class="material-icons-outlined">
+                                    table_chart
+                                </span>
+                            </a>
                         </td>
                         
                         <td width="10px">
-                            <form action="{{ route('admin.occClientes.destroy', $orden_compra) }}" method="POST">
-        
+                            <a href="{{ route('admin.ventas.edit', $orden_compra->id) }}" class="btn btn-sm btn-primary">
+                                <span class="material-icons-outlined">
+                                    edit
+                                </span>
+                            </a>
+                        </td>
+    
+                        <td width="10px">
+                            
+                            <form action="{{ route('admin.occProveedores.destroy', $orden_compra->id) }}" method="POST">
+    
                                 @csrf
                                 @method('DELETE')
-        
-                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro de eliminar este registro?'); false">Eliminar</button>
+    
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro de eliminar este registro?'); false">
+                                    <span class="material-icons-outlined">
+                                        delete
+                                    </span>
+                                </button>
                             </form>
+                            
                         </td>
-
                     </tr>
                 @endforeach
                 
@@ -61,9 +77,13 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="/css/admin_custom.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
 @stop
 
 @section('js')

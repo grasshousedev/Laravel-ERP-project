@@ -118,7 +118,10 @@ class OccProveedoresController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Ocproveedore::destroy($id);
+
+        $orden_compras = Ocproveedore::all();
+        return redirect()->route('admin.occProveedores.index', compact('orden_compras'))->with('info', 'Se elimino correctamente.');
     }
 }
 
