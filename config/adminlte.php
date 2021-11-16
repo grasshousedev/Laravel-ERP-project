@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Dashboard',
+    'title' => 'Dashboard 3D Printer',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -50,7 +50,7 @@ return [
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => '3D Printers',
 
     /*
     |--------------------------------------------------------------------------
@@ -145,15 +145,15 @@ return [
     |
     */
 
-    'sidebar_mini' => 'lg',
+    'sidebar_mini' => 'sm',
     'sidebar_collapse' => false,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
     'sidebar_collapse_remember_no_transition' => true,
-    'sidebar_scrollbar_theme' => 'os-theme-light',
+    'sidebar_scrollbar_theme' => 'os-theme-dark',
     'sidebar_scrollbar_auto_hide' => 'l',
     'sidebar_nav_accordion' => true,
-    'sidebar_nav_animation_speed' => 300,
+    'sidebar_nav_animation_speed' => 200,
 
     /*
     |--------------------------------------------------------------------------
@@ -232,16 +232,20 @@ return [
             'topnav_right' => false,
         ],
 
-        [
-            'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
-        ],
+        // [
+        //     'type'         => 'fullscreen-widget',
+        //     'topnav_right' => true,
+        // ],
 
         // // Sidebar items:
         // [
         //     'type' => 'sidebar-menu-search',
         //     'text' => 'search',
         // ],
+        [
+            'type'         => 'darkmode-widget',
+            'topnav_right' => true, // Or "topnav => true" to place on the left.
+        ],
         
         [
             'text'  => 'Dashboard',
@@ -626,7 +630,7 @@ return [
             'close_all_other' => true,
             'scroll_left' => true,
             'scroll_right' => true,
-            'fullscreen' => true,
+            'fullscreen' => false,
         ],
         'options' => [
             'loading_screen' => 1000,
