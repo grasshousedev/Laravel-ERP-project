@@ -46,6 +46,7 @@
             </small>
         @enderror
     </div>
+    
     <div class="col-md-1.8 my-1" style="margin-left: 19px;">
         {!! Form::label('tiempo_expiracion', 'Expiracion') !!}
         {!! Form::select('tiempo_expiracion', $expiracion, null, ['class' => 'custom-select mr-sm-2']) !!}

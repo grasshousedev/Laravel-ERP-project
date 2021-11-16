@@ -26,6 +26,7 @@ use App\Http\Controllers\Admin\Lista_ProductosController;
 use App\Http\Controllers\Admin\CondicionesController;
 use App\Http\Controllers\Admin\Pie_PaginaController;
 use App\Http\Controllers\Admin\Area_ContactoController;
+use App\Http\Controllers\Admin\OccProveedoresController;
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
@@ -76,3 +77,5 @@ Route::resource('piedepagina', Pie_PaginaController::class)->names('admin.piedep
 Route::resource('areacontacto', Area_ContactoController::class)->names('admin.areacontacto');
 
 Route::resource('listaproductos', Lista_ProductosController::class)->names('admin.listaproductos');
+
+Route::resource('occProveedores', OccProveedoresController::class)->names('admin.occProveedores');

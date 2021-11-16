@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClienteProductosTable extends Migration
+class ProductosOcproveedor extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateClienteProductosTable extends Migration
      */
     public function up()
     {
-        Schema::create('cliente_productos', function (Blueprint $table) {
+        Schema::create('productos_occps', function (Blueprint $table) {
             $table->id();
             
             $table->string('producto');
@@ -22,11 +22,11 @@ class CreateClienteProductosTable extends Migration
             $table->double('precio_prod');
             $table->double('total_prod');
 
-            $table->unsignedBigInteger('cotizacion_id')->nullable();
+            $table->unsignedBigInteger('oc_proveedor_id')->nullable();
             
-            $table->foreign('cotizacion_id')
+            $table->foreign('oc_proveedor_id')
                     ->references('id')
-                    ->on('cotizaciones')
+                    ->on('ocproveedores')
                     ->onDelete('set null');
 
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
@@ -41,6 +41,6 @@ class CreateClienteProductosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cliente_productos');
+        Schema::dropIfExists('productos_occps');
     }
 }
