@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-<h1>Productos / Servicios</h1>
+<h1>Productos proveedores</h1>
 
 @stop
 
@@ -14,9 +14,9 @@
     <div class="col-sm-2">
         <div class="card">
         <div class="card-body">
-        {!! Form::open(['route' => "admin.productos_cli.store", 'autocomplete'=>'off']) !!}
+        {!! Form::open(['route' => "admin.productos_provee.store", 'autocomplete'=>'off']) !!}
 
-            @include('admin.ventas.parts.form_prods_cli')
+            @include('admin.occProveedores.parts.form_prods_provee')
 
             {{-- {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!} --}}
             <input type="submit" class="btn btn-primary" onclick="calcular()" value="Crear">
@@ -109,7 +109,7 @@
         console.log('test');
         $.ajax({
             type: 'get', 
-            url: "{{ route('admin.ventas.searchProduct') }}",
+            url: "{{route('admin.listaproductos.searchProduct')}}",
             success:function(response){
                 console.log(response);
 
@@ -118,8 +118,8 @@
                 var dataCust2 = {};
 
                 for (var i = 0; i < custArray.length; i++){
-                    dataCust[custArray[i].model_prod] = null;
-                    dataCust2[custArray[i].model_prod] = custArray[i];
+                    dataCust[custArray[i].producto] = null;
+                    dataCust2[custArray[i].producto] = custArray[i];
                 }
                 console.log("dataCust2");
                 console.log(dataCust2);
@@ -128,8 +128,10 @@
                     data: dataCust,
                     onAutocomplete:function(reqdata){
                         console.log(reqdata);
-                        $('#precio_prod').val(dataCust2[reqdata]['vent_prod']);
+                        $('#precio_prod').val(dataCust2[reqdata]['precio_prod']);
                         $('#proveedor').val(dataCust2[reqdata]['proveedor']);
+                        $('#moneda').val(dataCust2[reqdata]['moneda']);
+                        $('#tiempo_entrega').val(dataCust2[reqdata]['tiempo_entrega']);
                     }
                 });
             }

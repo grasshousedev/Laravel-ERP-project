@@ -15,13 +15,7 @@ class VentaIndexController extends Controller
      */
     public function index()
     {
-        //$cotizacion = Cotizacione::all();
-
-        $filtro = 'COT';
-        $cotizacion = \DB::table('cotizaciones')
-                    ->select('cotizaciones.*')
-                    ->where('codigo', 'like','%'.$filtro.'%')
-                    ->get()->toArray();
+        $cotizacion = Cotizacione::all();
         //return response()->json($cotizacion);
         return view('admin.ventas.index', compact('cotizacion'));
     }

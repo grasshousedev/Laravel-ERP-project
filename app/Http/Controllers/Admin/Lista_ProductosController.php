@@ -30,6 +30,12 @@ class Lista_ProductosController extends Controller
         //
     }
 
+    public function searchProduct()
+    {
+        $productos     = Listado::all();
+        return response()->json($productos);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

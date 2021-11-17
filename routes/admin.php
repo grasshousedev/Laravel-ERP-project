@@ -27,6 +27,7 @@ use App\Http\Controllers\Admin\CondicionesController;
 use App\Http\Controllers\Admin\Pie_PaginaController;
 use App\Http\Controllers\Admin\Area_ContactoController;
 use App\Http\Controllers\Admin\OccProveedoresController;
+use App\Http\Controllers\Admin\Proveedores_productos;
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
@@ -51,6 +52,8 @@ Route::resource('clientes', ClienteController::class)->names('admin.clientes');
 Route::resource('proveedores', ProveedoresController::class)->names('admin.proveedores');
 
 Route::resource('productos_cli', Cliente_productos::class)->names('admin.productos_cli');
+
+Route::resource('productos_provee', Proveedores_productos::class)->names('admin.productos_provee');
 
 Route::resource('evaluaciones', EvaluacionesController::class)->names('admin.evaluaciones');
 

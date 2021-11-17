@@ -37,7 +37,7 @@
                         <td>{{ $orden_compra->responsable }}</td>
 
                         <td width="10px">
-                            <a href="{{ route('admin.productos_cli.index', 'id='.$orden_compra->id) }}" class="btn btn-sm btn-secondary">
+                            <a href="{{ route('admin.productos_provee.index', 'id=OP00'.$orden_compra->id) }}" class="btn btn-sm btn-secondary">
                                 <span class="material-icons-outlined">
                                     table_chart
                                 </span>

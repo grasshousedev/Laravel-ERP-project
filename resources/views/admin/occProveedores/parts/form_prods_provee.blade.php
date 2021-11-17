@@ -39,8 +39,12 @@
 </div>
 <br>
 
-<input type="hidden" name="cotizacion_id" value="{{ ($_GET['id']) }}">
+<input type="text" name="codigo" value="{{ ($_GET['id']) }}">
+<input type="text" name="oc_proveedor_id" value="{{ ltrim($_GET['id'], 'OP00') }}">
+{{-- ltrim($str, 'g') --}}
+<input name="total_prod" type="text" id="total_prod">
 
-<input name="total_prod" type="hidden" id="total_prod">
-
-<input type="hidden" name="proveedor" id="proveedor">
+<input type="text" name="proveedor" id="proveedor">
+<input type="text" name="moneda" id="moneda">
+<input type="text" name="codigo_cotizacion" id="codigo_cotizacion">
+<input type="text" name="tiempo_entrega" id="tiempo_entrega">

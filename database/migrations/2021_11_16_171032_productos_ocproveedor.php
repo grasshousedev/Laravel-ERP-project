@@ -17,10 +17,15 @@ class ProductosOcproveedor extends Migration
             $table->id();
             
             $table->string('producto');
-            $table->string('notas');
+            $table->string('codigo');
+            $table->string('notas')->nullable();
+            $table->string('proveedor');
+            $table->string('moneda');
             $table->double('cantidad_prod');
             $table->double('precio_prod');
             $table->double('total_prod');
+            $table->string('codigo_cotizacion')->nullable();
+            $table->string('tiempo_entrega');
 
             $table->unsignedBigInteger('oc_proveedor_id')->nullable();
             
