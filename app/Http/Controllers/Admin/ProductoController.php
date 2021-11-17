@@ -59,7 +59,7 @@ class ProductoController extends Controller
 
         $datosprod = request()->except('_token');
         Producto::insert($datosprod);
-        //return response()->json($datosprod); asd
+        // return response()->json($datosprod);
         $productos = Producto::all();
         return redirect()->route('admin.productos.index', compact('productos'))->with('info', 'El producto fue creado correctamente.');
     }

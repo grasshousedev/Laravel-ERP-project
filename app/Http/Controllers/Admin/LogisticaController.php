@@ -15,6 +15,7 @@ use App\Models\Cotizacione;
 use App\Models\Area_provee_cliente;
 use App\Models\Cliente;
 use App\Models\Producto;
+use App\Models\Listado;
 use App\Models\Orden_pedido;
 use App\Models\Cliente_producto;
 use App\Classes\CustomCodeGenerator;
@@ -79,6 +80,29 @@ class LogisticaController extends Controller
         $registro->cotizacion_id = $cotizacion['cotizacion_id'];
         $registro->cliente_id = $cotizacion['cliente_id'];
         $registro->save();
+
+        $productos = Cliente_producto::where('cotizacion_id', '=', $cotizacion['cotizacion_id'])->get();
+        foreach ($productos as $p) {        
+            $p['moneda'] = $cotizacion['moneda'];
+            // $productos['codigo_cotizacion'] = $cotizacion['codigo_cotizacion'];
+            $p['tiempo_entrega'] = $cotizacion['tiempo_entrega'];
+        }
+
+        foreach ($productos as $p) {
+            $listado = new Listado;
+            $listado->codigo = $cotizacion['codigo'];
+            $listado->producto = $p['producto'];
+            $listado->notas = $p['notas'];
+            $listado->cantidad_prod = $p['cantidad_prod'];
+            $listado->proveedor = $p['proveedor'];
+            $listado->moneda = $p['moneda'];
+            $listado->precio_prod = $p['precio_prod'];
+            $listado->codigo_cotizacion = $p['codigo_cotizacion'];
+            $listado->tiempo_entrega = $p['tiempo_entrega'];
+            $listado->save();
+        }
+        
+        // return response()->json($productos);
 
         return redirect()->route('admin.logistica.index');
     }

@@ -34,7 +34,7 @@
             console.log('test');
             $.ajax({
                 type: 'get', 
-                url: "{{route('admin.occProveedores.search')}}",
+                url: "{{route('admin.ventas.search')}}",
                 success:function(response){
                     console.log(response);
 
@@ -55,33 +55,6 @@
                             console.log(reqdata);
                             $('#cliente_id').val(dataCust2[reqdata]['id']);
                             $('#direccion').val(dataCust2[reqdata]['direccion']);
-                        }
-                    });
-                }
-            });
-
-            $.ajax({
-                type: 'get', 
-                url: "{{route('admin.occProveedores.searchProduct')}}",
-                success:function(response){
-                    console.log(response);
-
-                    var custArray = response;
-                    var dataCust = {};
-                    var dataCust2 = {};
-
-                    for (var i = 0; i < custArray.length; i++){
-                        dataCust[custArray[i].model_prod] = null;
-                        dataCust2[custArray[i].model_prod] = custArray[i];
-                    }
-                    console.log("dataCust2");
-                    console.log(dataCust2);
-
-                    $('input#item').autocomplete({
-                        data: dataCust,
-                        onAutocomplete:function(reqdata){
-                            console.log(reqdata);
-                            $('#precio_venta').val(dataCust2[reqdata]['vent_prod']);
                         }
                     });
                 }

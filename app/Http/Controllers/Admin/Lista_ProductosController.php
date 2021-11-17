@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Listado;
 use App\Models\Cliente_producto;
 
 class Lista_ProductosController extends Controller
@@ -15,7 +16,7 @@ class Lista_ProductosController extends Controller
      */
     public function index()
     {
-        $lista_productos = Cliente_producto::all();
+        $lista_productos = Listado::all();
         return view('admin.lista_productos_comprados.index', compact('lista_productos'));
     }
 

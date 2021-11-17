@@ -129,6 +129,7 @@
                     onAutocomplete:function(reqdata){
                         console.log(reqdata);
                         $('#precio_prod').val(dataCust2[reqdata]['vent_prod']);
+                        $('#proveedor').val(dataCust2[reqdata]['proveedor']);
                     }
                 });
             }

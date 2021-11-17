@@ -30,7 +30,7 @@
 
 <div class="input-field" style="max-width: 210px;">
     {!! Form::label('precio_prod', 'Precio') !!}
-    {!! Form::text('precio_prod', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
+    {!! Form::text('precio_prod', null, ['class' => 'form-control', 'autocomplete'=>'off', 'readonly']) !!}
     @error('precio_prod')
         <small class="text-danger">
             {{ $message }}
@@ -40,5 +40,6 @@
 <br>
 
 <input type="hidden" name="cotizacion_id" value="{{ ($_GET['id']) }}">
+<input name="total_prod" type="hidden" id="total_prod">
 
-<input name="total_prod" class="bg-dark text-white border-0" type="hidden" id="total_prod">
+<input type="hidden" name="proveedor" id="proveedor">

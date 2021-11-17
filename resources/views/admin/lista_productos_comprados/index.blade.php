@@ -26,7 +26,7 @@
                 <tbody>
                     @foreach ($lista_productos as $producto)
                     <tr>
-                        <td>COT00{{ $producto->cotizacion_id }}</td>
+                        <td>{{ $producto->codigo }}</td>
                         <td>{{ $producto->producto }}</td>
                         <td>{{ $producto->notas }}</td>
                         <td>{{ $producto->cantidad_prod }}</td>

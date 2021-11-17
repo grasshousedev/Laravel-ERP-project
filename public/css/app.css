@@ -1938,6 +1938,11 @@ select {
 .ease-in {
 	transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 .bg-gradient {
     background: #0f2027; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
 
