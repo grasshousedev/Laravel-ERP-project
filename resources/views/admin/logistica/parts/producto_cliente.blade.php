@@ -4,8 +4,6 @@
             <tr>
                 <th scope="col">Item</th>
                 <th scope="col">Cantidad</th>
-                <th scope="col">Precio Venta</th>
-                <th scope="col">Total</th>
                 <th scope="col">Observaciones</th>
             </tr>
         </thead>
@@ -18,12 +16,6 @@
                 </th>
                 <th scope="row">
                     {{ $item->cantidad_prod }}
-                </th>
-                <th scope="row">
-                    {{ $item->precio_prod }}
-                </th>
-                <th scope="row">
-                    {{ $item->total_prod }}
                 </th>
                 <th scope="row">
                     {{ $item->notas }}
