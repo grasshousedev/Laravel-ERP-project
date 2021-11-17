@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class Proveedores extends Seeder
 {
@@ -22,7 +23,8 @@ class Proveedores extends Seeder
             'celular2'      => '935682092',
             'email1'        => 'info@digitalz.pe',
             'email2'        => '',
-            'paginaweb'     => 'www.digitalz3d.com'
+            'paginaweb'     => 'www.digitalz3d.com',
+            'estado'        => 'Activo'
         ]);
 
         DB::table('proveedores')->insert([
@@ -34,7 +36,8 @@ class Proveedores extends Seeder
             'celular2'      => '982001288',
             'email1'        => 'ventas@krear3d.com',
             'email2'        => '',
-            'paginaweb'     => 'www.krear3d.com'
+            'paginaweb'     => 'www.krear3d.com',
+            'estado'        => 'Activo'
         ]);
 
         DB::table('proveedores')->insert([
@@ -46,7 +49,8 @@ class Proveedores extends Seeder
             'celular2'      => '',
             'email1'        => 'info@aditiva3d.com',
             'email2'        => '',
-            'paginaweb'     => 'www.aditiva3d.com'
+            'paginaweb'     => 'www.aditiva3d.com',
+            'estado'        => 'Activo'
         ]);
 
         DB::table('proveedores')->insert([
@@ -58,7 +62,8 @@ class Proveedores extends Seeder
             'celular2'      => '',
             'email1'        => 'ventas@crear4d.com',
             'email2'        => '',
-            'paginaweb'     => 'www.crear4d.com'
+            'paginaweb'     => 'www.crear4d.com',
+            'estado'        => 'Activo'
         ]);
 
         DB::table('proveedores')->insert([
@@ -70,7 +75,8 @@ class Proveedores extends Seeder
             'celular2'      => '931508310',
             'email1'        => '3dcadperu@gmail.com',
             'email2'        => '',
-            'paginaweb'     => ' www.3dcadperu.com'
+            'paginaweb'     => ' www.3dcadperu.com',
+            'estado'        => 'Activo'
         ]);
 
     }

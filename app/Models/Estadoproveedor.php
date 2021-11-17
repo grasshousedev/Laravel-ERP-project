@@ -5,11 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Proveedore extends Model
+class Estadoproveedor extends Model
 {
     use HasFactory;
-    public function ocproveedores()
-    {
-        return $this->hasMany('App\Models\OccProveedore');
-    }
 }

@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Proveedore extends Model
+class Ocproveedore extends Model
 {
     use HasFactory;
-    public function ocproveedores()
+    public function proveedor()
     {
-        return $this->hasMany('App\Models\OccProveedore');
+        return $this->belongsTo('App\Models\Proveedore');
     }
 }

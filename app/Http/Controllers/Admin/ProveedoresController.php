@@ -53,14 +53,12 @@ class ProveedoresController extends Controller
             'email1'        => 'required|unique:proveedores',
             'email2'        => '',
             'paginaweb'     => '',
-            'area'          => 'required',
             'estado'        => 'required',
-            'asignado'      => 'required',
         ]);
 
         $datosprovee = request()->except('_token');
         Proveedore::insert($datosprovee);
-        //return response()->json($datoscli); asd
+        //return response()->json($datosprovee);
 
         $proveedores = Proveedore::all();
         return redirect()->route('admin.proveedores.index', compact('proveedores'))->with('info', 'El proveedor fue registrado correctamente.');

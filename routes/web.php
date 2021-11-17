@@ -27,3 +27,8 @@ Route::get('admin/ventas/pdf', [App\Http\Controllers\Admin\VentaController::clas
 Route::get('admin/ventas/findCustomers', [App\Http\Controllers\Admin\VentaController::class, 'search'])->name('admin.ventas.search');
 
 Route::get('admin/ventas/findCustomersProduct', [App\Http\Controllers\Admin\VentaController::class, 'searchProduct'])->name('admin.ventas.searchProduct');
+
+Route::get('admin/occProveedores/findCustomers', [App\Http\Controllers\Admin\OccProveedoresController::class, 'search'])->name('admin.occProveedores.search');
+
+Route::get('admin/occProveedores/findCustomersProduct', [App\Http\Controllers\Admin\OccProveedoresController::class, 'searchProduct'])->name('admin.occProveedores.searchProduct');
+

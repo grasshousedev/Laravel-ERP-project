@@ -382,8 +382,18 @@ return [
                             'route'   => 'admin.logistica.index',
                         ],
                         [
-                            'text'  => 'Compras',
-                            'route'   => 'admin.listaproductos.index',
+                            'text'    => 'Compras',
+                            
+                            'submenu' => [
+                                [
+                                    'text' => 'Listado',
+                                    'route'   => 'admin.listaproductos.index',
+                                ],
+                                [
+                                    'text'    => 'O.C. Proveedor',
+                                    'route'   => 'admin.occProveedores.index',
+                                ],
+                            ],
                         ],
                     ],
         ],

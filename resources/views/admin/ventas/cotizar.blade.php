@@ -15,7 +15,6 @@
                 
             {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
 
-
             {!! Form::close() !!}
         </div>
     </div>
@@ -35,7 +34,7 @@
             console.log('test');
             $.ajax({
                 type: 'get', 
-                url: "{{route('admin.ventas.search')}}",
+                url: "{{route('admin.occProveedores.search')}}",
                 success:function(response){
                     console.log(response);
 
@@ -63,7 +62,7 @@
 
             $.ajax({
                 type: 'get', 
-                url: "{{route('admin.ventas.searchProduct')}}",
+                url: "{{route('admin.occProveedores.searchProduct')}}",
                 success:function(response){
                     console.log(response);
 

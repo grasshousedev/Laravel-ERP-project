@@ -34,8 +34,6 @@
                     <th id="">Producto</th>
                     <th id="">Notas</th>
                     <th id="">Cantidad</th>
-                    <th id="">Precio</th>
-                    <th id="">Total de Producto</th>
                     <th id="">Funciones</th>
                 </thead>
                 <tbody>
@@ -47,8 +45,6 @@
                         <td>{{ $producto->producto }}</td>
                         <td>{{ $producto->notas }}</td>
                         <td>{{ $producto->cantidad_prod }}</td>
-                        <td>{{ $producto->precio_prod }}</td>
-                        <td>{{ $producto->total_prod }}</td>
 
                         <td style="width: 150px;">
                             <a href="{{ route('admin.productos_cli.edit', $producto->id) }}" class="btn btn-sm btn-primary" >
