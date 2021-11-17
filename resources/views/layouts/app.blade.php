@@ -7,7 +7,7 @@
         
         <title>{{ config('app.name', 'ERP Laravel') }}</title>
         
-        <link rel="icon" href="{{ asset('images/icono.ico') }}" type="image/x-icon">
+        <link rel="icon" href="images/icono.ico" type="image/x-icon">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
