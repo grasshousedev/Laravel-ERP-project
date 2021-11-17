@@ -7,7 +7,7 @@
         
         <title>{{ config('app.name', 'ERP Printer3D Login') }}</title>
         
-        <link rel="icon" href="images/icono.ico" type="image/x-icon">
+        <link rel="icon" href="favicons/favicon.ico" type="image/x-icon">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
