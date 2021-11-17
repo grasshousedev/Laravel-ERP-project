@@ -128,6 +128,7 @@
                     data: dataCust,
                     onAutocomplete:function(reqdata){
                         console.log(reqdata);
+                        $('#cantidad_prod').val(dataCust2[reqdata]['cantidad_prod']);
                         $('#precio_prod').val(dataCust2[reqdata]['precio_prod']);
                         $('#proveedor').val(dataCust2[reqdata]['proveedor']);
                         $('#moneda').val(dataCust2[reqdata]['moneda']);

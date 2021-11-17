@@ -9,7 +9,7 @@
 </div>
 
 {!! Form::label('responsable', 'Responsable') !!}
-{!! Form::text('responsable', null, ['class' => 'custom-select mr-sm-2', 'autocomplete'=>'off']) !!}
+{!! Form::select('responsable', $users, auth()->user()->name, ['class' => 'custom-select mr-sm-2']) !!}
 @error('responsable')
     <small class="text-danger">
         {{ $message }}

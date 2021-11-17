@@ -30,7 +30,7 @@
                         <td>{{ $producto->producto }}</td>
                         <td>{{ $producto->notas }}</td>
                         <td>{{ $producto->cantidad_prod }}</td>
-                        <td></td>
+                        <td>{{ $producto->proveedor }}</td>
                         
                         <td width="10px">
                             <a href="{{ route('admin.tiempoexpiracion.edit', $producto->id) }}" class="btn btn-sm btn-primary">

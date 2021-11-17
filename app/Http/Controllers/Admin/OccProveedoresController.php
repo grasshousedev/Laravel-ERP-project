@@ -38,8 +38,9 @@ class OccProveedoresController extends Controller
         $tiempo_entrega = Tiempo_entrega::pluck('entrega', 'entrega');
         $expiracion     = Tiempo_expiracione::pluck('expiracion', 'expiracion');
         $moneda         = Tipo_moneda::pluck('moneda', 'moneda');
+        $users          = User::pluck('name', 'name');
 
-        return view('admin.occProveedores.create', compact('estado', 'expiracion', 'forma_pago', 'moneda', 'tiempo_entrega'));
+        return view('admin.occProveedores.create', compact('estado', 'expiracion', 'forma_pago', 'moneda', 'tiempo_entrega', 'users'));
     }
 
     public function search()
