@@ -377,32 +377,48 @@ return [
             'text'        => 'Logística',
             'icon'        => 'fas fa-clipboard-check',
             'submenu' => [
+                [
+                    'text'  => 'Ordenes de Pedido',
+                    'route'   => 'admin.logistica.index',
+                ],
+                [
+                    'text'    => 'Compras',
+                    
+                    'submenu' => [
                         [
-                            'text'  => 'Ordenes de Pedido',
-                            'route'   => 'admin.logistica.index',
+                            'text' => 'Listado',
+                            'route'   => 'admin.listaproductos.index',
                         ],
                         [
-                            'text'    => 'Compras',
-                            
-                            'submenu' => [
-                                [
-                                    'text' => 'Listado',
-                                    'route'   => 'admin.listaproductos.index',
-                                ],
-                                [
-                                    'text'    => 'O.C. Proveedor',
-                                    'route'   => 'admin.occProveedores.index',
-                                ],
-                            ],
+                            'text'    => 'O.C. Proveedor',
+                            'route'   => 'admin.occProveedores.index',
                         ],
                     ],
+                ],
+            ],
         ],
 
         [
             'text'        => 'Almacen',
-            'route'       => 'admin.almacen.index',
             'icon'        => 'fas fa-boxes',
-            'can'         => 'Ver listado de roles'
+            'submenu' => [
+                [
+                    'text'  => 'Ingresos',
+                    'route'   => 'admin.ingresosAlmacen.index',
+                ],
+                [
+                    'text'  => 'Stock',
+                    'route'   => 'admin.stockAlmacen.index',
+                ],
+                [
+                    'text'  => 'Registro de guias',
+                    'route'   => 'admin.registroAlmacen.index',
+                ],
+                [
+                    'text'  => 'Compras',
+                    'route'   => 'admin.comprasAlmacen.index',
+                ],
+            ],
         ],
 
         [
@@ -461,7 +477,7 @@ return [
                         ],
                         [
                             'text'  => 'CRUD IGV',
-                            'route'   => 'admin.logistica.index',
+                            //'route'   => 'admin.logistica.index',
                         ],
                         [
                             'text'  => 'CRUD ESTADO (cliente/proveedor)',

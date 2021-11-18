@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AlmacenController extends Controller
+class RegistroAlmacenController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class AlmacenController extends Controller
      */
     public function index()
     {
-        return view('admin.almacen.index');
+        return view('admin.almacenRegistro.index');
     }
 
     /**

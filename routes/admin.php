@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RoleController;
-use App\Http\Controllers\Admin\AlmacenController;
 use App\Http\Controllers\Admin\LogisticaController;
 use App\Http\Controllers\Admin\ProductoController;
 use App\Http\Controllers\Admin\ServicioController;
@@ -28,14 +27,16 @@ use App\Http\Controllers\Admin\Pie_PaginaController;
 use App\Http\Controllers\Admin\Area_ContactoController;
 use App\Http\Controllers\Admin\OccProveedoresController;
 use App\Http\Controllers\Admin\Proveedores_productos;
+use App\Http\Controllers\Admin\ComprasAlmacenController;
+use App\Http\Controllers\Admin\IngresosAlmacenController;
+use App\Http\Controllers\Admin\RegistroAlmacenController;
+use App\Http\Controllers\Admin\StockAlmacenController;
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
 Route::resource('users', UserController::class)->middleware('can:Ver listado de usuarios')->names('admin.users');
 
 Route::resource('roles', RoleController::class)->middleware('can:Ver listado de roles')->names('admin.roles');
-
-Route::resource('almacen', AlmacenController::class)->names('admin.almacen');
 
 Route::resource('logistica', LogisticaController::class)->names('admin.logistica');
 
@@ -82,3 +83,14 @@ Route::resource('areacontacto', Area_ContactoController::class)->names('admin.ar
 Route::resource('listaproductos', Lista_ProductosController::class)->names('admin.listaproductos');
 
 Route::resource('occProveedores', OccProveedoresController::class)->names('admin.occProveedores');
+
+
+
+Route::resource('comprasAlmacen', ComprasAlmacenController::class)->names('admin.comprasAlmacen');
+
+Route::resource('ingresosAlmacen', IngresosAlmacenController::class)->names('admin.ingresosAlmacen');
+
+Route::resource('registroAlmacen', RegistroAlmacenController::class)->names('admin.registroAlmacen');
+
+Route::resource('stockAlmacen', StockAlmacenController::class)->names('admin.stockAlmacen');
+
