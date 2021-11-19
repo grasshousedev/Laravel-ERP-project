@@ -1,16 +1,16 @@
 @extends('adminlte::page')
 
-@section('title', 'Agregar Modelo')
+@section('title', 'Agregar Fabricante')
 
 @section('content_header')
-    <h1>Agregar Modelo</h1>
+    <h1>Agregar Fabricante</h1>
 @stop
 
 @section('content')
 
-    {!! Form::open(['route' => 'admin.modeloProducto.store']) !!}
+    {!! Form::open(['route' => 'admin.rutaFabricante.store']) !!}
 
-        @include('admin.views_modelos.parts.form')
+        @include('admin.views_fabricantes.parts.form')
 
         {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
 

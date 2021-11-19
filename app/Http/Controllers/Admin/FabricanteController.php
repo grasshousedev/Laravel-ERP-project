@@ -15,8 +15,8 @@ class FabricanteController extends Controller
      */
     public function index()
     {
-        $modelos = Fabricante::all();
-        return view('admin.views_fabricantes.index', compact('modelos'));
+        $all_registros = Fabricante::all();
+        return view('admin.views_fabricantes.index', compact('all_registros'));
     }
 
 
@@ -39,15 +39,15 @@ class FabricanteController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'modelo'        => 'required',
+            'fabricante'        => 'required',
         ]);
 
         $nuevo_registro = request()->except('_token');
         Fabricante::insert($nuevo_registro);
         //return response()->json($estado_entregas); 
 
-        $modelos = Fabricante::all();
-        return redirect()->route('admin.rutaFabricante.index', compact('modelos'))->with('info', 'El modelo fue registrado correctamente.');
+        $all_registros = Fabricante::all();
+        return redirect()->route('admin.rutaFabricante.index', compact('all_registros'))->with('info', 'El fabricante fue registrado correctamente.');
     }
 
     /**
@@ -69,8 +69,8 @@ class FabricanteController extends Controller
      */
     public function edit($id)
     {
-        $modelos = Fabricante::find($id);
-        return view('admin.views_fabricantes.edit', compact('modelos'));
+        $registro = Fabricante::find($id);
+        return view('admin.views_fabricantes.edit', compact('registro'));
     }
 
     /**
@@ -83,7 +83,7 @@ class FabricanteController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'modelo'        => 'required',
+            'fabricante'        => 'required',
         ]);
 
         $nuevo_registro = request()->except('_token', '_method');
@@ -91,8 +91,8 @@ class FabricanteController extends Controller
         Fabricante::where('id','=',$id)->update($nuevo_registro);
         //return response()->json($estado_entregas); 
 
-        $modelos = Modelo::findOrFail($id);
-        return redirect()->route('admin.rutaFabricante.index', compact('modelos'))->with('info', 'La ruta fue actualizada correctamente.');
+        $all_registros = Fabricante::findOrFail($id);
+        return redirect()->route('admin.rutaFabricante.index', compact('all_registros'))->with('info', 'El fabricante fue actualizado correctamente.');
     }
 
     /**
@@ -104,6 +104,6 @@ class FabricanteController extends Controller
     public function destroy($id)
     {
         Fabricante::destroy($id);
-        return redirect()->route('admin.rutaFabricante.index')->with('info', 'La ruta fue eliminada correctamente.');
+        return redirect()->route('admin.rutaFabricante.index')->with('info', 'El fabricante fue eliminado correctamente.');
     }
 }

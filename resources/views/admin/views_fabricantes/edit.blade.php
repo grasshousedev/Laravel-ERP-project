@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Fabricante')
 
 @section('content_header')
-    <h1>Editar moneda</h1>
+    <h1>Editar Fabricante</h1>
 @stop
 
 @section('content')
@@ -14,11 +14,11 @@
     @endif
     <div class="card">
         <div class="card-body">
-            {!! Form::model($modelos, ['route' => ['admin.modeloProducto.update', $modelos], 'method' => 'put']) !!}
+            {!! Form::model($registro, ['route' => ['admin.rutaFabricante.update', $registro], 'method' => 'put']) !!}
             
-                @include('admin.views_modelos.parts.form')
+                @include('admin.views_fabricantes.parts.form')
 
-                {!! Form::submit('Editar Modelo', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Editar Fabricante', ['class' => 'btn btn-primary']) !!}
                 
             {!! Form::close() !!}
         </div>

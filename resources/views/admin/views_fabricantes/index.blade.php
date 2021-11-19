@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Modelos')
+@section('title', 'Fabricantes')
 
 @section('content_header')
-    <a class="btn btn-primary float-right" href="{{ route('admin.modeloProducto.create') }}" role="button">Agregar Modelo</a>
-    <h1>Tipo de Modelo</h1>
+    <a class="btn btn-primary float-right" href="{{ route('admin.rutaFabricante.create') }}" role="button">Agregar Fabricante</a>
+    <h1>Fabricante</h1>
 @stop
 
 @section('content')
@@ -18,18 +18,18 @@
             <table class="table table-striped" id="estado_entrega">
                 <thead>
                     <th id="">ID</th>
-                    <th id="">Tipo de modelo</th>
+                    <th id="">Fabricante</th>
                     <th id=""></th>
                     <th id=""></th>
                 </thead>
                 <tbody>
-                    @foreach ($modelos as $mod)
+                    @foreach ($all_registros as $item)
                     <tr>
-                        <td>{{ $mod->id }}</td>
-                        <td>{{ $mod->modelo }}</td>
+                        <td>{{ $item->id }}</td>
+                        <td>{{ $item->fabricante }}</td>
                         
                         <td width="10px">
-                            <a href="{{ route('admin.modeloProducto.edit', $mod->id) }}" class="btn btn-sm btn-primary">
+                            <a href="{{ route('admin.rutaFabricante.edit', $item->id) }}" class="btn btn-sm btn-primary">
                                 <span class="material-icons-outlined">
                                     edit
                                 </span>
@@ -38,7 +38,7 @@
     
                         <td width="10px">
                             
-                            <form action="{{ route('admin.modeloProducto.destroy', $mod->id) }}" method="POST">
+                            <form action="{{ route('admin.rutaFabricante.destroy', $item->id) }}" method="POST">
     
                                 @csrf
                                 @method('DELETE')
