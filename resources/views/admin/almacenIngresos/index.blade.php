@@ -3,8 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <a href="{{ route('admin.productos.create') }}" class="btn btn-secondary btn-sm float-right">Agregar Ingreso</a>
-
+    <a href="{{ route('admin.ingresosAlmacen.create') }}" class="btn btn-secondary btn-sm float-right">Agregar Ingreso</a>
     <h1>Ingresos Almacen</h1>
 @stop
 
@@ -18,45 +17,57 @@
     <div class="card-body">
         <table class="table table-striped" id="ingresos">
             <thead>
-                <th>Almacen</th>
-                <th>Fabricante</th>
-                <th>Modelo</th>
-                <th>Categoria</th>
-                <th>Lote</th>
-                <th>Unidades</th>
-                <th></th>
-                <th></th>
+                <th id="">Almacen</th>
+                <th id="">Fabricante</th>
+                <th id="">Modelo</th>
+                <th id="">Categoria</th>
+                <th id="">Lote</th>
+                <th id="">Unidades</th>
+                <th id=""></th>
+                <th id=""></th>
+                <th id=""></th>
             </thead>
             <tbody>
-                {{-- @foreach ($productos as $producto)
+                @foreach ($almaceningreso as $ingreso)
                     <tr>
-                        <td>{{ $producto->id }}</td>
-                        <td>{{ $producto->cod_prod }}</td>
-                        <td>{{ $producto->fabri_prod }}</td>
-                        <td>{{ $producto->model_prod }}</td>
-                        <td>{{ $producto->tipo_prod }}</td>
-                        <td>S/.{{ $producto->prec_prod }}</td>
-                        <td>S/.{{ $producto->vent_prod }}</td>
-                        <td>{{ $producto->unidades_prod }}</td>
-                        @can('Editar productos')
-                            <td width="10px">
-                                <a href="{{ route('admin.productos.edit', $producto->id) }}" class="btn btn-sm btn-primary">Editar</a>
-                            </td>
-                        @endcan
-                            
-                        @can('Eliminar productos')
-                            <td width="10px">
-                                <form action="{{ route('admin.productos.destroy', $producto) }}" method="POST">
+                        <td>{{ $ingreso->almacen }}</td>
+                        <td>{{ $ingreso->fabricante }}</td>
+                        <td>{{ $ingreso->modelo }}</td>
+                        <td>{{ $ingreso->categoria }}</td>
+                        <td>{{ $ingreso->lote }}</td>
+                        <td>{{ $ingreso->unidades }}</td>
 
-                                    @csrf
-                                    @method('DELETE')
+                        <td width="10px">
+                            <a href="{{ route('admin.ingresosAlmacen.show', $ingreso->id) }}" class="btn btn-sm btn-primary">
+                                <span class="material-icons-outlined">
+                                    visibility
+                                </span>
+                            </a>
+                        </td>
 
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('ESTAS SEGURO'); false">Eliminar</button>
-                                </form>
-                            </td>
-                        @endcan
+                        <td width="10px">
+                            <a href="{{ route('admin.ingresosAlmacen.edit', $ingreso->id) }}" class="btn btn-sm btn-primary">
+                                <span class="material-icons-outlined">
+                                    edit
+                                </span>
+                            </a>
+                        </td>
+                        
+                        <td width="10px">
+                            <form action="{{ route('admin.ingresosAlmacen.destroy', $ingreso) }}" method="POST">
+
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('ESTAS SEGURO'); false">
+                                    <span class="material-icons-outlined">
+                                        delete
+                                    </span>
+                                </button>
+                            </form>
+                        </td>
                     </tr>
-                @endforeach --}}
+                @endforeach
             </tbody>
         </table>
     </div>
@@ -67,6 +78,10 @@
     <link rel="stylesheet" href="/css/admin_custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
 @stop
 
 @section('js')

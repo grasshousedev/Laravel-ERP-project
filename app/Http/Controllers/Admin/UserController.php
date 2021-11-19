@@ -48,14 +48,14 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'      => 'required',
-            'apellido'  => 'required',
-            'dni'       => 'required|unique:users|max:8',
-            'email'     => 'required|unique:users',
-            'estado'  => 'required',
-            'cargo'  => 'required',
-            'celular'  => 'required|max:9',
-            'password'  => 'required'
+            'name'          => 'required',
+            'apellido'      => 'required',
+            'dni'           => 'required|unique:users|max:8',
+            'email'         => 'required|unique:users',
+            'estado'        => 'required',
+            'cargo'         => 'required',
+            'celular'       => 'required|max:9',
+            'password'      => 'required'
         ]);
 
         $datosuser = request()->except('_token');
