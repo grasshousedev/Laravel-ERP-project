@@ -36,6 +36,7 @@ use App\Http\Controllers\Admin\FabricanteController;
 use App\Http\Controllers\Admin\CategoriaController;
 use App\Http\Controllers\Admin\LoteController;
 use App\Http\Controllers\Admin\AlmacenController;
+use App\Http\Controllers\Admin\UnidadesMedidaController;
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
@@ -108,3 +109,5 @@ Route::resource('rutaCategoria', CategoriaController::class)->names('admin.rutaC
 Route::resource('rutaLote', LoteController::class)->names('admin.rutaLote');
 
 Route::resource('rutaAlmacen', AlmacenController::class)->names('admin.rutaAlmacen');
+
+Route::resource('rutaUnidadesMedida', UnidadesMedidaController::class)->names('admin.rutaUnidadesMedida');

@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Editar Almacen</h1>
+    <h1>Editar Unidad de Medida</hh1>
 @stop
 
 @section('content')
@@ -14,11 +14,11 @@
     @endif
     <div class="card">
         <div class="card-body">
-            {!! Form::model($registro, ['route' => ['admin.rutaAlmacen.update', $registro], 'method' => 'put']) !!}
+            {!! Form::model($registro, ['route' => ['admin.rutaUnidadesMedida.update', $registro], 'method' => 'put']) !!}
             
-                @include('admin.views_almacenes.parts.form')
+                @include('admin.views_unidades_medida.parts.form')
 
-                {!! Form::submit('Editar Almacen', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Editar Lote', ['class' => 'btn btn-primary']) !!}
                 
             {!! Form::close() !!}
         </div>

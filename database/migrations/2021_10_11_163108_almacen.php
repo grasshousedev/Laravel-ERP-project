@@ -13,7 +13,12 @@ class Almacen extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('almacenes', function (Blueprint $table) {
+            $table->id();
+            $table->string('almacen');
+            $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->dateTime('updated_at')->nullable();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class Almacen extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('almacenes');
     }
 }

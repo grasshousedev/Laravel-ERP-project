@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Almacene;
+use App\Models\UnidadesMedida;
 
-class AlmacenController extends Controller
+class UnidadesMedidaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class AlmacenController extends Controller
      */
     public function index()
     {
-        $all_registros = Almacene::all();
-        return view('admin.views_almacenes.index', compact('all_registros'));
+        $all_registros = UnidadesMedida::all();
+        return view('admin.views_unidades_medida.index', compact('all_registros'));
     }
 
 
@@ -27,7 +27,7 @@ class AlmacenController extends Controller
      */
     public function create()
     {
-        return view('admin.views_almacenes.create');
+        return view('admin.views_unidades_medida.create');
     }
 
     /**
@@ -39,14 +39,14 @@ class AlmacenController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'almacen'        => 'required',
+            'unidad'        => 'required',
         ]);
 
         $nuevo_registro = request()->except('_token');
-        Almacene::insert($nuevo_registro);
+        UnidadesMedida::insert($nuevo_registro);
 
-        $all_registros = Almacene::all();
-        return redirect()->route('admin.rutaAlmacen.index', compact('all_registros'))->with('info', 'El almacen fue registrado correctamente.');
+        $all_registros = UnidadesMedida::all();
+        return redirect()->route('admin.rutaUnidadesMedida.index', compact('all_registros'))->with('info', 'El almacen fue registrado correctamente.');
     }
 
     /**
@@ -68,8 +68,8 @@ class AlmacenController extends Controller
      */
     public function edit($id)
     {
-        $registro = Almacene::find($id);
-        return view('admin.views_almacenes.edit', compact('registro'));
+        $registro = UnidadesMedida::find($id);
+        return view('admin.views_unidades_medida.edit', compact('registro'));
     }
 
     /**
@@ -82,16 +82,16 @@ class AlmacenController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'almacen'        => 'required',
+            'unidad'        => 'required',
         ]);
 
         $nuevo_registro = request()->except('_token', '_method');
 
-        Almacene::where('id','=',$id)->update($nuevo_registro);
+        UnidadesMedida::where('id','=',$id)->update($nuevo_registro);
         //return response()->json($estado_entregas); 
 
-        $all_registros = Almacene::findOrFail($id);
-        return redirect()->route('admin.rutaAlmacen.index', compact('all_registros'))->with('info', 'El almacen fue actualizado correctamente.');
+        $all_registros = UnidadesMedida::findOrFail($id);
+        return redirect()->route('admin.rutaUnidadesMedida.index', compact('all_registros'))->with('info', 'La unidad de medida fue actualizada correctamente.');
     }
 
     /**
@@ -102,7 +102,7 @@ class AlmacenController extends Controller
      */
     public function destroy($id)
     {
-        Almacene::destroy($id);
-        return redirect()->route('admin.rutaAlmacen.index')->with('info', 'El almacen fue eliminado correctamente.');
+        UnidadesMedida::destroy($id);
+        return redirect()->route('admin.rutaUnidadesMedida.index')->with('info', 'La unidad de medida fue eliminada correctamente.');
     }
 }

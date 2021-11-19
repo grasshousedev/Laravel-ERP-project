@@ -1,16 +1,16 @@
 @extends('adminlte::page')
 
-@section('title', 'Agregar Almacen')
+@section('title', 'Agregar Unidad de Medida')
 
 @section('content_header')
-    <h1>Agregar Almacen</h1>
+    <h1>Agregar Unidad de Medida</h1>
 @stop
 
 @section('content')
 
-    {!! Form::open(['route' => 'admin.rutaAlmacen.store']) !!}
+    {!! Form::open(['route' => 'admin.rutaUnidadesMedida.store']) !!}
 
-        @include('admin.views_almacenes.parts.form')
+        @include('admin.views_unidades_medida.parts.form')
 
         {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
 

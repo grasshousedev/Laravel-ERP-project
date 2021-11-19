@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Almacenes')
+@section('title', 'Unidades de Medida')
 
 @section('content_header')
-    <a class="btn btn-primary float-right" href="{{ route('admin.rutaAlmacen.create') }}" role="button">Agregar Almacen</a>
-    <h1>Almacenes</h1>
+    <a class="btn btn-primary float-right" href="{{ route('admin.rutaUnidadesMedida.create') }}" role="button">Agregar Unidad de Medida</a>
+    <h1>Unidades de Medida</h1>
 @stop
 
 @section('content')
@@ -18,7 +18,7 @@
             <table class="table table-striped" id="estado_entrega">
                 <thead>
                     <th id="">ID</th>
-                    <th id="">Almacen</th>
+                    <th id="">Unidad</th>
                     <th id=""></th>
                     <th id=""></th>
                 </thead>
@@ -26,10 +26,10 @@
                     @foreach ($all_registros as $item)
                     <tr>
                         <td>{{ $item->id }}</td>
-                        <td>{{ $item->almacen }}</td>
+                        <td>{{ $item->unidad }}</td>
                         
                         <td width="10px">
-                            <a href="{{ route('admin.rutaAlmacen.edit', $item->id) }}" class="btn btn-sm btn-primary">
+                            <a href="{{ route('admin.rutaUnidadesMedida.edit', $item->id) }}" class="btn btn-sm btn-primary">
                                 <span class="material-icons-outlined">
                                     edit
                                 </span>
@@ -38,7 +38,7 @@
     
                         <td width="10px">
                             
-                            <form action="{{ route('admin.rutaAlmacen.destroy', $item->id) }}" method="POST">
+                            <form action="{{ route('admin.rutaUnidadesMedida.destroy', $item->id) }}" method="POST">
     
                                 @csrf
                                 @method('DELETE')

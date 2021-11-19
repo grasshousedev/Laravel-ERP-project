@@ -507,6 +507,10 @@ return [
                             'text'  => 'CRUD ALMACEN',
                             'route'   => 'admin.rutaAlmacen.index',
                         ],
+                        [
+                            'text'  => 'CRUD UNIDADES DE MEDIDA',
+                            'route'   => 'admin.rutaUnidadesMedida.index',
+                        ],
                         // [
                         //     'text'    => 'level_one',
                         //     'url'     => '#',
