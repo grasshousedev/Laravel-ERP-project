@@ -495,6 +495,18 @@ return [
                             'text'  => 'CRUD FABRICANTES',
                             'route'   => 'admin.rutaFabricante.index',
                         ],
+                        [
+                            'text'  => 'CRUD CATEGORIAS',
+                            'route'   => 'admin.rutaCategoria.index',
+                        ],
+                        [
+                            'text'  => 'CRUD LOTES',
+                            'route'   => 'admin.rutaLote.index',
+                        ],
+                        [
+                            'text'  => 'CRUD ALMACEN',
+                            'route'   => 'admin.rutaAlmacen.index',
+                        ],
                         // [
                         //     'text'    => 'level_one',
                         //     'url'     => '#',
