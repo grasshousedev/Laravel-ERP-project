@@ -31,6 +31,8 @@ use App\Http\Controllers\Admin\ComprasAlmacenController;
 use App\Http\Controllers\Admin\IngresosAlmacenController;
 use App\Http\Controllers\Admin\RegistroAlmacenController;
 use App\Http\Controllers\Admin\StockAlmacenController;
+use App\Http\Controllers\Admin\ModeloProductosController;
+use App\Http\Controllers\Admin\FabricanteController;
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
@@ -94,3 +96,6 @@ Route::resource('registroAlmacen', RegistroAlmacenController::class)->names('adm
 
 Route::resource('stockAlmacen', StockAlmacenController::class)->names('admin.stockAlmacen');
 
+Route::resource('modeloProducto', ModeloProductosController::class)->names('admin.modeloProducto');
+
+Route::resource('rutaFabricante', FabricanteController::class)->names('admin.rutaFabricante');

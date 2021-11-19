@@ -487,6 +487,14 @@ return [
                             'text'  => 'CRUD AREA DE CONTACTO',
                             'route'   => 'admin.areacontacto.index',
                         ],
+                        [
+                            'text'  => 'CRUD MODELOS',
+                            'route'   => 'admin.modeloProducto.index',
+                        ],
+                        [
+                            'text'  => 'CRUD FABRICANTES',
+                            'route'   => 'admin.rutaFabricante.index',
+                        ],
                         // [
                         //     'text'    => 'level_one',
                         //     'url'     => '#',
