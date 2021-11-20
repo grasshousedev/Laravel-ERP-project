@@ -297,6 +297,10 @@ return [
             'icon'        => 'fas fa-concierge-bell',
             'submenu' => [
                 [
+                    'text'  => 'Cotizaciones',
+                    'route' => 'admin.evaluaciones.index'
+                ],
+                [
                     'text'  => 'Clientes',
                     'route' => 'admin.clientes.index'
                 ],

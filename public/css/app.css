@@ -1943,6 +1943,9 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
 .bg-gradient {
     background: #0f2027; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
 
