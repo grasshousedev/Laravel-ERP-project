@@ -289,9 +289,13 @@
     <hr style="border:1px;">
     <br>
     <div class="producto">
-        @foreach($cliente_producto as $item)
-            {{ $item->info_producto }}
-        @endforeach
+        {{--@foreach($cliente_producto as $item)
+            {{ $item->producto }}
+            {{ $item->notas }}
+            {{ $item->cantidad_prod }}
+            {{ $item->precio_prod }}
+            {{ $item->proveedor }}
+        @endforeach--}}
     </div>
     <br>
     <div class="condiciones">
@@ -299,7 +303,7 @@
     </div>
     <br>
     <div class="pie_de_pagina">
-        Pie de Pagina
+        {{ $cotizacion->pie_pagina }}
     </div>
 </body>
 </html>
