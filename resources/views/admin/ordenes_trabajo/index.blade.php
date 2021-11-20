@@ -27,7 +27,7 @@
                 <th id=""></th>
                 <th id=""></th>
                 <th id=""></th>
-                <th id=""></th>
+                {{-- <th id=""></th> --}}
             </thead>
             <tbody>
                 @foreach ($cotizacion as $cot)
@@ -38,7 +38,7 @@
                     <td>{{ $cot->created_at }}</td>
                     <td>{{ $cot->updated_at }}</td>
 
-                    <td width="10px">
+                    {{-- <td width="10px">
                         <form action="{{ route('admin.ordenestrabajo.show', $cot->id) }}" method="GET">
                             <button type="submit" class="btn btn-sm btn-warning">
                                 <span class="material-icons-outlined md-48">
@@ -46,7 +46,7 @@
                                 </span>
                             </button>
                         </form>
-                    </td>
+                    </td> --}}
                     
                     <td width="10px">
                         <a href="{{ route('admin.ordenestrabajo.edit', $cot->id) }}" class="btn btn-sm btn-primary">
