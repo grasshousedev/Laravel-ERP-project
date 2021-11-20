@@ -19,7 +19,6 @@ cd ./ERP-laravel
 Para instalar dependencias ejecute:
 ```
 composer update
-composer require barryvdh/laravel-dompdf
 npm install
 npm run dev
 ```
