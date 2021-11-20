@@ -111,3 +111,4 @@ Route::resource('rutaLote', LoteController::class)->names('admin.rutaLote');
 Route::resource('rutaAlmacen', AlmacenController::class)->names('admin.rutaAlmacen');
 
 Route::resource('rutaUnidadesMedida', UnidadesMedidaController::class)->names('admin.rutaUnidadesMedida');
+
