@@ -4,7 +4,7 @@
             <table class="table table-striped" id="userstable">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>Codigo</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>DNI</th>
@@ -17,7 +17,7 @@
                 <tbody>
                     @foreach ($users as $user)
                         <tr>
-                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->codigo }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->apellido }}</td>
                             <td>{{ $user->dni }}</td>
