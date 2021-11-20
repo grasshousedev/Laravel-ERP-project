@@ -19,13 +19,14 @@ cd ./ERP-laravel
 Para instalar dependencias ejecute:
 ```
 composer update
+composer require barryvdh/laravel-dompdf
 npm install
 npm run dev
 ```
 
 ### Creando base de datos:
 Crear una base de datos en el motor postgres con el nombre "postDBS".
-En seguida para integrar las migrciones ejecutar los scripts:
+En seguida para integrar las migraciones ejecutar los scripts:
 
 ```
 php artisan migrate
