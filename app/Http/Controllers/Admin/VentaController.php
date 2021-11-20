@@ -16,6 +16,8 @@ use App\Models\Area_provee_cliente;
 use App\Models\Cliente;
 use App\Models\Producto;
 use App\Models\Cliente_producto;
+use App\Models\Pie_pagina;
+use App\Models\Condicione;
 use App\Classes\CustomCodeGenerator;
 use PDF;
 
@@ -28,17 +30,18 @@ class VentaController extends Controller
      */
     public function index()
     {
-
         $estado         = estado_entrega::pluck('estado', 'estado');
         $forma_pago     = Forma_pago::pluck('tipo_pago', 'tipo_pago');
         $tiempo_entrega = Tiempo_entrega::pluck('entrega', 'entrega');
         $expiracion     = Tiempo_expiracione::pluck('expiracion', 'expiracion');
         $moneda         = Tipo_moneda::pluck('moneda', 'moneda');
         $users          = User::pluck('name', 'name');
+        $condiciones    = Condicione::all();
+        $pie_pagina     = Pie_pagina::all();
 
         $cotizacion     = Cotizacione::all();
 
-        return view('admin.ventas.cotizar', compact('estado', 'expiracion', 'forma_pago', 'moneda', 'tiempo_entrega', 'users', 'cotizacion'));
+        return view('admin.ventas.cotizar', compact('estado', 'expiracion', 'forma_pago', 'moneda', 'tiempo_entrega', 'users', 'cotizacion', 'condiciones', 'pie_pagina'));
     }
 
     public function pdf()
