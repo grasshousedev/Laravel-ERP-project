@@ -289,17 +289,76 @@
     <hr style="border:1px;">
     <br>
     <div class="producto">
-        {{--@foreach($cliente_producto as $item)
-            {{ $item->producto }}
-            {{ $item->notas }}
-            {{ $item->cantidad_prod }}
-            {{ $item->precio_prod }}
-            {{ $item->proveedor }}
-        @endforeach--}}
+        <table class="table table-sm bg-dark" id="table_t">
+            <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Notas</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Total producto</th>    
+                </tr>
+            </thead>
+            <tbody id="table_data">
+                <?php 
+                    $total_productos = 0;
+                ?>
+                @foreach($cliente_producto as $item)
+                <tr>
+                    <th scope="row">
+                        {{ $item->producto }}
+                    </th>
+                    <th scope="row">
+                        {{ $item->notas }}
+                    </th>
+                    <th scope="row">
+                        {{ $item->cantidad_prod }}
+                    </th>
+                    <th scope="row">
+                        {{ $item->precio_prod }}
+                    </th>
+                    <th scope="row" style="text-align: right">
+                        {{ $item->total_prod }}
+                    </th>
+                </tr>
+                
+                <?php $producto = $item->total_prod; ?>
+                <?php $total_productos = $total_productos + $producto; ?>
+                @endforeach
+                <tr class="table-bordered">
+                    <td><strong>Sub total</strong></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align: right">
+                        <?php echo $total_productos; ?>
+                    </td>
+                </tr>
+                <tr class="table-bordered">
+                    <td><strong>IGV</strong></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align: right">
+                        <?php $igv = $total_productos * 18/100; ?>
+                        <?php echo $igv;?>
+                    </td>
+                </tr>
+                <tr class="table-bordered">
+                    <td><strong>Total</strong></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align: right">
+                        <?php echo $total_productos + $igv; ?>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <br>
     <div class="condiciones">
-        Condiciones
+        {{ $cotizacion->condiciones }}
     </div>
     <br>
     <div class="pie_de_pagina">

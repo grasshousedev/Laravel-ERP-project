@@ -128,13 +128,13 @@ class VentaController extends Controller
     public function show($id)
     {
         $cotizacion           = Cotizacione::find($id);
-        $cliente_producto     = Cliente_producto::where('cotizacion_id', '=', $cotizacion['cotizacion_id'])->get();;
+        $cliente_producto     = Cliente_producto::where('cotizacion_id', '=', $cotizacion['id'])->get();;
 
-        // $pdf = PDF::loadView('admin.ventas.mas_info', compact('cotizacion', 'cliente_producto'));
+        $pdf = PDF::loadView('admin.ventas.mas_info', compact('cotizacion', 'cliente_producto'));
 
-        // $nombre         = date('Y-m-d');
-        // return $pdf->stream('CLIENTE-'.$nombre.'.pdf');
-        return response()->json($cliente_producto); //para debugs
+        $nombre         = date('Y-m-d');
+        return $pdf->stream('CLIENTE-'.$nombre.'.pdf');
+        //return response()->json($cliente_producto); //para debugs
 
     }
 
