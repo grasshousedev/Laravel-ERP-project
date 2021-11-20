@@ -7,7 +7,7 @@
     <div class="col-4 mx-auto text-center">
         <img src="vendor/adminlte/dist/img/SENATI-logo.png" alt="logo">
     </div>
-</div><br><br><br><br>
+</div><br><br>
 @stop
 
 @section('content')
