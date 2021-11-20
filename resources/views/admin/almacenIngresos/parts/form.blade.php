@@ -8,9 +8,9 @@
     @enderror
 </div>
 
-<div class="input-field">
+<div class="select-field">
     {!! Form::label('fabricante', 'Fabricante') !!}
-    {!! Form::text('fabricante', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
+    {!! Form::select('fabricante', $fabricante, null, ['class' => 'form-control']) !!}
     @error('fabricante')
         <small class="text-danger">
             {{ $message }}
@@ -18,9 +18,9 @@
     @enderror
 </div>
 
-<div class="input-field">
+<div class="select-field">
     {!! Form::label('modelo', 'Modelo') !!}
-    {!! Form::text('modelo', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
+    {!! Form::select('modelo', $modelo ,null, ['class' => 'form-control']) !!}
     @error('modelo')
         <small class="text-danger">
             {{ $message }}
@@ -28,9 +28,9 @@
     @enderror
 </div>
 
-<div class="input-field">
+<div class="select-field">
     {!! Form::label('categoria', 'Categoria') !!}
-    {!! Form::text('categoria', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
+    {!! Form::select('categoria', $categoria, null, ['class' => 'form-control']) !!}
     @error('categoria')
         <small class="text-danger">
             {{ $message }}
@@ -48,9 +48,9 @@
     @enderror
 </div>
 
-<div class="input-field">
+<div class="select-field">
     {!! Form::label('lote', 'Lote') !!}
-    {!! Form::text('lote', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
+    {!! Form::select('lote', $lote ,null, ['class' => 'form-control']) !!}
     @error('lote')
         <small class="text-danger">
             {{ $message }}
@@ -58,9 +58,9 @@
     @enderror
 </div>
 
-<div class="input-field">
+<div class="select-field">
     {!! Form::label('unidad_medida', 'Unidad de medida') !!}
-    {!! Form::text('unidad_medida', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
+    {!! Form::select('unidad_medida', $unidades_med ,null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
     @error('unidad_medida')
         <small class="text-danger">
             {{ $message }}
@@ -118,9 +118,9 @@
     @enderror
 </div>
 
-<div class="input-field">
+<div class="select-field">
     {!! Form::label('almacen', 'Almacen') !!}
-    {!! Form::text('almacen', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
+    {!! Form::select('almacen', $almacen, null, ['class' => 'form-control']) !!}
     @error('almacen')
         <small class="text-danger">
             {{ $message }}

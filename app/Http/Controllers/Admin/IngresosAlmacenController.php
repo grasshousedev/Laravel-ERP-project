@@ -6,6 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Almacen_ingreso;
 use App\Models\Tipo_moneda;
+use App\Models\Almacene;
+use App\Models\Modelo;
+use App\Models\Fabricante;
+use App\Models\Categoria;
+use App\Models\Lote;
+use App\Models\UnidadesMedida;
 
 class IngresosAlmacenController extends Controller
 {
@@ -28,7 +34,14 @@ class IngresosAlmacenController extends Controller
     public function create()
     {
         $moneda         = Tipo_moneda::pluck('moneda', 'moneda');
-        return view('admin.almacenIngresos.create', compact('moneda'));
+        $almacen        = Almacene::pluck('almacen', 'almacen');
+        $modelo         = Modelo::pluck('modelo', 'modelo');
+        $fabricante     = Fabricante::pluck('fabricante', 'fabricante');
+        $categoria      = Categoria::pluck('categoria', 'categoria');
+        $lote           = Lote::pluck('lote', 'lote');
+        $unidades_med   = UnidadesMedida::pluck('unidad', 'unidad');
+
+        return view('admin.almacenIngresos.create', compact('moneda', 'almacen', 'modelo', 'fabricante', 'categoria', 'lote', 'unidades_med'));
     }
 
     /**
