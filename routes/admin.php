@@ -41,7 +41,7 @@ use App\Http\Controllers\Admin\OrdenesTrabajoListadoController;
 use App\Http\Controllers\Admin\OccClientesListadoController;
 use App\Http\Controllers\Admin\OccProveedoresControllerListado;
 
-Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
+// Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
 Route::resource('users', UserController::class)->middleware('can:Ver listado de usuarios')->names('admin.users');
 

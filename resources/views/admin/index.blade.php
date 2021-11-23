@@ -25,7 +25,7 @@
     </div>
 
     <div class="col-md text-center">
-        <h2>{{ $num_cot_aprobadas }}</h2>
+        <h2>{{ $cotizaciones_aprobadas }}</h2>
         <h4>Ordenes de Trabajo</h4>
     </div>
 
