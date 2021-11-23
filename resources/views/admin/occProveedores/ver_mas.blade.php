@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Vista detallada de la salida Nº {{ $almaceningreso->id }}</h1>
+    <h1>Vista detallada de la orden de compra del proveedor Nº {{ $orden_compras->id }}</h1>
 @stop
 
 @section('content')
@@ -15,69 +15,41 @@
 <div class="card">
     <div class="card-body">
         <div>
-            Codigo: {{ $almaceningreso->codigo }}
+            RUC: {{ $orden_compras->ruc }}
         </div>
 
         <div>
-            Fabricante:  {{ $almaceningreso->fabricante }}
+            Responsable:  {{ $orden_compras->responsable }}
         </div>
 
         <div>
-            Modelo: {{ $almaceningreso->modelo }}
+            Tiempo de entrega: {{ $orden_compras->tiempo_entrega }}
         </div>
 
         <div>
-            Categoria: {{ $almaceningreso->categoria }}
+            Contacto: {{ $orden_compras->contacto }}
         </div>
 
         <div>
-            Precio de costo: {{ $almaceningreso->precio_costo }}
+            Estado: {{ $orden_compras->estado }}
         </div>
 
         <div>
-            Lote: {{ $almaceningreso->lote }}
+            Moneda: {{ $orden_compras->moneda }}
         </div>
 
         <div>
-            Unidad de medida: {{ $almaceningreso->unidad_medida }}
+            Razon social: {{ $orden_compras->razon_social }}
         </div>        
 
         <div>
-            Unidades: {{ $almaceningreso->unidades }}
+            Direccion: {{ $orden_compras->direccion }}
         </div>
 
         <div>
-            Descripcion: {{ $almaceningreso->descripcion }}
+            Cotizacion de Proveedor: {{ $orden_compras->cot_proveedor }}
         </div>
-
-        <div>
-            RUC proveedor: {{ $almaceningreso->ruc_provee }}
-        </div>
-
-        <div>
-            Razon social: {{ $almaceningreso->razon_social }}
-        </div>
-
-        <div>
-            Guia: {{ $almaceningreso->guia }}
-        </div>
-
-        <div>
-            Almacen: {{ $almaceningreso->almacen }}
-        </div>
-
-        <div>
-            O.C. proveedor: {{ $almaceningreso->oc_proveedor }}
-        </div>
-
-        <div>
-            Orden de pedido: {{ $almaceningreso->orden_pedido }}
-        </div>
-
-        <div>
-            Moneda: {{ $almaceningreso->moneda }}
-        </div>
-        <a href="{{ route('admin.rutaSalidas.index') }}" class="btn btn-primary">Volver</a>
+        <a href="{{ route('admin.occProveedores.index') }}" class="btn btn-primary">Volver</a>
 </div>
 @stop
 

@@ -14,9 +14,9 @@
     @endif
     <div class="card">
         <div class="card-body">
-            {!! Form::model($almaceningreso, ['route' => ['admin.ingresosAlmacen.update', $almaceningreso], 'method' => 'put']) !!}
+            {!! Form::model($almaceningreso, ['route' => ['admin.rutaSalidas.update', $almaceningreso], 'method' => 'put']) !!}
             
-                @include('admin.almacenIngresos.parts.form')
+                @include('admin.views_salidas.parts.form')
 
                 {!! Form::submit('Editar', ['class' => 'btn btn-primary']) !!}
 
