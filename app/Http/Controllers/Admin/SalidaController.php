@@ -132,7 +132,6 @@ class SalidaController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'codigo'            => 'required',
             'fabricante'        => 'required',
             'modelo'            => 'required',
             'categoria'         => 'required',
@@ -149,7 +148,7 @@ class SalidaController extends Controller
             'orden_pedido'      => 'required',
             'moneda'            => 'required',
         ]);
-        $datosingreso = request()->except('_token', '_method');
+        $datosingreso = request()->except('_token', '_method', 'codigo');
 
         Salida::where('id', '=', $id)->update($datosingreso);
         $almaceningreso = Salida::all();
