@@ -17,7 +17,6 @@
     <div class="card-body">
         <table class="table table-striped" id="ingresos">
             <thead>
-                <th id="">Nombre</th>
                 <th id="">Almacen</th>
                 <th id="">Fabricante</th>
                 <th id="">Modelo</th>
@@ -31,7 +30,6 @@
             <tbody>
                 @foreach ($almaceningreso as $ingreso)
                     <tr>
-                        <td>{{ $ingreso->nombre }}</td>
                         <td>{{ $ingreso->almacen }}</td>
                         <td>{{ $ingreso->fabricante }}</td>
                         <td>{{ $ingreso->modelo }}</td>

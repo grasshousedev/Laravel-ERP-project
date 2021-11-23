@@ -30,6 +30,12 @@ class DatabaseSeeder extends Seeder
         $this->call(Clientes::class);
         $this->call(estado_occProveedor::class);
         $this->call(Proveedores::class);
+        $this->call(AlmaceneSeeder::class);
+        $this->call(ModeloSeeder::class);
+        $this->call(UnidadMedidaSeeder::class);
+        $this->call(FabricanteSeeder::class);
+        $this->call(CategoriaSeeder::class);
+        $this->call(LoteSeeder::class);
     }
     
 }
