@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Salidas extends Migration
+class Stocks extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class Salidas extends Migration
      */
     public function up()
     {
-        Schema::create('salidas', function (Blueprint $table) {
+        Schema::create('stock', function (Blueprint $table) {
             $table->id();
             
             $table->string('codigo');
-            $table->string('nombre');
             $table->string('fabricante');
             $table->string('modelo');
             $table->string('categoria');
@@ -46,6 +45,6 @@ class Salidas extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('salidas');
+        Schema::dropIfExists('stock');
     }
 }

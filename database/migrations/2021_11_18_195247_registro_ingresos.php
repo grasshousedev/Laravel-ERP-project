@@ -17,6 +17,7 @@ class RegistroIngresos extends Migration
             $table->id();
             
             $table->string('codigo');
+            $table->string('nombre');
             $table->string('fabricante');
             $table->string('modelo');
             $table->string('categoria');

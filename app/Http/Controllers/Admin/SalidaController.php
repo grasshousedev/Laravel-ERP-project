@@ -56,6 +56,7 @@ class SalidaController extends Controller
     {
         $request->validate([
             'codigo'            => 'required',
+            'nombre'            => 'required',
             'fabricante'        => 'required',
             'modelo'            => 'required',
             'categoria'         => 'required',
@@ -132,6 +133,7 @@ class SalidaController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'nombre'        => 'required',
             'fabricante'        => 'required',
             'modelo'            => 'required',
             'categoria'         => 'required',

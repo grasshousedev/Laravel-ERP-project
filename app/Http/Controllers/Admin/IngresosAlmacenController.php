@@ -57,6 +57,7 @@ class IngresosAlmacenController extends Controller
     {
         $request->validate([
             'codigo'            => 'required',
+            'nombre'        => 'required',
             'fabricante'        => 'required',
             'modelo'            => 'required',
             'categoria'         => 'required',
@@ -133,6 +134,7 @@ class IngresosAlmacenController extends Controller
     {
         $request->validate([
             'fabricante'        => 'required',
+            'nombre'        => 'required',
             'modelo'            => 'required',
             'categoria'         => 'required',
             'precio_costo'      => 'required',
