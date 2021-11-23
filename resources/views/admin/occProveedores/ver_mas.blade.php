@@ -12,45 +12,106 @@
             {{ session('info') }}
         </div>
     @endif
+
 <div class="card">
     <div class="card-body">
-        <div>
-            RUC: {{ $orden_compras->ruc }}
+        <div class="row row-cols-1 row-cols-md-5 g-4" style="max-width: 100rem;">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">RUC</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $orden_compras->ruc }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Responsable:  </h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $orden_compras->responsable }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Tiempo de entrega:  </h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $orden_compras->tiempo_entrega }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Contacto:  </h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $orden_compras->contacto }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Estado:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $orden_compras->estado }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Moneda: </h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $orden_compras->moneda }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> Razon social: </h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $orden_compras->razon_social }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Direccion:  </h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $orden_compras->direccion }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> Cotizacion de Proveedor: </h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $orden_compras->cot_proveedor }}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div>
-            Responsable:  {{ $orden_compras->responsable }}
-        </div>
-
-        <div>
-            Tiempo de entrega: {{ $orden_compras->tiempo_entrega }}
-        </div>
-
-        <div>
-            Contacto: {{ $orden_compras->contacto }}
-        </div>
-
-        <div>
-            Estado: {{ $orden_compras->estado }}
-        </div>
-
-        <div>
-            Moneda: {{ $orden_compras->moneda }}
-        </div>
-
-        <div>
-            Razon social: {{ $orden_compras->razon_social }}
-        </div>        
-
-        <div>
-            Direccion: {{ $orden_compras->direccion }}
-        </div>
-
-        <div>
-            Cotizacion de Proveedor: {{ $orden_compras->cot_proveedor }}
-        </div>
-        <a href="{{ route('admin.occProveedores.index') }}" class="btn btn-primary">Volver</a>
+    </div>
 </div>
+
+<a href="{{ route('admin.occProveedores.index') }}" class="btn btn-primary">Volver</a>
+
 @stop
 
 @section('css')

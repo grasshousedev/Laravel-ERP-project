@@ -3,9 +3,9 @@
 @section('title', 'Evaluaciones')
 
 @section('content_header')
-<a class="btn btn-primary float-right" href="{{ route('admin.ventas.pdf') }}" role="button">PDF</a>
-<a class="btn btn-primary float-right" href="{{ route('admin.ventas.index') }}" role="button">Cotizar</a>
-<a class="btn btn-primary float-right" href="{{ route('admin.clientes.index') }}" role="button">Clientes</a>
+<a class="btn btn-primary float-right" href="{{ route('admin.ventas.pdf') }}" role="button" style="margin-right: 20px;">PDF</a>
+<a class="btn btn-primary float-right" href="{{ route('admin.ventas.index') }}" role="button" style="margin-right: 20px;">Cotizar</a>
+<a class="btn btn-primary float-right" href="{{ route('admin.clientes.index') }}" role="button" style="margin-right: 20px;">Clientes</a>
     <h1>Evaluaciones</h1>
 @stop
 

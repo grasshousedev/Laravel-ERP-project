@@ -17,7 +17,7 @@
         {!! Form::open(['route' => "admin.productos_provee.store", 'autocomplete'=>'off']) !!}
 
             @include('admin.occProveedores.parts.form_prods_provee')
-
+            <br>
             {{-- {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!} --}}
             <input type="submit" class="btn btn-primary" onclick="calcular()" value="Crear">
             <a href="{{ route('admin.evaluaciones.index') }}" class="btn btn-primary">Volver</a>
