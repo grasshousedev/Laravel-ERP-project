@@ -27,6 +27,7 @@
                 <th id=""></th>
                 <th id=""></th>
                 <th id=""></th>
+                <th id=""></th>
             </thead>
             <tbody>
                 @foreach ($orden_compras as $orden_compra)
@@ -35,6 +36,14 @@
                         <td>{{ $orden_compra->razon_social }}</td>
                         <td>{{ $orden_compra->estado }}</td>
                         <td>{{ $orden_compra->responsable }}</td>
+                        
+                        <td width="10px">
+                            <a href="{{ route('admin.occProveedores.show', $orden_compra->id) }}" class="btn btn-sm btn-primary">
+                                <span class="material-icons-outlined">
+                                    visibility
+                                </span>
+                            </a>
+                        </td>
 
                         <td width="10px">
                             <a href="{{ route('admin.productos_provee.index', 'id=OP00'.$orden_compra->id) }}" class="btn btn-sm btn-secondary">

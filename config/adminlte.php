@@ -391,8 +391,8 @@ return [
                     'route'   => 'admin.ingresosAlmacen.index',
                 ],
                 [
-                    'text'  => 'Salida',
-                    'route'   => 'admin.ingresosAlmacen.index',
+                    'text'  => 'Salidas',
+                    'route'   => 'admin.rutaSalidas.index',
                 ],
                 [
                     'text'  => 'Stock',

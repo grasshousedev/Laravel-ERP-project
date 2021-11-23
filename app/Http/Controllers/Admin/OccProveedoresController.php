@@ -85,7 +85,9 @@ class OccProveedoresController extends Controller
      */
     public function show($id)
     {
-        //
+        $orden_compras = Ocproveedore::find($id);
+
+        return view('admin.occProveedores.ver_mas', compact('orden_compras'));
     }
 
     /**

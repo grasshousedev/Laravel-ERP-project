@@ -14,13 +14,12 @@ use App\Http\Controllers\Admin\VentaController;
 |
 */
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
-    return view('admin.index');
-})->name('admin');
+Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'] )->middleware(['auth:sanctum', 'verified'])->name('admin.index');
+Route::get('/admin', [App\Http\Controllers\Admin\HomeController::class, 'index'] )->middleware(['auth:sanctum', 'verified'])->name('admin.index');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
 
 Route::get('admin/ventas/pdf', [App\Http\Controllers\Admin\VentaController::class, 'pdf'])->name('admin.ventas.pdf');
 
