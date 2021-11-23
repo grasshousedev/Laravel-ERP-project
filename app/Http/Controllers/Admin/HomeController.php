@@ -17,8 +17,9 @@ class HomeController extends Controller
 {
     public function index(){
 
+        $num_cot_aprobadas = 0;
         $num_cot_aprobadas = count(Ordenes_compra::all());
-        $num_cot_aprobadas = (isset($num_cot_aprobadas)) ? $num_cot_aprobadas : 0;
+        // $num_cot_aprobadas = (isset($num_cot_aprobadas)) ? $num_cot_aprobadas : 0;
 
         $num_productos = count(Producto::all());
         $num_productos = (isset($num_productos)) ? $num_productos : 0;
