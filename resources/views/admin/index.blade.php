@@ -15,7 +15,7 @@
 
 <div class="row justify-content-center align-items-center">
     <div class="col-md text-center">
-        <h2>{{ $num_cot_aprobadas }}</h2>
+        {{-- <h2>{{ $cotizaciones_aprobadas }}</h2> --}}
         <h4>Cotizaciones Aprobadas</h4>
     </div>
 

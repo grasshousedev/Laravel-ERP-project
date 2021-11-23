@@ -95,10 +95,19 @@
 
 <div class="form-group col-md-4">
 
-    <div class="col-14 my-1">
+    {{-- <div class="col-14 my-1">
         {!! Form::label('condiciones', 'Condiciones generales') !!}
         {!! Form::text('condiciones', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
         @error('condiciones')
+            <small class="text-danger">
+                {{ $message }}
+            </small>
+        @enderror
+    </div> --}}
+    <div class="col-14 my-1">
+        <label for="condiciones">Condiciones</label>
+        <textarea name="condiciones" id="condiciones" class="form-control"> @foreach ($condiciones as $cond) {{ $cond->condiciones }}&#13;&#10; @endforeach </textarea>
+        @error('pie_pagina')
             <small class="text-danger">
                 {{ $message }}
             </small>
@@ -115,7 +124,7 @@
         @enderror
     </div>
 
-    <div class="col-15 my-3">
+    {{-- <div class="col-15 my-3">
         {!! Form::label('pie_pagina', 'Pie de pagina') !!}
         {!! Form::text('pie_pagina', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
         @error('pie_pagina')
@@ -123,6 +132,14 @@
                 {{ $message }}
             </small>
         @enderror
+    </div> --}}
+    <div class="col-15 my-3">
+        <label for="pie_pagina">Pie de pagina</label>
+        <textarea name="pie_pagina" id="pie_pagina" class="form-control"> @foreach ($pie_pagina as $pie) {{ $pie->pie_pagina }}&#13;&#10; @endforeach </textarea>
+        @error('pie_pagina')
+            <small class="text-danger">
+                {{ $message }}
+            </small>
+        @enderror
     </div>
-
 </div>
