@@ -40,6 +40,7 @@ use App\Http\Controllers\Admin\UnidadesMedidaController;
 use App\Http\Controllers\Admin\OrdenesTrabajoListadoController;
 use App\Http\Controllers\Admin\OccClientesListadoController;
 use App\Http\Controllers\Admin\OccProveedoresControllerListado;
+use App\Http\Controllers\Admin\SalidaController;
 
 // Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
@@ -116,4 +117,6 @@ Route::resource('rutaLote', LoteController::class)->names('admin.rutaLote');
 Route::resource('rutaAlmacen', AlmacenController::class)->names('admin.rutaAlmacen');
 
 Route::resource('rutaUnidadesMedida', UnidadesMedidaController::class)->names('admin.rutaUnidadesMedida');
+
+Route::resource('rutaSalidas', SalidaController::class)->names('admin.rutaSalidas');
 
