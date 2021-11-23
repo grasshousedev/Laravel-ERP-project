@@ -37,6 +37,9 @@ use App\Http\Controllers\Admin\CategoriaController;
 use App\Http\Controllers\Admin\LoteController;
 use App\Http\Controllers\Admin\AlmacenController;
 use App\Http\Controllers\Admin\UnidadesMedidaController;
+use App\Http\Controllers\Admin\OrdenesTrabajoListadoController;
+use App\Http\Controllers\Admin\OccClientesListadoController;
+use App\Http\Controllers\Admin\OccProveedoresControllerListado;
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
@@ -90,7 +93,9 @@ Route::resource('listaproductos', Lista_ProductosController::class)->names('admi
 
 Route::resource('occProveedores', OccProveedoresController::class)->names('admin.occProveedores');
 
-
+Route::resource('ordenestrabajoListado', OrdenesTrabajoListadoController::class)->names('admin.ordenestrabajoListado');
+Route::resource('occClientesListado', OccClientesListadoController::class)->names('admin.occClientesListado');
+Route::resource('occProveedoresListado', OccProveedoresControllerListado::class)->names('admin.occProveedoresListado');
 
 Route::resource('comprasAlmacen', ComprasAlmacenController::class)->names('admin.comprasAlmacen');
 

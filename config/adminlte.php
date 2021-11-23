@@ -304,30 +304,6 @@ return [
                     'text'  => 'Clientes',
                     'route' => 'admin.clientes.index'
                 ],
-                // [
-                //     'text'    => 'level_one',
-                //     'url'     => '#',
-                //     'submenu' => [
-                //         [
-                //             'text' => 'level_two',
-                //             'url'  => '#',
-                //         ],
-                //         [
-                //             'text'    => 'level_two',
-                //             'url'     => '#',
-                //             'submenu' => [
-                //                 [
-                //                     'text' => 'level_three',
-                //                     'url'  => '#',
-                //                 ],
-                //                 [
-                //                     'text' => 'level_three',
-                //                     'url'  => '#',
-                //                 ],
-                //             ],
-                //         ],
-                //     ],
-                // ],
                 [
                     'text' => 'Proveedores',
                     'route' => 'admin.proveedores.index'
@@ -407,7 +383,15 @@ return [
             'icon'        => 'fas fa-boxes',
             'submenu' => [
                 [
+                    'text'  => 'O.C. Clientes',
+                    'route'   => 'admin.occClientesListado.index',
+                ],
+                [
                     'text'  => 'Ingresos',
+                    'route'   => 'admin.ingresosAlmacen.index',
+                ],
+                [
+                    'text'  => 'Salida',
                     'route'   => 'admin.ingresosAlmacen.index',
                 ],
                 [
@@ -415,13 +399,21 @@ return [
                     'route'   => 'admin.stockAlmacen.index',
                 ],
                 [
+                    'text'  => 'O.C. Proveedor',
+                    'route'   => 'admin.occProveedoresListado.index',
+                ],
+                [
+                    'text'  => 'Ordenes de trabajo',
+                    'route'   => 'admin.ordenestrabajoListado.index',
+                ],
+                [
                     'text'  => 'Registro de guias',
                     'route'   => 'admin.registroAlmacen.index',
                 ],
-                [
-                    'text'  => 'Compras',
-                    'route'   => 'admin.comprasAlmacen.index',
-                ],
+                // [
+                //     'text'  => 'Compras',
+                //     'route'   => 'admin.comprasAlmacen.index',
+                // ],
             ],
         ],
 
