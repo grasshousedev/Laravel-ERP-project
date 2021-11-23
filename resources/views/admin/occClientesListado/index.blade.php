@@ -3,9 +3,6 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    {{-- @can('Crear productos') --}}
-        <a href="{{ route('admin.occClientes.create') }}" class="btn btn-secondary btn-sm float-right">Registrar O.C.</a>
-    {{-- @endcan --}}
     
     <h1>O. C. Clientes</h1>
 @stop
