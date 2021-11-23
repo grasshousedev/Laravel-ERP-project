@@ -40,7 +40,7 @@ class HomeController extends Controller
         $total_productos = 0;
         foreach ($producto as $item) {
             $total_productos += $item->prec_prod;
-        }        
+        }
         
         return view('admin.index', compact('cotizaciones_aprobadas', 'num_productos', 'num_op', 'total_ventas', 'total_productos'));
         // return view('admin.index');
