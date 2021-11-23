@@ -12,6 +12,7 @@ use App\Models\Fabricante;
 use App\Models\Categoria;
 use App\Models\Lote;
 use App\Models\UnidadesMedida;
+use App\Models\Almacen_ingreso;
 use App\Classes\CustomCodeGenerator;
 
 
@@ -45,6 +46,12 @@ class SalidaController extends Controller
 
         return view('admin.views_salidas.create', compact('moneda', 'almacen', 'modelo', 'fabricante', 'categoria', 'lote', 'unidades_med'));
     }
+    
+    public function search()
+    {
+        $ingresos     = Almacen_ingreso::all();
+        return response()->json($ingresos);
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -60,18 +67,21 @@ class SalidaController extends Controller
             'fabricante'        => 'required',
             'modelo'            => 'required',
             'categoria'         => 'required',
-            'precio_costo'      => 'required',
+            'precio_venta'      => 'required',
             'lote'              => 'required',
             'unidad_medida'     => 'required',
             'unidades'          => 'required',
             'descripcion'       => 'required',
-            'ruc_provee'        => 'required',
+            'ruc_cliente'       => 'required',
             'razon_social'      => 'required',
             'guia'              => 'required',
             'almacen'           => 'required',
-            'oc_proveedor'      => 'required',
-            'orden_pedido'      => 'required',
+            'occ'               => 'required',
+            'cot'      => 'required',
+            'vendedor'      => 'required',
+            'responsable'      => 'required',
             'moneda'            => 'required',
+            'serial'            => 'required',
         ]);
         
         $datosingreso = request()->except('_token');
@@ -133,22 +143,25 @@ class SalidaController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nombre'        => 'required',
+            'nombre'            => 'required',
             'fabricante'        => 'required',
             'modelo'            => 'required',
             'categoria'         => 'required',
-            'precio_costo'      => 'required',
+            'precio_venta'      => 'required',
             'lote'              => 'required',
             'unidad_medida'     => 'required',
             'unidades'          => 'required',
             'descripcion'       => 'required',
-            'ruc_provee'        => 'required',
+            'ruc_cliente'        => 'required',
             'razon_social'      => 'required',
             'guia'              => 'required',
             'almacen'           => 'required',
-            'oc_proveedor'      => 'required',
-            'orden_pedido'      => 'required',
+            'occ'      => 'required',
+            'cot'      => 'required',
+            'vendedor'      => 'required',
+            'responsable'      => 'required',
             'moneda'            => 'required',
+            'serial'            => 'required',
         ]);
         $datosingreso = request()->except('_token', '_method', 'codigo');
 
