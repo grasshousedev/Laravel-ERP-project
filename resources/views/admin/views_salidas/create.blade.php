@@ -11,9 +11,9 @@
     <div class="card">
         <div class="card-body">
 
-            {!! Form::open(['route' => 'admin.ingresosAlmacen.store']) !!}
+            {!! Form::open(['route' => 'admin.rutaSalidas.store']) !!}
             
-                @include('admin.almacenIngresos.parts.form')
+                @include('admin.views_salidas.parts.form')
 
                 {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
                 

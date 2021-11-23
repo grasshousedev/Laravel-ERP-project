@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Viste detallada del ingreso al almacen Nº {{ $almaceningreso->id }}</h1>
+    <h1>Vista detallada de la salida Nº {{ $almaceningreso->id }}</h1>
 @stop
 
 @section('content')
@@ -77,7 +77,7 @@
         <div>
             Moneda: {{ $almaceningreso->moneda }}
         </div>
-        <a href="{{ route('admin.ingresosAlmacen.index') }}" class="btn btn-primary">Volver</a>
+        <a href="{{ route('admin.rutaSalidas.index') }}" class="btn btn-primary">Volver</a>
 </div>
 @stop
 
