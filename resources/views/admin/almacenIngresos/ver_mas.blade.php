@@ -12,73 +12,175 @@
             {{ session('info') }}
         </div>
     @endif
+
 <div class="card">
     <div class="card-body">
-        <div>
-            Codigo: {{ $almaceningreso->codigo }}
+        <div class="row row-cols-1 row-cols-md-5 g-4" style="max-width: 100rem;">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Codigo:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->codigo }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> Fabricante:  </h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->fabricante }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> Modelo: </h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->modelo }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Categoria: </h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->categoria }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Precio de costo:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->precio_costo }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Lote:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->lote }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Unidad de medida:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->unidad_medida }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Unidades:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->unidades }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Descripcion:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->descripcion }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">RUC proveedor: </h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->ruc_provee }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Razon social:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->razon_social }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Guia:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->guia }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Almacen:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->almacen }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> O.C. proveedor:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->oc_proveedor }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> Orden de pedido:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->orden_pedido }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Moneda:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->moneda }}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div>
-            Fabricante:  {{ $almaceningreso->fabricante }}
-        </div>
-
-        <div>
-            Modelo: {{ $almaceningreso->modelo }}
-        </div>
-
-        <div>
-            Categoria: {{ $almaceningreso->categoria }}
-        </div>
-
-        <div>
-            Precio de costo: {{ $almaceningreso->precio_costo }}
-        </div>
-
-        <div>
-            Lote: {{ $almaceningreso->lote }}
-        </div>
-
-        <div>
-            Unidad de medida: {{ $almaceningreso->unidad_medida }}
-        </div>        
-
-        <div>
-            Unidades: {{ $almaceningreso->unidades }}
-        </div>
-
-        <div>
-            Descripcion: {{ $almaceningreso->descripcion }}
-        </div>
-
-        <div>
-            RUC proveedor: {{ $almaceningreso->ruc_provee }}
-        </div>
-
-        <div>
-            Razon social: {{ $almaceningreso->razon_social }}
-        </div>
-
-        <div>
-            Guia: {{ $almaceningreso->guia }}
-        </div>
-
-        <div>
-            Almacen: {{ $almaceningreso->almacen }}
-        </div>
-
-        <div>
-            O.C. proveedor: {{ $almaceningreso->oc_proveedor }}
-        </div>
-
-        <div>
-            Orden de pedido: {{ $almaceningreso->orden_pedido }}
-        </div>
-
-        <div>
-            Moneda: {{ $almaceningreso->moneda }}
-        </div>
-        <a href="{{ route('admin.ingresosAlmacen.index') }}" class="btn btn-primary">Volver</a>
+    </div>
 </div>
+<a href="{{ route('admin.ingresosAlmacen.index') }}" class="btn btn-primary">Volver</a>
+
 @stop
 
 @section('css')
