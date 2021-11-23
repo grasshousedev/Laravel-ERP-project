@@ -102,7 +102,14 @@ class IngresosAlmacenController extends Controller
     {
         $almaceningreso     = Almacen_ingreso::find($id);
         $moneda             = Tipo_moneda::pluck('moneda', 'moneda');
-        return view('admin.almacenIngresos.edit', compact('moneda', 'almaceningreso'));
+        $almacen        = Almacene::pluck('almacen', 'almacen');
+        $modelo         = Modelo::pluck('modelo', 'modelo');
+        $fabricante     = Fabricante::pluck('fabricante', 'fabricante');
+        $categoria      = Categoria::pluck('categoria', 'categoria');
+        $lote           = Lote::pluck('lote', 'lote');
+        $unidades_med   = UnidadesMedida::pluck('unidad', 'unidad');
+
+        return view('admin.almacenIngresos.edit', compact('almaceningreso', 'moneda', 'almacen', 'modelo', 'fabricante', 'categoria', 'lote', 'unidades_med'));
     }
 
     /**
