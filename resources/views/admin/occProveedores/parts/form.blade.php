@@ -1,4 +1,4 @@
-<div class="input-field"">
+<div class="input-field">
     {!! Form::label('ruc', 'RUC Proveedor') !!}
     {!! Form::text('ruc', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
     @error('ruc')
