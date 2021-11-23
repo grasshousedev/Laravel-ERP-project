@@ -12,6 +12,8 @@ use App\Models\Fabricante;
 use App\Models\Categoria;
 use App\Models\Lote;
 use App\Models\UnidadesMedida;
+use App\Classes\CustomCodeGenerator;
+
 
 class SalidaController extends Controller
 {
@@ -53,7 +55,7 @@ class SalidaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'codigo'            => 'required',
+            // 'codigo'            => 'required',
             'fabricante'        => 'required',
             'modelo'            => 'required',
             'categoria'         => 'required',
@@ -72,6 +74,13 @@ class SalidaController extends Controller
         ]);
         $datosingreso = request()->except('_token');
         Salida::insert($datosingreso);
+
+        $last = Salida::all()->last();
+        $last = isset($last) ? count($last) : 0;
+
+        $codigo = new CustomCodeGenerator("RS", $last->id - 1); #resta uno porque dentro de la clase sumará 1
+        $datosingreso['codigo'] = $codigo->generar;
+        Salida::where('id', '=', $last->id)->update($datosingreso);
 
         $almaceningreso = Salida::all();
         //return response()->json($datosingreso);
