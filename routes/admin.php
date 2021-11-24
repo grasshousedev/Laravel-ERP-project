@@ -41,6 +41,7 @@ use App\Http\Controllers\Admin\OccClientesListadoController;
 use App\Http\Controllers\Admin\OccProveedoresControllerListado;
 use App\Http\Controllers\Admin\SalidaController;
 use App\Http\Controllers\Admin\StockAlmacenController;
+use App\Http\Controllers\Admin\RegistroGuiaController;
 
 // Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
@@ -121,4 +122,6 @@ Route::resource('rutaUnidadesMedida', UnidadesMedidaController::class)->names('a
 Route::resource('rutaSalidas', SalidaController::class)->names('admin.rutaSalidas');
 
 Route::resource('rutaStock', StockAlmacenController::class)->names('admin.rutaStock');
+
+Route::resource('rutaGuia', RegistroGuiaController::class)->names('admin.rutaGuia');
 
