@@ -123,7 +123,7 @@ class IngresosAlmacenController extends Controller
         $lote           = Lote::pluck('lote', 'lote');
         $unidades_med   = UnidadesMedida::pluck('unidad', 'unidad');
 
-        return view('admin.almacenIngresos.edit', compact('moneda', 'almaceningreso', 'modelo', 'fabricante', 'almacen', 'categoria', 'lote', 'unidades_med'));
+        return view('admin.almacenIngresos.edit', compact('almaceningreso', 'moneda', 'almacen', 'modelo', 'fabricante', 'categoria', 'lote', 'unidades_med'));
     }
 
     /**

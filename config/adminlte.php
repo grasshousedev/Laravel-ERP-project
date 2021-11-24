@@ -408,7 +408,7 @@ return [
                 ],
                 [
                     'text'  => 'Registro de guias',
-                    'route'   => 'admin.registroAlmacen.index',
+                    'route'   => 'admin.rutaGuia.index',
                 ],
                 // [
                 //     'text'  => 'Compras',

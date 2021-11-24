@@ -48,7 +48,7 @@ class OccClientes extends Controller
         $occC = request()->except('_token');
         if($request->hasFile('archivo')){
             $archivo = $request->file('archivo');
-            $archivo->move(public_path().'/uploads/', $occC['archivo']->getClientOriginalName());
+            $archivo->move(public_path().'/uploads/OC-CLIENTES/', $occC['archivo']->getClientOriginalName());
             $occC['archivo'] = $archivo->getClientOriginalName();
         }
         OccCliente::insert($occC);
