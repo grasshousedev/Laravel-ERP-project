@@ -6,13 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Salida;
-// use App\Models\Tipo_moneda;
-// use App\Models\Almacene;
-// use App\Models\Modelo;
-// use App\Models\Fabricante;
-// use App\Models\Categoria;
-// use App\Models\Lote;
-// use App\Models\UnidadesMedida;
 use App\Models\Almacen_ingreso;
 use App\Classes\CustomCodeGenerator;
 
