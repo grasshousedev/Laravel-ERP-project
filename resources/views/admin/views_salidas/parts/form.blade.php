@@ -110,7 +110,7 @@
     <div class="col-md">
         <div class="form-floating">
             <div class="form-group">
-                <label class="col-md-4 control-label" >{!! Form::label('precio_venta', 'Precio Venta (Unitario)') !!}</label> 
+                <label class="col-md-4 control-label" >{!! Form::label('precio_costo', 'Precio Costo (Unitario)') !!}</label> 
                 <div class="col-md-11 inputGroupContainer">
                     <div class="input-group">
                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-cash" viewBox="0 0 16 16" style="margin-right: 20px;">
@@ -119,6 +119,12 @@
                     </svg>
                         {!! Form::number('precio_venta', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
                         @error('precio_venta')
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="margin-right: 20px;">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                        </svg>
+                        {!! Form::number('precio_costo', null, ['class' => 'form-control', 'autocomplete'=>'off', 'min'=>'3400']) !!}
+                        @error('precio_costo')
                             <small class="text-danger">
                                 {{ $message }}
                             </small>
@@ -425,7 +431,7 @@
     <div class="col-md">
         <div class="form-floating">
             <div class="form-group">
-                <label class="col-md-4 control-label" for="fecha_ingreso">Fecha Ingreso</label> 
+                <label class="col-md-4 control-label" for="fecha_salida">Fecha Salida</label> 
                 <div class="col-md-11 inputGroupContainer">
                     <div class="input-group">
                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-calendar-week" viewBox="0 0 16 16" style="margin-right: 20px;">
@@ -433,6 +439,11 @@
                       <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                     </svg>
                         <input type="date" name="fecha_ingreso" id="fecha_ingreso" class="form-control" min="2021-11-01" max="2023-11-01">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="margin-right: 20px;">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                        </svg>
+                        <input type="date" name="fecha_salida" id="fecha_salida" class="form-control" min="2021-11-01" max="2023-11-01">
                     </div>
                 </div>
             </div>
@@ -441,7 +452,7 @@
     <div class="col-md">
         <div class="form-floating">
             <div class="form-group">
-                <label class="col-md-4 control-label" for="hora_ingreso">Hora Ingreso</label> 
+                <label class="col-md-4 control-label" for="hora_salida">Hora Salida</label> 
                 <div class="col-md-11 inputGroupContainer">
                     <div class="input-group">
                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16" style="margin-right: 20px;">
@@ -449,6 +460,11 @@
                       <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
                     </svg>
                         <input type="time" name="hora_ingreso" id="hora_ingreso" class="form-control" min="09:00" max="20:00">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="margin-right: 20px;">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                        </svg>
+                        <input type="time" name="hora_salida" id="hora_salida" class="form-control" min="09:00" max="20:00">
                     </div>
                 </div>
             </div>
