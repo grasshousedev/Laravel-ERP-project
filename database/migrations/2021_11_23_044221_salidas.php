@@ -37,6 +37,8 @@ class Salidas extends Migration
             $table->string('moneda');
             $table->string('serial');
             $table->string('id_ingreso');
+            $table->date('fecha_salida');
+            $table->time('hora_salida');
 
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('updated_at')->nullable();

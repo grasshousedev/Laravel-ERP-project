@@ -82,6 +82,8 @@ class SalidaController extends Controller
             'responsable'      => 'required',
             'moneda'            => 'required',
             'serial'            => 'required',
+            'fecha_salida'            => 'required',
+            'hora_salida'            => 'required',
         ]);
         
         $datosingreso = request()->except('_token');
@@ -162,6 +164,8 @@ class SalidaController extends Controller
             'responsable'      => 'required',
             'moneda'            => 'required',
             'serial'            => 'required',
+            'fecha_salida'            => 'required',
+            'hora_salida'            => 'required',
         ]);
         $datosingreso = request()->except('_token', '_method', 'codigo');
 

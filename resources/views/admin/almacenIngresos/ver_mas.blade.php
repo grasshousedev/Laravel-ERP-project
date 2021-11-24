@@ -196,6 +196,26 @@
                     </div>
                 </div>
             </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Fecha Ingreso:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->fecha_ingreso }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Hora Ingreso:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->hora_ingreso }}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

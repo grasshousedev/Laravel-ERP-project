@@ -13,7 +13,7 @@ class ActualizarStock
         
         foreach ($ingresos as $id){
             $registro = Salida::where('id_ingreso', '=', $id->id_ingreso);
-            isset($registro){
+            if(isset($registro)){
                 $registro->cantidad = $registro->cantidad - $cantidad;
                 $registro->save();
             }

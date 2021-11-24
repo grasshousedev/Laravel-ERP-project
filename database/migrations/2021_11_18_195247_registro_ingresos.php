@@ -34,6 +34,8 @@ class RegistroIngresos extends Migration
             $table->string('orden_pedido');
             $table->string('moneda');
             $table->string('serial');
+            $table->date('fecha_ingreso');
+            $table->time('hora_ingreso');
 
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('updated_at')->nullable();
