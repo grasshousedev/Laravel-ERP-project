@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Editar O.C. Cliente</h1>
+    <h1>Editar Guia</h1>
 @stop
 
 @section('content')
@@ -14,9 +14,9 @@
     @endif
     <div class="card">
         <div class="card-body">
-            {!! Form::model($occClientes, ['route' => ['admin.occClientes.update', $occClientes], 'method' => 'put']) !!}
+            {!! Form::model($reguistros_guias, ['route' => ['admin.rutaGuia.update', $reguistros_guias], 'method' => 'put']) !!}
             
-                @include('admin.occClientes.parts.form')
+                @include('admin.views_guias.parts.form')
 
                 {!! Form::submit('Editar producto', ['class' => 'btn btn-primary']) !!}
                 

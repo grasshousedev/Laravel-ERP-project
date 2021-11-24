@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Guia;
 
 class RegistroGuiaController extends Controller
 {
@@ -14,7 +15,8 @@ class RegistroGuiaController extends Controller
      */
     public function index()
     {
-        return view('admin.views_guias.index');
+        $reguistros_guias = Guia::all();
+        return view('admin.views_guias.index', compact('reguistros_guias'));
     }
 
     /**
@@ -24,7 +26,7 @@ class RegistroGuiaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.views_guias.create');
     }
 
     /**
@@ -35,7 +37,27 @@ class RegistroGuiaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'ruc'               => 'required',
+            'razon'             => 'required',
+            'direccion'         => 'required',
+            'fecha_llegada'     => 'required',
+            'hora_llegada'      => 'required',
+            'archivo'           => 'required',
+            'oop'               => 'required',
+            'numero_guia'       => 'required',
+        ]);
+        $guia = request()->except('_token');
+        if($request->hasFile('archivo')){
+            $archivo = $request->file('archivo');
+            $archivo->move(public_path().'/uploads/REGISTRO-GUIAS/', $guia['archivo']->getClientOriginalName());
+            $guia['archivo'] = $archivo->getClientOriginalName();
+        }
+        Guia::insert($guia);
+        //return response()->json($guia);
+        //dd($request);
+        $reguistros_guias = Guia::all();
+        return redirect()->route('admin.rutaGuia.index', compact('reguistros_guias'))->with('info', 'Fue creado correctamente.');
     }
 
     /**
@@ -57,7 +79,9 @@ class RegistroGuiaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $reguistros_guias = Guia::find($id);
+
+        return view('admin.views_guias.edit', compact('reguistros_guias'));
     }
 
     /**
@@ -69,7 +93,30 @@ class RegistroGuiaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'ruc'               => 'required',
+            'razon'             => 'required',
+            'direccion'         => 'required',
+            'fecha_llegada'     => 'required',
+            'hora_llegada'      => 'required',
+            'archivo'           => 'required',
+            'oop'               => 'required',
+            'numero_guia'       => 'required',
+        ]);
+
+        $guia = request()->except('_token');
+        if($request->hasFile('archivo')){
+            $archivo = $request->file('archivo');
+            $archivo->move(public_path().'/uploads/REGISTRO-GUIAS/', $guia['archivo']->getClientOriginalName());
+            $guia['archivo'] = $archivo->getClientOriginalName();
+        }
+
+        Guia::where('id','=',$id)->update($guia);
+        
+        $reguistros_guias = Guia::findOrFail($id);
+
+        return redirect()->route('admin.rutaGuia.index', $reguistros_guias)->with('info', 'Se actualizo correctamente');
+
     }
 
     /**
@@ -80,6 +127,9 @@ class RegistroGuiaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Guia::destroy($id);
+
+        $reguistros_guias = Guia::all();
+        return redirect()->route('admin.rutaGuia.index', compact('reguistros_guias'))->with('info', 'Se elimino correctamente.');
     }
 }

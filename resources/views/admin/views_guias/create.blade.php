@@ -3,14 +3,14 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Crear O. C. Clientes</h1>
+    <h1>Registrar guia</h1>
 @stop
 
 @section('content')
 
-    {!! Form::open(['route' => 'admin.occClientes.store', 'enctype' => 'multipart/form-data']) !!}
+    {!! Form::open(['route' => 'admin.rutaGuia.store', 'enctype' => 'multipart/form-data']) !!}
     
-        @include('admin.occClientes.parts.form')
+        @include('admin.views_guias.parts.form')
         {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
         
     {!! Form::close() !!}

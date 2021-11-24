@@ -4,7 +4,7 @@
 
 @section('content_header')
     {{-- @can('Crear productos') --}}
-        <a href="{{ route('admin.occClientes.create') }}" class="btn btn-secondary btn-sm float-right">Registrar O.C.</a>
+        <a href="{{ route('admin.rutaGuia.create') }}" class="btn btn-secondary btn-sm float-right">Agregar guia</a>
     {{-- @endcan --}}
     
     <h1>Guias</h1>
@@ -18,33 +18,37 @@
     @endif
 <div class="card">
     <div class="card-body">
-        <table class="table table-striped" id="occ">
+        <table class="table table-striped" id="guia">
             <thead>
                 <th id="">RUC</th>
                 <th id="">Razon social</th>
-                <th id="">Descripcion</th>
-                <th id="">Cotizacion</th>
-                <th id="">Tiempo de entrega</th>
+                <th id="">Direccion</th>
+                <th id="">Fecha de llegada</th>
+                <th id="">Hora de llegada</th>
+                <th id="">Opp</th>
+                <th id="">Numero de guia</th>
                 <th id="">Archivo</th>
                 <th id=""></th>
                 <th id=""></th>
             </thead>
             <tbody>
-                @foreach ($occClientes as $occ)
+                @foreach ($reguistros_guias as $guia)
                     <tr>
-                        <td>{{ $occ->ruc }}</td>
-                        <td>{{ $occ->razon }}</td>
-                        <td>{{ $occ->descripcion }}</td>
-                        <td>{{ $occ->cot }}</td>
-                        <td>{{ $occ->tiempo_entrega }}</td>
-                        <td> <a href="/uploads/{{ $occ->archivo }}" target="_blank">Ver archivo</a></td>
+                        <td>{{ $guia->ruc }}</td>
+                        <td>{{ $guia->razon }}</td>
+                        <td>{{ $guia->direccion }}</td>
+                        <td>{{ $guia->fecha_llegada }}</td>
+                        <td>{{ $guia->hora_llegada }}</td>
+                        <td>{{ $guia->oop }}</td>
+                        <td>{{ $guia->numero_guia }}</td>
+                        <td> <a href="/uploads/REGISTRO-GUIAS/{{ $guia->archivo }}" target="_blank">Ver archivo</a></td>
 
                         <td width="10px">
-                            <a href="{{ route('admin.occClientes.edit', $occ->id) }}" class="btn btn-sm btn-primary">Editar</a>
+                            <a href="{{ route('admin.rutaGuia.edit', $guia->id) }}" class="btn btn-sm btn-primary">Editar</a>
                         </td>
                         
                         <td width="10px">
-                            <form action="{{ route('admin.occClientes.destroy', $occ) }}" method="POST">
+                            <form action="{{ route('admin.rutaGuia.destroy', $guia) }}" method="POST">
         
                                 @csrf
                                 @method('DELETE')
@@ -74,7 +78,7 @@
     <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready (function () {
-            $('#occ').DataTable();
+            $('#guia').DataTable();
         });
     </script>
 @stop

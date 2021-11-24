@@ -13,7 +13,19 @@ class Guias extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('guias', function (Blueprint $table) {
+            $table->id();
+            $table->string('ruc');
+            $table->string('razon');
+            $table->string('direccion');
+            $table->string('fecha_llegada');
+            $table->string('hora_llegada');
+            $table->string('archivo');
+            $table->string('oop');
+            $table->string('numero_guia');
+            $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->dateTime('updated_at')->nullable();
+        });
     }
 
     /**
@@ -23,6 +35,6 @@ class Guias extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('guias');
     }
 }
