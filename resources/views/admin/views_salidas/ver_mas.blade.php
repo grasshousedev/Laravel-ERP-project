@@ -29,6 +29,8 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
+<<<<<<< HEAD
+=======
                         <h5 class="card-title"> Nombre:  </h5>
                         <br>
                         <hr style="background-color: white;">
@@ -39,6 +41,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
+>>>>>>> 7bf79f19e93382beb2de68c4c15963ffd510ad23
                         <h5 class="card-title"> Fabricante:  </h5>
                         <br>
                         <hr style="background-color: white;">
@@ -189,7 +192,11 @@
         </div>
     </div>
 </div>
+
+<a href="{{ route('admin.rutaSalidas.index') }}" class="btn btn-primary">Volver</a>
+
 <a href="{{ route('admin.ingresosAlmacen.index') }}" class="btn btn-primary">Volver</a>
+
 
 @stop
 

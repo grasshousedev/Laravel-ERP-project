@@ -54,6 +54,7 @@
                 text-align: center;
                 background-color: #246355;
                 color: white;
+                top: 0%;
             }
             .cuadro3{
                 border: 1px solid black;
@@ -63,6 +64,7 @@
                 height: 20px;
                 margin-top: 140px;
                 text-align: center;
+                top: 0%;
 
             }
             .cuadro4{
@@ -75,6 +77,7 @@
                 margin-top: 120px;
                 background-color: #246355;
                 color: white;
+                top: 0%;
             }
             .cuadro5{
                 border: 1px solid black;
@@ -84,6 +87,7 @@
                 height: 20px;
                 margin-top: 140px;
                 text-align: center;
+                top: 0%;
             }
             .cuadro6{
                 border: 1px solid black;
@@ -196,7 +200,6 @@
                 position: fixed;
             }
             .producto{
-                border: 1px solid black;
                 height: 300px;
             }
             .condiciones{
@@ -283,20 +286,19 @@
     <div class="cuadro16">
         {{ $cotizacion->tiempo_entrega }}
     </div>
-    <br>
-    <br>
-    <br>
-    <hr style="border:1px;">
-    <br>
+<br>
+<br>
+<br>
+<br>
     <div class="producto">
-        <table class="table table-sm bg-dark" id="table_t">
+        <table class="table table-sm bg-dark" id="table_t" style="border-collapse: collapse;">
             <thead>
                 <tr>
-                    <th scope="col">Item</th>
-                    <th scope="col">Notas</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Precio</th>
-                    <th scope="col">Total producto</th>    
+                    <th scope="col" style="width: 117px;">Item</th>
+                    <th scope="col" style="width: 117px;">Notas</th>
+                    <th scope="col" style="width: 117px;">Cantidad</th>
+                    <th scope="col" style="width: 117px;">Precio</th>
+                    <th scope="col" style="width: 117px;">Total producto</th>    
                 </tr>
             </thead>
             <tbody id="table_data">
