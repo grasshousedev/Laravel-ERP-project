@@ -14,7 +14,6 @@ use App\Models\Salida;
 // use App\Models\Lote;
 // use App\Models\UnidadesMedida;
 use App\Models\Almacen_ingreso;
-use App\Models\Stock;
 use App\Classes\CustomCodeGenerator;
 
 class StockAlmacenController extends Controller
@@ -26,7 +25,7 @@ class StockAlmacenController extends Controller
      */
     public function index()
     {
-        $almaceningreso = Stock::all();
+        $almaceningreso = Almacen_ingreso::all();
         return view('admin.views_stock.index', compact('almaceningreso'));
     }
 
