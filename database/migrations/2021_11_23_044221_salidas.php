@@ -21,7 +21,7 @@ class Salidas extends Migration
             $table->string('fabricante');
             $table->string('modelo');
             $table->string('categoria');
-            $table->string('precio_venta');
+            $table->string('precio_costo');
             $table->string('lote');
             $table->string('unidad_medida');
             $table->double('unidades');

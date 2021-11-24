@@ -3,26 +3,19 @@
 namespace App\Classes;
 
 use App\Models\Almacen_ingreso;
-use App\Models\Stock;
+use App\Models\Salida;
 
 class ActualizarStock
 {
     public function revisar_tablas()
     {
-        $ingresos = Stock::all();
+        $ingresos = Almacen_ingreso::all();
         
         foreach ($ingresos as $id){
-            $registro = Salida::where('id_ingreso', '=', $id->id_ingreso);
+            $salidas = Salida::where('id_ingreso', '=', $id->id_ingreso);
             if(isset($registro)){
-                $registro->cantidad = $registro->cantidad - $cantidad;
-                $registro->save();
+                $salidas->cantidad = $ingresos->cantidad - $salidas->cantidad;
             }
         }
-    }
-    public function actualizar_de_registro($id, $cantidad)
-    {
-        $registro = Stock::where('id_ingreso', '=', $id);
-        $registro->cantidad = $registro->cantidad - $cantidad;
-        $registro->save();
     }
 }

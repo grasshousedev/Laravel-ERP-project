@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         {{-- <link href="{{ public_path('css/app.css') }}" rel="stylesheet" type="text/css"> --}}
         {{-- <link href="{{ public_path('css/pdf.css') }}" rel="stylesheet" type="text/css"> --}}
-        <title>PDF</title>
+        <title>PDF {{ $cotizacion->codigo }}</title>
         <style>
             th, td {    
                 border: 1px solid black;
@@ -105,7 +105,7 @@
                 border: 1px solid black;
                 width: 100px;
                 text-align: center;
-                top: 22%;
+                top: 23%;
                 position: fixed;
                 height: 20px;
                 background-color: #246355;
@@ -115,7 +115,7 @@
                 border: 1px solid black;
                 width: 100px;
                 text-align: center;
-                top: 24%;
+                top: 25%;
                 position: fixed;
                 height: 20px;
             }
@@ -124,7 +124,7 @@
                 width: 110px;
                 margin-left: 130px;
                 height: 20px;
-                top: 22%;
+                top: 23%;
                 text-align: center;
                 position: fixed;
                 background-color: #246355;
@@ -135,7 +135,7 @@
                 width: 110px;
                 margin-left: 130px;
                 height: 20px;
-                top: 24%;
+                top: 25%;
                 text-align: center;
                 position: fixed;
             }
@@ -144,7 +144,7 @@
                 width: 110px;
                 margin-left: 270px;
                 height: 20px;
-                top: 22%;
+                top: 23%;
                 text-align: center;
                 position: fixed;
                 background-color: #246355;
@@ -155,7 +155,7 @@
                 width: 110px;
                 margin-left: 270px;
                 height: 20px;
-                top: 24%;
+                top: 25%;
                 text-align: center;
                 position: fixed;
             }
@@ -164,7 +164,7 @@
                 width: 110px;
                 margin-left: 410px;
                 height: 20px;
-                top: 22%;
+                top: 23%;
                 text-align: center;
                 position: fixed;
                 background-color: #246355;
@@ -175,7 +175,7 @@
                 width: 110px;
                 margin-left: 410px;
                 height: 20px;
-                top: 24%;
+                top: 25%;
                 text-align: center;
                 position: fixed;
             }
@@ -184,7 +184,7 @@
                 width: 150px;
                 margin-left: 550px;
                 height: 20px;
-                top: 22%;
+                top: 23%;
                 text-align: center;
                 position: fixed;
                 background-color: #246355;
@@ -195,7 +195,7 @@
                 width: 150px;
                 margin-left: 550px;
                 height: 20px;
-                top: 24%;
+                top: 25%;
                 text-align: center;
                 position: fixed;
             }
@@ -214,7 +214,7 @@
     </head>
 <body>
     <div class="p">
-    <p style="font-size: 20px;">NOMBRE DE LA EMPRESA</p>
+    <p style="font-size: 20px;">3D PRINTER</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa iusto ul
     m labore consequuntur perspiciatis velit dolorem culpa, sunt dolorum nemo!</p> 
     </div> 
@@ -289,7 +289,6 @@
 <br>
 <br>
 <br>
-<br>
     <div class="producto">
         <table class="table table-sm bg-dark" id="table_t" style="border-collapse: collapse;">
             <thead>
@@ -358,6 +357,7 @@
             </tbody>
         </table>
     </div>
+    <br>
     <br>
     <div class="condiciones">
         {{ $cotizacion->condiciones }}
