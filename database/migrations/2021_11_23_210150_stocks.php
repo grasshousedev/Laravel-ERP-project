@@ -13,10 +13,12 @@ class Stocks extends Migration
      */
     public function up()
     {
-        Schema::create('stock', function (Blueprint $table) {
+        Schema::create('stocks', function (Blueprint $table) {
             $table->id();
             
             $table->string('codigo');
+            $table->string('alm');
+            $table->string('serial');
             $table->string('fabricante');
             $table->string('modelo');
             $table->string('categoria');
@@ -24,14 +26,15 @@ class Stocks extends Migration
             $table->string('lote');
             $table->string('unidad_medida');
             $table->double('unidades');
+            $table->string('moneda');
             $table->string('descripcion');
-            $table->string('ruc_provee');
+            $table->string('ruc_proveedor');
             $table->string('razon_social');
             $table->string('guia');
             $table->string('almacen');
-            $table->string('oc_proveedor');
-            $table->string('orden_pedido');
-            $table->string('moneda');
+            $table->string('ocp');
+            $table->string('op');
+            $table->string('id_ingreso');
 
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('updated_at')->nullable();
@@ -45,6 +48,6 @@ class Stocks extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stock');
+        Schema::dropIfExists('stocks');
     }
 }

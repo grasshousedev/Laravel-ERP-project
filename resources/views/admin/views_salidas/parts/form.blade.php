@@ -431,3 +431,4 @@
 <br>
 
 <input type="hidden" name="codigo" value="def">
+<input type="hidden" id="id_ingreso" name="id_ingreso" value="">

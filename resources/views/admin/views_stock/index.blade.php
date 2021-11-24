@@ -4,7 +4,7 @@
 
 @section('content_header')
     <a href="{{ route('admin.ingresosAlmacen.create') }}" class="btn btn-secondary btn-sm float-right">Agregar Ingreso</a>
-    <h1>Ingresos Almacen</h1>
+    <h1>Almacen Stock</h1>
 @stop
 
 @section('content')
@@ -17,12 +17,10 @@
     <div class="card-body">
         <table class="table table-striped" id="ingresos">
             <thead>
-                <th id="">Almacen</th>
-                <th id="">Fabricante</th>
-                <th id="">Modelo</th>
-                <th id="">Categoria</th>
-                <th id="">Lote</th>
+                <th id="">Nombre</th>
                 <th id="">Unidades</th>
+                <th id="">Almacen</th>
+                <th id="">Precio Costo</th>
                 <th id=""></th>
                 <th id=""></th>
                 <th id=""></th>
@@ -30,12 +28,10 @@
             <tbody>
                 @foreach ($almaceningreso as $ingreso)
                     <tr>
-                        <td>{{ $ingreso->almacen }}</td>
-                        <td>{{ $ingreso->fabricante }}</td>
-                        <td>{{ $ingreso->modelo }}</td>
-                        <td>{{ $ingreso->categoria }}</td>
-                        <td>{{ $ingreso->lote }}</td>
+                        <td>{{ $ingreso->nombre }}</td>
                         <td>{{ $ingreso->unidades }}</td>
+                        <td>{{ $ingreso->almacen }}</td>
+                        <td>{{ $ingreso->precio_costo }}</td>
 
                         <td width="10px">
                             <a href="{{ route('admin.ingresosAlmacen.show', $ingreso->id) }}" class="btn btn-sm btn-primary">

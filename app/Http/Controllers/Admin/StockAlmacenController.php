@@ -5,6 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\Salida;
+// use App\Models\Tipo_moneda;
+// use App\Models\Almacene;
+// use App\Models\Modelo;
+// use App\Models\Fabricante;
+// use App\Models\Categoria;
+// use App\Models\Lote;
+// use App\Models\UnidadesMedida;
+use App\Models\Almacen_ingreso;
+use App\Models\Stock;
+use App\Classes\CustomCodeGenerator;
+
 class StockAlmacenController extends Controller
 {
     /**
@@ -14,7 +26,8 @@ class StockAlmacenController extends Controller
      */
     public function index()
     {
-        return view('admin.almacenStock.index');
+        $almaceningreso = Stock::all();
+        return view('admin.views_stock.index', compact('almaceningreso'));
     }
 
     /**

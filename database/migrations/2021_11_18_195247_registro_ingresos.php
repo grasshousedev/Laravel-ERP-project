@@ -33,6 +33,7 @@ class RegistroIngresos extends Migration
             $table->string('oc_proveedor');
             $table->string('orden_pedido');
             $table->string('moneda');
+            $table->string('serial');
 
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('updated_at')->nullable();

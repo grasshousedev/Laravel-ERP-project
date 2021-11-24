@@ -66,6 +66,7 @@
                             $('#guia').val(dataCust2[reqdata]['guia']);
                             $('#almacen').val(dataCust2[reqdata]['almacen']);
                             $('#moneda').val(dataCust2[reqdata]['moneda']);
+                            $('#id_ingreso').val(dataCust2[reqdata]['id']);
                         }
                     });
                 }

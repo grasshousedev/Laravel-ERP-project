@@ -29,6 +29,16 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
+                        <h5 class="card-title">Serial:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->serial }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
                         <h5 class="card-title"> Nombre:  </h5>
                         <br>
                         <hr style="background-color: white;">

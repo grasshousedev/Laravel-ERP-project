@@ -30,7 +30,6 @@ use App\Http\Controllers\Admin\Proveedores_productos;
 use App\Http\Controllers\Admin\ComprasAlmacenController;
 use App\Http\Controllers\Admin\IngresosAlmacenController;
 use App\Http\Controllers\Admin\RegistroAlmacenController;
-use App\Http\Controllers\Admin\StockAlmacenController;
 use App\Http\Controllers\Admin\ModeloProductosController;
 use App\Http\Controllers\Admin\FabricanteController;
 use App\Http\Controllers\Admin\CategoriaController;
@@ -41,6 +40,7 @@ use App\Http\Controllers\Admin\OrdenesTrabajoListadoController;
 use App\Http\Controllers\Admin\OccClientesListadoController;
 use App\Http\Controllers\Admin\OccProveedoresControllerListado;
 use App\Http\Controllers\Admin\SalidaController;
+use App\Http\Controllers\Admin\StockAlmacenController;
 
 // Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
@@ -119,4 +119,6 @@ Route::resource('rutaAlmacen', AlmacenController::class)->names('admin.rutaAlmac
 Route::resource('rutaUnidadesMedida', UnidadesMedidaController::class)->names('admin.rutaUnidadesMedida');
 
 Route::resource('rutaSalidas', SalidaController::class)->names('admin.rutaSalidas');
+
+Route::resource('rutaStock', StockAlmacenController::class)->names('admin.rutaStock');
 
