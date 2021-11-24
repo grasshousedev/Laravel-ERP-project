@@ -29,6 +29,8 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
+<<<<<<< HEAD
+=======
                         <h5 class="card-title">Serial:</h5>
                         <br>
                         <hr style="background-color: white;">
@@ -39,6 +41,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
+>>>>>>> 20ac84c2fe1c1665f2526126288f4d2a545edab0
                         <h5 class="card-title"> Nombre:  </h5>
                         <br>
                         <hr style="background-color: white;">
