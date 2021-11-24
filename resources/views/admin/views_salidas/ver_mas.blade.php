@@ -29,6 +29,16 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
+                        <h5 class="card-title">Serial:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->serial }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
                         <h5 class="card-title"> Nombre:  </h5>
                         <br>
                         <hr style="background-color: white;">
@@ -122,7 +132,7 @@
                         <h5 class="card-title">RUC proveedor: </h5>
                         <br>
                         <hr style="background-color: white;">
-                        <p class="card-text">{{ $almaceningreso->ruc_provee }}</p>
+                        <p class="card-text">{{ $almaceningreso->ruc_cliente }}</p>
                     </div>
                 </div>
             </div>
@@ -159,20 +169,40 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"> O.C. proveedor:</h5>
+                        <h5 class="card-title"> OCC:</h5>
                         <br>
                         <hr style="background-color: white;">
-                        <p class="card-text">{{ $almaceningreso->oc_proveedor }}</p>
+                        <p class="card-text">{{ $almaceningreso->occ }}</p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"> Orden de pedido:</h5>
+                        <h5 class="card-title"> COT:</h5>
                         <br>
                         <hr style="background-color: white;">
-                        <p class="card-text">{{ $almaceningreso->orden_pedido }}</p>
+                        <p class="card-text">{{ $almaceningreso->cot }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> Vendedor:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->vendedor }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> Responsable:</h5>
+                        <br>
+                        <hr style="background-color: white;">
+                        <p class="card-text">{{ $almaceningreso->responsable }}</p>
                     </div>
                 </div>
             </div>
@@ -211,10 +241,6 @@
 </div>
 
 <a href="{{ route('admin.rutaSalidas.index') }}" class="btn btn-primary">Volver</a>
-
-<a href="{{ route('admin.ingresosAlmacen.index') }}" class="btn btn-primary">Volver</a>
-
-
 @stop
 
 @section('css')
