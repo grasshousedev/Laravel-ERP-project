@@ -396,7 +396,7 @@ return [
                 ],
                 [
                     'text'  => 'Stock',
-                    'route'   => 'admin.stockAlmacen.index',
+                    'route'   => 'admin.rutaStock.index',
                 ],
                 [
                     'text'  => 'O.C. Proveedor',

@@ -57,6 +57,8 @@ class IngresosAlmacenController extends Controller
     {
         $request->validate([
             'codigo'            => 'required',
+            'serial'            => 'required',
+            'nombre'        => 'required',
             'fabricante'        => 'required',
             'modelo'            => 'required',
             'categoria'         => 'required',
@@ -72,6 +74,8 @@ class IngresosAlmacenController extends Controller
             'oc_proveedor'      => 'required',
             'orden_pedido'      => 'required',
             'moneda'            => 'required',
+            'fecha_ingreso'            => 'required',
+            'hora_ingreso'            => 'required',
         ]);
         $datosingreso = request()->except('_token');
         Almacen_ingreso::insert($datosingreso);
@@ -133,6 +137,8 @@ class IngresosAlmacenController extends Controller
     {
         $request->validate([
             'fabricante'        => 'required',
+            'nombre'        => 'required',
+            'serial'            => 'required',
             'modelo'            => 'required',
             'categoria'         => 'required',
             'precio_costo'      => 'required',
@@ -147,6 +153,8 @@ class IngresosAlmacenController extends Controller
             'oc_proveedor'      => 'required',
             'orden_pedido'      => 'required',
             'moneda'            => 'required',
+            'fecha_ingreso'            => 'required',
+            'hora_ingreso'            => 'required',
         ]);
         $datosingreso = request()->except('_token', '_method', 'codigo');
 

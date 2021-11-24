@@ -17,6 +17,7 @@ class RegistroIngresos extends Migration
             $table->id();
             
             $table->string('codigo');
+            $table->string('nombre');
             $table->string('fabricante');
             $table->string('modelo');
             $table->string('categoria');
@@ -32,6 +33,9 @@ class RegistroIngresos extends Migration
             $table->string('oc_proveedor');
             $table->string('orden_pedido');
             $table->string('moneda');
+            $table->string('serial');
+            $table->date('fecha_ingreso');
+            $table->time('hora_ingreso');
 
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('updated_at')->nullable();

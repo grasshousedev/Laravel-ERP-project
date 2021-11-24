@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Vista detallada del ingreso al almacen Nº {{ $almaceningreso->id }}</h1>
+    <h1>Viste detallada del ingreso al almacen Nº {{ $almaceningreso->id }}</h1>
 @stop
 
 @section('content')
@@ -23,26 +23,6 @@
                         <br>
                         <hr style="background-color: white;">
                         <p class="card-text">{{ $almaceningreso->codigo }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Serial:</h5>
-                        <br>
-                        <hr style="background-color: white;">
-                        <p class="card-text">{{ $almaceningreso->serial }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"> Nombre:  </h5>
-                        <br>
-                        <hr style="background-color: white;">
-                        <p class="card-text">{{ $almaceningreso->nombre }}</p>
                     </div>
                 </div>
             </div>
@@ -193,26 +173,6 @@
                         <br>
                         <hr style="background-color: white;">
                         <p class="card-text">{{ $almaceningreso->moneda }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Fecha Ingreso:</h5>
-                        <br>
-                        <hr style="background-color: white;">
-                        <p class="card-text">{{ $almaceningreso->fecha_ingreso }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Hora Ingreso:</h5>
-                        <br>
-                        <hr style="background-color: white;">
-                        <p class="card-text">{{ $almaceningreso->hora_ingreso }}</p>
                     </div>
                 </div>
             </div>
