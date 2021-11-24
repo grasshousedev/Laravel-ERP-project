@@ -13,6 +13,9 @@ use App\Models\Categoria;
 use App\Models\Lote;
 use App\Models\UnidadesMedida;
 
+use App\Classes\CustomCodeGenerator;
+
+
 class IngresosAlmacenController extends Controller
 {
     /**
@@ -73,6 +76,13 @@ class IngresosAlmacenController extends Controller
         $datosingreso = request()->except('_token');
         Almacen_ingreso::insert($datosingreso);
 
+        $last = Almacen_ingreso::all()->last();
+        $last = isset($last) ? $last : 0;
+
+        $codigo = new CustomCodeGenerator("ALM", $last->id - 1); #resta uno porque dentro de la clase sumará 1
+        $datosingreso['codigo'] = $codigo->generar;
+        Almacen_ingreso::where('id', '=', $last->id)->update($datosingreso);
+
         $almaceningreso = Almacen_ingreso::all();
         //return response()->json($datosingreso);
         return redirect()->route('admin.ingresosAlmacen.index', compact('almaceningreso'))->with('info', 'El registro de ingreso fue creado correctamente.');
@@ -102,9 +112,9 @@ class IngresosAlmacenController extends Controller
     {
         $almaceningreso     = Almacen_ingreso::find($id);
         $moneda             = Tipo_moneda::pluck('moneda', 'moneda');
+        $fabricante     = Fabricante::pluck('fabricante', 'fabricante');
         $almacen        = Almacene::pluck('almacen', 'almacen');
         $modelo         = Modelo::pluck('modelo', 'modelo');
-        $fabricante     = Fabricante::pluck('fabricante', 'fabricante');
         $categoria      = Categoria::pluck('categoria', 'categoria');
         $lote           = Lote::pluck('lote', 'lote');
         $unidades_med   = UnidadesMedida::pluck('unidad', 'unidad');
@@ -122,7 +132,6 @@ class IngresosAlmacenController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'codigo'            => 'required',
             'fabricante'        => 'required',
             'modelo'            => 'required',
             'categoria'         => 'required',
@@ -139,7 +148,7 @@ class IngresosAlmacenController extends Controller
             'orden_pedido'      => 'required',
             'moneda'            => 'required',
         ]);
-        $datosingreso = request()->except('_token', '_method');
+        $datosingreso = request()->except('_token', '_method', 'codigo');
 
         Almacen_ingreso::where('id', '=', $id)->update($datosingreso);
         $almaceningreso = Almacen_ingreso::all();

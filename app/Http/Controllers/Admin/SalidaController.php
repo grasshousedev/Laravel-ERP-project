@@ -12,6 +12,8 @@ use App\Models\Fabricante;
 use App\Models\Categoria;
 use App\Models\Lote;
 use App\Models\UnidadesMedida;
+use App\Classes\CustomCodeGenerator;
+
 
 class SalidaController extends Controller
 {
@@ -70,8 +72,16 @@ class SalidaController extends Controller
             'orden_pedido'      => 'required',
             'moneda'            => 'required',
         ]);
+        
         $datosingreso = request()->except('_token');
         Salida::insert($datosingreso);
+
+        $last = Salida::all()->last();
+        $last = isset($last) ? $last : 0;
+
+        $codigo = new CustomCodeGenerator("RS", $last->id - 1); #resta uno porque dentro de la clase sumará 1
+        $datosingreso['codigo'] = $codigo->generar;
+        Salida::where('id', '=', $last->id)->update($datosingreso);
 
         $almaceningreso = Salida::all();
         //return response()->json($datosingreso);
@@ -102,7 +112,14 @@ class SalidaController extends Controller
     {
         $almaceningreso     = Salida::find($id);
         $moneda             = Tipo_moneda::pluck('moneda', 'moneda');
-        return view('admin.views_salidas.edit', compact('moneda', 'almaceningreso'));
+        $fabricante     = Fabricante::pluck('fabricante', 'fabricante');
+        $almacen        = Almacene::pluck('almacen', 'almacen');
+        $modelo         = Modelo::pluck('modelo', 'modelo');
+        $categoria      = Categoria::pluck('categoria', 'categoria');
+        $lote           = Lote::pluck('lote', 'lote');
+        $unidades_med   = UnidadesMedida::pluck('unidad', 'unidad');
+
+        return view('admin.views_salidas.edit', compact('moneda', 'almaceningreso', 'modelo', 'fabricante', 'almacen', 'categoria', 'lote', 'unidades_med'));
     }
 
     /**
@@ -115,7 +132,6 @@ class SalidaController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'codigo'            => 'required',
             'fabricante'        => 'required',
             'modelo'            => 'required',
             'categoria'         => 'required',
@@ -132,7 +148,7 @@ class SalidaController extends Controller
             'orden_pedido'      => 'required',
             'moneda'            => 'required',
         ]);
-        $datosingreso = request()->except('_token', '_method');
+        $datosingreso = request()->except('_token', '_method', 'codigo');
 
         Salida::where('id', '=', $id)->update($datosingreso);
         $almaceningreso = Salida::all();
