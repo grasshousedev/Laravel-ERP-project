@@ -77,6 +77,7 @@ class IngresosAlmacenController extends Controller
             'fecha_ingreso'            => 'required',
             'hora_ingreso'            => 'required',
         ]);
+
         $datosingreso = request()->except('_token');
         Almacen_ingreso::insert($datosingreso);
 

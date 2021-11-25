@@ -21,10 +21,10 @@ class RegistroIngresos extends Migration
             $table->string('fabricante');
             $table->string('modelo');
             $table->string('categoria');
-            $table->string('precio_costo');
+            $table->double('precio_costo');
             $table->string('lote');
             $table->string('unidad_medida');
-            $table->double('unidades');
+            $table->integer('unidades');
             $table->string('descripcion');
             $table->string('ruc_provee');
             $table->string('razon_social');

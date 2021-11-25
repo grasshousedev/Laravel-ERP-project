@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Salidas extends Migration
+class Stocks extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class Salidas extends Migration
      */
     public function up()
     {
-        Schema::create('salidas', function (Blueprint $table) {
+        Schema::create('stocks', function (Blueprint $table) {
             $table->id();
             
             $table->string('codigo');
@@ -26,20 +26,17 @@ class Salidas extends Migration
             $table->string('unidad_medida');
             $table->integer('unidades');
             $table->string('descripcion');
-            $table->string('ruc_cliente');
+            $table->string('ruc_provee');
             $table->string('razon_social');
             $table->string('guia');
             $table->string('almacen');
-            $table->string('occ');
-            $table->string('cot');
-            $table->string('vendedor');
-            $table->string('responsable');
+            $table->string('oc_proveedor');
+            $table->string('orden_pedido');
             $table->string('moneda');
             $table->string('serial');
+            $table->date('fecha_ingreso');
+            $table->time('hora_ingreso');
             $table->string('id_ingreso');
-            $table->date('fecha_salida');
-            $table->time('hora_salida');
-            $table->string('estado')->default("0");
 
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('updated_at')->nullable();
@@ -53,6 +50,7 @@ class Salidas extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('salidas');
+        Schema::dropIfExists('stocks');
+
     }
 }
