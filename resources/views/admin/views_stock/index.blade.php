@@ -3,7 +3,6 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <a href="{{ route('admin.ingresosAlmacen.create') }}" class="btn btn-secondary btn-sm float-right">Agregar Ingreso</a>
     <h1>Almacen Stock</h1>
 @stop
 
@@ -17,40 +16,31 @@
     <div class="card-body">
         <table class="table table-striped" id="ingresos">
             <thead>
+                <th id="">ALM</th>
                 <th id="">Nombre</th>
-                <th id="">Unidades</th>
-                <th id="">Almacen</th>
+                <th id="">Unidades Disponibles</th>
                 <th id="">Precio Costo</th>
-                <th id=""></th>
                 <th id=""></th>
                 <th id=""></th>
             </thead>
             <tbody>
                 @foreach ($almaceningreso as $ingreso)
                     <tr>
+                        <td>{{ $ingreso->codigo }}</td>
                         <td>{{ $ingreso->nombre }}</td>
                         <td>{{ $ingreso->unidades }}</td>
-                        <td>{{ $ingreso->almacen }}</td>
                         <td>{{ $ingreso->precio_costo }}</td>
 
                         <td width="10px">
-                            <a href="{{ route('admin.ingresosAlmacen.show', $ingreso->id) }}" class="btn btn-sm btn-primary">
+                            <a href="{{ route('admin.rutaStock.show', $ingreso->id) }}" class="btn btn-sm btn-primary">
                                 <span class="material-icons-outlined">
                                     visibility
                                 </span>
                             </a>
                         </td>
-
-                        <td width="10px">
-                            <a href="{{ route('admin.ingresosAlmacen.edit', $ingreso->id) }}" class="btn btn-sm btn-primary">
-                                <span class="material-icons-outlined">
-                                    edit
-                                </span>
-                            </a>
-                        </td>
                         
                         <td width="10px">
-                            <form action="{{ route('admin.ingresosAlmacen.destroy', $ingreso) }}" method="POST">
+                            <form action="{{ route('admin.rutaStock.destroy', $ingreso) }}" method="POST">
 
                                 @csrf
                                 @method('DELETE')

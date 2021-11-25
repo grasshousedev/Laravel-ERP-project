@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 use App\Models\Salida;
 use App\Models\Stock;
-use App\Models\Almacen_ingreso;
 use App\Classes\CustomCodeGenerator;
 
 class StockAlmacenController extends Controller
@@ -22,7 +21,7 @@ class StockAlmacenController extends Controller
         $salidas = Salida::where('estado','=','0')
                             ->get()
                             ->groupBy('id_ingreso');
-                            
+
         if($salidas->count() > 0){
             $totales_array = array();
             $par = array();
@@ -44,7 +43,7 @@ class StockAlmacenController extends Controller
             }
         
             foreach ($totales_array as $salida){
-                $row = Almacen_ingreso::find($salida['id_ingreso']);
+                $row = Stock::find($salida['id_ingreso']);
                 $stock = new Stock;
                 $stock->codigo = $row->codigo;
                 $stock->nombre = $row->nombre;
@@ -73,8 +72,6 @@ class StockAlmacenController extends Controller
             
         $almaceningreso = Stock::all();
         return view('admin.views_stock.index', compact('almaceningreso'));
-        // return response()->json($salidas);
-        // return response()->json($totales_array);
     }
 
     /**
@@ -106,7 +103,8 @@ class StockAlmacenController extends Controller
      */
     public function show($id)
     {
-        //
+        $almaceningreso = Stock::find($id);
+        return view('admin.views_stock.ver_mas', compact('almaceningreso'));
     }
 
     /**
@@ -140,6 +138,9 @@ class StockAlmacenController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Stock::destroy($id);
+
+        $almaceningreso = Stock::all();
+        return redirect()->route('admin.rutaStock.index', compact('almaceningreso'))->with('info', 'El registro fue eliminado correctamente.');
     }
 }
