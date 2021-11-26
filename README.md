@@ -39,7 +39,7 @@ npm run dev
 
 Crear una base de datos en el motor postgres con el nombre "postDBS".
 El código de autenticación para establecer conexion con la base de datos es `1234`
-en caso de que el suyo sea distinto puede cambiarlo en el archivo ".env"
+en caso de que el suyo sea distinto puede cambiarlo en el archivo ```.env```
 En seguida para integrar las migraciones ejecutar los scripts:
 
 ```
