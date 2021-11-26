@@ -13,6 +13,7 @@ use App\Models\Categoria;
 use App\Models\Lote;
 use App\Models\UnidadesMedida;
 use App\Models\Cliente;
+use App\Models\Stock;
 use App\Models\Almacen_ingreso;
 use App\Classes\CustomCodeGenerator;
 
@@ -50,7 +51,7 @@ class SalidaController extends Controller
     
     public function search()
     {
-        $ingresos     = Almacen_ingreso::all();
+        $ingresos     = Stock::all();
         return response()->json($ingresos);
     }
 
@@ -91,8 +92,9 @@ class SalidaController extends Controller
             'serial'            => 'required',
             'fecha_salida'            => 'required',
             'hora_salida'            => 'required',
+            'id_ingreso'            => 'required',
         ]);
-        
+
         $datosingreso = request()->except('_token');
         Salida::insert($datosingreso);
 
@@ -103,9 +105,8 @@ class SalidaController extends Controller
         $datosingreso['codigo'] = $codigo->generar;
         Salida::where('id', '=', $last->id)->update($datosingreso);
 
-        $almaceningreso = Salida::all();
-        //return response()->json($datosingreso);
-        return redirect()->route('admin.rutaSalidas.index', compact('almaceningreso'))->with('info', 'El registro de salida fue creado correctamente.');
+        $almaceningreso = Stock::all();
+        return redirect()->route('admin.rutaStock.index', compact('almaceningreso'))->with('info', 'El registro de salida fue creado correctamente.');
     }
 
     /**

@@ -68,6 +68,7 @@
                             $('#almacen').val(dataCust2[reqdata]['almacen']);
                             $('#moneda').val(dataCust2[reqdata]['moneda']);
                             $('#id_ingreso').val(dataCust2[reqdata]['id']);
+                            $('#unidades').attr('max', dataCust2[reqdata]['unidades']);
                         }
                     });
                 }
