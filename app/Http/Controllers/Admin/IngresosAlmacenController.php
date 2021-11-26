@@ -12,6 +12,7 @@ use App\Models\Fabricante;
 use App\Models\Categoria;
 use App\Models\Lote;
 use App\Models\UnidadesMedida;
+use App\Models\Proveedore;
 
 use App\Classes\CustomCodeGenerator;
 
@@ -47,6 +48,12 @@ class IngresosAlmacenController extends Controller
         return view('admin.almacenIngresos.create', compact('moneda', 'almacen', 'modelo', 'fabricante', 'categoria', 'lote', 'unidades_med'));
     }
 
+    public function searchProveedor()
+    {
+        $proveedores     = Proveedore::all();
+        return response()->json($proveedores);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -58,7 +65,7 @@ class IngresosAlmacenController extends Controller
         $request->validate([
             'codigo'            => 'required',
             'serial'            => 'required',
-            'nombre'        => 'required',
+            'nombre'            => 'required',
             'fabricante'        => 'required',
             'modelo'            => 'required',
             'categoria'         => 'required',
@@ -74,8 +81,8 @@ class IngresosAlmacenController extends Controller
             'oc_proveedor'      => 'required',
             'orden_pedido'      => 'required',
             'moneda'            => 'required',
-            'fecha_ingreso'            => 'required',
-            'hora_ingreso'            => 'required',
+            'fecha_ingreso'     => 'required',
+            'hora_ingreso'      => 'required',
         ]);
 
         $datosingreso = request()->except('_token');
@@ -138,7 +145,7 @@ class IngresosAlmacenController extends Controller
     {
         $request->validate([
             'fabricante'        => 'required',
-            'nombre'        => 'required',
+            'nombre'            => 'required',
             'serial'            => 'required',
             'modelo'            => 'required',
             'categoria'         => 'required',
@@ -154,8 +161,8 @@ class IngresosAlmacenController extends Controller
             'oc_proveedor'      => 'required',
             'orden_pedido'      => 'required',
             'moneda'            => 'required',
-            'fecha_ingreso'            => 'required',
-            'hora_ingreso'            => 'required',
+            'fecha_ingreso'     => 'required',
+            'hora_ingreso'      => 'required',
         ]);
         $datosingreso = request()->except('_token', '_method', 'codigo');
 

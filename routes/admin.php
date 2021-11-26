@@ -49,7 +49,7 @@ Route::resource('users', UserController::class)->middleware('can:Ver listado de 
 
 Route::resource('roles', RoleController::class)->middleware('can:Ver listado de roles')->names('admin.roles');
 
-Route::resource('logistica', LogisticaController::class)->names('admin.logistica');
+Route::resource('logistica', LogisticaController::class)->middleware('can:Ver Logistica')->names('admin.logistica');
 
 Route::resource('productos', ProductoController::class)->middleware('can:Ver listado de productos')->names('admin.productos');
 
@@ -59,9 +59,9 @@ Route::resource('ventas', VentaController::class)->names('admin.ventas');
 
 Route::resource('ventas-index', VentaIndexController::class)->names('admin.ventas-index');
 
-Route::resource('clientes', ClienteController::class)->names('admin.clientes');
+Route::resource('clientes', ClienteController::class)->middleware('can:Ver listado de clientes')->names('admin.clientes');
 
-Route::resource('proveedores', ProveedoresController::class)->names('admin.proveedores');
+Route::resource('proveedores', ProveedoresController::class)->middleware('can:Ver listado de proveedores')->names('admin.proveedores');
 
 Route::resource('productos_cli', Cliente_productos::class)->names('admin.productos_cli');
 

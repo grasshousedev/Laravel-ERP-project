@@ -109,7 +109,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md">
+    {{-- <div class="col-md">
         <div class="form-floating">
             <div class="form-group">
                 <label class="col-md-4 control-label" >{!! Form::label('cargo', 'Cargo') !!}</label> 
@@ -128,7 +128,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 </div>
 

@@ -18,6 +18,7 @@ class RolSeeder extends Seeder
     {
         $rolAdmin = Role::create(['name' => 'Admin']);
         $rolUser = Role::create(['name' => 'User']);
+        $rolLogistica = Role::create(['name' => 'Logistica']);
 
         Permission::create(['name' => 'Ver dashboard'])->syncRoles([$rolAdmin, $rolUser]);
 
@@ -31,10 +32,24 @@ class RolSeeder extends Seeder
         Permission::create(['name' => 'Editar roles'])->syncRoles([$rolAdmin]);
         Permission::create(['name' => 'Eliminar roles'])->syncRoles([$rolAdmin]);
 
-        Permission::create(['name' => 'Ver listado de productos'])->syncRoles([$rolAdmin]);
+        Permission::create(['name' => 'Ver listado de productos'])->syncRoles([$rolAdmin, $rolLogistica]);
         Permission::create(['name' => 'Crear productos'])->syncRoles([$rolAdmin]);
         Permission::create(['name' => 'Editar productos'])->syncRoles([$rolAdmin]);
         Permission::create(['name' => 'Eliminar productos'])->syncRoles([$rolAdmin]);
         
+        Permission::create(['name' => 'Ver listado de proveedores'])->syncRoles([$rolAdmin, $rolLogistica]);
+        Permission::create(['name' => 'Crear proveedores'])->syncRoles([$rolAdmin]);
+        Permission::create(['name' => 'Editar proveedores'])->syncRoles([$rolAdmin]);
+        Permission::create(['name' => 'Eliminar proveedores'])->syncRoles([$rolAdmin]);
+
+        Permission::create(['name' => 'Ver listado de clientes'])->syncRoles([$rolAdmin, $rolLogistica]);
+        Permission::create(['name' => 'Crear clientes'])->syncRoles([$rolAdmin]);
+        Permission::create(['name' => 'Editar clientes'])->syncRoles([$rolAdmin]);
+        Permission::create(['name' => 'Eliminar clientes'])->syncRoles([$rolAdmin]);
+
+        Permission::create(['name' => 'Ver Ventas'])->syncRoles([$rolLogistica, $rolAdmin]);
+        Permission::create(['name' => 'Ver Operaciones'])->syncRoles([$rolLogistica, $rolAdmin]);
+        Permission::create(['name' => 'Ver Logistica'])->syncRoles([$rolLogistica, $rolAdmin]);
+
     }
 }

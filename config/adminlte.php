@@ -282,13 +282,15 @@ return [
         ],
 
         [
-            'text' => 'Proveedores',
-            'route' => 'admin.proveedores.index'
+            'text'          => 'Proveedores',
+            'route'         => 'admin.proveedores.index',
+            'can'           => 'Ver listado de proveedores'
         ],
 
         [
-            'text'  => 'Clientes',
-            'route' => 'admin.clientes.index'
+            'text'          => 'Clientes',
+            'route'         => 'admin.clientes.index',
+            'can'           => 'Ver listado de clientes'
         ],
 
         [
@@ -318,6 +320,7 @@ return [
         [
             'text'        => 'Operaciones',
             'icon'        => 'fas fa-cogs',
+            'can'         => 'Ver Operaciones',
             'submenu' => [
                         [
                             'text'  => 'Evaluaciones',
@@ -356,6 +359,7 @@ return [
         [
             'text'        => 'Logística',
             'icon'        => 'fas fa-clipboard-check',
+            'can'         => 'Ver Logistica',
             'submenu' => [
                 [
                     'text'  => 'Ordenes de Pedido',

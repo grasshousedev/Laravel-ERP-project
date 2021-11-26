@@ -53,7 +53,7 @@ class UserController extends Controller
             'dni'           => 'required|unique:users|max:8',
             'email'         => 'required|unique:users',
             'estado'        => 'required',
-            'cargo'         => 'required',
+            //'cargo'         => 'required',
             'celular'       => 'required|max:9',
             'password'      => 'required'
         ]);

@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('12345678'),
             'celular' => '123456731',
             'estado' => 'ACTIVO',
-            'cargo' => 'ADMINISTRACION',
+            //'cargo' => 'ADMINISTRACION',
         ])->assignRole('Admin');
 
         User::create([
@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('12345678'),
             'celular' => '123456731',
             'estado' => 'ACTIVO',
-            'cargo' => 'ADMINISTRACION',
+            //'cargo' => 'ADMINISTRACION',
         ])->assignRole('Admin');
 
         User::create([
@@ -46,7 +46,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('12345678'),
             'celular' => '123456731',
             'estado' => 'ACTIVO',
-            'cargo' => 'ADMINISTRACION',
+            //'cargo' => 'ADMINISTRACION',
         ])->assignRole('Admin');
 
         User::create([
@@ -58,8 +58,20 @@ class UserSeeder extends Seeder
             'password' => bcrypt('12345678'),
             'celular' => '123456731',
             'estado' => 'ACTIVO',
-            'cargo' => 'ADMINISTRACION',
+            //'cargo' => 'ADMINISTRACION',
         ])->assignRole('Admin');
+
+        User::create([
+            'codigo' => 'USU005',
+            'name' => 'Logistica',
+            'apellido' => 'Log',
+            'email' => 'logistica@gmail.com',
+            'dni' => '12345615',
+            'password' => bcrypt('12345678'),
+            'celular' => '123456731',
+            'estado' => 'ACTIVO',
+            //'cargo' => 'LOGISTICA',
+        ])->assignRole('Logistica');
 
     }
 }

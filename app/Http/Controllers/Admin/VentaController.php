@@ -52,6 +52,8 @@ class VentaController extends Controller
         $expiracion     = Tiempo_expiracione::pluck('expiracion', 'expiracion');
         $moneda         = Tipo_moneda::pluck('moneda', 'moneda');
         $users          = User::pluck('name', 'name');
+        $condiciones    = Condicione::all();
+        $pie_pagina     = Pie_pagina::all();
 
         $cotizacion     = Cotizacione::all();
 
@@ -156,8 +158,10 @@ class VentaController extends Controller
         $expiracion     = Tiempo_expiracione::pluck('expiracion', 'expiracion');
         $moneda         = Tipo_moneda::pluck('moneda', 'moneda');
         $users          = User::pluck('name', 'name');
+        $condiciones    = Condicione::all();
+        $pie_pagina     = Pie_pagina::all();
 
-        return view('admin.ventas.edit', compact('cotizacion', 'estado', 'expiracion', 'forma_pago', 'moneda', 'tiempo_entrega', 'users'));
+        return view('admin.ventas.edit', compact('cotizacion', 'estado', 'expiracion', 'forma_pago', 'moneda', 'tiempo_entrega', 'users', 'condiciones', 'pie_pagina'));
     }
 
     /**
@@ -186,7 +190,7 @@ class VentaController extends Controller
 
         Cotizacione::where('id', '=', $id)->update($datoscot);
 
-        //$cotizacion = Cotizacione::findOrFail($id);
+        $cotizacion = Cotizacione::findOrFail($id);
 
         return redirect()->route('admin.ventas-index.index', $cotizacion)->with('info', 'La cotizacion fue actualizada correctamente.');
         //return response()->json($datoscot); 
