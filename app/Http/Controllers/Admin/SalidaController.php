@@ -84,8 +84,9 @@ class SalidaController extends Controller
             'serial'            => 'required',
             'fecha_salida'            => 'required',
             'hora_salida'            => 'required',
+            'id_ingreso'            => 'required',
         ]);
-        
+
         $datosingreso = request()->except('_token');
         Salida::insert($datosingreso);
 
