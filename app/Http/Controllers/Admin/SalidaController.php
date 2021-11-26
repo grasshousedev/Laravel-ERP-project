@@ -12,6 +12,7 @@ use App\Models\Fabricante;
 use App\Models\Categoria;
 use App\Models\Lote;
 use App\Models\UnidadesMedida;
+use App\Models\Cliente;
 use App\Models\Almacen_ingreso;
 use App\Classes\CustomCodeGenerator;
 
@@ -51,6 +52,12 @@ class SalidaController extends Controller
     {
         $ingresos     = Almacen_ingreso::all();
         return response()->json($ingresos);
+    }
+
+    public function searchCliente()
+    {
+        $clientes     = Cliente::all();
+        return response()->json($clientes);
     }
 
     /**
