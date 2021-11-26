@@ -236,16 +236,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Estado:</h5>
-                        <br>
-                        <hr style="background-color: white;">
-                        <p class="card-text">{{ $almaceningreso->estado }}</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
