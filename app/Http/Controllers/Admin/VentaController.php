@@ -120,7 +120,7 @@ class VentaController extends Controller
         $datoscot['codigo'] = $codigo->generar;
         Cotizacione::where('id', '=', $cotizacion->id)->update($datoscot);
 
-        return redirect()->route('admin.evaluaciones.index', compact('cotizacion'))->with('info', 'La cotizacion fue creada correctamente.');
+        return redirect()->route('admin.ventas-index.index', compact('cotizacion'))->with('info', 'La cotizacion fue creada correctamente.');
         // return response()->json($cotizacion); //para debugs
     }
 

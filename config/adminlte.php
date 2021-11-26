@@ -300,7 +300,7 @@ return [
             'submenu' => [
                 [
                     'text'  => 'Cotizaciones',
-                    'route' => 'admin.evaluaciones.index'
+                    'route' => 'admin.ventas-index.index'
                 ],
                 [
                     'text'  => 'Clientes',
