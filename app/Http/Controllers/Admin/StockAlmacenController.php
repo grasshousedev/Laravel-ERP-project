@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Salida;
 use App\Models\Stock;
+use App\Models\Almacen_ingreso;
 use App\Classes\CustomCodeGenerator;
 
 class StockAlmacenController extends Controller
@@ -43,7 +44,7 @@ class StockAlmacenController extends Controller
             }
         
             foreach ($totales_array as $salida){
-                $row = Stock::find($salida['id_ingreso']);
+                $row = Almacen_ingreso::find($salida['id_ingreso']);
                 $stock = new Stock;
                 $stock->codigo = $row->codigo;
                 $stock->nombre = $row->nombre;
