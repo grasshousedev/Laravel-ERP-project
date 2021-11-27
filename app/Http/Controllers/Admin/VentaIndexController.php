@@ -49,7 +49,12 @@ class VentaIndexController extends Controller
      */
     public function show($id)
     {
-        //
+        $cotizacione = Cotizacione::find($id);
+        $cotizacione['estado'] = 'Proceso';
+        $cotizacione->save();
+
+        $cotizacion = Cotizacione::all();
+        return view('admin.evaluaciones.index', compact('cotizacion'));
     }
 
     /**

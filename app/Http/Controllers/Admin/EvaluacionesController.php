@@ -18,19 +18,11 @@ class EvaluacionesController extends Controller
      */
     public function index()
     {
-        $filtro = 'COT';
+        $filtro = 'Proceso';
         $cotizacion = \DB::table('cotizaciones')
                     ->select('cotizaciones.*')
-                    ->where('codigo', 'like','%'.$filtro.'%')
+                    ->where('estado', 'like','%'.$filtro.'%')
                     ->get();
-        //$cota = Cotizacione::find($id);
-        // foreach($cotizacion as $key=>$value) {
-        //     echo $key.' => '.$value->codigo.'<br>';
-        //     echo '<br>';
-            
-        //     $res = str_replace("COT", "OT", $value->codigo);
-        //     echo $res;
-        // }
         
         //return ($cotizacion);
         return view('admin.evaluaciones.index', compact('cotizacion'));
