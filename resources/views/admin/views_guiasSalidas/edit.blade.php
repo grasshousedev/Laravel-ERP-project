@@ -14,9 +14,9 @@
     @endif
     <div class="card">
         <div class="card-body">
-            {!! Form::model($reguistros_guias, ['route' => ['admin.rutaGuia.update', $reguistros_guias], 'method' => 'put']) !!}
+            {!! Form::model($reguistros_guias, ['route' => ['admin.rutaGuiaSalida.update', $reguistros_guias], 'method' => 'put']) !!}
             
-                @include('admin.views_guias.parts.form')
+                @include('admin.views_guiasSalidas.parts.form')
 
                 {!! Form::submit('Editar', ['class' => 'btn btn-primary']) !!}
                 

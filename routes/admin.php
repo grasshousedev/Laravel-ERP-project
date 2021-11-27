@@ -42,6 +42,7 @@ use App\Http\Controllers\Admin\OccProveedoresControllerListado;
 use App\Http\Controllers\Admin\SalidaController;
 use App\Http\Controllers\Admin\StockAlmacenController;
 use App\Http\Controllers\Admin\RegistroGuiaController;
+use App\Http\Controllers\Admin\RegistroGuiaSalidaController;
 use App\Http\Controllers\Admin\PDFOPController;
 
 // Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
@@ -127,4 +128,6 @@ Route::resource('rutaSalidas', SalidaController::class)->names('admin.rutaSalida
 Route::resource('rutaStock', StockAlmacenController::class)->names('admin.rutaStock');
 
 Route::resource('rutaGuia', RegistroGuiaController::class)->names('admin.rutaGuia');
+
+Route::resource('rutaGuiaSalida', RegistroGuiaSalidaController::class)->names('admin.rutaGuiaSalida');
 
