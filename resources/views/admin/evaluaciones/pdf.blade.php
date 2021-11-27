@@ -32,7 +32,7 @@
             }
             .cuadro{
                 border: 1px solid black;
-                width: 180px;
+                width: 220px;
                 height: 20px;
                 text-align: center;
                 background-color: #246355;
@@ -40,14 +40,14 @@
             }
             .cuadro_1{
                 border: 1px solid black;
-                width: 180px;
+                width: 220px;
                 height: 20px;
                 text-align: center;
             }
             .cuadro2{
                 border: 1px solid black;
                 width: 220px;
-                margin-left: 230px;
+                margin-left: 240px;
                 position: fixed;
                 height: 20px;
                 margin-top: 120px;
@@ -59,7 +59,7 @@
             .cuadro3{
                 border: 1px solid black;
                 width: 220px;
-                margin-left: 230px;
+                margin-left: 240px;
                 position: fixed;
                 height: 20px;
                 margin-top: 140px;
@@ -92,6 +92,7 @@
             .cuadro6{
                 border: 1px solid black;
                 width: 700px;
+                margin-top: 50px;
                 text-align: center;
                 background-color: #246355;
                 color: white;
@@ -105,7 +106,7 @@
                 border: 1px solid black;
                 width: 100px;
                 text-align: center;
-                top: 23%;
+                top: 25%;
                 position: fixed;
                 height: 20px;
                 background-color: #246355;
@@ -115,16 +116,15 @@
                 border: 1px solid black;
                 width: 100px;
                 text-align: center;
-                top: 25%;
+                top: 27%;
                 position: fixed;
                 height: 20px;
             }
             .cuadro9{
                 border: 1px solid black;
-                width: 110px;
-                margin-left: 130px;
+                width: 220px;
                 height: 20px;
-                top: 23%;
+                top: 18%;
                 text-align: center;
                 position: fixed;
                 background-color: #246355;
@@ -132,19 +132,18 @@
             }
             .cuadro10{
                 border: 1px solid black;
-                width: 110px;
-                margin-left: 130px;
+                width: 220px;
                 height: 20px;
-                top: 25%;
+                top: 20%;
                 text-align: center;
                 position: fixed;
             }
             .cuadro11{
                 border: 1px solid black;
-                width: 110px;
-                margin-left: 270px;
+                width: 220px;
+                margin-left: 240px;
                 height: 20px;
-                top: 23%;
+                top: 18%;
                 text-align: center;
                 position: fixed;
                 background-color: #246355;
@@ -152,19 +151,19 @@
             }
             .cuadro12{
                 border: 1px solid black;
-                width: 110px;
-                margin-left: 270px;
+                width: 220px;
+                margin-left: 240px;
                 height: 20px;
-                top: 25%;
+                top: 20%;
                 text-align: center;
                 position: fixed;
             }
             .cuadro13{
                 border: 1px solid black;
-                width: 110px;
-                margin-left: 410px;
+                width: 220px;
+                margin-left: 480px;
                 height: 20px;
-                top: 23%;
+                top: 18%;
                 text-align: center;
                 position: fixed;
                 background-color: #246355;
@@ -172,10 +171,10 @@
             }
             .cuadro14{
                 border: 1px solid black;
-                width: 110px;
-                margin-left: 410px;
+                width: 220px;
+                margin-left: 480px;
                 height: 20px;
-                top: 25%;
+                top: 20%;
                 text-align: center;
                 position: fixed;
             }
@@ -200,7 +199,7 @@
                 position: fixed;
             }
             .producto{
-                height: 300px;
+                height: 500px;
             }
             .condiciones{
                 border: 1px solid black;
@@ -245,26 +244,29 @@
         {{ $cotizacion->cliente }}
         {{ $cotizacion->ruc_cliente }}
     </div>
-
-    <div class="cuadro">
+    <div class="cuadro4">
+        Vendedor
+    </div>
+    <div class="cuadro5">
+        {{ $cotizacion->asignado }} 
+    </div>
+    <div class="cuadro9">
         Forma de pago
     </div>
-
-    <div class="cuadro_1">
+    <div class="cuadro10">
         {{ $cotizacion->forma_pago }} 
     </div>
-
     <br>
-    <div class="cuadro">
+    <div class="cuadro11">
         Estado
     </div>
-    <div class="cuadro_1">
+    <div class="cuadro12">
         {{ $cotizacion->estado }}
     </div>
-    <div class="cuadro">
+    <div class="cuadro13">
         Tiempo de entrega
     </div>
-    <div class="cuadro_1">
+    <div class="cuadro14">
         {{ $cotizacion->tiempo_entrega }}
     </div>
     <div class="cuadro6">
@@ -273,16 +275,13 @@
     <div class="cuadro6_1">
         {{ $cotizacion->direccion }}
     </div>
-<br>
-<br>
-<br>
     <div class="producto">
-        <table id="table_t" style="border-collapse: collapse; margin-top: 50px;">
+        <table id="table_t" style="border-collapse: collapse;">
             <thead>
                 <tr>
-                    <th scope="col" style="width: 117px;">Item</th>
-                    <th scope="col" style="width: 117px;">Notas</th>
-                    <th scope="col" style="width: 117px;">Cantidad</th>
+                    <th scope="col" style="width: 210px;">Item</th>
+                    <th scope="col" style="width: 210px;">Notas</th>
+                    <th scope="col" style="width: 210px;">Cantidad</th>
                 </tr>
             </thead>
             <tbody id="table_data">
