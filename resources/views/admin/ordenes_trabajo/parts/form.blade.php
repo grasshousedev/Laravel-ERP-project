@@ -27,16 +27,18 @@
 
 <div class="form-row" style="margin-left: 10px;">
 
+    {!! Form::hidden('cliente_id', null, ['class' => 'custom-select mr-sm-2', 'autocomplete'=>'off']) !!}
+
     <div class="col-md-1 my-1">
-        {!! Form::label('cliente_id', 'Cliente ID') !!}
-        {!! Form::text('cliente_id', null, ['class' => 'custom-select mr-sm-2', 'autocomplete'=>'off']) !!}
-        @error('cliente_id')
+        {!! Form::label('encargado', 'Encargado') !!}
+        {!! Form::select('encargado', $users, auth()->user()->name, ['class' => 'custom-select mr-sm-2']) !!}
+        @error('encargado')
             <small class="text-danger">
                 {{ $message }}
             </small>
         @enderror
     </div>
-
+    
     <div class="col-md-1 my-1" style="margin-left: 19px;">
         {!! Form::label('moneda', 'Moneda') !!}
         {!! Form::select('moneda', $moneda, null, ['class' => 'custom-select mr-sm-2']) !!}

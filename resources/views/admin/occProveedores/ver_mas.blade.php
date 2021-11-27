@@ -106,37 +106,55 @@
                     </div>
                 </div>
             </div>
+
+            
         </div>
     </div>
 </div>
 
 <div class="productos">
-    <table class="table table-sm bg-dark" id="table_t">
-        <thead>
-            <tr>
-                <th scope="col">Item</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Observaciones</th>
-            </tr>
-        </thead>
-        <tbody id="table_data">
+    
+    @foreach ($producto as $item)
+    <div class="card">
+        <div class="card-body">
+            <div class="row row-cols-1 row-cols-md-5 g-4" style="max-width: 100rem;">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"> Producto: </h5>
+                            <br>
+                            <hr style="background-color: white;">
+                            <p class="card-text">{{ $item->producto }}</p>
+                        </div>
+                    </div>
+                </div>
 
-            @foreach ($producto as $item)
-            <tr>
-                <th scope="row">
-                    {{ $item->producto }}
-                </th>
-                <th scope="row">
-                    {{ $item->cantidad_prod }}
-                </th>
-                <th scope="row">
-                    {{ $item->notas }}
-                </th>
-            </tr>            
-            @endforeach
-        
-        </tbody>
-    </table>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"> Cantidad: </h5>
+                            <br>
+                            <hr style="background-color: white;">
+                            <p class="card-text">{{ $item->cantidad_prod }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"> Notas: </h5>
+                            <br>
+                            <hr style="background-color: white;">
+                            <p class="card-text">{{ $item->notas }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>        
+    @endforeach
+    
 </div>
 
 <a href="{{ route('admin.occProveedores.index') }}" class="btn btn-primary">Volver</a>

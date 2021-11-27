@@ -18,6 +18,7 @@ class OrdenesCompras extends Migration
             $table->string('codigo');
             $table->string('cliente');
             $table->string('asignado');
+            $table->string('encargado')->nullable();
             $table->string('moneda');
             $table->string('tiempo_expiracion');
             $table->string('estado');

@@ -12,6 +12,7 @@ use App\Models\Tipo_moneda;
 use App\Models\User;
 use App\Models\Ocproveedore;
 use App\Models\Proveedore;
+use App\Models\Productos_occp;
 
 class OccProveedoresController extends Controller
 {
@@ -87,7 +88,10 @@ class OccProveedoresController extends Controller
     {
         $orden_compras = Ocproveedore::find($id);
 
-        return view('admin.occProveedores.ver_mas', compact('orden_compras'));
+        $producto = Productos_occp::where('oc_proveedor_id', '=', $orden_compras->id)->get();
+
+
+        return view('admin.occProveedores.ver_mas', compact('orden_compras', 'producto'));
     }
 
     /**
