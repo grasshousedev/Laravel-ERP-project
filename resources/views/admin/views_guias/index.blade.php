@@ -20,7 +20,7 @@
     <div class="card-body">
         <table class="table table-striped" id="guia">
             <thead>
-                <th id="">RUC</th>
+                <th id="">RUC Proveedor</th>
                 <th id="">Razon social</th>
                 <th id="">Direccion</th>
                 <th id="">Fecha de llegada</th>
