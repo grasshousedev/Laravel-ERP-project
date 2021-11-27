@@ -15,6 +15,7 @@ use App\Models\Cotizacione;
 use App\Models\Area_provee_cliente;
 use App\Models\Cliente;
 use App\Models\Producto;
+use App\Models\Condicione;
 use App\Models\Cliente_producto;
 use App\Classes\CustomCodeGenerator;
 
@@ -79,7 +80,9 @@ class OrdenesTrabajoController extends Controller
         $moneda         = Tipo_moneda::pluck('moneda', 'moneda');
         $users          = User::pluck('name', 'name');
 
-        return view('admin.ordenes_trabajo.edit', compact('cotizacion', 'estado', 'expiracion', 'forma_pago', 'moneda', 'tiempo_entrega', 'users'));
+        $producto = Cliente_producto::where('cotizacion_id', '=', $cotizacion->cotizacion_id)->get();
+
+        return view('admin.ordenes_trabajo.edit', compact('cotizacion', 'estado', 'expiracion', 'forma_pago', 'moneda', 'tiempo_entrega', 'users', 'producto'));
     }
 
     /**
