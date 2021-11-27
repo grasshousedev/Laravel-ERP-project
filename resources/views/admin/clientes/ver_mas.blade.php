@@ -118,7 +118,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Asignado</h5>
+                            <h5 class="card-title">Vendedor</h5>
                             <br>
                             <hr style="background-color: white;">
                             <p class="card-text">{{$clientes->asignado}}</p>

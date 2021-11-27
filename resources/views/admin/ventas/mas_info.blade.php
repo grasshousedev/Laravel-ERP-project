@@ -207,7 +207,7 @@
                 height: 210px;
             }
             .pie_de_pagina{
-                border: 1px solid black;
+                border: none;
                 height: 120px;
             }
         </style>
@@ -215,8 +215,7 @@
 <body>
     <div class="p">
     <p style="font-size: 20px;">3D PRINTER</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa iusto ul
-    m labore consequuntur perspiciatis velit dolorem culpa, sunt dolorum nemo!</p> 
+    <p>{{ $cotizacion->condiciones }}</p> 
     </div> 
     <br>
     <table class="coti">
@@ -235,13 +234,15 @@
     </div>
     <div class="cuadro_1">
         {{ $cotizacion->created_at }}
+    <br>
     </div>
     <br>
     <div class="cuadro2">
-        Cliente
+        Cliente / RUC
     </div>
     <div class="cuadro3">
         {{ $cotizacion->cliente }}
+        {{ $cotizacion->ruc_cliente }}
     </div>
     <div class="cuadro4">
         Vendedor
@@ -290,7 +291,7 @@
 <br>
 <br>
     <div class="producto">
-        <table class="table table-sm bg-dark" id="table_t" style="border-collapse: collapse;">
+        <table id="table_t" style="border-collapse: collapse; margin-top: 50px;">
             <thead>
                 <tr>
                     <th scope="col" style="width: 117px;">Item</th>
@@ -326,6 +327,7 @@
                 <?php $producto = $item->total_prod; ?>
                 <?php $total_productos = $total_productos + $producto; ?>
                 @endforeach
+
                 <tr class="table-bordered">
                     <td><strong>Sub total</strong></td>
                     <td></td>
@@ -358,13 +360,9 @@
         </table>
     </div>
     <br>
-    <br>
-    <div class="condiciones">
-        {{ $cotizacion->condiciones }}
-    </div>
-    <br>
-    <div class="pie_de_pagina">
-        {{ $cotizacion->pie_pagina }}
+    <div class="pie_de_pagina" style="text-align: center;">
+        <small style="text-decoration: underline;">pie de pagina</small>
+        <p>{{ $cotizacion->pie_pagina }}</p>
     </div>
 </body>
 </html>

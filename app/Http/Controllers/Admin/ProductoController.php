@@ -45,6 +45,7 @@ class ProductoController extends Controller
     {
         $request->validate([
             'cod_prod'      => 'required',
+            'nombre'      => 'required',
             'fabri_prod'    => 'required',
             'model_prod'    => 'required',
             'tipo_prod'     => 'required',
@@ -55,6 +56,7 @@ class ProductoController extends Controller
             'estado'        => 'required',
             'tipo'          => 'required',
             'proveedor'     => 'required',
+            'razon_social'      => 'required',
         ]);
 
         $datosprod = request()->except('_token');
