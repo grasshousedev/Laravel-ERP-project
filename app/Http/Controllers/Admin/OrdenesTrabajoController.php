@@ -94,20 +94,8 @@ class OrdenesTrabajoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'cliente'           => 'required',
-            'asignado'          => 'required',
-            'moneda'            => 'required',
-            'tiempo_expiracion' => 'required',
-            'estado'            => 'required',
-            'forma_pago'        => 'required',
-            'tiempo_entrega'    => 'required',
-            'condiciones'       => 'required',
-            'direccion'         => 'required',
-            'pie_pagina'        => 'required',
-        ]);
 
-        $datoscot = request()->except('_token', '_method', 'codigo');
+        $datoscot = request()->except('_token', '_method', 'codigo', 'ruc_cliente', 'procesado');
 
         Ordenes_compra::where('id', '=', $id)->update($datoscot);
         $cotizacion = Ordenes_compra::findOrFail($id);
