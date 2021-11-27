@@ -108,10 +108,11 @@ class VentaController extends Controller
             'condiciones'       => 'required',
             'direccion'         => 'required',
             'pie_pagina'        => 'required',
-            'cliente_id'        => '',
+            'cliente_id'        => 'required',
+            'ruc_cliente'        => 'required',
         ]);
 
-        $datoscot = request()->only('codigo', 'cliente', 'asignado', 'moneda', 'tiempo_expiracion', 'estado', 'forma_pago', 'tiempo_entrega', 'condiciones', 'direccion', 'pie_pagina', 'cliente_id');
+        $datoscot = request()->except('_token');
         Cotizacione::insert($datoscot);
 
         $cotizacion = Cotizacione::all()->last();

@@ -15,10 +15,6 @@ class estado extends Seeder
     public function run()
     {
         DB::table('estado_entregas')->insert([
-            'estado'   => 'Seleccionar...'
-        ]);
-
-        DB::table('estado_entregas')->insert([
             'estado'   => 'Abierto'
         ]);
 
@@ -27,7 +23,7 @@ class estado extends Seeder
         ]);
 
         DB::table('estado_entregas')->insert([
-            'estado'   => 'Poceso'
+            'estado'   => 'Proceso'
         ]);
 
         DB::table('estado_entregas')->insert([
