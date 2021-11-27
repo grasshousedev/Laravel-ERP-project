@@ -25,6 +25,8 @@ class Listado extends Migration
             $table->double('precio_prod');
             $table->string('codigo_cotizacion')->nullable();
             $table->string('tiempo_entrega');
+            $table->string('responsable');
+            $table->string('ocp');
 
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('updated_at')->nullable();

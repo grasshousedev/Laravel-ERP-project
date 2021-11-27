@@ -21,7 +21,7 @@
                     <th id="">Notas</th>
                     <th id="">Cantidad</th>
                     <th id="">Proveedor</th>
-                    <th id="">Opciones</th>
+                    <th id=""></th>
                 </thead>
                 <tbody>
                     @foreach ($lista_productos as $producto)
@@ -33,9 +33,9 @@
                         <td>{{ $producto->proveedor }}</td>
                         
                         <td width="10px">
-                            <a href="{{ route('admin.tiempoexpiracion.edit', $producto->id) }}" class="btn btn-sm btn-primary">
+                            <a href="{{ route('admin.listaproductos.show', $producto->id) }}" class="btn btn-sm btn-primary">
                                 <span class="material-icons-outlined">
-                                    edit
+                                    visibility
                                 </span>
                             </a>
                         </td>

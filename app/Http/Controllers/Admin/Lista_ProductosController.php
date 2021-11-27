@@ -55,7 +55,9 @@ class Lista_ProductosController extends Controller
      */
     public function show($id)
     {
-        //
+        $item = Listado::find($id);
+
+        return view('admin.lista_productos_comprados.mas_info', compact('item'));
     }
 
     /**
