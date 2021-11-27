@@ -16,6 +16,7 @@ class Productos extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
             $table->string('cod_prod');
+            $table->string('nombre');
             $table->string('fabri_prod');
             $table->string('model_prod');
             $table->string('tipo_prod');
@@ -26,6 +27,7 @@ class Productos extends Migration
             $table->string('estado');
             $table->string('tipo');
             $table->string('proveedor');
+            $table->string('razon_social');
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('updated_at')->nullable();
         });

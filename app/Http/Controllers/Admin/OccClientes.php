@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\OccCliente;
+use App\Models\Cliente;
 
 class OccClientes extends Controller
 {
@@ -127,5 +128,11 @@ class OccClientes extends Controller
 
         $occClientes = OccCliente::all();
         return redirect()->route('admin.occClientes.index', compact('occClientes'))->with('info', 'Se elimino correctamente.');
+    }
+
+    public function searchClientes()
+    {
+        $cliente     = Cliente::all();
+        return response()->json($cliente);
     }
 }

@@ -14,9 +14,6 @@ class EstadoProducto_servicios extends Seeder
      */
     public function run()
     {
-        DB::table('estado_productoservicios')->insert([
-            'producto_servicio'   => 'Seleccionar...'
-        ]);
 
         DB::table('estado_productoservicios')->insert([
             'producto_servicio'   => 'Producto'

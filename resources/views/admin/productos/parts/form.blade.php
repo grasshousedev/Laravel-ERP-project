@@ -2,6 +2,28 @@
     <div class="col-md">
         <div class="form-floating">
             <div class="form-group">
+                <label class="col-md-4 control-label" >{!! Form::label('nombre', 'Nombre') !!}</label> 
+                <div class="col-md-11 inputGroupContainer">
+                    <div class="input-group">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-upc" viewBox="0 0 16 16" style="margin-right: 20px;">
+                            <path d="M3 4.5a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-7zm3 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7z"/>
+                        </svg>
+                        {!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre del producto']) !!}
+                        @error('nombre')
+                        <small class="text-danger">
+                            Ingrese el nombre del producto
+                        </small>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row g-2">
+    <div class="col-md">
+        <div class="form-floating">
+            <div class="form-group">
                 <label class="col-md-4 control-label" >{!! Form::label('cod_prod', 'Codigo') !!}</label> 
                 <div class="col-md-11 inputGroupContainer">
                     <div class="input-group">
@@ -133,7 +155,7 @@
     <div class="col-md">
         <div class="form-floating">
             <div class="form-group">
-                <label class="col-md-4 control-label" >{!! Form::label('vent_prod', 'Precio de venta') !!}</label> 
+                <label class="col-md-4 control-label" >{!! Form::label('vent_prod', 'Precio de costo') !!}</label> 
                 <div class="col-md-11 inputGroupContainer">
                     <div class="input-group">
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-currency-exchange" viewBox="0 0 16 16" style="margin-right: 20px;">
@@ -199,14 +221,35 @@
     <div class="col-md">
         <div class="form-floating">
             <div class="form-group">
-                <label class="col-md-4 control-label" >{!! Form::label('proveedor', 'Proveedor') !!}</label> 
+                <label class="col-md-4 control-label" >{!! Form::label('tipo', 'Tipo (Producto/Servicio)') !!}</label> 
                 <div class="col-md-11 inputGroupContainer">
                     <div class="input-group">
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="margin-right: 20px;">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                         </svg>
-                        {!! Form::text('proveedor', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el proveedor']) !!}
+                        {!! Form::select('tipo', $tipo, null, ['class' => 'form-control']) !!}
+                        @error('tipo')
+                        <small class="text-danger">
+                            El campo unidades es requerido
+                        </small>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row g-2">
+    <div class="col-md">
+        <div class="form-floating">
+            <div class="form-group">
+                <label class="col-md-4 control-label" >{!! Form::label('proveedor', 'Ruc Proveedor') !!}</label> 
+                <div class="col-md-11 inputGroupContainer">
+                    <div class="input-field">
+                        {!! Form::text('proveedor', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el RUC']) !!}
                         @error('proveedor')
                         <small class="text-danger">
                             El campo unidades es requerido
@@ -220,15 +263,15 @@
     <div class="col-md">
         <div class="form-floating">
             <div class="form-group">
-                <label class="col-md-4 control-label" >{!! Form::label('tipo', 'Tipo (Producto/Servicio)') !!}</label> 
+                <label class="col-md-4 control-label" >{!! Form::label('razon_social', 'Razón Social') !!}</label> 
                 <div class="col-md-11 inputGroupContainer">
                     <div class="input-group">
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="margin-right: 20px;">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                         </svg>
-                        {!! Form::select('tipo', $tipo, null, ['class' => 'form-control']) !!}
-                        @error('tipo')
+                        {!! Form::text('razon_social', null, ['class' => 'form-control', 'placeholder' => 'Ingrese la razon social']) !!}
+                        @error('razon_social')
                         <small class="text-danger">
                             El campo unidades es requerido
                         </small>

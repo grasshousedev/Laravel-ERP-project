@@ -17,10 +17,6 @@ use App\Http\Controllers\Admin\VentaController;
 Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'] )->middleware(['auth:sanctum', 'verified'])->name('admin.index');
 Route::get('/admin', [App\Http\Controllers\Admin\HomeController::class, 'index'] )->middleware(['auth:sanctum', 'verified'])->name('admin.index');
 
-// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//     return view('dashboard');
-// })->name('dashboard');
-
 Route::get('admin/ventas/pdf', [App\Http\Controllers\Admin\VentaController::class, 'pdf'])->name('admin.ventas.pdf');
 
 Route::get('admin/ventas/findCustomers', [App\Http\Controllers\Admin\VentaController::class, 'search'])->name('admin.ventas.search');
@@ -37,3 +33,7 @@ Route::get('admin/rutaSalidas/findCustomers', [App\Http\Controllers\Admin\Salida
 Route::get('admin/rutaSalidas/findCustomersCliente', [App\Http\Controllers\Admin\SalidaController::class, 'searchCliente'])->name('admin.rutaSalidas.searchCliente');
 
 Route::get('admin/ingresosAlmacen/findCustomers', [App\Http\Controllers\Admin\IngresosAlmacenController::class, 'searchProveedor'])->name('admin.ingresosAlmacen.searchProveedor');
+
+Route::get('admin/productos/searchProveedor', [App\Http\Controllers\Admin\ProductoController::class, 'searchProveedor'])->name('admin.productos.searchProveedor');
+
+Route::get('admin/occClientes/searchClientes', [App\Http\Controllers\Admin\OccClientes::class, 'searchClientes'])->name('admin.occClientes.searchClientes');

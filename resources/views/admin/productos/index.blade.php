@@ -22,7 +22,7 @@
             <thead>
                 <th>ID</th>
                 <th>Codigo</th>
-                <th>Fabricante</th>
+                <th>Nombre</th>
                 <th>Modelo</th>
                 <th>Tipo</th>
                 <th>Precio-compra</th>
@@ -36,7 +36,7 @@
                     <tr>
                         <td>{{ $producto->id }}</td>
                         <td>{{ $producto->cod_prod }}</td>
-                        <td>{{ $producto->fabri_prod }}</td>
+                        <td>{{ $producto->nombre }}</td>
                         <td>{{ $producto->model_prod }}</td>
                         <td>{{ $producto->tipo_prod }}</td>
                         <td>S/.{{ $producto->prec_prod }}</td>

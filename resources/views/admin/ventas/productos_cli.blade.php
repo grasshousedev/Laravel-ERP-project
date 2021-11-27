@@ -20,7 +20,7 @@
 
             {{-- {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!} --}}
             <input type="submit" class="btn btn-primary" onclick="calcular()" value="Crear">
-            <a href="{{ route('admin.evaluaciones.index') }}" class="btn btn-primary">Volver</a>
+            <a href="{{ route('admin.ventas-index.index') }}" class="btn btn-primary">Volver</a>
             {!! Form::close() !!}
         </div>
         </div>

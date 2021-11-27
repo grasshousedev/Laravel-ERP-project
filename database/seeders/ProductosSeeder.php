@@ -16,6 +16,7 @@ class ProductosSeeder extends Seeder
     {
         DB::table('productos')->insert([
             'cod_prod'      => 'SLA0001',
+            'nombre'      => 'Impresora Pinzheng',
             'fabri_prod'    => 'Pinzheng',
             'model_prod'    => 'Dazzle L120 Basic',
             'tipo_prod'     => 'SLA',
@@ -25,11 +26,13 @@ class ProductosSeeder extends Seeder
             'unidades_prod' => 11,
             'estado'        => 'Activo',
             'tipo'          => 'Producto',
-            'proveedor'     => 'Prueba proveedores'
+            'proveedor'     => '20602868495',
+            'razon_social'     => 'DIGITALZ PERU S.A.C.',
         ]);
 
         DB::table('productos')->insert([
             'cod_prod'      => 'SLA0002',
+            'nombre'      => 'Impresora Pinzheng SL',
             'fabri_prod'    => 'Pinzheng',
             'model_prod'    => 'Dazzle S130',
             'tipo_prod'     => 'SLA',
@@ -39,11 +42,13 @@ class ProductosSeeder extends Seeder
             'unidades_prod' => 10,
             'estado'        => 'Activo',
             'tipo'          => 'Producto',
-            'proveedor'     => 'Prueba proveedores'
+            'proveedor'     => '20556316890',
+            'razon_social'     => 'FABRICACIONES DIGITALES DEL PERU S.A',
         ]);
 
         DB::table('productos')->insert([
             'cod_prod'      => 'FDM0001',
+            'nombre'      => 'Impresora Twotrees',
             'fabri_prod'    => 'Twotrees',
             'model_prod'    => 'Saphire Plus V1.1',
             'tipo_prod'     => 'FDM',
@@ -53,11 +58,13 @@ class ProductosSeeder extends Seeder
             'unidades_prod' => 15,
             'estado'        => 'Activo',
             'tipo'          => 'Producto',
-            'proveedor'     => 'Prueba proveedores'
+            'proveedor'     => '20602927114',
+            'razon_social'     => 'ADITIVA 3D S.A.C.',
         ]);
 
         DB::table('productos')->insert([
             'cod_prod'      => 'FDM0002',
+            'nombre'      => 'Impresora Anel',
             'fabri_prod'    => 'Anet',
             'model_prod'    => 'ET4',
             'tipo_prod'     => 'FDM',
@@ -67,12 +74,14 @@ class ProductosSeeder extends Seeder
             'unidades_prod' => 30,
             'estado'        => 'Activo',
             'tipo'          => 'Producto',
-            'proveedor'     => 'Prueba proveedores'
+            'proveedor'     => '20556994537',
+            'razon_social'     => 'CORPORACION CREAR 4D SOCIEDAD ANONIMA CERRADA',
         ]);
 
         DB::table('productos')->insert([
             'cod_prod'      => 'FDM0003',
             'fabri_prod'    => 'Creality',
+            'nombre'    => 'Impresora Creality',
             'model_prod'    => 'Ender 3',
             'tipo_prod'     => 'FDM',
             'descripcion'   => 'Prueba descripcion',
@@ -81,12 +90,14 @@ class ProductosSeeder extends Seeder
             'unidades_prod' => 28,
             'estado'        => 'Activo',
             'tipo'          => 'Producto',
-            'proveedor'     => 'Prueba proveedores'
+            'proveedor'     => '0601916674',
+            'razon_social'     => 'CORPORACION 3D CAD PERU E.I.R.L.'
         ]);
 
         DB::table('productos')->insert([
             'cod_prod'      => 'FDM0004',
             'fabri_prod'    => 'Artillery',
+            'nombre'    => 'Impresora Artillery',
             'model_prod'    => 'Sidewinder X1',
             'tipo_prod'     => 'FDM',
             'descripcion'   => 'Prueba descripcion',
@@ -95,12 +106,14 @@ class ProductosSeeder extends Seeder
             'unidades_prod' => 19,
             'estado'        => 'Activo',
             'tipo'          => 'Producto',
-            'proveedor'     => 'Prueba proveedores'
+            'proveedor'     => '0601916674',
+            'razon_social'     => 'CORPORACION 3D CAD PERU E.I.R.L.'
         ]);
 
         DB::table('productos')->insert([
             'cod_prod'      => 'FDM0005',
             'fabri_prod'    => 'Anycubic',
+            'nombre'    => 'Impresoa Anycubic',
             'model_prod'    => 'Chiron',
             'tipo_prod'     => 'FDM',
             'descripcion'   => 'Prueba descripcion',
@@ -109,12 +122,14 @@ class ProductosSeeder extends Seeder
             'unidades_prod' => 20,
             'estado'        => 'Activo',
             'tipo'          => 'Producto',
-            'proveedor'     => 'Prueba proveedores'
+            'proveedor'     => '20556994537',
+            'razon_social'     => 'CORPORACION CREAR 4D SOCIEDAD ANONIMA CERRADA',
         ]);
 
         DB::table('productos')->insert([
             'cod_prod'      => 'DLP0001',
             'fabri_prod'    => 'Pinzheng',
+            'nombre'    => 'Impresora Pinzheng',
             'model_prod'    => 'Dazzle D100',
             'tipo_prod'     => 'DLP',
             'descripcion'   => 'Prueba descripcion',
@@ -123,12 +138,14 @@ class ProductosSeeder extends Seeder
             'unidades_prod' => 5,
             'estado'        => 'Activo',
             'tipo'          => 'Producto',
-            'proveedor'     => 'Prueba proveedores'
+            'proveedor'     => '0601916674',
+            'razon_social'     => 'CORPORACION 3D CAD PERU E.I.R.L.'
         ]);
 
         DB::table('productos')->insert([
             'cod_prod'      => 'SLA0003',
             'fabri_prod'    => 'Wiiboox',
+            'nombre'    => 'Impresora Wiiboox',
             'model_prod'    => '3DSL450',
             'tipo_prod'     => 'SLA',
             'descripcion'   => 'Prueba descripcion',
@@ -137,12 +154,14 @@ class ProductosSeeder extends Seeder
             'unidades_prod' => 1,
             'estado'        => 'Activo',
             'tipo'          => 'Producto',
-            'proveedor'     => 'Prueba proveedores'
+            'proveedor'     => '0601916674',
+            'razon_social'     => 'CORPORACION 3D CAD PERU E.I.R.L.'
         ]);
 
         DB::table('productos')->insert([
             'cod_prod'      => 'SLA0004',
             'fabri_prod'    => 'Wiiboox',
+            'nombre'    => 'Impresora Wiiboox',
             'model_prod'    => '3DSL460',
             'tipo_prod'     => 'SLA',
             'descripcion'   => 'Prueba descripcion',
@@ -151,12 +170,14 @@ class ProductosSeeder extends Seeder
             'unidades_prod' => 5,
             'estado'        => 'Activo',
             'tipo'          => 'Producto',
-            'proveedor'     => 'Prueba proveedores'
+            'proveedor'     => '0601916674',
+            'razon_social'     => 'CORPORACION 3D CAD PERU E.I.R.L.'
         ]);
 
         DB::table('productos')->insert([
             'cod_prod'      => 'SLA0005',
             'fabri_prod'    => 'Soonsolid',
+            'nombre'    => 'Impresora Soonsolid',
             'model_prod'    => 'SP350HP',
             'tipo_prod'     => 'SLA',
             'descripcion'   => 'Prueba descripcion',
@@ -165,12 +186,14 @@ class ProductosSeeder extends Seeder
             'unidades_prod' => 1,
             'estado'        => 'Activo',
             'tipo'          => 'Producto',
-            'proveedor'     => 'Prueba proveedores'
+            'proveedor'     => '0601916674',
+            'razon_social'     => 'CORPORACION 3D CAD PERU E.I.R.L.'
         ]);
 
         DB::table('productos')->insert([
             'cod_prod'      => 'FDM0006',
             'fabri_prod'    => 'Allcct',
+            'nombre'    => 'Impreso Allcct',
             'model_prod'    => 'Weike 6610',
             'tipo_prod'     => 'FDM',
             'descripcion'   => 'Prueba descripcion',
@@ -179,12 +202,14 @@ class ProductosSeeder extends Seeder
             'unidades_prod' => 5,
             'estado'        => 'Activo',
             'tipo'          => 'Producto',
-            'proveedor'     => 'Prueba proveedores'
+            'proveedor'     => '0601916674',
+            'razon_social'     => 'CORPORACION 3D CAD PERU E.I.R.L.'
         ]);
 
         DB::table('productos')->insert([
             'cod_prod'      => 'DLP0002',
             'fabri_prod'    => 'Creality',
+            'nombre'    => 'Impresora Creality',
             'model_prod'    => 'LD-002R',
             'tipo_prod'     => 'DLP',
             'descripcion'   => 'Prueba descripcion',
@@ -193,7 +218,8 @@ class ProductosSeeder extends Seeder
             'unidades_prod' => 20,
             'estado'        => 'Activo',
             'tipo'          => 'Producto',
-            'proveedor'     => 'Prueba proveedores'
+            'proveedor'     => '0601916674',
+            'razon_social'     => 'CORPORACION 3D CAD PERU E.I.R.L.'
         ]);
     }
 }

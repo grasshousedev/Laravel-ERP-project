@@ -149,7 +149,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Guia:</h5>
+                        <h5 class="card-title">Guia de salida:</h5>
                         <br>
                         <hr style="background-color: white;">
                         <p class="card-text">{{ $almaceningreso->guia }}</p>
