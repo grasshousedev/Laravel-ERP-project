@@ -42,8 +42,11 @@ use App\Http\Controllers\Admin\OccProveedoresControllerListado;
 use App\Http\Controllers\Admin\SalidaController;
 use App\Http\Controllers\Admin\StockAlmacenController;
 use App\Http\Controllers\Admin\RegistroGuiaController;
+use App\Http\Controllers\Admin\PDFOPController;
 
 // Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
+
+Route::resource('pdf_op', UserController::class)->names('admin.pdf_op');
 
 Route::resource('users', UserController::class)->middleware('can:Ver listado de usuarios')->names('admin.users');
 

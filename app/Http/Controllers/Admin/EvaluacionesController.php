@@ -18,7 +18,7 @@ class EvaluacionesController extends Controller
      */
     public function index()
     {
-        $filtro = 'Proceso';
+        $filtro = 'Aprobado';
         $cotizacion = \DB::table('cotizaciones')
                     ->select('cotizaciones.*')
                     ->where('estado', 'like','%'.$filtro.'%')

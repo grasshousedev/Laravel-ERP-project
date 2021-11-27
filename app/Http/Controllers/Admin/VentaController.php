@@ -141,7 +141,6 @@ class VentaController extends Controller
         $nombre         = date('Y-m-d');
         return $pdf->stream('CLIENTE-'.$nombre.'.pdf');
         //return response()->json($cliente_producto); //para debugs
-
     }
 
     /**

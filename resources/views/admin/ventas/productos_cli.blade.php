@@ -34,7 +34,8 @@
                     <th id="">Producto</th>
                     <th id="">Notas</th>
                     <th id="">Cantidad</th>
-                    <th id="">Funciones</th>
+                    <th id=""></th>
+                    <th id=""></th>
                 </thead>
                 <tbody>
                     <?php 
@@ -52,6 +53,21 @@
                                 edit
                                 </span>
                             </a>
+                        </td>
+                        <td width="10px">
+                        
+                            <form action="{{ route('admin.productos_cli.destroy', $producto->id) }}" method="POST">
+    
+                                @csrf
+                                @method('DELETE')
+    
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro de eliminar este registro?'); false">
+                                    <span class="material-icons-outlined">
+                                        delete
+                                    </span>
+                                </button>
+                            </form>
+                            
                         </td>
                         
                         <?php $producto = $producto->total_prod; ?>
