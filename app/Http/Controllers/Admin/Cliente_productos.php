@@ -113,5 +113,8 @@ class Cliente_productos extends Controller
                     ->where('cotizacion_id', $filtro)
                     ->get();
         return view('admin.ventas.productos_cli', compact('productos'));
+        
+        //return redirect()->route('admin.productos_cli.index', 'id='.$request->cotizacion_id);
+
     }
 }

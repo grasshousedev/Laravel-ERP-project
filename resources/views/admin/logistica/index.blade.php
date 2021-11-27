@@ -38,7 +38,7 @@
                     <td>{{ $cot->updated_at }}</td>
 
                     <td width="10px">
-                        <form action="{{ route('admin.logistica.show', $cot->id) }}" method="GET">
+                        <form action="{{ route('admin.pdf_op.show', $cot->id) }}" method="GET">
                             <button type="submit" class="btn btn-sm btn-warning">
                                 <span class="material-icons-outlined md-48">
                                     picture_as_pdf

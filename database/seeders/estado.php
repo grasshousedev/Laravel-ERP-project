@@ -23,6 +23,10 @@ class estado extends Seeder
         ]);
 
         DB::table('estado_entregas')->insert([
+            'estado'   => 'Aprobado'
+        ]);
+
+        DB::table('estado_entregas')->insert([
             'estado'   => 'Pendiente'
         ]);
 

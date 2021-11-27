@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Cotizacione;
+use App\Models\Cliente_producto;
+use PDF;
 
-class VentaIndexController extends Controller
+class PDFOPController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +17,7 @@ class VentaIndexController extends Controller
      */
     public function index()
     {
-        $cotizacion = Cotizacione::all();
-        //return response()->json($cotizacion);
-        return view('admin.ventas.index', compact('cotizacion'));
+        //
     }
 
     /**
@@ -49,12 +49,14 @@ class VentaIndexController extends Controller
      */
     public function show($id)
     {
-        $cotizacione = Cotizacione::find($id);
-        $cotizacione['estado'] = 'Aprobado';
-        $cotizacione->save();
+        $cotizacion           = Cotizacione::find($id);
+        $cliente_producto     = Cliente_producto::where('cotizacion_id', '=', $cotizacion['id'])->get();
 
-        $cotizacion = Cotizacione::all();
-        return view('admin.evaluaciones.index', compact('cotizacion'));
+        $pdf = PDF::loadView('admin.logistica.mas_info', compact('cotizacion', 'cliente_producto'));
+
+        $nombre         = date('Y-m-d');
+        return $pdf->stream('CLIENTE-'.$nombre.'.pdf');
+        //return response()->json($cliente_producto); //para debugs
     }
 
     /**
