@@ -25,7 +25,7 @@
                 <th id="">Direccion</th>
                 <th id="">Fecha de llegada</th>
                 <th id="">Hora de llegada</th>
-                <th id="">Opp</th>
+                <th id="">OCP</th>
                 <th id="">Numero de guia</th>
                 <th id="">Archivo</th>
                 <th id=""></th>
