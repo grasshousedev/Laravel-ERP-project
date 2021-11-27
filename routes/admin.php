@@ -44,6 +44,8 @@ use App\Http\Controllers\Admin\StockAlmacenController;
 use App\Http\Controllers\Admin\RegistroGuiaController;
 use App\Http\Controllers\Admin\RegistroGuiaSalidaController;
 use App\Http\Controllers\Admin\PDFOPController;
+use App\Http\Controllers\Admin\EvaluacionesPDFController;
+use App\Http\Controllers\Admin\EvaluacionesVerMasController;
 
 // Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
@@ -130,4 +132,8 @@ Route::resource('rutaStock', StockAlmacenController::class)->names('admin.rutaSt
 Route::resource('rutaGuia', RegistroGuiaController::class)->names('admin.rutaGuia');
 
 Route::resource('rutaGuiaSalida', RegistroGuiaSalidaController::class)->names('admin.rutaGuiaSalida');
+
+Route::resource('rutaEvaluacionesPDF', EvaluacionesPDFController::class)->names('admin.rutaEvaluacionesPDF');
+
+Route::resource('rutaEvaluacionesVerMas', EvaluacionesVerMasController::class)->names('admin.rutaEvaluacionesVerMas');
 

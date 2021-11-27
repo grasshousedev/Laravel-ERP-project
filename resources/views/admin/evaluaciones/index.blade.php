@@ -33,14 +33,18 @@
             <tbody>
                 @foreach ($cotizacion as $cot)
                 <tr>
-                    <td>{{ $cot->codigo }}</td>
+                    <td>
+                        <a href="{{ route('admin.EvaluacionesVerMasController.show', $cot->id) }}">
+                            {{ $cot->codigo }}
+                        </a>
+                    </td>
                     <td>{{ $cot->cliente }}</td>
                     <td>{{ $cot->asignado }}</td>
                     <td>{{ $cot->created_at }}</td>
                     <td>{{ $cot->updated_at }}</td>
 
                     <td width="10px">
-                        <form action="{{ route('admin.ventas.show', $cot->id) }}" method="GET">
+                        <form action="{{ route('admin.rutaEvaluacionesPDF.show', $cot->id) }}" method="GET">
                             <button type="submit" class="btn btn-sm btn-warning">
                                 <span class="material-icons-outlined md-48">
                                     picture_as_pdf
