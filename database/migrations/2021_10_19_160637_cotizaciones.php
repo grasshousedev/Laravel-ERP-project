@@ -17,6 +17,7 @@ class Cotizaciones extends Migration
             $table->bigIncrements('id');
             $table->string('codigo');
             $table->string('cliente');
+            $table->string('ruc_cliente');
             $table->string('asignado');
             $table->string('moneda');
             $table->string('tiempo_expiracion');
