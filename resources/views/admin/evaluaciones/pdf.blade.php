@@ -275,6 +275,7 @@
     <div class="cuadro6_1">
         {{ $cotizacion->direccion }}
     </div>
+    <br>
     <div class="producto">
         <table id="table_t" style="border-collapse: collapse;">
             <thead>
