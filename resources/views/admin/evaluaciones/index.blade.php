@@ -33,11 +33,7 @@
             <tbody>
                 @foreach ($cotizacion as $cot)
                 <tr>
-                    <td>
-                        <a href="{{ route('admin.rutaEvaluacionesVerMas.show', $cot->id) }}">
-                            {{ $cot->codigo }}
-                        </a>
-                    </td>
+                    <td>{{ $cot->codigo }}</td>
                     <td>{{ $cot->cliente }}</td>
                     <td>{{ $cot->asignado }}</td>
                     <td>{{ $cot->created_at }}</td>
