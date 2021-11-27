@@ -1,11 +1,16 @@
-<div class="form-row" style="margin-left: 10px;">
-
-    {{-- @foreach ($cotizacion as $value)
-    <?//php $id = $value->id; ?>
-    @endforeach --}}
-    <input name="codigo" type="hidden" id="validationDefault01" value="COT000">
+<div class="form-row" style="">
     <div class="input-field" style="max-width: 210px;">
-        {!! Form::label('cliente', 'Cliente') !!}
+        {!! Form::label('ruc_cliente', 'Ruc Cliente') !!}
+        {!! Form::text('ruc_cliente', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
+        @error('ruc_cliente')
+            <small class="text-danger">
+                {{ $message }}
+            </small>
+        @enderror
+    </div>
+
+    <div class="input-field" style="max-width: 210px;">
+        {!! Form::label('cliente', 'Razon social') !!}
         {!! Form::text('cliente', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
         @error('cliente')
             <small class="text-danger">
@@ -14,7 +19,7 @@
         @enderror
     </div>
     <div class="col-md-2 my-1" style="margin-left: 60px;">
-        {!! Form::label('asignado', 'Asignado') !!}
+        {!! Form::label('asignado', 'Vendedor') !!}
         {!! Form::select('asignado', $users, auth()->user()->name, ['class' => 'custom-select mr-sm-2']) !!}
         @error('asignado')
             <small class="text-danger">
@@ -95,15 +100,6 @@
 
 <div class="form-group col-md-4">
 
-    {{-- <div class="col-14 my-1">
-        {!! Form::label('condiciones', 'Condiciones generales') !!}
-        {!! Form::text('condiciones', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
-        @error('condiciones')
-            <small class="text-danger">
-                {{ $message }}
-            </small>
-        @enderror
-    </div> --}}
     <div class="col-14 my-1">
         <label for="condiciones">Condiciones</label>
         <textarea name="condiciones" id="condiciones" class="form-control"> @foreach ($condiciones as $cond) {{ $cond->condiciones }}&#13;&#10; @endforeach </textarea>
@@ -124,15 +120,6 @@
         @enderror
     </div>
 
-    {{-- <div class="col-15 my-3">
-        {!! Form::label('pie_pagina', 'Pie de pagina') !!}
-        {!! Form::text('pie_pagina', null, ['class' => 'form-control', 'autocomplete'=>'off']) !!}
-        @error('pie_pagina')
-            <small class="text-danger">
-                {{ $message }}
-            </small>
-        @enderror
-    </div> --}}
     <div class="col-15 my-3">
         <label for="pie_pagina">Pie de pagina</label>
         <textarea name="pie_pagina" id="pie_pagina" class="form-control"> @foreach ($pie_pagina as $pie) {{ $pie->pie_pagina }}&#13;&#10; @endforeach </textarea>
@@ -143,3 +130,5 @@
         @enderror
     </div>
 </div>
+
+<input name="codigo" type="hidden" id="validationDefault01" value="COT000">

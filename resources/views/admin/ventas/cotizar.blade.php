@@ -43,18 +43,19 @@
                     var dataCust2 = {};
 
                     for (var i = 0; i < custArray.length; i++){
-                        dataCust[custArray[i].contacto] = null;
-                        dataCust2[custArray[i].contacto] = custArray[i];
+                        dataCust[custArray[i].ruc] = null;
+                        dataCust2[custArray[i].ruc] = custArray[i];
                     }
                     console.log("dataCust2");
                     console.log(dataCust2);
 
-                    $('input#cliente').autocomplete({
+                    $('input#ruc_cliente').autocomplete({
                         data: dataCust,
                         onAutocomplete:function(reqdata){
                             console.log(reqdata);
                             $('#cliente_id').val(dataCust2[reqdata]['id']);
                             $('#direccion').val(dataCust2[reqdata]['direccion']);
+                            $('#cliente').val(dataCust2[reqdata]['razon_social']);
                         }
                     });
                 }

@@ -244,7 +244,7 @@
         {{ $cotizacion->cliente }}
     </div>
     <div class="cuadro4">
-        Asignado
+        Vendedor
     </div>
     <div class="cuadro5">
         {{ $cotizacion->asignado }}
