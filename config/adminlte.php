@@ -411,13 +411,13 @@ return [
                     'route'   => 'admin.ordenestrabajoListado.index',
                 ],
                 [
-                    'text'  => 'Registro de guias',
+                    'text'  => 'Registro guias ingresos',
                     'route'   => 'admin.rutaGuia.index',
                 ],
-                // [
-                //     'text'  => 'Compras',
-                //     'route'   => 'admin.comprasAlmacen.index',
-                // ],
+                [
+                    'text'  => 'Registro guias salidas',
+                    'route'   => 'admin.rutaGuiaSalida.index',
+                ],
             ],
         ],
 

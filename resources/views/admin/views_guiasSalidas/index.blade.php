@@ -4,10 +4,10 @@
 
 @section('content_header')
     {{-- @can('Crear productos') --}}
-        <a href="{{ route('admin.rutaGuia.create') }}" class="btn btn-secondary btn-sm float-right">Agregar guia de ingreso</a>
+        <a href="{{ route('admin.rutaGuiaSalida.create') }}" class="btn btn-secondary btn-sm float-right">Agregar guia de salida</a>
     {{-- @endcan --}}
     
-    <h1>Guias de ingresos</h1>
+    <h1>Guias de salida</h1>
 @stop
 
 @section('content')
@@ -41,7 +41,7 @@
                         <td>{{ $guia->hora_llegada }}</td>
                         <td>{{ $guia->oop }}</td>
                         <td>{{ $guia->numero_guia }}</td>
-                        <td> <a href="/uploads/REGISTRO-GUIAS-INGRESO/{{ $guia->archivo }}" target="_blank">Ver archivo</a></td>
+                        <td> <a href="/uploads/REGISTRO-GUIAS-SALIDA/{{ $guia->archivo }}" target="_blank">Ver archivo</a></td>
 
                         <td width="10px">
                             <a href="{{ route('admin.rutaGuia.edit', $guia->id) }}" class="btn btn-sm btn-primary">Editar</a>
