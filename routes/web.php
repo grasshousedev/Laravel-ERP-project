@@ -37,3 +37,5 @@ Route::get('admin/rutaSalidas/findCustomers', [App\Http\Controllers\Admin\Salida
 Route::get('admin/rutaSalidas/findCustomersCliente', [App\Http\Controllers\Admin\SalidaController::class, 'searchCliente'])->name('admin.rutaSalidas.searchCliente');
 
 Route::get('admin/ingresosAlmacen/findCustomers', [App\Http\Controllers\Admin\IngresosAlmacenController::class, 'searchProveedor'])->name('admin.ingresosAlmacen.searchProveedor');
+
+Route::get('admin/productos/searchProveedor', [App\Http\Controllers\Admin\ProductoController::class, 'searchProveedor'])->name('admin.productos.searchProveedor');

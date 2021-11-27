@@ -8,6 +8,7 @@ use App\Models\Producto;
 use App\Models\Tipo_impresora;
 use App\Models\Estado_impresora;
 use App\Models\EstadoProductoservicio;
+use App\Models\Proveedore;
 
 class ProductoController extends Controller
 {
@@ -61,7 +62,7 @@ class ProductoController extends Controller
 
         $datosprod = request()->except('_token');
         Producto::insert($datosprod);
-        // return response()->json($datosprod);
+
         $productos = Producto::all();
         return redirect()->route('admin.productos.index', compact('productos'))->with('info', 'El producto fue creado correctamente.');
     }
@@ -91,6 +92,12 @@ class ProductoController extends Controller
         $tipo       = EstadoProductoservicio::pluck('producto_servicio', 'producto_servicio');
 
         return view('admin.productos.edit', compact('producto', 'tipo_prod', 'estado', 'tipo'));
+    }
+
+    public function searchProveedor()
+    {
+        $proveedores       = Proveedore::all();
+        return response()->json($proveedores);
     }
 
     /**
