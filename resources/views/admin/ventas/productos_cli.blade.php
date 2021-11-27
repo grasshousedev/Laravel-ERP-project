@@ -13,16 +13,17 @@
 <div class="row">
     <div class="col-sm-2">
         <div class="card">
-        <div class="card-body">
-        {!! Form::open(['route' => "admin.productos_cli.store", 'autocomplete'=>'off']) !!}
+            <div class="card-body">
+                {!! Form::open(['route' => "admin.productos_cli.store", 'autocomplete'=>'off']) !!}
 
-            @include('admin.ventas.parts.form_prods_cli')
+                    @include('admin.ventas.parts.form_prods_cli')
 
-            {{-- {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!} --}}
-            <input type="submit" class="btn btn-primary" onclick="calcular()" value="Crear">
-            <a href="{{ route('admin.ventas-index.index') }}" class="btn btn-primary">Volver</a>
-            {!! Form::close() !!}
-        </div>
+                    {{-- {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!} --}}
+                    <input type="submit" class="btn btn-primary" onclick="calcular()" value="Crear">
+                    <a href="{{ route('admin.ventas-index.index') }}" class="btn btn-primary">Volver</a>
+                    
+                {!! Form::close() !!}
+            </div>
         </div>
     </div>
 

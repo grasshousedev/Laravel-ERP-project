@@ -13,16 +13,17 @@
 <div class="row">
     <div class="col-sm-2">
         <div class="card">
-        <div class="card-body">
-        {!! Form::open(['route' => "admin.productos_provee.store", 'autocomplete'=>'off']) !!}
+            <div class="card-body">
+                {!! Form::open(['route' => "admin.productos_provee.store", 'autocomplete'=>'off']) !!}
 
-            @include('admin.occProveedores.parts.form_prods_provee')
-            <br>
-            {{-- {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!} --}}
-            <input type="submit" class="btn btn-primary" onclick="calcular()" value="Crear">
-            <a href="{{ route('admin.evaluaciones.index') }}" class="btn btn-primary">Volver</a>
-            {!! Form::close() !!}
-        </div>
+                    @include('admin.occProveedores.parts.form_prods_provee')
+                    <br>
+                    {{-- {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!} --}}
+                    <input type="submit" class="btn btn-primary" onclick="calcular()" value="Crear">
+                    <a href="{{ route('admin.occProveedores.index') }}" class="btn btn-primary">Volver</a>
+
+                {!! Form::close() !!}
+            </div>
         </div>
     </div>
 
@@ -34,7 +35,7 @@
                     <th id="">Producto</th>
                     <th id="">Notas</th>
                     <th id="">Cantidad</th>
-                    <th id="">Funciones</th>
+                    <th id=""></th>
                 </thead>
                 <tbody>
                     <?php 
@@ -47,11 +48,11 @@
                         <td>{{ $producto->cantidad_prod }}</td>
 
                         <td style="width: 150px;">
-                            <a href="{{ route('admin.productos_cli.edit', $producto->id) }}" class="btn btn-sm btn-primary" >
+                            {{-- <a href="{{ route('admin.productos_cli.edit', $producto->id) }}" class="btn btn-sm btn-primary" >
                                 <span class="material-icons-outlined">
                                 edit
                                 </span>
-                            </a>
+                            </a> --}}
                         </td>
                         
                         <?php $producto = $producto->total_prod; ?>

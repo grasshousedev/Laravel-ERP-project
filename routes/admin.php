@@ -48,7 +48,7 @@ use App\Http\Controllers\Admin\EvaluacionesPDFController;
 
 // Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
-Route::resource('pdf_op', UserController::class)->names('admin.pdf_op');
+Route::resource('pdf_op', PDFOPController::class)->names('admin.pdf_op');
 
 Route::resource('users', UserController::class)->middleware('can:Ver listado de usuarios')->names('admin.users');
 

@@ -32,7 +32,7 @@
             }
             .cuadro{
                 border: 1px solid black;
-                width: 180px;
+                width: 220px;
                 height: 20px;
                 text-align: center;
                 background-color: #246355;
@@ -40,14 +40,14 @@
             }
             .cuadro_1{
                 border: 1px solid black;
-                width: 180px;
+                width: 220px;
                 height: 20px;
                 text-align: center;
             }
             .cuadro2{
                 border: 1px solid black;
                 width: 220px;
-                margin-left: 230px;
+                margin-left: 240px;
                 position: fixed;
                 height: 20px;
                 margin-top: 120px;
@@ -59,7 +59,7 @@
             .cuadro3{
                 border: 1px solid black;
                 width: 220px;
-                margin-left: 230px;
+                margin-left: 240px;
                 position: fixed;
                 height: 20px;
                 margin-top: 140px;
@@ -92,6 +92,7 @@
             .cuadro6{
                 border: 1px solid black;
                 width: 700px;
+                margin-top: 50px;
                 text-align: center;
                 background-color: #246355;
                 color: white;
@@ -105,7 +106,7 @@
                 border: 1px solid black;
                 width: 100px;
                 text-align: center;
-                top: 23%;
+                top: 25%;
                 position: fixed;
                 height: 20px;
                 background-color: #246355;
@@ -115,16 +116,15 @@
                 border: 1px solid black;
                 width: 100px;
                 text-align: center;
-                top: 25%;
+                top: 27%;
                 position: fixed;
                 height: 20px;
             }
             .cuadro9{
                 border: 1px solid black;
-                width: 110px;
-                margin-left: 130px;
+                width: 220px;
                 height: 20px;
-                top: 23%;
+                top: 18%;
                 text-align: center;
                 position: fixed;
                 background-color: #246355;
@@ -132,19 +132,18 @@
             }
             .cuadro10{
                 border: 1px solid black;
-                width: 110px;
-                margin-left: 130px;
+                width: 220px;
                 height: 20px;
-                top: 25%;
+                top: 20%;
                 text-align: center;
                 position: fixed;
             }
             .cuadro11{
                 border: 1px solid black;
-                width: 110px;
-                margin-left: 270px;
+                width: 220px;
+                margin-left: 240px;
                 height: 20px;
-                top: 23%;
+                top: 18%;
                 text-align: center;
                 position: fixed;
                 background-color: #246355;
@@ -152,19 +151,19 @@
             }
             .cuadro12{
                 border: 1px solid black;
-                width: 110px;
-                margin-left: 270px;
+                width: 220px;
+                margin-left: 240px;
                 height: 20px;
-                top: 25%;
+                top: 20%;
                 text-align: center;
                 position: fixed;
             }
             .cuadro13{
                 border: 1px solid black;
-                width: 110px;
-                margin-left: 410px;
+                width: 220px;
+                margin-left: 480px;
                 height: 20px;
-                top: 23%;
+                top: 18%;
                 text-align: center;
                 position: fixed;
                 background-color: #246355;
@@ -172,10 +171,10 @@
             }
             .cuadro14{
                 border: 1px solid black;
-                width: 110px;
-                margin-left: 410px;
+                width: 220px;
+                margin-left: 480px;
                 height: 20px;
-                top: 25%;
+                top: 20%;
                 text-align: center;
                 position: fixed;
             }
@@ -200,14 +199,14 @@
                 position: fixed;
             }
             .producto{
-                height: 300px;
+                height: 500px;
             }
             .condiciones{
                 border: 1px solid black;
                 height: 210px;
             }
             .pie_de_pagina{
-                border: 1px solid black;
+                border: none;
                 height: 120px;
             }
         </style>
@@ -215,8 +214,7 @@
 <body>
     <div class="p">
     <p style="font-size: 20px;">3D PRINTER</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa iusto ul
-    m labore consequuntur perspiciatis velit dolorem culpa, sunt dolorum nemo!</p> 
+    <p>{{ $cotizacion->condiciones }}</p> 
     </div> 
     <br>
     <table class="coti">
@@ -225,9 +223,9 @@
             <th>Cotizacion</th>
         </tr>
     </thead>
-    <tr>
-        <td>{{ $cotizacion->codigo }}</td>
-    </tr>
+        <tr>
+            <td>{{ $cotizacion->codigo }}</td>
+        </tr>
     </table>
     <br>
     <div class="cuadro">
@@ -237,17 +235,39 @@
         {{ $cotizacion->created_at }}
     </div>
     <br>
+
     <div class="cuadro2">
-        Cliente
+        Cliente / RUC
     </div>
+
     <div class="cuadro3">
         {{ $cotizacion->cliente }}
+        {{ $cotizacion->ruc_cliente }}
     </div>
     <div class="cuadro4">
-        Asignado
+        Vendedor
     </div>
     <div class="cuadro5">
-        {{ $cotizacion->asignado }}
+        {{ $cotizacion->asignado }} 
+    </div>
+    <div class="cuadro9">
+        Forma de pago
+    </div>
+    <div class="cuadro10">
+        {{ $cotizacion->forma_pago }} 
+    </div>
+    <br>
+    <div class="cuadro11">
+        Estado
+    </div>
+    <div class="cuadro12">
+        {{ $cotizacion->estado }}
+    </div>
+    <div class="cuadro13">
+        Tiempo de entrega
+    </div>
+    <div class="cuadro14">
+        {{ $cotizacion->tiempo_entrega }}
     </div>
     <div class="cuadro6">
         Direccion
@@ -256,54 +276,16 @@
         {{ $cotizacion->direccion }}
     </div>
     <br>
-    <div class="cuadro7">
-        Moneda
-    </div>
-    <div class="cuadro8">
-        {{ $cotizacion->moneda }}
-    </div>
-    <div class="cuadro9">
-        Forma de Pago
-    </div>
-    <div class="cuadro10">
-        {{ $cotizacion->forma_pago }}
-    </div>
-    <div class="cuadro11">
-        Expiracion
-    </div>
-    <div class="cuadro12">
-        {{ $cotizacion->tiempo_expiracion }}
-    </div>
-    <div class="cuadro13">
-        Estado
-    </div>
-    <div class="cuadro14">
-        {{ $cotizacion->estado }}
-    </div>
-    <div class="cuadro15">
-        Tiempo de Entrega
-    </div>
-    <div class="cuadro16">
-        {{ $cotizacion->tiempo_entrega }}
-    </div>
-<br>
-<br>
-<br>
     <div class="producto">
-        <table class="table table-sm bg-dark" id="table_t" style="border-collapse: collapse;">
+        <table id="table_t" style="border-collapse: collapse;">
             <thead>
                 <tr>
-                    <th scope="col" style="width: 117px;">Item</th>
-                    <th scope="col" style="width: 117px;">Notas</th>
-                    <th scope="col" style="width: 117px;">Cantidad</th>
-                    <th scope="col" style="width: 117px;">Precio</th>
-                    <th scope="col" style="width: 117px;">Total producto</th>    
+                    <th scope="col" style="width: 210px;">Item</th>
+                    <th scope="col" style="width: 210px;">Notas</th>
+                    <th scope="col" style="width: 210px;">Cantidad</th>
                 </tr>
             </thead>
             <tbody id="table_data">
-                <?php 
-                    $total_productos = 0;
-                ?>
                 @foreach($cliente_producto as $item)
                 <tr>
                     <th scope="row">
@@ -315,56 +297,15 @@
                     <th scope="row">
                         {{ $item->cantidad_prod }}
                     </th>
-                    <th scope="row">
-                        {{ $item->precio_prod }}
-                    </th>
-                    <th scope="row" style="text-align: right">
-                        {{ $item->total_prod }}
-                    </th>
                 </tr>
-                
-                <?php $producto = $item->total_prod; ?>
-                <?php $total_productos = $total_productos + $producto; ?>
                 @endforeach
-                <tr class="table-bordered">
-                    <td><strong>Sub total</strong></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td style="text-align: right">
-                        <?php echo $total_productos; ?>
-                    </td>
-                </tr>
-                <tr class="table-bordered">
-                    <td><strong>IGV</strong></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td style="text-align: right">
-                        <?php $igv = $total_productos * 18/100; ?>
-                        <?php echo $igv;?>
-                    </td>
-                </tr>
-                <tr class="table-bordered">
-                    <td><strong>Total</strong></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td style="text-align: right">
-                        <?php echo $total_productos + $igv; ?>
-                    </td>
-                </tr>
             </tbody>
         </table>
     </div>
     <br>
-    <br>
-    <div class="condiciones">
-        {{ $cotizacion->condiciones }}
-    </div>
-    <br>
-    <div class="pie_de_pagina">
-        {{ $cotizacion->pie_pagina }}
+    <div class="pie_de_pagina" style="text-align: center;">
+        <small style="text-decoration: underline;">pie de pagina</small>
+        <p>{{ $cotizacion->pie_pagina }}</p>
     </div>
 </body>
 </html>

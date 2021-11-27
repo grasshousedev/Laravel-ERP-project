@@ -50,12 +50,12 @@ class PDFOPController extends Controller
     public function show($id)
     {
         $cotizacion           = Cotizacione::find($id);
-        $cliente_producto     = Cliente_producto::where('cotizacion_id', '=', $cotizacion['id'])->get();
+        $cliente_producto     = Cliente_producto::where('cotizacion_id', '=', $cotizacion->id)->get();
 
         $pdf = PDF::loadView('admin.logistica.mas_info', compact('cotizacion', 'cliente_producto'));
 
         $nombre         = date('Y-m-d');
-        return $pdf->stream('CLIENTE-'.$nombre.'.pdf');
+        return $pdf->stream($nombre.'.pdf');
         //return response()->json($cliente_producto); //para debugs
     }
 
