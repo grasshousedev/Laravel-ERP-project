@@ -220,12 +220,12 @@
     <table class="coti">
     <thead>
         <tr>
-            <th>Cotizacion</th>
+            <th>OCCP</th>
         </tr>
     </thead>
-        <tr>
+        <!-- <tr>
             <td>{{ $cotizacion->codigo }}</td>
-        </tr>
+        </tr> -->
     </table>
     <br>
     <div class="cuadro">
@@ -237,24 +237,23 @@
     <br>
 
     <div class="cuadro2">
-        Cliente / RUC
+        RUC
     </div>
 
     <div class="cuadro3">
-        {{ $cotizacion->cliente }}
-        {{ $cotizacion->ruc_cliente }}
+        {{ $cotizacion->ruc }}
     </div>
     <div class="cuadro4">
-        Vendedor
+        Responsable
     </div>
     <div class="cuadro5">
-        {{ $cotizacion->asignado }} 
+        {{ $cotizacion->responsable }} 
     </div>
     <div class="cuadro9">
-        Forma de pago
+        Moneda
     </div>
     <div class="cuadro10">
-        {{ $cotizacion->forma_pago }} 
+        {{ $cotizacion->moneda }} 
     </div>
     <br>
     <div class="cuadro11">
@@ -269,6 +268,8 @@
     <div class="cuadro14">
         {{ $cotizacion->tiempo_entrega }}
     </div>
+    <br>
+    <br>
     <div class="cuadro6">
         Direccion
     </div>
