@@ -32,7 +32,7 @@
                         <td>{{ $occ->descripcion }}</td>
                         <td>{{ $occ->cot }}</td>
                         <td>{{ $occ->tiempo_entrega }}</td>
-                        <td> <a href="/uploads/{{ $occ->archivo }}" target="_blank">Ver archivo</a></td>
+                        <td> <a href="/uploads/OC-CLIENTES/{{ $occ->archivo }}" target="_blank">Ver archivo</a></td>
 
                         {{-- <td width="10px">
                             <a href="{{ route('admin.occClientes.edit', $occ->id) }}" class="btn btn-sm btn-primary">Editar</a>

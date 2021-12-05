@@ -8,11 +8,11 @@
 @stop
 
 @section('content')
-    @if (session('info'))
+@if (session('info'))
     <div class="alert alert-success">
         {{ session('info') }}
     </div>
-    @endif
+@endif
     <div class="card">
         <div class="card-body">
             <table class="table table-striped" id="estado_entrega">
