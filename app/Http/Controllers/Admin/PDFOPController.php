@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Cotizacione;
 use App\Models\Cliente_producto;
+use App\Models\Orden_pedido;
 use PDF;
 
 class PDFOPController extends Controller
@@ -49,7 +49,7 @@ class PDFOPController extends Controller
      */
     public function show($id)
     {
-        $cotizacion           = Cotizacione::find($id);
+        $cotizacion           = Orden_pedido::find($id);
         $cliente_producto     = Cliente_producto::where('cotizacion_id', '=', $cotizacion->id)->get();
 
         $pdf = PDF::loadView('admin.logistica.mas_info', compact('cotizacion', 'cliente_producto'));
