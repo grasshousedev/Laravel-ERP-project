@@ -8,7 +8,7 @@ use App\Models\Cotizacione;
 use App\Models\Ordenes_compra;
 use App\Classes\CustomCodeGenerator;
 use App\Models\Forma_pago;
-use App\Models\Estado_entrega;
+use App\Models\estado_entrega;
 use App\Models\Tiempo_entrega;
 use App\Models\Tiempo_expiracione;
 use App\Models\Tipo_moneda;

@@ -28,14 +28,25 @@
                 <th id=""></th>
                 <th id=""></th>
                 <th id=""></th>
+                <th id=""></th>
             </thead>
             <tbody>
                 @foreach ($orden_compras as $orden_compra)
                     <tr>
                         <td>{{ $orden_compra->ruc }}</td>
                         <td>{{ $orden_compra->razon_social }}</td>
-                        <td>{{ $orden_compra->estado }}</td>
+                    <td>{{ $orden_compra->estado }}</td>
                         <td>{{ $orden_compra->responsable }}</td>
+
+                        <td width="10px">
+                            <form action="{{ route('admin.rutaOCCP_PDF.show', $orden_compra->id) }}" method="GET">
+                                <button type="submit" class="btn btn-sm btn-warning">
+                                    <span class="material-icons-outlined md-48">
+                                        picture_as_pdf
+                                    </span>
+                                </button>
+                            </form>
+                        </td>
                         
                         <td width="10px">
                             <a href="{{ route('admin.occProveedores.show', $orden_compra->id) }}" class="btn btn-sm btn-primary">
@@ -54,7 +65,7 @@
                         </td>
                         
                         <td width="10px">
-                            <a href="{{ route('admin.ventas.edit', $orden_compra->id) }}" class="btn btn-sm btn-primary">
+                            <a href="{{ route('admin.occProveedores.edit', $orden_compra->id) }}" class="btn btn-sm btn-primary">
                                 <span class="material-icons-outlined">
                                     edit
                                 </span>

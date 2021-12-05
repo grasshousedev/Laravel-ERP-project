@@ -13,6 +13,7 @@ use App\Models\User;
 use App\Models\Ocproveedore;
 use App\Models\Proveedore;
 use App\Models\Productos_occp;
+use App\Models\estado_entrega;
 
 class OccProveedoresController extends Controller
 {
@@ -102,7 +103,13 @@ class OccProveedoresController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cotizacion     = Ocproveedore::find($id);
+        $estado         = estado_entrega::pluck('estado', 'estado');
+        $tiempo_entrega = Tiempo_entrega::pluck('entrega', 'entrega');
+        $moneda         = Tipo_moneda::pluck('moneda', 'moneda');
+        $users          = User::pluck('name', 'name');
+
+        return view('admin.occProveedores.edit', compact('cotizacion', 'estado', 'moneda', 'tiempo_entrega', 'users'));
     }
 
     /**
@@ -114,7 +121,26 @@ class OccProveedoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $request->validate([
+        //     'ruc'               => 'required',
+        //     'responsable'       => 'required',
+        //     'tiempo_entrega'    => 'required',
+        //     'contacto'          => 'required',
+        //     'estado'            => 'required',
+        //     'moneda'            => 'required',
+        //     'razon_social'      => 'required',
+        //     'direccion'         => 'required',
+        //     'cot_proveedor'     => '',
+        //     'proveedor_id'      => 'required',
+        // ]);
+
+        $datoscot = request()->except('_token', '_method', 'codigo');
+
+        Ocproveedore::where('id', '=', $id)->update($datoscot);
+
+        $cotizacion = Ocproveedore::findOrFail($id);
+
+        return redirect()->route('admin.occProveedores.index', $cotizacion)->with('info', 'La cotizacion fue actualizada correctamente.');
     }
 
     /**

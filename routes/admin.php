@@ -45,6 +45,7 @@ use App\Http\Controllers\Admin\RegistroGuiaController;
 use App\Http\Controllers\Admin\RegistroGuiaSalidaController;
 use App\Http\Controllers\Admin\PDFOPController;
 use App\Http\Controllers\Admin\EvaluacionesPDFController;
+use App\Http\Controllers\Admin\OCCP_PDFController;
 
 // Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('admin.home');
 
@@ -99,6 +100,7 @@ Route::resource('areacontacto', Area_ContactoController::class)->names('admin.ar
 Route::resource('listaproductos', Lista_ProductosController::class)->names('admin.listaproductos');
 
 Route::resource('occProveedores', OccProveedoresController::class)->names('admin.occProveedores');
+Route::resource('rutaOCCP_PDF', OCCP_PDFController::class)->names('admin.rutaOCCP_PDF');
 
 Route::resource('ordenestrabajoListado', OrdenesTrabajoListadoController::class)->names('admin.ordenestrabajoListado');
 Route::resource('occClientesListado', OccClientesListadoController::class)->names('admin.occClientesListado');
