@@ -24,7 +24,7 @@
                 <th id="">Asignado</th>
                 <th id="">Creado</th>
                 <th id="">Editado</th>
-                <th id=""></th>
+                <th id="">Listado</th>
                 <th id=""></th>
                 <th id=""></th>
                 <th id=""></th>
@@ -39,7 +39,7 @@
                     <td>{{ $cot->updated_at }}</td>
 
                     <td width="10px">
-                        <a href="{{ route('admin.ventas-index.show', $cot->id) }}" class="btn btn-sm btn-primary">
+                        <a href="{{ route('admin.rutaEvaluacionesPDF.edit', $cot->id) }}" class="btn btn-sm {{$cot->listado}}">
                             <span class="material-icons-outlined">
                                 check_circle
                             </span>

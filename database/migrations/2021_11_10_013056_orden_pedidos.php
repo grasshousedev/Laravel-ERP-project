@@ -21,6 +21,7 @@ class OrdenPedidos extends Migration
             $table->string('moneda');
             $table->string('tiempo_expiracion');
             $table->string('estado');
+            $table->string('listado')->default('btn-success');
             $table->string('forma_pago');
             $table->string('tiempo_entrega');
             $table->string('condiciones');

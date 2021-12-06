@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Listado;
 use App\Models\Cliente_producto;
+use App\Models\Orden_pedido;
 
 class Lista_ProductosController extends Controller
 {
@@ -16,13 +17,7 @@ class Lista_ProductosController extends Controller
      */
     public function index()
     {
-        $oc = Ordenes_compra::where('listado', '=', 'btn-primary')->get();
-        $lista_productos = array();
-        foreach ($oc as $item) {
-            $prods = Listado::where('cotizacion_id', '=', $item->cotizacion_id)->get();
-            array_push($lista_productos, $prods);
-        }
-        
+        $lista_productos = Listado::where('listado', '=', 'btn-primary')->get();
         return view('admin.lista_productos_comprados.index', compact('lista_productos'));
     }
 

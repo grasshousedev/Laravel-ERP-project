@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Cliente_producto;
 use App\Models\Cotizacione;
+use App\Models\Orden_pedido;
+use App\Models\Listado;
 use PDF;
 
 class EvaluacionesPDFController extends Controller
@@ -67,7 +69,14 @@ class EvaluacionesPDFController extends Controller
      */
     public function edit($id)
     {
-        //
+        //CAMBIA LISTADO EN ORDEN DE PEDIDO JAMIRLOHIZO
+        $cotizacion = Orden_pedido::find($id);
+        $cotizacion->listado = "btn-primary";
+        $cotizacion->save();
+
+        Listado::where('cotizacion_id', '=', $cotizacion->cotizacion_id)->update(['listado' => 'btn-primary']);
+        
+        return redirect()->route('admin.logistica.index');
     }
 
     /**
