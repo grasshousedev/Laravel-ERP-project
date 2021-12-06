@@ -27,6 +27,7 @@
                 <th id=""></th>
                 <th id=""></th>
                 <th id=""></th>
+                <th id=""></th>
             </thead>
             <tbody>
                 @foreach ($cotizacion as $cot)
@@ -36,6 +37,14 @@
                     <td>{{ $cot->asignado }}</td>
                     <td>{{ $cot->created_at }}</td>
                     <td>{{ $cot->updated_at }}</td>
+
+                    <td width="10px">
+                        <a href="{{ route('admin.ventas-index.show', $cot->id) }}" class="btn btn-sm btn-primary">
+                            <span class="material-icons-outlined">
+                                check_circle
+                            </span>
+                        </a>
+                    </td>
 
                     <td width="10px">
                         <form action="{{ route('admin.pdf_op.show', $cot->id) }}" method="GET">

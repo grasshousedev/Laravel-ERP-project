@@ -17,6 +17,7 @@ class OrdenesCompras extends Migration
             $table->bigIncrements('id');
             $table->string('codigo');
             $table->string('cliente');
+            $table->string('ruc_cliente');
             $table->string('asignado');
             $table->string('encargado')->nullable();
             $table->string('moneda');

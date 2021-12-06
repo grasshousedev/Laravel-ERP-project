@@ -22,6 +22,8 @@ class Listado extends Migration
             $table->double('cantidad_prod');
             $table->string('proveedor');
             $table->string('moneda');
+            $table->string('cotizacion_id');
+            $table->string('listado')->default('btn-success');
             $table->double('precio_prod');
             $table->string('codigo_cotizacion')->nullable();
             $table->string('tiempo_entrega');

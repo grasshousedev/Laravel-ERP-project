@@ -27,6 +27,8 @@ class Cotizaciones extends Migration
             $table->string('condiciones');
             $table->string('direccion');
             $table->text('pie_pagina');
+            $table->text('requiere')->nullable();
+            $table->text('operaciones')->nullable();
             $table->unsignedBigInteger('cliente_id')->nullable();
             
             $table->foreign('cliente_id')

@@ -72,6 +72,7 @@ class EvaluacionesController extends Controller
         $registro = new Ordenes_compra;
         $registro->codigo = $cotizacion['codigo'];
         $registro->cliente = $cotizacion['cliente'];
+        $registro->ruc_cliente = $cotizacion['ruc_cliente'];
         $registro->asignado = $cotizacion['asignado'];
         $registro->moneda = $cotizacion['moneda'];
         $registro->tiempo_expiracion = $cotizacion['tiempo_expiracion'];

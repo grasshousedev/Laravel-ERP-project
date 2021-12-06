@@ -16,7 +16,13 @@ class Lista_ProductosController extends Controller
      */
     public function index()
     {
-        $lista_productos = Listado::all();
+        $oc = Ordenes_compra::where('listado', '=', 'btn-primary')->get();
+        $lista_productos = array();
+        foreach ($oc as $item) {
+            $prods = Listado::where('cotizacion_id', '=', $item->cotizacion_id)->get();
+            array_push($lista_productos, $prods);
+        }
+        
         return view('admin.lista_productos_comprados.index', compact('lista_productos'));
     }
 

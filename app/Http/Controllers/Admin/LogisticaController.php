@@ -98,6 +98,7 @@ class LogisticaController extends Controller
             $listado->moneda = $p['moneda'];
             $listado->precio_prod = $p['precio_prod'];
             $listado->codigo_cotizacion = $p['codigo_cotizacion'];
+            $listado->cotizacion_id = $p['cotizacion_id'];
             $listado->tiempo_entrega = $p['tiempo_entrega'];
             $listado->responsable = $cotizacion['asignado'];
             $listado->ocp = str_replace("T", "C", $cotizacion['codigo']);
