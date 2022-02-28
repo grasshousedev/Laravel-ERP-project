@@ -44,7 +44,7 @@
 -   [Datatables](https://www.datatables.net/)
 -   [PostgreSQL](https://www.postgresql.org/)
 
-<small>Detalle de las versiones y dependencias en la <a href="#">documentacion técnica</a> del programa*</small>
+<small>Detalle de las versiones y dependencias en la <a href="https://www.keepandshare.com/doc9/27781/manual-tecnico-erp-laravel-pdf-1-9-meg?da=y">manual técnico</a> del programa*</small>
 
 <p align="right">(<a href="#top">ir al inicio</a>)</p>
 
