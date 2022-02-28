@@ -1,14 +1,15 @@
 <!-- LOGO -->
 <div align="center" id="top">
-<img src="https://i.ibb.co/gTGF9ck/image.png" alt="image" border="0">
+<img src="screenshots/index.png" alt="image" border="0">
   <h1 align="center">3DWorld</h1>
   <p align="center">
     Sistema <a href="https://dynamics.microsoft.com/es-mx/erp/define-erp/">ERP (Enterprise Resource Planning)</a>, dedicado a automatizar y administrar los procesos empresariales de las áreas de: finanzas, venta al por menor, cadena de suministro, recursos humanos y operaciones.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explorar documentación»</strong></a>
+    <a href="https://www.keepandshare.com/doc9/27780/manual-de-usuario-erp-laravel-pdf-2-2-meg?dn=y&dnad=y"><strong>Explorar documentación de usuario»</strong></a>
+    <a href="https://www.keepandshare.com/doc9/27781/manual-tecnico-erp-laravel-pdf-1-9-meg?da=y"><strong>Explorar documentación técnica»</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Jamir-boop/SENATI-MARKET/tree/main/screenshots">Demo Screenshots</a>
+    <a href="https://github.com/Jamir-boop/3Dworld/tree/master/screenshots">Demo Screenshots</a>
   </p>
 </div>
 <br />
@@ -53,7 +54,7 @@
 1. Clonar el repositorio; abra su terminal en su directorio de preferencia y ejecute, en seguida ingrese a la carpeta 3Dworld:
 
 ```
-    git clone https://github.com/Jamir-boop/3Dworld.git && cd ./3Dworld
+    git clone --depth=1 https://github.com/Jamir-boop/3Dworld.git && cd ./3Dworld
 ```
 2. Duplicar el archivo `env.example` y renombrarlo a `.env`:
 3. Para instalar dependencias ejecute:
