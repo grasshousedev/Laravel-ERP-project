@@ -1,58 +1,80 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-<p align="center">GRUPO MARKET</p>
+<!-- LOGO -->
+<div align="center" id="top">
+<img src="https://i.ibb.co/gTGF9ck/image.png" alt="image" border="0">
+  <h1 align="center">3DWorld</h1>
+  <p align="center">
+    Sistema <a href="https://dynamics.microsoft.com/es-mx/erp/define-erp/">ERP (Enterprise Resource Planning)</a>, dedicado a automatizar y administrar los procesos empresariales de las áreas de: finanzas, venta al por menor, cadena de suministro, recursos humanos y operaciones.
+    <br />
+    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explorar documentación»</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Jamir-boop/SENATI-MARKET/tree/main/screenshots">Demo Screenshots</a>
+  </p>
+</div>
+<br />
 
-## COMO EJECUTAR LOCALMENTE
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Tabla de contenidos</summary>
+  <ol>
+    <li>
+      <a href="#sobre-el-proyecto">Sobre el Proyecto</a>
+    </li>
+    <li>
+        <a href="#construido-con">Construido Con</a>
+    </li>
+    <li>
+      <a href="#ejecutar-localmente">Ejecutar localmente 🚀</a>
+    </li>
+  </ol>
+</details>
+<hr>
 
-### Clonando el repositorio:
+## Sobre el proyecto
+3DWorld es resultado del análisis y la automatización de los procesos de la empresa del mismo nombre, las cuales abarcan: Cadena de suministro, Venta, Operaciones, Logística, Almacén y Recursos Humanos.
+<hr>
 
-Abra su terminal en un directorio de preferencia y ejecute:
+## Construido con
+-   [Laravel 8](https://laravel.com/)
+-   [Composer](https://getcomposer.org/)
+-   [Bootstrap](https://getbootstrap.com/)
+-   [Livewire](https://laravel-livewire.com/)
+-   [AdminLTE](https://adminlte.io/docs/3.1/)
+-   [Datatables](https://www.datatables.net/)
+-   [PostgreSQL](https://www.postgresql.org/)
+
+<small>Detalle de las versiones y dependencias en la <a href="#">documentacion técnica</a> del programa*</small>
+
+<p align="right">(<a href="#top">ir al inicio</a>)</p>
+
+## Ejecutar localmente
+**Se requiere tener instalado el motor de bases de datos [PostgreSQL](https://www.postgresql.org/)**
+
+1. Clonar el repositorio; abra su terminal en su directorio de preferencia y ejecute, en seguida ingrese a la carpeta 3Dworld:
 
 ```
-git clone https://github.com/Jamir-boop/ERP-Laravel.git
+    git clone https://github.com/Jamir-boop/3Dworld.git && cd ./3Dworld
 ```
-
-### Agregando archivo .env:
-
-Duplicar el archivo env.example y renombrarlo a:
+2. Duplicar el archivo `env.example` y renombrarlo a `.env`:
+3. Para instalar dependencias ejecute:
 
 ```
-.env
+    composer update
+    npm install
 ```
 
-### Instalamos Dependencias:
+4. En su base de datos postgresql; crear una base de datos con el nombre `postDBS`.
 
-En terminal ingrese a la carpeta ERP-Laravel:
-
+5. En su terminal ejecute las migraciones:
 ```
-cd ./ERP-laravel
+    php artisan migrate && php artisan migrate:fresh --seed
 ```
-
-Para instalar dependencias ejecute:
-
+6. Para iniciar un servidor local usando artisan ejecute:
 ```
-composer update
-npm install
-npm run dev
+    php artisan serve
 ```
 
-### Creando base de datos:
 
-Crear una base de datos en el motor postgres con el nombre "postDBS".
-El código de autenticación para establecer conexion con la base de datos es `1234`
-en caso de que el suyo sea distinto puede cambiarlo en el archivo ```.env```
-En seguida para integrar las migraciones ejecutar los scripts:
+<p align="right">(<a href="#top">ir al inicio</a>)</p>
+<hr>
 
-```
-php artisan migrate
-php artisan migrate:fresh --seed
-```
-
-### Inicializando localmente:
-
-```
-php artisan serve
-```
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

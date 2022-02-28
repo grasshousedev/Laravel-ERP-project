@@ -11,6 +11,10 @@
 @stop
 
 @section('content')
+<div class="row justify-content-center align-items-center">
+    <img src="https://static.anychart.com/images/gallery/v8/dashboards-multiple-charts-at-stage.png" alt="demo dashboard" width="100%">
+</div>
+
 <h1 class="text-center text-uppercase">Dashboard Impresoras 3D</h1>
 
 <div class="row justify-content-center align-items-center">
